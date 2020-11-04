@@ -82,6 +82,7 @@ const main = (function() {
         new Filter('unit-id', 'ID'),
         new Filter('unit-name', '名前'),
         new Filter('unit-hp', 'HP'),
+        new Filter('unit-attr', '所属'),
         new Filter('unit-atk', '攻撃'),
         new Filter('unit-spd', '攻撃速度'),
         new Filter('unit-atkscale', '攻撃倍率'),
@@ -263,6 +264,9 @@ const main = (function() {
                 case '名前':
                     col.textContent = data['name'];
                     break;
+                case '所属':
+                    col.textContent = data['attr'];
+                    break;
                 case 'HP':
                     col.textContent = parseInt(parseFloat(data['hp']) + parseFloat(data['hp_rate']) * (UNIT_LEVEL - 1));
                     break;
@@ -322,6 +326,10 @@ const main = (function() {
             return descending ?
                 (a, b) => compareDesc(a, b, 'name'):
                 (a, b) => compareAsc(a, b, 'name');
+        case '所属':
+            return descending ?
+                (a, b) => compareDesc(a, b, 'attr'):
+                (a, b) => compareAsc(a, b, 'attr');
         case 'HP':
             return descending ?
                 (a, b) => compareParamDesc(a, b, 'hp', 'hp_rate', (UNIT_LEVEL - 1)):
