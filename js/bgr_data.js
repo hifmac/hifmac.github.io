@@ -118,7 +118,7 @@ function Textbox(id, text) {
 
     let form_text_label =document.createElement('label');
     form_text_label.setAttribute('for', id);
-    form_text_label.textContent = text;
+    form_text_label.textContent = text + "：";
 
     let form_text = document.createElement('div');
     form_text.setAttribute('class', 'form-group')
