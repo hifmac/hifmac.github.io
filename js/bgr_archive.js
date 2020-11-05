@@ -6635,7 +6635,7 @@ const BGR_DATA = {
             "times":null
           },
           {
-            "name":"定身",
+            "name":"移動速度低下",
             "scale":"-1",
             "scale_rate":null,
             "value":null,
@@ -13437,7 +13437,7 @@ const BGR_DATA = {
         "sp":"54",
         "buffer1":[
           {
-            "name":"定身",
+            "name":"移動速度低下",
             "scale":"-1",
             "value":null,
             "duration":"5",
@@ -14721,7 +14721,7 @@ const BGR_DATA = {
         "sp":"63",
         "buffer1":[
           {
-            "name":"定身",
+            "name":"移動速度低下",
             "scale":"-1",
             "value":null,
             "duration":"5",
@@ -27845,7 +27845,7 @@ const BGR_DATA = {
         "buffer1_prob":"1",
         "buffer2":[
           {
-            "name":"移動速度低下量：100%(定身)",
+            "name":"移動速度低下",
             "scale":"-1",
             "value":null,
             "duration":"3",
@@ -31693,7 +31693,7 @@ const BGR_DATA = {
         "buffer1_prob":"1",
         "buffer2":[
           {
-            "name":"移動速度低下量：100%(定身)",
+            "name":"移動速度低下",
             "scale":"-1",
             "value":null,
             "duration":"3",

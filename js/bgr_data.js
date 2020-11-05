@@ -1,11 +1,11 @@
 // import { BGR_DATA } from './bgr_archive.js'
 
 /**
- * unit attribute filter
- * @param {string} value 
+ * inline form
+ * @param {string} id 
  * @param {string} text
  */
-function Filter(id, text) {
+function Checkbox(id, text) {
     let form_check_input = document.createElement('input');
     form_check_input.id = id;
     form_check_input.setAttribute('type', 'checkbox');
@@ -22,102 +22,310 @@ function Filter(id, text) {
     form_check.appendChild(form_check_input);
     form_check.appendChild(form_check_label);
 
-    this.checkbox = form_check_input;
+    this.input = form_check_input;
     this.label = form_check_label;
-    this.form = form_check;
+    this.checkbox = form_check;
 }
 
 /**
  * filter input element
  * @type {HTMLDivElement}
  */
-Filter.prototype.form = null;
+Checkbox.prototype.checkbox = null;
 
 /**
  * filter input element
  * @type {HTMLInputElement}
  */
-Filter.prototype.checkbox = null;
+Checkbox.prototype.input = null;
 
 /**
  * filter input element
  * @type {HTMLLabelElement}
  */
-Filter.prototype.label = null;
+Checkbox.prototype.label = null;
 
 /**
  * @returns {string} filter value
  */
-Filter.prototype.value = function Filter_value() {
+Checkbox.prototype.value = function Form_value() {
     return this.label.textContent;
 };
 
 /**
  * @returns {boolean} whether filter bockbox is checked
  */
-Filter.prototype.checked = function Filter_checked() {
-    return this.checkbox.checked;
+Checkbox.prototype.checked = function Form_checked() {
+    return this.input.checked;
 };
 
 /**
  * set change event listener
  * @param {function(Event): void} value change event listener
  */
-Filter.prototype.onChanged = function Filter_onChanged(value) {
-    this.checkbox.addEventListener('change', value);
+Checkbox.prototype.onChanged = function Form_onChanged(value) {
+    this.input.addEventListener('change', value);
 };
 
+/**
+ * inline form
+ * @param {string} id 
+ * @param {string} text
+ */
+function Textbox(id, text) {
+    let form_text_input = document.createElement('input');
+    form_text_input.id = id;
+    form_text_input.setAttribute('type', 'text');
+    form_text_input.setAttribute('class', 'form-control');
+    form_text_input.setAttribute('placeholder', text);
+    form_text_input.checked = true;
+
+    let form_text_label =document.createElement('label');
+    form_text_label.setAttribute('for', id);
+    form_text_label.textContent = text;
+
+    let form_text = document.createElement('div');
+    form_text.setAttribute('class', 'form-group')
+    form_text.appendChild(form_text_label);
+    form_text.appendChild(form_text_input);
+
+    this.input = form_text_input;
+    this.label = form_text_label;
+    this.textbox = form_text;
+}
+
+/**
+ * filter input element
+ * @type {HTMLDivElement}
+ */
+Textbox.prototype.textbox = null;
+
+/**
+ * filter input element
+ * @type {HTMLInputElement}
+ */
+Textbox.prototype.input = null;
+
+/**
+ * filter input element
+ * @type {HTMLLabelElement}
+ */
+Textbox.prototype.label = null;
+
+/**
+ * @returns {string} filter value
+ */
+Textbox.prototype.value = function Textbox_value() {
+    return this.input.value;
+};
+
+/**
+ * @returns {boolean} filter value
+ */
+Textbox.prototype.checked = function Textbox_checked() {
+    return true;
+};
+
+/**
+ * set change event listener
+ * @param {function(Event): void} value change event listener
+ */
+Textbox.prototype.onChanged = function Textbox_onChanged(value) {
+    this.input.addEventListener('change', value);
+};
+
+/**
+ * content filter
+ * @param {string} id 
+ * @param {string} text
+ */
+function CheckboxFilter(id, text) {
+    this.checkbox = new Checkbox(id, text);
+}
+
+CheckboxFilter.prototype.checkbox = null;
+
+/**
+ * get form
+ * @param {HTMLFormElement} obj column object to read
+ */
+CheckboxFilter.prototype.form = function CheckboxFilter_form(obj) {
+    return this.checkbox.checkbox;
+}
+
+/**
+ * content filter
+ * @param {string} id 
+ * @param {string} text
+ */
+function TextFilter(id, text) {
+    this.textbox = new Textbox(id, text);
+}
+
+TextFilter.prototype.textbox = null;
+
+/**
+ * get form
+ * @param {HTMLFormElement} obj column object to read
+ */
+TextFilter.prototype.form = function TextFilter_form(obj) {
+    return this.textbox.textbox;
+}
+
+/**
+ * content column selecter
+ * @param {string} id
+ * @param {string} text
+ */
+function Column(id, text, read, formatter) {
+    this.checkbox = new Checkbox(id, text);
+    this.read = read;
+    this.formatter = formatter;
+}
+
+/**
+ * @type {Form}
+ */
+Column.prototype.checkbox = null;
+
+/**
+ * @type {function(obj): ant}
+ */
+Column.prototype.read = null;
+
+/**
+ * @type {function(number) : string}
+ */
+Column.prototype.formatter = null;
+
+/**
+ * get form
+ * @param {HTMLFormElement} obj column object to read
+ */
+Column.prototype.form = function Column_form(obj) {
+    return this.checkbox.checkbox;
+}
+
+/**
+ * get column string
+ * @param {object} obj column object to read
+ */
+Column.prototype.string = function Column_string(obj) {
+    const value = this.read(obj);
+    if (value && this.formatter) {
+        return this.formatter(value);
+    }
+    return value;
+}
+
 const main = (function() {
+    function getEquipLevel(obj) {
+        return parseInt(obj['base_lv_max'] || 0) + 5 * parseInt(obj['over'] || 0);
+    }
+
+    function calculateParam(obj, param, param_rate, level) {
+        if (obj[param] || obj[param_rate]) {
+            return parseFloat(obj[param] || 0) + parseFloat(obj[param_rate] || 0) * level;
+        }
+        else {
+            return null;
+        }
+    }
+
+    function toInt(value) {
+        if (value) {
+            return parseInt(value);
+        }
+        return null;
+    }
+
+    function toFloat(value) {
+        if (value) {
+            return parseFloat(value);
+        }
+        return null;
+    }
+
+    function percentize(value) {
+        return value ? parseInt(value * 100) + '%' : null;
+    }
+
+    function formatSkillBuff(buffers, prob) {
+        const ret = [];
+        for (let i in buffers) {
+            const buffer = buffers[i];
+            const buff = [ buffer['name'] ]
+            if (buffer['scale']) {
+                buff.push(percentize(Math.abs(toFloat(buffer['scale']))));
+            }
+            if (buffer['value'] && 0 < Math.abs(toInt(buffer['value'])) && buffer['name'].indexOf('勢力転換') == -1) {
+                buff.push(Math.abs(toInt(buffer['value'])));
+            }
+            if (buffer['duration']) {
+                buff.push(toInt(buffer['duration']) + '秒');
+            }
+            buff.push(percentize(prob));
+            ret.push(buff.join(' '))
+        }
+        return ret.join('    ');
+    }
+
     const UNIT_LEVEL = 100;
 
     const attribute_filter = [
-        new Filter('attr-sandica', 'サンディカ'),
-        new Filter('attr-demonia', 'デモニア'),
-        new Filter('attr-valmir', 'ヴァーミル'),
-        new Filter('attr-blanc', 'ブラン'),
-        new Filter('attr-jade', 'ジェイド'),
+        new CheckboxFilter('attr-sandica', 'サンディカ'),
+        new CheckboxFilter('attr-demonia', 'デモニア'),
+        new CheckboxFilter('attr-valmir', 'ヴァーミル'),
+        new CheckboxFilter('attr-blanc', 'ブラン'),
+        new CheckboxFilter('attr-jade', 'ジェイド'),
+    ];
+
+    const unit_skill_filter = [
+        new TextFilter('skill-attack', 'スキル効果：'),
     ];
 
     const unit_content = [
-        new Filter('unit-id', 'ID'),
-        new Filter('unit-name', '名前'),
-        new Filter('unit-hp', 'HP'),
-        new Filter('unit-attr', '所属'),
-        new Filter('unit-atk', '攻撃'),
-        new Filter('unit-spd', '攻撃速度'),
-        new Filter('unit-atkscale', '攻撃倍率'),
-        new Filter('unit-atkrange', '攻撃距離'),
-        new Filter('unit-def', '防御'),
-        new Filter('unit-move', '移動速度'),
-        new Filter('unit-critical', 'クリティカル'),
-        new Filter('unit-leaderskill', '隊長スキル'),
-        new Filter('unit-skillscale', 'スキル倍率'),
-        new Filter('unit-skillsp', 'スキルSP'),
-        new Filter('unit-skilltarget', 'スキル対象'),        
+        new Column('unit-id', 'ID', (x) => parseInt(x['id'])),
+        new Column('unit-name', '名前', (x) => x['name']),
+        new Column('unit-attr', '所属', (x) => x['attr']),
+        new Column('unit-hp', 'HP', (x) => calculateParam(x, 'hp', 'hp_rate', UNIT_LEVEL - 1), toInt),
+        new Column('unit-atk', '攻撃', (x) => calculateParam(x, 'atk', 'atk_rate', UNIT_LEVEL - 1), toInt),
+        new Column('unit-atkscale', '攻撃倍率', (x) => toFloat(x['nskill']['scale']), percentize),
+        new Column('unit-spd', '攻撃速度', (x) => calculateParam(x, 'spd', 'spd_rate', UNIT_LEVEL - 1), toInt),
+        new Column('unit-atkrange', '攻撃距離', (x) => toInt(x['nskill']['range'])),
+        new Column('unit-def', '防御', (x) => calculateParam(x, 'def', 'def_rate', UNIT_LEVEL - 1), toInt),
+        new Column('unit-move', '移動速度', (x) => toInt(x['move'])),
+        new Column('unit-critical', 'クリティカル', (x) => toFloat(x['crit']), percentize),
+        new Column('unit-leaderskill', '隊長スキル', (x) => x['lskill'].map((x) => x['name'] + percentize(toFloat(x['scale']))).join('\n')),
+        new Column('unit-skillscale', 'スキル倍率', (x) => x['askill'] ? toFloat(x['askill']['scale']) : null, percentize),
+        new Column('unit-skillsp', 'スキルSP', (x) => x['askill'] ? toInt(x['askill']['sp']) : null),
+        new Column('unit-skilltarget', 'スキル対象', (x) => x['askill'] ? toInt(x['askill']['number']) : null),
+        new Column('unit-skillbuffer1', 'スキル効果1', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer1'], x['askill']['buffer1_prob']) : null),
+        new Column('unit-skillbuffer2', 'スキル効果2', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer2'], x['askill']['buffer2_prob']) : null),
     ];
 
     const rarelity_filter = [
-        new Filter('N', 'N'),
-        new Filter('R', 'R'),
-        new Filter('SR', 'SR'),
-        new Filter('SSR', 'SSR'),
-        new Filter('UR', 'UR'),
-        new Filter('Z', '神器'),
+        new CheckboxFilter('N', 'N'),
+        new CheckboxFilter('R', 'R'),
+        new CheckboxFilter('SR', 'SR'),
+        new CheckboxFilter('SSR', 'SSR'),
+        new CheckboxFilter('UR', 'UR'),
+        new CheckboxFilter('Z', '神器'),
     ];
 
     const equip_content = [
-        new Filter('equip-name', '名前'),
-        new Filter('equip-hp', 'ランク'),
-        new Filter('equip-level', '最大レベル'),
-        new Filter('equip-hp', 'HP'),
-        new Filter('equip-atk', '攻撃'),
-        new Filter('equip-spd', '攻撃速度'),
-        new Filter('equip-def', '防御'),
-        new Filter('equip-move', '移動速度'),
-        new Filter('equip-critical', 'クリティカル'),
-        new Filter('equip-skillbp', 'スキルBP'),
-        new Filter('equip-skillscale', 'スキル倍率'),
-        new Filter('equip-skilltarget', 'スキル対象'),        
+        new Column('equip-name', '名前', (x) => x['name']),
+        new Column('equip-hp', 'ランク', (x) => x['skill'] ? '神器' : x['rank']),
+        new Column('equip-level', '最大レベル', getEquipLevel),
+        new Column('equip-hp', 'HP', (x) => calculateParam(x, 'hp', 'hp_rate', getEquipLevel(x)), toInt),
+        new Column('equip-atk', '攻撃', (x) => calculateParam(x, 'atk', 'atk_rate', getEquipLevel(x)), toInt),
+        new Column('equip-spd', '攻撃速度', (x) => calculateParam(x, 'spd', 'spd_rate', getEquipLevel(x)), toInt),
+        new Column('equip-def', '防御', (x) => calculateParam(x, 'def', 'def_rate', getEquipLevel(x)), toInt),
+        new Column('equip-move', '移動速度', (x) => toInt(x['move'])),
+        new Column('equip-critical', 'クリティカル', (x) => toFloat(x['crit']), percentize),
+        new Column('equip-skillscale', 'スキル倍率', (x) => x['skill'] ? calculateParam(x['skill'], 'scale', 'scale_rate', getEquipLevel(x)) : null, percentize),
+        new Column('equip-skillbp', 'スキルBP', (x) => x['skill'] ? calculateParam(x['skill'], 'bp', 'bp_rate', getEquipLevel(x)) : null),
+        new Column('equip-skilltarget', 'スキル対象', (x) => x['skill'] ? toInt(x['skill']['number']) : null),
     ];
 
     /** @type {HTMLSelectElement} */
@@ -132,100 +340,54 @@ const main = (function() {
     /** @type {HTMLDivElement} */
     let data_content = null;
 
-    /** @type {object} current sort column */
-    let current_sort = {
-        column: null,
-        descending: true,
-    };
+    /** @type {HTMLDivElement} */
+    let skill_filter = null;
+
+    /** 
+     * current sort column
+     * @type {object}
+     */
+    let current_sort = {};
+
+    function filterAttackSkill(unit, value) {
+        if (value.length) {
+            if (unit['askill']) {
+                for (let i in unit['askill']['buffer1']) {
+                    if (0 <= unit['askill']['buffer1'][i]['name'].indexOf(value)) {
+                        console.log(unit['name'], value);
+                        return true;
+                    }
+                }
+
+                for (let i in unit['askill']['buffer2']) {
+                    if (0 <= unit['askill']['buffer2'][i]['name'].indexOf(value)) {
+                        return true;
+                    }
+                }
+            }
+            console.log(unit['name'], value);
+            return false;
+        }
+        return true;
+    }
+
+    function filterLeaderSkill(unit, value) {
+        if (value.length) {
+            for (let i in unit['lskill']) {
+                if (0 < unit['lskill'][i]['name'].indexOf(value)) {
+                    return true;
+                }
+            }
+        }
+        return false
+    }
 
     function filterAttribute(unit, value) {
         return unit['attr'] == value;
-    }    
-   
+    }
+
     function filterRarelity(equip, value) {
         return (!equip['skill'] && equip['rank'] == value) || (equip['skill'] && value == '神器');
-    }
-
-    function getEquipLevel(obj) {
-        return parseInt(obj['base_lv_max'] || 0) + 5 * parseInt(obj['over'] || 0);
-    }
-
-    function calculateParam(obj, param, param_rate, level) {
-        return parseFloat(obj[param] || 0) + parseFloat(obj[param_rate] || 0) * level;
-    }
-
-    function compareAsc(a, b, param) {
-        if (a[param] > b[param]) {
-            return -1;
-        }
-        else if (a[param] < b[param]) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    }
-
-    function compareDesc(a, b, param) {
-        if (a[param] < b[param]) {
-            return -1;
-        }
-        else if (a[param] > b[param]) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    }
-
-    function compareNumberAsc(a, b, param) {
-        if (a && !b) {
-            return 1;
-        }
-        else if (!a) {
-            return -1;
-        }
-        else {
-            return parseFloat(a[param] || 0) - parseFloat(b[param] || 0);
-        }
-    }
-
-    function compareNumberDesc(a, b, param) {
-        if (a && !b) {
-            return -1;
-        }
-        else if (!a) {
-            return 1;
-        }
-        else {
-            return parseFloat(b[param] || 0) - parseFloat(a[param] || 0);
-        }
-    }
-
-    function compareParamAsc(a, b, param, param_rate, level_a, level_b) {
-        if (a && !b) {
-            return 1;
-        }
-        else if (!a) {
-            return -1;
-        }
-        else {
-            level_b = level_b || level_a;
-            return calculateParam(a, param, param_rate, level_a) - calculateParam(b, param, param_rate, level_b);
-        }
-    }
-
-    function compareParamDesc(a, b, param, param_rate, level_a, level_b) {
-        if (a && !b) {
-            return -1;
-        }
-        else if (!a) {
-            return 1;
-        }
-        else {
-            level_b = level_b || level_a;
-            return calculateParam(b, param, param_rate, level_b) - calculateParam(a, param, param_rate, level_a);
-        }
     }
 
     /**
@@ -237,320 +399,60 @@ const main = (function() {
     function applyFilters(obj, func, filters) {
         let matched = false;
         filters.forEach(function(f) {
-            matched = matched || (f.checked() && func(obj, f.value()));
+            matched = matched || (f.checkbox || f.textbox).checked() && func(obj, (f.checkbox || f.textbox).value());
         })
         return matched;
     }
 
     /**
-     * unit to table row
-     * @param {object} data 
-     */
-    function unitToRow(data, contents) {
-        /**
-         * @type {HTMLTableRowElement}
-         */
-        const row = document.createElement('tr');
-        for (let i in contents) {
-            if (contents[i].checked()) {
-                /**
-                 * @type {HTMLTableDataCellElement}
-                 */
-                let col = document.createElement('td');
-                switch (contents[i].value()) {
-                case 'ID':
-                    col.textContent = data['id'];
-                    break;
-                case '名前':
-                    col.textContent = data['name'];
-                    break;
-                case '所属':
-                    col.textContent = data['attr'];
-                    break;
-                case 'HP':
-                    col.textContent = parseInt(parseFloat(data['hp']) + parseFloat(data['hp_rate']) * (UNIT_LEVEL - 1));
-                    break;
-                case '攻撃':
-                    col.textContent = parseInt(parseFloat(data['atk']) + parseFloat(data['atk_rate']) * (UNIT_LEVEL - 1));
-                    break;
-                case '攻撃速度':
-                    col.textContent = parseInt(parseFloat(data['spd']) + parseFloat(data['spd_rate']) * (UNIT_LEVEL - 1));
-                    break;
-                case '攻撃倍率':
-                    col.textContent = parseInt(data['nskill']['scale'] * 100) + '%';
-                    break;
-                case '攻撃距離':
-                    col.textContent = data['nskill']['range'];
-                    break;
-                case '防御':
-                    col.textContent = parseInt(parseFloat(data['def']) + parseFloat(data['def_rate']) * (UNIT_LEVEL - 1));
-                    break;
-                case '移動速度':
-                    col.textContent = parseFloat(data['move']);
-                    break;
-                case 'クリティカル':
-                    col.textContent = parseInt(parseFloat(data['crit']) * 100) + '%';
-                    break;
-                case '隊長スキル':
-                    col.textContent = data['lskill'].map(x => x['name'] + parseInt(x['scale'] * 100) + '%').join('\n')
-                    break;
-                case 'スキル倍率':
-                    col.textContent = parseInt(data['askill']['scale'] * 100) + '%';
-                    break;
-                case 'スキルSP':
-                    col.textContent = data['askill']['sp'];
-                    break;
-                case 'スキル対象':
-                    col.textContent = data['askill']['number'];
-                    break;
-                }
-                row.appendChild(col);
-            }
-        }
-        return row;
-    }
-
-    /**
-     * generate unit sort function
-     * @param {string} sort_key sort key
-     * @param {boolean} descending sort direction 
-     * @returns {function(object, object): number} sort fuction
-     */
-    function unitSorter(sort_key, descending) {
-        switch (sort_key) {
-        case 'ID':
-            return descending ?
-                (a, b) => compareNumberDesc(a, b, 'id'):
-                (a, b) => compareNumberAsc(a, b, 'id');
-        case '名前':
-            return descending ?
-                (a, b) => compareDesc(a, b, 'name'):
-                (a, b) => compareAsc(a, b, 'name');
-        case '所属':
-            return descending ?
-                (a, b) => compareDesc(a, b, 'attr'):
-                (a, b) => compareAsc(a, b, 'attr');
-        case 'HP':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'hp', 'hp_rate', (UNIT_LEVEL - 1)):
-                (a, b) => compareParamAsc(a, b, 'hp', 'hp_rate', (UNIT_LEVEL - 1));
-        case '攻撃':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'atk', 'atk_rate', (UNIT_LEVEL - 1)):
-                (a, b) => compareParamAsc(a, b, 'atk', 'atk_rate', (UNIT_LEVEL - 1));
-        case '攻撃速度':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'spd', 'spd_rate', (UNIT_LEVEL - 1)):
-                (a, b) => compareParamAsc(a, b, 'spd', 'spd_rate', (UNIT_LEVEL - 1));
-        case '攻撃倍率':
-            return descending ?
-                (a, b) => compareNumberDesc(a['nskill'], b['nskill'], 'scale'):
-                (a, b) => compareNumberAsc(a['nskill'], b['nskill'], 'scale');
-        case '攻撃距離':
-            return descending ?
-                (a, b) => compareNumberDesc(a['nskill'], b['nskill'], 'range'):
-                (a, b) => compareNumberAsc(a['nskill'], b['nskill'], 'range');
-        case '防御':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'def', 'def_rate', (UNIT_LEVEL - 1)):
-                (a, b) => compareParamAsc(a, b, 'def', 'def_rate', (UNIT_LEVEL - 1));
-        case '移動速度':
-            return descending ?
-                (a, b) => compareNumberDesc(a, b, 'move'):
-                (a, b) => compareNumberAsc(a, b, 'move');
-        case 'クリティカル':
-            return descending ?
-                (a, b) => compareNumberDesc(a, b, 'crit'):
-                (a, b) => compareNumberAsc(a, b, 'crit');
-        case '隊長スキル':
-            return null;
-        case 'スキル倍率':
-            return descending ?
-                (a, b) => compareNumberDesc(a['askill'], b['askill'], 'scale'):
-                (a, b) => compareNumberAsc(a['askill'], b['askill'], 'scale');
-        case 'スキルSP':
-            return descending ?
-                (a, b) => compareNumberDesc(a['askill'], b['askill'], 'sp'):
-                (a, b) => compareNumberAsc(a['askill'], b['askill'], 'sp');
-        case 'スキル対象':
-            return descending ?
-                (a, b) => compareNumberDesc(a['askill'], b['askill'], 'number'):
-                (a, b) => compareNumberAsc(a['askill'], b['askill'], 'number');
-        default:
-            return null;
-        }
-    }
-
-    /**
      * equip to row
      * @param {object} data 
-     * @param {Filter[]} contents 
+     * @param {Column[]} contents 
      */
-    function equipToRow(data, contents) {
-        /**
-         * @type {HTMLTableRowElement}
-         */
+    function dataToRow(data, contents) {
         const row = document.createElement('tr');
         for (let i in contents) {
-            if (contents[i].checked()) {
-                /**
-                 * @type {HTMLTableDataCellElement}
-                 */
+            if (contents[i].checkbox.checked()) {
                 const col = document.createElement('td');
-                const level = getEquipLevel(data);
-                switch (contents[i].value()) {
-                case '名前':
-                    col.textContent = data['name'];
-                    break;
-                case 'ランク':
-                    if (data['skill']) {
-                        col.textContent = '神器';
-                    }
-                    else {
-                        col.textContent = data['rank'];
-                    }
-                    break;
-                case '最大レベル':
-                    col.textContent = level;
-                    break;
-                case 'HP':
-                    if (data['hp']) {
-                        col.textContent = parseInt(parseFloat(data['hp']) + parseFloat(data['hp_rate'] || 0) * level);
-                    }
-                    break;
-                case '攻撃':
-                    if (data['atk']) {
-                        col.textContent = parseInt(parseFloat(data['atk']) + parseFloat(data['atk_rate'] || 0) * level);
-                    }
-                    break;
-                case '攻撃速度':
-                    if (data['spd']) {
-                        col.textContent = parseInt(parseFloat(data['spd']) + parseFloat(data['spd_rate'] || 0) * level);
-                    }
-                    break;
-                case '防御':
-                    if (data['def']) {
-                        col.textContent = parseInt(parseFloat(data['def']) + parseFloat(data['def_rate'] || 0) * level);
-                    }
-                    break;
-                case '移動速度':
-                    if (data['move']) {
-                        col.textContent = parseFloat(data['move']);
-                    }
-                    break;
-                case 'クリティカル':
-                    if (data['crit']) {
-                        col.textContent = parseInt(parseFloat(data['crit']) * 100) + '%';
-                    }
-                    break;
-                case 'スキルBP':
-                        if (data['skill']) {
-                            col.textContent = parseInt(data['skill']['bp']) + parseFloat(data['skill']['bp_rate'] || 0) * level;
-                        }
-                        break;
-                case 'スキル倍率':
-                    if (data['skill']) {
-                        col.textContent = parseInt(data['skill']['scale'] * 100) + '%';
-                    }
-                    break;
-                case 'スキル対象':
-                    if (data['skill']) {
-                        col.textContent = data['skill']['number'];
-                    }
-                    break;
-                }
+                col.textContent = contents[i].string(data)
                 row.appendChild(col);
             }
         }
         return row;
-    }
-
-    /**
-     * generate equip sort function
-     * @param {string} sort_key sort key
-     * @param {boolean} descending sort direction 
-     * @returns {function(object, object): number} sort fuction
-     */
-    function equipSorter(sort_key, descending) {
-        switch (sort_key) {
-        case 'ランク':
-            return descending ?
-                (a, b) => compareDesc(a, b, 'rank'):
-                (a, b) => compareAsc(a, b, 'rank');
-        case '名前':
-            return descending ?
-                (a, b) => compareDesc(a, b, 'name'):
-                (a, b) => compareAsc(a, b, 'name');
-        case 'HP':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'hp', 'hp_rate', getEquipLevel(a), getEquipLevel(b)):
-                (a, b) => compareParamAsc(a, b, 'hp', 'hp_rate', getEquipLevel(a), getEquipLevel(b));
-        case '最大レベル':
-            return descending ?
-                (a, b) => compareNumberDesc(a, b, 'base_lv_max'):
-                (a, b) => compareNumberAsc(a, b, 'base_lv_max');
-        case '攻撃':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'atk', 'atk_rate', getEquipLevel(a), getEquipLevel(b)):
-                (a, b) => compareParamAsc(a, b, 'atk', 'atk_rate', getEquipLevel(a), getEquipLevel(b));
-        case '攻撃速度':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'spd', 'spd_rate', getEquipLevel(a), getEquipLevel(b)):
-                (a, b) => compareParamAsc(a, b, 'spd', 'spd_rate', getEquipLevel(a), getEquipLevel(b));
-        case '防御':
-            return descending ?
-                (a, b) => compareParamDesc(a, b, 'def', 'def_rate', getEquipLevel(a), getEquipLevel(b)):
-                (a, b) => compareParamAsc(a, b, 'def', 'def_rate', getEquipLevel(a), getEquipLevel(b));
-        case '移動速度':
-            return descending ?
-                (a, b) => compareNumberDesc(a, b, 'move'):
-                (a, b) => compareNumberAsc(a, b, 'move');
-        case 'クリティカル':
-            return descending ?
-                (a, b) => compareNumberDesc(a, b, 'crit'):
-                (a, b) => compareNumberAsc(a, b, 'crit');
-        case 'スキル倍率':
-            return descending ?
-                (a, b) => compareParamDesc(a['skill'], b['skill'], 'scale', 'scale_rate', getEquipLevel(a), getEquipLevel(b)):
-                (a, b) => compareParamAsc(a['skill'], b['skill'], 'scale', 'scale_rate', getEquipLevel(a), getEquipLevel(b));
-        case 'スキルBP':
-            return descending ?
-                (a, b) => compareParamDesc(a['skill'], b['skill'], 'bp', 'bp_rate', getEquipLevel(a), getEquipLevel(b)):
-                (a, b) => compareParamAsc(a['skill'], b['skill'], 'bp', 'bp_rate', getEquipLevel(a), getEquipLevel(b));
-        case 'スキル対象':
-            return descending ?
-                (a, b) => compareNumberDesc(a['skill'], b['skill'], 'number'):
-                (a, b) => compareNumberAsc(a['skill'], b['skill'], 'number');
-        default:
-            return null;
-        }
     }
 
     /**
      * make table header
-     * @param {Filter[]} contents 
+     * @param {string} value current data type
+     * @param {Column[]} contents 
      */
-    function makeHeader(contents) {
+    function makeHeader(value, contents) {
         const header = document.createElement('thead')
         header.setAttribute('class', 'table-dark')
         const row = document.createElement('tr')
         for (let i in contents) {
-            if (contents[i].checked()) {
+            if (contents[i].checkbox.checked()) {
                 const th = document.createElement('th');
-                th.textContent = contents[i].value();
-                if (current_sort.column == contents[i].value()) {
-                    th.textContent += current_sort.descending ? '▽' : '△'
+
+                th.textContent = contents[i].checkbox.value();
+                if (current_sort[value] && current_sort[value].column == contents[i]) {
+                    th.textContent += current_sort[value].descending ? '▽' : '△';
                 }
+
                 th.addEventListener('click', function() {
-                    if (current_sort.column == contents[i].value()) {
-                        current_sort.descending = !current_sort.descending
+                    const sort = current_sort[value];
+                    if (sort && sort.column == contents[i]) {
+                        sort.descending = !sort.descending
                     }
                     else {
-                        current_sort.column = contents[i].value();
-                        current_sort.descending = true;
+                        current_sort[value] = {
+                            column: contents[i],
+                            descending: true,
+                        }
                     }
-                    onDataTypeChanged(data_type.value);
+                    onDataTypeChanged(value);
                 });
+
                 row.appendChild(th);
             }
         }
@@ -563,8 +465,8 @@ const main = (function() {
      * @param {HTMLElement} elem element to remove children
      */
     function clearChildren(elem) {
-        while (elem.firstChild) {
-            elem.removeChild(elem.firstChild);
+        while (elem.lastChild) {
+            elem.removeChild(elem.lastChild);
         }
     }
 
@@ -572,55 +474,77 @@ const main = (function() {
      * update form a group with a label
      * @param {string} labelname form group label
      * @param {HTMLDivElement} formgroup the form group to contain
-     * @param {Filter[]} filters filterd to be contained the group
+     * @param {any[]} form_holder filterd to be contained the group
      */
-    function updateFormGroup(labelname, formgroup, filters) {
+    function updateFormGroup(labelname, formgroup, form_holder) {
         clearChildren(formgroup);
 
         const label = document.createElement('label');
         label.textContent = labelname;
         formgroup.appendChild(label);
 
-        for (let i in filters) {
-            formgroup.appendChild(filters[i].form);
+        for (let i in form_holder) {
+            formgroup.appendChild(form_holder[i].form());
+        }
+    }
+
+    function sortAsc(a, b) {
+        if (a < b) {
+            return 1;
+        }
+        else if (b < a) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
+
+    function sortDesc(a, b) {
+        if (a < b) {
+            return -1;
+        }
+        else if (b < a) {
+            return 1;
+        }
+        else {
+            return 0;
         }
     }
 
     function onDataTypeChanged(value) {
-        clearChildren(data_table);
+        let filter;
+        let content;
+        let filter_func;
 
         if (value == 'unit') {
-            const data = BGR_DATA['unit'];
-            const sorter = unitSorter(current_sort.column, current_sort.descending);
-            if (sorter) {
-                data.sort(sorter);
-            }
-
-            updateFormGroup('フィルタ：', data_filter, attribute_filter);
-            updateFormGroup('コンテンツ：', data_content, unit_content);
-
-            data_table.appendChild(makeHeader(unit_content));
-            for (let i in data) { 
-                if (applyFilters(data[i], filterAttribute, attribute_filter)) {
-                    data_table.appendChild(unitToRow(data[i], unit_content));
-                }
-            }
+            filter_name = '所属：'
+            filter = attribute_filter;
+            content = unit_content;
+            filter_func = filterAttribute;
         }
         else if (value == 'equip') {
-            const data = BGR_DATA['equip'];
-            const sorter = equipSorter(current_sort.column, current_sort.descending);
-            if (sorter) {
-                data.sort(sorter);
-            }
+            filter_name = 'ランク：'
+            filter = rarelity_filter;
+            content = equip_content;
+            filter_func = filterRarelity;
+        }
 
-            updateFormGroup('フィルタ：', data_filter, rarelity_filter);
-            updateFormGroup('コンテンツ：', data_content, equip_content);
+        clearChildren(data_table);
+        const data = BGR_DATA[value];
+        updateFormGroup(filter_name, data_filter, filter);
+        updateFormGroup('スキル：', skill_filter, unit_skill_filter);
+        updateFormGroup('コンテンツ：', data_content, content);
 
-            data_table.appendChild(makeHeader(equip_content));
-            for (let i in data) { 
-                if (applyFilters(data[i], filterRarelity, rarelity_filter)) {
-                    data_table.appendChild(equipToRow(data[i], equip_content));
-                }
+        if (current_sort[value] && current_sort[value].column) {
+            data.sort((a, b) =>
+                (current_sort[value].descending ? sortAsc : sortDesc)(current_sort[value].column.read(a), current_sort[value].column.read(b)));
+        }
+
+        data_table.appendChild(makeHeader(value, content));
+        for (let i in data) { 
+            if (applyFilters(data[i], filter_func, filter) && applyFilters(data[i], filterAttackSkill, unit_skill_filter)) {
+                data_table.appendChild(dataToRow(data[i], content));
             }
         }
     }
@@ -634,12 +558,14 @@ const main = (function() {
             data_type = document.getElementById("data-type");
             data_table = document.getElementById("data-table");                 
             data_filter = document.getElementById("data-filter");
+            skill_filter = document.getElementById("skill-filter");
             data_content = document.getElementById("data-content");
 
             data_type.addEventListener('change', change_event_listener);
-            [ attribute_filter, unit_content, rarelity_filter, equip_content ].forEach(function(filter) {
+            [ attribute_filter, unit_skill_filter, unit_content, rarelity_filter, equip_content ].forEach(function(filter) {
                 filter.forEach(function(f) {
-                    f.onChanged(change_event_listener);
+                    console.log(f);
+                    (f.checkbox || f.textbox).onChanged(change_event_listener);
                 });    
             });
 
