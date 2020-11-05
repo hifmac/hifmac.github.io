@@ -15,19 +15,17 @@
     </head>
     <body>
         <div class="container-fluid">
-            <form class="form-inline">
+            <div class="form-inline">
                 <label for="data-type">対象：</label>
                 <select class="form-control" id="data-type">
                     <option value="equip">装備</option>
                     <option value="unit">ユニット</option>
                 </select>    
             </div>
-        </div>
-        <div class="container-fluid" id='data-filter'></div>
-        <div class="container-fluid">
+            <div class="form-inline" id='data-filter'></div>
             <div class="form-inline" id='skill-filter'></div>
+            <div class="form-inline" id='data-content'></div>
         </div>
-        <div class="container-fluid" id='data-content'></div>
 
         <table id='data-table' class="table table-hover table-striped table-bordered"></table>
 

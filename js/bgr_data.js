@@ -1,6 +1,75 @@
 // import { BGR_DATA } from './bgr_archive.js'
 
 /**
+ * inherits a parent to a child
+ * @param {function} parent object to be inherited
+ * @param {function} child object to inherit
+ */
+function inherits(parent, child) {
+    child.prototype = Object.create(parent.prototype);
+}
+
+/**
+ * 
+ * @param {HTMLLabelElement} label 
+ * @param {HTMLInputElement} input 
+ * @param {HTMLDivElement} form 
+ */
+function Form(label, input, form) {
+    this.input = input;
+    this.label = label;
+    this.form = form;
+}
+
+/**
+ * filter input element
+ * @type {HTMLDivElement}
+ */
+Form.prototype.form = null;
+
+/**
+ * filter input element
+ * @type {HTMLInputElement}
+ */
+Form.prototype.input = null;
+
+/**
+ * filter input element
+ * @type {HTMLLabelElement}
+ */
+Form.prototype.label = null;
+
+/**
+ * @returns {string} filter value
+ */
+Form.prototype.value = function Form_value() {
+    return this.input.value;
+};
+
+/**
+ * @returns {boolean} filter value
+ */
+Form.prototype.checked = function Form_checked() {
+    return this.input.checked;
+};
+
+/**
+ * set parent node for this
+ * @param {HTMLElement} parent parent node to add child
+ */
+Form.prototype.setParent = function Form_setParent(parent) {
+    parent.appendChild(this.form);
+};
+
+/**
+ * set change event listener
+ * @param {function(Event): void} value change event listener
+ */
+Form.prototype.onChanged = function Form_onChanged(value) {
+    this.input.addEventListener('change', value);
+};
+
+/**
  * inline form
  * @param {string} id 
  * @param {string} text
@@ -22,49 +91,16 @@ function Checkbox(id, text) {
     form_check.appendChild(form_check_input);
     form_check.appendChild(form_check_label);
 
-    this.input = form_check_input;
-    this.label = form_check_label;
-    this.checkbox = form_check;
+    Form.call(this, form_check_label, form_check_input, form_check);
 }
 
-/**
- * filter input element
- * @type {HTMLDivElement}
- */
-Checkbox.prototype.checkbox = null;
-
-/**
- * filter input element
- * @type {HTMLInputElement}
- */
-Checkbox.prototype.input = null;
-
-/**
- * filter input element
- * @type {HTMLLabelElement}
- */
-Checkbox.prototype.label = null;
+inherits(Form, Checkbox);
 
 /**
  * @returns {string} filter value
  */
 Checkbox.prototype.value = function Form_value() {
     return this.label.textContent;
-};
-
-/**
- * @returns {boolean} whether filter bockbox is checked
- */
-Checkbox.prototype.checked = function Form_checked() {
-    return this.input.checked;
-};
-
-/**
- * set change event listener
- * @param {function(Event): void} value change event listener
- */
-Checkbox.prototype.onChanged = function Form_onChanged(value) {
-    this.input.addEventListener('change', value);
 };
 
 /**
@@ -89,35 +125,10 @@ function Textbox(id, text) {
     form_text.appendChild(form_text_label);
     form_text.appendChild(form_text_input);
 
-    this.input = form_text_input;
-    this.label = form_text_label;
-    this.textbox = form_text;
+    Form.call(this, form_text_label, form_text_input, form_text);
 }
 
-/**
- * filter input element
- * @type {HTMLDivElement}
- */
-Textbox.prototype.textbox = null;
-
-/**
- * filter input element
- * @type {HTMLInputElement}
- */
-Textbox.prototype.input = null;
-
-/**
- * filter input element
- * @type {HTMLLabelElement}
- */
-Textbox.prototype.label = null;
-
-/**
- * @returns {string} filter value
- */
-Textbox.prototype.value = function Textbox_value() {
-    return this.input.value;
-};
+inherits(Form, Textbox);
 
 /**
  * @returns {boolean} filter value
@@ -131,45 +142,36 @@ Textbox.prototype.checked = function Textbox_checked() {
  * @param {function(Event): void} value change event listener
  */
 Textbox.prototype.onChanged = function Textbox_onChanged(value) {
-    this.input.addEventListener('change', value);
+    this.input.addEventListener('input', value);
 };
 
 /**
  * content filter
- * @param {string} id 
- * @param {string} text
+ * @param {Form} form form object
+ * @param {function(object, object): bool} func filter function
  */
-function CheckboxFilter(id, text) {
-    this.checkbox = new Checkbox(id, text);
-}
-
-CheckboxFilter.prototype.checkbox = null;
-
-/**
- * get form
- * @param {HTMLFormElement} obj column object to read
- */
-CheckboxFilter.prototype.form = function CheckboxFilter_form(obj) {
-    return this.checkbox.checkbox;
+function Filter(form, func) {
+    this.form = form;
+    this.func = func;
 }
 
 /**
- * content filter
- * @param {string} id 
- * @param {string} text
+ * @type {Form}
  */
-function TextFilter(id, text) {
-    this.textbox = new Textbox(id, text);
-}
-
-TextFilter.prototype.textbox = null;
+Filter.prototype.form = null;
 
 /**
- * get form
- * @param {HTMLFormElement} obj column object to read
+ * 
+ * @type {function(object, object): bool}
  */
-TextFilter.prototype.form = function TextFilter_form(obj) {
-    return this.textbox.textbox;
+Filter.prototype.func = null;
+
+/**
+ * apply filter to an object
+ * @param {object} obj the object to be applied
+ */
+Filter.prototype.apply = function Filter_apply(obj) {
+    return this.func(obj, this.form.value());
 }
 
 /**
@@ -178,18 +180,18 @@ TextFilter.prototype.form = function TextFilter_form(obj) {
  * @param {string} text
  */
 function Column(id, text, read, formatter) {
-    this.checkbox = new Checkbox(id, text);
+    this.form = new Checkbox(id, text);
     this.read = read;
     this.formatter = formatter;
 }
 
 /**
- * @type {Form}
+ * @type {Filter}
  */
-Column.prototype.checkbox = null;
+Column.prototype.form = null;
 
 /**
- * @type {function(obj): ant}
+ * @type {function(obj): any}
  */
 Column.prototype.read = null;
 
@@ -197,14 +199,6 @@ Column.prototype.read = null;
  * @type {function(number) : string}
  */
 Column.prototype.formatter = null;
-
-/**
- * get form
- * @param {HTMLFormElement} obj column object to read
- */
-Column.prototype.form = function Column_form(obj) {
-    return this.checkbox.checkbox;
-}
 
 /**
  * get column string
@@ -270,18 +264,62 @@ const main = (function() {
         return ret.join('    ');
     }
 
+    function filterSkill(skill, value) {
+        for (let i in skill) {
+            if (0 <= skill[i]['name'].indexOf(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function filterAttackSkill(unit, value) {
+        if (value.length) {
+            if (unit['askill']) {
+                return filterSkill(unit['askill']['buffer1'], value) 
+                    || filterSkill(unit['askill']['buffer2'], value);
+            }
+            return false;
+        }
+        return true;
+    }
+
+    function filterLeaderSkill(unit, value) {
+        if (value.length) {
+            return filterSkill(unit['lskill'], value);
+        }
+        return true;
+    }
+
+    function filterEquipSkill(equip, value) {
+        if (value.length) {
+            return equip['skill']
+                && (filterSkill(equip['skill']['buffer1'], value) || filterSkill(equip['skill']['buffer2'], value))
+        }
+        return true;       
+    }
+
+    function filterAttribute(unit, value) {
+        return unit['attr'] == value;
+    }
+
+    function filterRarelity(equip, value) {
+        return (!equip['skill'] && equip['rank'] == value) || (equip['skill'] && value == '神器');
+    }
+
     const UNIT_LEVEL = 100;
 
     const attribute_filter = [
-        new CheckboxFilter('attr-sandica', 'サンディカ'),
-        new CheckboxFilter('attr-demonia', 'デモニア'),
-        new CheckboxFilter('attr-valmir', 'ヴァーミル'),
-        new CheckboxFilter('attr-blanc', 'ブラン'),
-        new CheckboxFilter('attr-jade', 'ジェイド'),
+        new Filter(new Checkbox('attr-sandica', 'サンディカ'), filterAttribute),
+        new Filter(new Checkbox('attr-demonia', 'デモニア'), filterAttribute),
+        new Filter(new Checkbox('attr-valmir', 'ヴァーミル'), filterAttribute),
+        new Filter(new Checkbox('attr-blanc', 'ブラン'), filterAttribute),
+        new Filter(new Checkbox('attr-jade', 'ジェイド'), filterAttribute),
     ];
 
     const unit_skill_filter = [
-        new TextFilter('skill-attack', 'スキル効果：'),
+        new Filter(new Textbox('skill-leader', '隊長スキル'), filterLeaderSkill),
+        new Filter(new Textbox('skill-attack', 'スキル効果'), filterAttackSkill),
     ];
 
     const unit_content = [
@@ -305,12 +343,16 @@ const main = (function() {
     ];
 
     const rarelity_filter = [
-        new CheckboxFilter('N', 'N'),
-        new CheckboxFilter('R', 'R'),
-        new CheckboxFilter('SR', 'SR'),
-        new CheckboxFilter('SSR', 'SSR'),
-        new CheckboxFilter('UR', 'UR'),
-        new CheckboxFilter('Z', '神器'),
+        new Filter(new Checkbox('N', 'N'), filterRarelity),
+        new Filter(new Checkbox('R', 'R'), filterRarelity),
+        new Filter(new Checkbox('SR', 'SR'), filterRarelity),
+        new Filter(new Checkbox('SSR', 'SSR'), filterRarelity),
+        new Filter(new Checkbox('UR', 'UR'), filterRarelity),
+        new Filter(new Checkbox('Z', '神器'), filterRarelity),
+    ];
+
+    const equip_skill_filter = [
+        new Filter(new Textbox('skill-equip', 'スキル効果'), filterEquipSkill),
     ];
 
     const equip_content = [
@@ -326,6 +368,7 @@ const main = (function() {
         new Column('equip-skillscale', 'スキル倍率', (x) => x['skill'] ? calculateParam(x['skill'], 'scale', 'scale_rate', getEquipLevel(x)) : null, percentize),
         new Column('equip-skillbp', 'スキルBP', (x) => x['skill'] ? calculateParam(x['skill'], 'bp', 'bp_rate', getEquipLevel(x)) : null),
         new Column('equip-skilltarget', 'スキル対象', (x) => x['skill'] ? toInt(x['skill']['number']) : null),
+        new Column('equip-skillbuffer', 'スキル効果', (x) => x['skill'] ? formatSkillBuff(x['skill']['buffer1'], x['skill']['buffer1_prob']) : null),
     ];
 
     /** @type {HTMLSelectElement} */
@@ -349,57 +392,16 @@ const main = (function() {
      */
     let current_sort = {};
 
-    function filterAttackSkill(unit, value) {
-        if (value.length) {
-            if (unit['askill']) {
-                for (let i in unit['askill']['buffer1']) {
-                    if (0 <= unit['askill']['buffer1'][i]['name'].indexOf(value)) {
-                        console.log(unit['name'], value);
-                        return true;
-                    }
-                }
-
-                for (let i in unit['askill']['buffer2']) {
-                    if (0 <= unit['askill']['buffer2'][i]['name'].indexOf(value)) {
-                        return true;
-                    }
-                }
-            }
-            console.log(unit['name'], value);
-            return false;
-        }
-        return true;
-    }
-
-    function filterLeaderSkill(unit, value) {
-        if (value.length) {
-            for (let i in unit['lskill']) {
-                if (0 < unit['lskill'][i]['name'].indexOf(value)) {
-                    return true;
-                }
-            }
-        }
-        return false
-    }
-
-    function filterAttribute(unit, value) {
-        return unit['attr'] == value;
-    }
-
-    function filterRarelity(equip, value) {
-        return (!equip['skill'] && equip['rank'] == value) || (equip['skill'] && value == '神器');
-    }
-
     /**
      * 
      * @param {object} obj 
      * @param {Filter[]} filters 
      * @returns {boolean} whether filters are matched
      */
-    function applyFilters(obj, func, filters) {
+    function applyFilters(obj, filters) {
         let matched = false;
         filters.forEach(function(f) {
-            matched = matched || (f.checkbox || f.textbox).checked() && func(obj, (f.checkbox || f.textbox).value());
+            matched = matched || f.apply(obj);
         })
         return matched;
     }
@@ -412,7 +414,7 @@ const main = (function() {
     function dataToRow(data, contents) {
         const row = document.createElement('tr');
         for (let i in contents) {
-            if (contents[i].checkbox.checked()) {
+            if (contents[i].form.checked()) {
                 const col = document.createElement('td');
                 col.textContent = contents[i].string(data)
                 row.appendChild(col);
@@ -431,10 +433,10 @@ const main = (function() {
         header.setAttribute('class', 'table-dark')
         const row = document.createElement('tr')
         for (let i in contents) {
-            if (contents[i].checkbox.checked()) {
+            if (contents[i].form.checked()) {
                 const th = document.createElement('th');
 
-                th.textContent = contents[i].checkbox.value();
+                th.textContent = contents[i].form.value();
                 if (current_sort[value] && current_sort[value].column == contents[i]) {
                     th.textContent += current_sort[value].descending ? '▽' : '△';
                 }
@@ -472,19 +474,21 @@ const main = (function() {
 
     /**
      * update form a group with a label
-     * @param {string} labelname form group label
      * @param {HTMLDivElement} formgroup the form group to contain
-     * @param {any[]} form_holder filterd to be contained the group
+     * @param {any[]} form_holder filtered to be contained the group
+     * @param {string} labelname form group label
      */
-    function updateFormGroup(labelname, formgroup, form_holder) {
+    function updateFormGroup(formgroup, form_holder, labelname) {
         clearChildren(formgroup);
 
-        const label = document.createElement('label');
-        label.textContent = labelname;
-        formgroup.appendChild(label);
+        if (labelname) {
+            const label = document.createElement('label');
+            label.textContent = labelname;
+            formgroup.appendChild(label);
+        }
 
         for (let i in form_holder) {
-            formgroup.appendChild(form_holder[i].form());
+            form_holder[i].form.setParent(formgroup);
         }
     }
 
@@ -512,38 +516,47 @@ const main = (function() {
         }
     }
 
-    function onDataTypeChanged(value) {
+    function onDataTypeChanged(e) {
+        const value = data_type.value;
+
+        let filter_name;
         let filter;
+        let skill_filters;
         let content;
-        let filter_func;
 
         if (value == 'unit') {
             filter_name = '所属：'
             filter = attribute_filter;
+            skill_filters = unit_skill_filter;
             content = unit_content;
-            filter_func = filterAttribute;
         }
         else if (value == 'equip') {
             filter_name = 'ランク：'
             filter = rarelity_filter;
+            skill_filters = equip_skill_filter;
             content = equip_content;
-            filter_func = filterRarelity;
         }
 
-        clearChildren(data_table);
-        const data = BGR_DATA[value];
-        updateFormGroup(filter_name, data_filter, filter);
-        updateFormGroup('スキル：', skill_filter, unit_skill_filter);
-        updateFormGroup('コンテンツ：', data_content, content);
+        if (e && e.target == data_type) {
+            updateFormGroup(data_filter, filter, filter_name);
+            updateFormGroup(skill_filter, skill_filters);
+            updateFormGroup(data_content, content, 'コンテンツ：');
+        }
 
+        const data = BGR_DATA[value];
         if (current_sort[value] && current_sort[value].column) {
             data.sort((a, b) =>
                 (current_sort[value].descending ? sortAsc : sortDesc)(current_sort[value].column.read(a), current_sort[value].column.read(b)));
         }
 
+        clearChildren(data_table);
         data_table.appendChild(makeHeader(value, content));
-        for (let i in data) { 
-            if (applyFilters(data[i], filter_func, filter) && applyFilters(data[i], filterAttackSkill, unit_skill_filter)) {
+        for (let i in data) {
+            let matched = applyFilters(data[i], filter);
+            skill_filters.forEach(function(f) {
+                matched = matched && applyFilters(data[i], [ f ]);
+            });
+            if (matched) {
                 data_table.appendChild(dataToRow(data[i], content));
             }
         }
@@ -551,25 +564,28 @@ const main = (function() {
 
     return {
         onLoad() {
-            const change_event_listener = function() {
-                onDataTypeChanged(data_type.value);
-            };
-
             data_type = document.getElementById("data-type");
             data_table = document.getElementById("data-table");                 
             data_filter = document.getElementById("data-filter");
             skill_filter = document.getElementById("skill-filter");
             data_content = document.getElementById("data-content");
 
-            data_type.addEventListener('change', change_event_listener);
-            [ attribute_filter, unit_skill_filter, unit_content, rarelity_filter, equip_content ].forEach(function(filter) {
+            data_type.addEventListener('change', onDataTypeChanged);
+
+            [
+                attribute_filter,
+                unit_skill_filter,
+                unit_content,
+                rarelity_filter,
+                equip_skill_filter,
+                equip_content
+            ].forEach(function(filter) {
                 filter.forEach(function(f) {
-                    console.log(f);
-                    (f.checkbox || f.textbox).onChanged(change_event_listener);
+                    f.form.onChanged(onDataTypeChanged);
                 });    
             });
 
-            change_event_listener();
+            data_type.dispatchEvent(new Event('change'));
         }
     }
 }());
