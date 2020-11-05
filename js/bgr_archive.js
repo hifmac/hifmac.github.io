@@ -6584,7 +6584,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"防御力上昇(10%)",
+            "name":"防御力上昇",
             "scale":"0.1",
             "scale_rate":null,
             "value":null,
@@ -6676,7 +6676,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"全部隊の攻撃速度増加(15%)",
+            "name":"全部隊の攻撃速度増加",
             "scale":"0.15",
             "scale_rate":null,
             "value":null,
@@ -6974,7 +6974,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"状態竊取",
+            "name":"状態転移",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -7720,7 +7720,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"攻撃上昇25%",
+            "name":"攻撃上昇",
             "scale":"0.25",
             "scale_rate":null,
             "value":null,
@@ -7730,7 +7730,7 @@ const BGR_DATA = {
             "times":null
           },
           {
-            "name":"クリティカル率UP1%",
+            "name":"クリティカル率UP",
             "scale":"0.1",
             "scale_rate":null,
             "value":null,

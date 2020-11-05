@@ -171,7 +171,7 @@ Filter.prototype.func = null;
  * @param {object} obj the object to be applied
  */
 Filter.prototype.apply = function Filter_apply(obj) {
-    return this.func(obj, this.form.value());
+    return this.form.checked() && this.func(obj, this.form.value());
 }
 
 /**
@@ -244,24 +244,25 @@ const main = (function() {
         return value ? parseInt(value * 100) + '%' : null;
     }
 
-    function formatSkillBuff(buffers, prob) {
+    function formatSkillBuff(buffers, prob, level) {
+        level = level || 0;
         const ret = [];
         for (let i in buffers) {
             const buffer = buffers[i];
-            const buff = [ buffer['name'] ]
+            const buffname = buffer['name'] + '[' + percentize(prob) + ']';
+            const effect = [];
             if (buffer['scale']) {
-                buff.push(percentize(Math.abs(toFloat(buffer['scale']))));
+                effect.push(percentize(Math.abs(toFloat(buffer['scale']) + toFloat(buffer['scale_rate'] * level))));
             }
             if (buffer['value'] && 0 < Math.abs(toInt(buffer['value'])) && buffer['name'].indexOf('勢力転換') == -1) {
-                buff.push(Math.abs(toInt(buffer['value'])));
+                effect.push(Math.abs(toInt(toFloat(buffer['value']) + toFloat(buffer['value_rate'] * level))));
             }
             if (buffer['duration']) {
-                buff.push(toInt(buffer['duration']) + '秒');
+                effect.push(toInt(toFloat(buffer['duration']) + toFloat(buffer['duration_rate']) * level) + '秒');
             }
-            buff.push(percentize(prob));
-            ret.push(buff.join(' '))
+            ret.push(buffname + '(' + effect.join(',') + ')')
         }
-        return ret.join('    ');
+        return ret.join('\n');
     }
 
     function filterSkill(skill, value) {
@@ -294,7 +295,8 @@ const main = (function() {
     function filterEquipSkill(equip, value) {
         if (value.length) {
             return equip['skill']
-                && (filterSkill(equip['skill']['buffer1'], value) || filterSkill(equip['skill']['buffer2'], value))
+                && (filterSkill(equip['skill']['buffer1'], value)
+                    || filterSkill(equip['skill']['buffer2'], value))
         }
         return true;       
     }
@@ -338,8 +340,8 @@ const main = (function() {
         new Column('unit-skillscale', 'スキル倍率', (x) => x['askill'] ? toFloat(x['askill']['scale']) : null, percentize),
         new Column('unit-skillsp', 'スキルSP', (x) => x['askill'] ? toInt(x['askill']['sp']) : null),
         new Column('unit-skilltarget', 'スキル対象', (x) => x['askill'] ? toInt(x['askill']['number']) : null),
-        new Column('unit-skillbuffer1', 'スキル効果1', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer1'], x['askill']['buffer1_prob']) : null),
-        new Column('unit-skillbuffer2', 'スキル効果2', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer2'], x['askill']['buffer2_prob']) : null),
+        new Column('unit-skillbuffer1', 'スキル効果1', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer1'], x['askill']['buffer1_prob']) : ''),
+        new Column('unit-skillbuffer2', 'スキル効果2', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer2'], x['askill']['buffer2_prob']) : ''),
     ];
 
     const rarelity_filter = [
@@ -367,8 +369,8 @@ const main = (function() {
         new Column('equip-critical', 'クリティカル', (x) => toFloat(x['crit']), percentize),
         new Column('equip-skillscale', 'スキル倍率', (x) => x['skill'] ? calculateParam(x['skill'], 'scale', 'scale_rate', getEquipLevel(x)) : null, percentize),
         new Column('equip-skillbp', 'スキルBP', (x) => x['skill'] ? calculateParam(x['skill'], 'bp', 'bp_rate', getEquipLevel(x)) : null),
-        new Column('equip-skilltarget', 'スキル対象', (x) => x['skill'] ? toInt(x['skill']['number']) : null),
-        new Column('equip-skillbuffer', 'スキル効果', (x) => x['skill'] ? formatSkillBuff(x['skill']['buffer1'], x['skill']['buffer1_prob']) : null),
+        new Column('equip-skillbuffer', 'スキル効果1', (x) => x['skill'] ? formatSkillBuff(x['skill']['buffer1'], x['skill']['buffer1_prob'], getEquipLevel(x)) : ''),
+        new Column('equip-skillbuffer', 'スキル効果2', (x) => x['skill'] ? formatSkillBuff(x['skill']['buffer2'], x['skill']['buffer2_prob'], getEquipLevel(x)) : ''),
     ];
 
     /** @type {HTMLSelectElement} */
@@ -416,6 +418,7 @@ const main = (function() {
         for (let i in contents) {
             if (contents[i].form.checked()) {
                 const col = document.createElement('td');
+                col.style.whiteSpace = 'pre';
                 col.textContent = contents[i].string(data)
                 row.appendChild(col);
             }
