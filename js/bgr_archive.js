@@ -842,7 +842,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"弱封印",
+            "name":"封印",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -6409,7 +6409,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"解除状態異常",
+            "name":"デバフ解除",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -7720,7 +7720,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"攻撃提昇25%",
+            "name":"攻撃上昇25%",
             "scale":"0.25",
             "scale_rate":null,
             "value":null,
@@ -7885,7 +7885,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"解除状態異常",
+            "name":"デバフ解除",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -8172,7 +8172,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"解除状態異常",
+            "name":"デバフ解除",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -8185,7 +8185,7 @@ const BGR_DATA = {
         "buffer1_prob":"1",
         "buffer2":[
           {
-            "name":"攻撃提昇",
+            "name":"攻撃上昇",
             "scale":"0.01",
             "scale_rate":"0.001125",
             "value":"200",
@@ -8293,7 +8293,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"解除状態異常",
+            "name":"デバフ解除",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -9327,7 +9327,7 @@ const BGR_DATA = {
         "bp_rate":"-1",
         "buffer1":[
           {
-            "name":"解除状態異常",
+            "name":"デバフ解除",
             "scale":null,
             "scale_rate":null,
             "value":null,
@@ -9933,7 +9933,7 @@ const BGR_DATA = {
         "buffer1_prob":"1",
         "buffer2":[
           {
-            "name":"攻撃提昇",
+            "name":"攻撃上昇",
             "scale":"0.056",
             "scale_rate":"0.0008",
             "value":null,
