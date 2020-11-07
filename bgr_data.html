@@ -8,26 +8,158 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
         <!--<script src="js/bgr_data.js" type="module"></script>-->
+        <script src="js/bgr_lib.js" type="text/javascript"></script>
         <script src="js/bgr_archive.js" type="text/javascript"></script>
         <script src="js/bgr_data.js" type="text/javascript"></script>
+        <script src="js/bgr_calc.js" type="text/javascript"></script>
 
-        <title>ブレイヴガールレイヴンズ 装備＆ユニットデータ</title>
+        <title>ブレイヴガールレイヴンズ　データ色々</title>
     </head>
     <body>
         <div class="container-fluid">
-            <div class="form-inline">
-                <label for="data-type">対象：</label>
-                <select class="form-control" id="data-type">
-                    <option value="equip">装備</option>
-                    <option value="unit">ユニット</option>
-                </select>    
-            </div>
-            <div class="form-inline" id='data-filter'></div>
-            <div class="form-inline" id='skill-filter'></div>
-            <div class="form-inline" id='data-content'></div>
-        </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#unit-data" data-toggle="list" class="nav-link active show">ユニット</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#equip-data" data-toggle="list" class="nav-link show">装備</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#status-calc" data-toggle="list" class="nav-link show">ステータス計算</a>
+                </li>
+            </ul>
 
-        <table id='data-table' class="table table-hover table-striped table-bordered"></table>
+            <div class="tab-content">
+                <!-- unit pane -->
+                <div class="tab-pane fade p-2 active show" id="unit-data">
+                    <div class="border p-2 mb-2">
+                        <div class="form-inline" id='unit-attr-filter'></div>
+                        <div class="form-inline" id='unit-skill-filter'></div>
+                        <div class="form-inline" id='unit-content'></div>
+                    </div>
+                    <div class="border mb-2">
+                        <table id='unit-table' class="table table-hover table-striped table-bordered"></table>
+                    </div>
+                </div>
+
+                <!-- equip pane -->
+                <div class="tab-pane fade p-2" id="equip-data">
+                    <div class="border p-2 mb-2">
+                        <div class="form-inline" id='equip-rank-filter'></div>
+                        <div class="form-inline" id='equip-skill-filter'></div>
+                        <div class="form-inline" id='equip-content'></div>
+                    </div>
+                    <div class="border mb-2">
+                        <table id='equip-table' class="table table-hover table-striped table-bordered"></table>
+                    </div>
+                </div>
+
+                <!-- calc pane -->
+                <div class="tab-pane fade p-2" id="status-calc">
+                    <div class="border pt-2 pb-2 mb-2">
+                        <div class="row">
+                            <label class="col-3 text-right" for="unit-selecter">ユニット</label>
+                            <select class="col-6 form-control" id="unit-selecter"></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="equip1">装備１</label>
+                            <select class="col-6 form-control" id="equip1"></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="equip2">装備２</label>
+                            <select class="col-6 form-control" id="equip2"></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="equip3">装備３</label>
+                            <select class="col-6 form-control" id="equip3"></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="equip4">装備４</label>
+                            <select class="col-6 form-control" id="equip4"></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="equip5">装備５</label>
+                            <select class="col-6 form-control" id="equip5"></select>    
+                        </div>
+                    </div>
+        
+                    <div class="border pt-2 pb-2 mb-2">
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-hp">HP</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-hp" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-atk">攻撃力</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-atk" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-def">防御力</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-def" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-spd">攻撃速度</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-spd" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-move">移動速度</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-move" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-crit">クリティカル</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-crit" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-atkscale">攻撃倍率</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-atkscale" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-atkrange">攻撃距離</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-atkrange" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-skillbuffer1">スキル効果1</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-skillbuffer1" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-skillbuffer2">スキル効果2</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-skillbuffer2" readonly></select>    
+                        </div>
+                        <div class="row">
+                            <label class="col-3 text-right" for="calc-unit-leaderskill">隊長スキル</label>
+                            <input class="col-6 form-control" type="text" id="calc-unit-leaderskill" readonly></select>    
+                        </div>
+                    </div>
+        
+        
+                    <div class="border mb-2">
+                        <div class="form-inline p-2">
+                            <button class="btn btn-dark mr-2" id="search-button">検索</button> 
+                            <label for="spd-selecter">攻速バフ</label>
+                            <select class="form-control mr-2" id="spd-selecter">
+                                <option value="1945">攻速1945(+0%)</option>
+                                <option value="1818">攻速1818(+7%)</option>
+                                <option value="1770">攻速1770(+10%)</option>
+                                <option value="1737">攻速1737(+12%)</option>
+                                <option value="1663">攻速1663(+17%)</option>
+                                <option value="1635">攻速1635(+19%)</option>
+                                <option value="1595">攻速1595(+22%)</option>
+                                <option value="1508">攻速1508(+29%)</option>
+                            </select>
+                            <label for="crit-selecter">CRITバフ</label>
+                            <select class="form-control" id="crit-selecter">
+                                <option value="0.00">CRIT100%(+0%)</option>
+                                <option value="0.07">CRIT93%(+7%)</option>
+                            </select>
+                        </div>
+        
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%" id="search-progress"></div>
+                        </div>
+                        <table id='search-table' class="table table-hover table-striped table-bordered"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

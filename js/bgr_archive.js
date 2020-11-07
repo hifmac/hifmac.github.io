@@ -1,4 +1,4 @@
-const BGR_DATA = {
+BgrLib.load({
   "equip":[
     {
       "name":" [EXP]古代の槌",
@@ -35963,4 +35963,4 @@ const BGR_DATA = {
       ]
     }
   ]
-}
+});

@@ -1,14 +1,3 @@
-// import { BGR_DATA } from './bgr_archive.js'
-
-/**
- * inherits a parent to a child
- * @param {function} parent object to be inherited
- * @param {function} child object to inherit
- */
-function inherits(parent, child) {
-    child.prototype = Object.create(parent.prototype);
-}
-
 /**
  * 
  * @param {HTMLLabelElement} label 
@@ -94,7 +83,7 @@ function Checkbox(id, text) {
     Form.call(this, form_check_label, form_check_input, form_check);
 }
 
-inherits(Form, Checkbox);
+BgrLib.inherits(Form, Checkbox);
 
 /**
  * @returns {string} filter value
@@ -128,7 +117,7 @@ function Textbox(id, text) {
     Form.call(this, form_text_label, form_text_input, form_text);
 }
 
-inherits(Form, Textbox);
+BgrLib.inherits(Form, Textbox);
 
 /**
  * @returns {boolean} filter value
@@ -148,7 +137,7 @@ Textbox.prototype.onChanged = function Textbox_onChanged(value) {
 /**
  * content filter
  * @param {Form} form form object
- * @param {function(object, object): bool} func filter function
+ * @param {function((BgrUnit | BgrEquip), string): bool} func filter function
  */
 function Filter(form, func) {
     this.form = form;
@@ -162,13 +151,13 @@ Filter.prototype.form = null;
 
 /**
  * 
- * @type {function(object, object): bool}
+ * @type {function((BgrUnit | BgrEquip), string): bool}
  */
 Filter.prototype.func = null;
 
 /**
  * apply filter to an object
- * @param {object} obj the object to be applied
+ * @param {(BgrUnit | BgrEquip)} obj the object to be applied
  */
 Filter.prototype.apply = function Filter_apply(obj) {
     return this.form.checked() && this.func(obj, this.form.value());
@@ -186,130 +175,352 @@ function Column(id, text, read, formatter) {
 }
 
 /**
- * @type {Filter}
+ * @type {Checkbox}
  */
 Column.prototype.form = null;
 
 /**
- * @type {function(obj): any}
+ * @type {function((BgrUnit | BgrEquip)): (number | string)}
  */
 Column.prototype.read = null;
 
 /**
- * @type {function(number) : string}
+ * @type {function((number | string)) : string}
  */
 Column.prototype.formatter = null;
 
 /**
  * get column string
- * @param {object} obj column object to read
+ * @param {(BgrUnit | BgrEquip)} obj column object to read
  */
 Column.prototype.string = function Column_string(obj) {
     const value = this.read(obj);
-    if (value && this.formatter) {
-        return this.formatter(value);
+    if (value) {
+        return this.formatter ? this.formatter(value) : value;
     }
-    return value;
+    return null;
 }
 
-const main = (function() {
-    function getEquipLevel(obj) {
-        return parseInt(obj['base_lv_max'] || 0) + 5 * parseInt(obj['over'] || 0);
-    }
+/**
+ * @param {HTMLElement} elem 
+ * @param {Column[]} content 
+ * @param {string} name 
+ */
+function DataTableContent(elem, content, name) {
+    this.element = elem;
+    this.content = content;
+    this.name = name;
+};
 
-    function calculateParam(obj, param, param_rate, level) {
-        if (obj[param] || obj[param_rate]) {
-            return parseFloat(obj[param] || 0) + parseFloat(obj[param_rate] || 0) * level;
-        }
-        else {
-            return null;
-        }
+/**
+ * @param {function(): void} callback 
+ */
+DataTableContent.prototype.onChanged = function DataTableContent_onChanged(callback) {
+    for (let i in this.content) {
+        this.content[i].form.onChanged(callback);
     }
+};
 
-    function toInt(value) {
-        if (value) {
-            return parseInt(value);
-        }
-        return null;
+/**
+ * @param {HTMLElement} elem 
+ * @param {Filter[]} filter 
+ * @param {string} name 
+ * @param {boolean} any whether filter is matched with any or all
+ */
+function DataTableFilter(elem, filter, name, any) {
+    this.element = elem;
+    this.filter = filter;
+    this.name = name;
+    this.any = any;
+};
+
+/**
+ * 
+ * @param {(BgrUnit | BgrEquip)} obj 
+ * @returns {boolean} whether filters are matched
+ */
+DataTableFilter.prototype.apply = function DataTableFilter_apply(obj) {
+    if (this.any) {
+        return this.filter.reduce((accum, x) => accum || x.apply(obj), false);
     }
-
-    function toFloat(value) {
-        if (value) {
-            return parseFloat(value);
-        }
-        return null;
+    else {
+        return this.filter.reduce((accum, x) => accum && x.apply(obj), true);
     }
+};
 
-    function percentize(value) {
-        return value ? parseInt(value * 100) + '%' : null;
+/**
+ * @param {function(): void} callback 
+ */
+DataTableFilter.prototype.onChanged = function DataTableFilter_onChanged(callback) {
+    for (let i in this.filter) {
+        this.filter[i].form.onChanged(callback);
     }
+};
 
-    function formatSkillBuff(buffers, prob, level) {
-        level = level || 0;
-        const ret = [];
-        for (let i in buffers) {
-            const buffer = buffers[i];
-            const buffname = buffer['name'] + '[' + percentize(prob) + ']';
-            const effect = [];
-            if (buffer['scale']) {
-                effect.push(percentize(Math.abs(toFloat(buffer['scale']) + toFloat(buffer['scale_rate'] * level))));
+/**
+ * @param {HTMLTableElement} table
+ * @param {(BgrUnit | BgrEquip)[]} data 
+ * @param {DataTableContent} contents 
+ * @param {DataTableFilter[]} filters 
+ */
+function DataTable(table, data, contents, filters) {
+    this.table = table;
+    this.data = data;
+    this.contents = contents;
+    this.filters = filters;
+    this.sort = {
+        column: null,
+        descending: false,
+    }
+}
+
+/**
+ * 
+ * @param {object} sort 
+ * @param {Column[]} contents 
+ * @param {function(): void} callback 
+ */
+DataTable.prototype.makeHeader = function DataTable_makeHeader(sort, contents, callback) {
+    const header = BgrLib.createTableHeader();
+    const row = document.createElement('tr')
+    for (let i in contents) {
+        if (contents[i].form.checked()) {
+            const th = BgrLib.createTableHeaderCell(contents[i].form.value());
+            if (sort.column == contents[i]) {
+                th.textContent += sort.descending ? '▽' : '△';
             }
-            if (buffer['value'] && 0 < Math.abs(toInt(buffer['value'])) && buffer['name'].indexOf('勢力転換') == -1) {
-                effect.push(Math.abs(toInt(toFloat(buffer['value']) + toFloat(buffer['value_rate'] * level))));
-            }
-            if (buffer['duration']) {
-                effect.push(toInt(toFloat(buffer['duration']) + toFloat(buffer['duration_rate']) * level) + '秒');
-            }
-            ret.push(buffname + '(' + effect.join(',') + ')')
+
+            th.addEventListener('click', function() {
+                if (sort.column == contents[i]) {
+                    sort.descending = !sort.descending
+                }
+                else {
+                    sort.column = contents[i];
+                    sort.descending = true;
+                }
+                callback();
+            });
+
+            row.appendChild(th);
         }
-        return ret.join('\n');
+    }
+    header.appendChild(row);
+    return header;
+};
+
+/**
+ * equip to row
+ * @param {(BgrUnit | BgrEquip))} data 
+ * @param {Column[]} contents 
+ */
+DataTable.prototype.dataToRow = function DataTable_dataToRow(data, contents) {
+    const row = document.createElement('tr');
+    for (let i in contents) {
+        if (contents[i].form.checked()) {
+            const col = BgrLib.createTableCell(contents[i].string(data));
+            col.style.whiteSpace = 'pre-wrap';
+            row.appendChild(col);
+        }
+    }
+    return row;
+};
+
+/**
+ * update form a group with a label
+ * @param {HTMLDivElement} formgroup the form group to contain
+ * @param {(Filter | Column)[]} form_holder filtered to be contained the group
+ * @param {string} labelname form group label
+ */
+DataTable.prototype.updateFormGroup = function DataTable_updateFormGroup(formgroup, form_holder, labelname) {
+    BgrLib.clearChildren(formgroup);
+
+    if (labelname) {
+        const label = document.createElement('label');
+        label.textContent = labelname;
+        formgroup.appendChild(label);
     }
 
-    function filterSkill(skill, value) {
-        for (let i in skill) {
-            if (0 <= skill[i]['name'].indexOf(value)) {
-                return true;
+    for (let i in form_holder) {
+        form_holder[i].form.setParent(formgroup);
+    }
+};
+
+/**
+ * @returns {function(): void} update callback
+ */
+DataTable.prototype.register = function DataTable_register() {
+    const self = this;
+
+    const onUpdated = function() {
+        self.updateFormGroup(
+            self.contents.element,
+            self.contents.content,
+            self.contents.name);
+
+        for (let i in self.filters) {
+            self.updateFormGroup(
+                self.filters[i].element,
+                self.filters[i].filter,
+                self.filters[i].name);
+        }
+
+        if (self.sort.column) {
+            const compare = (self.sort.descending ? BgrLib.compareDesc : BgrLib.compareAsc);
+            self.data.sort((a, b) => compare(self.sort.column.read(a), self.sort.column.read(b)));
+        }
+
+        BgrLib.clearChildren(self.table);
+        self.table.appendChild(self.makeHeader(self.sort, self.contents.content, onUpdated));
+        const tbody = document.createElement('tbody');
+        for (let i in self.data) {
+            const matched = self.filters.reduce((accum, x) => accum && x.apply(self.data[i]), true);
+            if (matched) {
+                tbody.appendChild(self.dataToRow(self.data[i], self.contents.content));
             }
         }
-        return false;
-    }
+        self.table.appendChild(tbody);
+    };
 
-    function filterAttackSkill(unit, value) {
-        if (value.length) {
-            if (unit['askill']) {
-                return filterSkill(unit['askill']['buffer1'], value) 
-                    || filterSkill(unit['askill']['buffer2'], value);
-            }
-            return false;
-        }
-        return true;
-    }
 
-    function filterLeaderSkill(unit, value) {
-        if (value.length) {
-            return filterSkill(unit['lskill'], value);
-        }
-        return true;
-    }
+    ([ this.contents ].concat(this.filters)).forEach(function(filter) {
+        filter.onChanged(onUpdated);
+    });
 
+    return onUpdated;
+}
+
+addEventListener('load', function() {
+    /**
+     * filter equip by skill
+     * @param {BgrEquip} equip 
+     * @param {string} value 
+     */
     function filterEquipSkill(equip, value) {
         if (value.length) {
-            return equip['skill']
-                && (filterSkill(equip['skill']['buffer1'], value)
-                    || filterSkill(equip['skill']['buffer2'], value))
+            return 0 <= equip.skillBuffer1().indexOf(value)
+                || 0 <= equip.skillBuffer2().indexOf(value);
         }
         return true;       
     }
 
+    /**
+     * filter equip by rarelity
+     * @param {BgrEquip} equip 
+     * @param {string} value 
+     */
+    function filterEquipRank(equip, value) {
+        return equip.rank() == value;
+    }
+
+    /** @type {HTMLTableElement} */
+    const equip_table = document.getElementById("equip-table");
+
+    /** @type {HTMLDivElement} */
+    const equip_rank_filter = document.getElementById("equip-rank-filter");
+
+    /** @type {HTMLDivElement} */
+    const equip_skill_filter = document.getElementById("equip-skill-filter");
+
+    /** @type {HTMLDivElement} */
+    const equip_content = document.getElementById("equip-content");
+
+    const rank_filter = [
+        new Filter(new Checkbox('N', 'N'), filterEquipRank),
+        new Filter(new Checkbox('R', 'R'), filterEquipRank),
+        new Filter(new Checkbox('SR', 'SR'), filterEquipRank),
+        new Filter(new Checkbox('SSR', 'SSR'), filterEquipRank),
+        new Filter(new Checkbox('UR', 'UR'), filterEquipRank),
+        new Filter(new Checkbox('Z', '神器'), filterEquipRank),
+    ];
+
+    const skill_filter = [
+        new Filter(new Textbox('skill-equip', 'スキル効果'), filterEquipSkill),
+    ];
+
+    const content = [
+        new Column('equip-name', '名前', (x) => x.name()),
+        new Column('equip-hp', 'ランク', (x) => x.rank()),
+        new Column('equip-level', '最大レベル', (x) => x.level()),
+        new Column('equip-hp', 'HP', (x) => x.hp(), parseInt),
+        new Column('equip-atk', '攻撃', (x) => x.atk(), parseInt),
+        new Column('equip-spd', '攻撃速度', (x) => x.spd(), parseInt),
+        new Column('equip-critical', 'クリティカル', (x) => x.crit(), BgrLib.percentize),
+        new Column('equip-def', '防御', (x) => x.def(), parseInt),
+        new Column('equip-move', '移動速度', (x) => x.move()),
+        new Column('equip-skillbuffer1', 'スキル効果1', (x) => x.skillBuffer1()),
+        new Column('equip-skillbuffer2', 'スキル効果2', (x) => x.skillBuffer2()),
+        new Column('equip-skillscale', 'スキル倍率', (x) => x.skillScale(), BgrLib.percentize),
+        new Column('equip-skillbp', 'スキルBP', (x) => x.skillBP()),
+    ];
+
+    const table = new DataTable(
+        equip_table,
+        BgrLib.getEquip(), 
+        new DataTableContent(equip_content, content, 'コンテンツ：'),
+        [
+            new DataTableFilter(equip_rank_filter, rank_filter, 'ランク：', true),
+            new DataTableFilter(equip_skill_filter, skill_filter, null, false),
+        ]);
+
+    table.register()();
+});
+
+addEventListener('load', function() {
+    /** @type {HTMLDivElement} */
+    const unit_attr_filter = document.getElementById("unit-attr-filter");
+
+    /** @type {HTMLDivElement} */
+    const unit_content = document.getElementById("unit-content");
+
+    /** @type {HTMLDivElement} */
+    const unit_skill_filter = document.getElementById("unit-skill-filter");
+
+    /** @type {HTMLTableElement} */
+    const unit_table = document.getElementById("unit-table");
+
+    /** 
+     * current sort column
+     * @type {object}
+     */
+    const sort = {
+        column: null,
+        descending: false,
+    };
+
+    /**
+     * filter unit by attack skill
+     * @param {BgrUnit} unit 
+     * @param {string} value 
+     */
+    function filterAttackSkill(unit, value) {
+        if (value.length) {
+            return 0 <= unit.attackSkillBuffer1().indexOf(value)
+                || 0 <= unit.attackSkillBuffer2().indexOf(value);
+        }
+        return true;
+    }
+
+    /**
+     * filter unit by leader skill
+     * @param {BgrUnit} unit 
+     * @param {string} value 
+     */
+    function filterLeaderSkill(unit, value) {
+        if (value.length) {
+            return 0 <= unit.leaderSkill().indexOf(value);
+        }
+        return true;
+    }
+    
+    /**
+     * filter unit by attribute
+     * @param {BgrUnit} unit 
+     * @param {string} value 
+     */
     function filterAttribute(unit, value) {
-        return unit['attr'] == value;
+        return unit.attr() == value;
     }
 
-    function filterRarelity(equip, value) {
-        return (!equip['skill'] && equip['rank'] == value) || (equip['skill'] && value == '神器');
-    }
-
-    const UNIT_LEVEL = 100;
 
     const attribute_filter = [
         new Filter(new Checkbox('attr-sandica', 'サンディカ'), filterAttribute),
@@ -319,278 +530,39 @@ const main = (function() {
         new Filter(new Checkbox('attr-jade', 'ジェイド'), filterAttribute),
     ];
 
-    const unit_skill_filter = [
+    const skill_filter = [
         new Filter(new Textbox('skill-leader', '隊長スキル'), filterLeaderSkill),
         new Filter(new Textbox('skill-attack', 'スキル効果'), filterAttackSkill),
     ];
 
-    const unit_content = [
-        new Column('unit-id', 'ID', (x) => parseInt(x['id'])),
-        new Column('unit-name', '名前', (x) => x['name']),
-        new Column('unit-attr', '所属', (x) => x['attr']),
-        new Column('unit-hp', 'HP', (x) => calculateParam(x, 'hp', 'hp_rate', UNIT_LEVEL - 1), toInt),
-        new Column('unit-atk', '攻撃', (x) => calculateParam(x, 'atk', 'atk_rate', UNIT_LEVEL - 1), toInt),
-        new Column('unit-atkscale', '攻撃倍率', (x) => toFloat(x['nskill']['scale']), percentize),
-        new Column('unit-spd', '攻撃速度', (x) => calculateParam(x, 'spd', 'spd_rate', UNIT_LEVEL - 1), toInt),
-        new Column('unit-atkrange', '攻撃距離', (x) => toInt(x['nskill']['range'])),
-        new Column('unit-def', '防御', (x) => calculateParam(x, 'def', 'def_rate', UNIT_LEVEL - 1), toInt),
-        new Column('unit-move', '移動速度', (x) => toInt(x['move'])),
-        new Column('unit-critical', 'クリティカル', (x) => toFloat(x['crit']), percentize),
-        new Column('unit-leaderskill', '隊長スキル', (x) => x['lskill'].map((x) => x['name'] + percentize(toFloat(x['scale']))).join('\n')),
-        new Column('unit-skillscale', 'スキル倍率', (x) => x['askill'] ? toFloat(x['askill']['scale']) : null, percentize),
-        new Column('unit-skillsp', 'スキルSP', (x) => x['askill'] ? toInt(x['askill']['sp']) : null),
-        new Column('unit-skilltarget', 'スキル対象', (x) => x['askill'] ? toInt(x['askill']['number']) : null),
-        new Column('unit-skillbuffer1', 'スキル効果1', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer1'], x['askill']['buffer1_prob']) : ''),
-        new Column('unit-skillbuffer2', 'スキル効果2', (x) => x['askill'] ? formatSkillBuff(x['askill']['buffer2'], x['askill']['buffer2_prob']) : ''),
+    const content = [
+        new Column('unit-id', 'ID', (x) => x.id()),
+        new Column('unit-name', '名前', (x) => x.name()),
+        new Column('unit-attr', '所属', (x) => x.attr()),
+        new Column('unit-hp', 'HP', (x) => x.hp(), parseInt),
+        new Column('unit-atk', '攻撃', (x) => x.atk(), parseInt),
+        new Column('unit-atkscale', '攻撃倍率', (x) => x.atkScale(), BgrLib.percentize),
+        new Column('unit-spd', '攻撃速度', (x) => x.spd(), parseInt),
+        new Column('unit-atkrange', '攻撃距離', (x) => x.atkRange()),
+        new Column('unit-critical', 'クリティカル', (x) => x.crit(), BgrLib.percentize),
+        new Column('unit-def', '防御', (x) => x.def(), parseInt),
+        new Column('unit-move', '移動速度', (x) => x.move(), parseInt),
+        new Column('unit-leaderskill', '隊長スキル', (x) => x.leaderSkill()),
+        new Column('unit-skillbuffer1', 'スキル効果1', (x) => x.attackSkillBuffer1()),
+        new Column('unit-skillbuffer2', 'スキル効果2', (x) => x.attackSkillBuffer2()),
+        new Column('unit-skillsp', 'スキルSP', (x) => x.attackSkillSP()),
+        new Column('unit-skilltarget', 'スキル対象', (x) => x.attackSkillTarget()),
+        new Column('unit-skillscale', 'スキル倍率', (x) => x.attackSkillScale(), BgrLib.percentize),
     ];
 
-    const rarelity_filter = [
-        new Filter(new Checkbox('N', 'N'), filterRarelity),
-        new Filter(new Checkbox('R', 'R'), filterRarelity),
-        new Filter(new Checkbox('SR', 'SR'), filterRarelity),
-        new Filter(new Checkbox('SSR', 'SSR'), filterRarelity),
-        new Filter(new Checkbox('UR', 'UR'), filterRarelity),
-        new Filter(new Checkbox('Z', '神器'), filterRarelity),
-    ];
+    const table = new DataTable(
+        unit_table,
+        BgrLib.getUnit(), 
+        new DataTableContent(unit_content, content, 'コンテンツ：'),
+        [
+            new DataTableFilter(unit_attr_filter, attribute_filter, '所属：', true),
+            new DataTableFilter(unit_skill_filter, skill_filter, null, false),
+        ]);
 
-    const equip_skill_filter = [
-        new Filter(new Textbox('skill-equip', 'スキル効果'), filterEquipSkill),
-    ];
-
-    const equip_content = [
-        new Column('equip-name', '名前', (x) => x['name']),
-        new Column('equip-hp', 'ランク', (x) => x['skill'] ? '神器' : x['rank']),
-        new Column('equip-level', '最大レベル', getEquipLevel),
-        new Column('equip-hp', 'HP', (x) => calculateParam(x, 'hp', 'hp_rate', getEquipLevel(x)), toInt),
-        new Column('equip-atk', '攻撃', (x) => calculateParam(x, 'atk', 'atk_rate', getEquipLevel(x)), toInt),
-        new Column('equip-spd', '攻撃速度', (x) => calculateParam(x, 'spd', 'spd_rate', getEquipLevel(x)), toInt),
-        new Column('equip-def', '防御', (x) => calculateParam(x, 'def', 'def_rate', getEquipLevel(x)), toInt),
-        new Column('equip-move', '移動速度', (x) => toInt(x['move'])),
-        new Column('equip-critical', 'クリティカル', (x) => toFloat(x['crit']), percentize),
-        new Column('equip-skillscale', 'スキル倍率', (x) => x['skill'] ? calculateParam(x['skill'], 'scale', 'scale_rate', getEquipLevel(x)) : null, percentize),
-        new Column('equip-skillbp', 'スキルBP', (x) => x['skill'] ? calculateParam(x['skill'], 'bp', 'bp_rate', getEquipLevel(x)) : null),
-        new Column('equip-skillbuffer', 'スキル効果1', (x) => x['skill'] ? formatSkillBuff(x['skill']['buffer1'], x['skill']['buffer1_prob'], getEquipLevel(x)) : ''),
-        new Column('equip-skillbuffer', 'スキル効果2', (x) => x['skill'] ? formatSkillBuff(x['skill']['buffer2'], x['skill']['buffer2_prob'], getEquipLevel(x)) : ''),
-    ];
-
-    /** @type {HTMLSelectElement} */
-    let data_type = null;
-
-    /** @type {HTMLTableElement} */
-    let data_table = null;
-
-    /** @type {HTMLDivElement} */
-    let data_filter = null;
-
-    /** @type {HTMLDivElement} */
-    let data_content = null;
-
-    /** @type {HTMLDivElement} */
-    let skill_filter = null;
-
-    /** 
-     * current sort column
-     * @type {object}
-     */
-    let current_sort = {};
-
-    /**
-     * 
-     * @param {object} obj 
-     * @param {Filter[]} filters 
-     * @returns {boolean} whether filters are matched
-     */
-    function applyFilters(obj, filters) {
-        let matched = false;
-        filters.forEach(function(f) {
-            matched = matched || f.apply(obj);
-        })
-        return matched;
-    }
-
-    /**
-     * equip to row
-     * @param {object} data 
-     * @param {Column[]} contents 
-     */
-    function dataToRow(data, contents) {
-        const row = document.createElement('tr');
-        for (let i in contents) {
-            if (contents[i].form.checked()) {
-                const col = document.createElement('td');
-                col.style.whiteSpace = 'pre';
-                col.textContent = contents[i].string(data)
-                row.appendChild(col);
-            }
-        }
-        return row;
-    }
-
-    /**
-     * make table header
-     * @param {string} value current data type
-     * @param {Column[]} contents 
-     */
-    function makeHeader(value, contents) {
-        const header = document.createElement('thead')
-        header.setAttribute('class', 'table-dark')
-        const row = document.createElement('tr')
-        for (let i in contents) {
-            if (contents[i].form.checked()) {
-                const th = document.createElement('th');
-
-                th.textContent = contents[i].form.value();
-                if (current_sort[value] && current_sort[value].column == contents[i]) {
-                    th.textContent += current_sort[value].descending ? '▽' : '△';
-                }
-
-                th.addEventListener('click', function() {
-                    const sort = current_sort[value];
-                    if (sort && sort.column == contents[i]) {
-                        sort.descending = !sort.descending
-                    }
-                    else {
-                        current_sort[value] = {
-                            column: contents[i],
-                            descending: true,
-                        }
-                    }
-                    onDataTypeChanged(value);
-                });
-
-                row.appendChild(th);
-            }
-        }
-        header.appendChild(row);
-        return header;
-    }
-
-    /**
-     * clear children of an element
-     * @param {HTMLElement} elem element to remove children
-     */
-    function clearChildren(elem) {
-        while (elem.lastChild) {
-            elem.removeChild(elem.lastChild);
-        }
-    }
-
-    /**
-     * update form a group with a label
-     * @param {HTMLDivElement} formgroup the form group to contain
-     * @param {any[]} form_holder filtered to be contained the group
-     * @param {string} labelname form group label
-     */
-    function updateFormGroup(formgroup, form_holder, labelname) {
-        clearChildren(formgroup);
-
-        if (labelname) {
-            const label = document.createElement('label');
-            label.textContent = labelname;
-            formgroup.appendChild(label);
-        }
-
-        for (let i in form_holder) {
-            form_holder[i].form.setParent(formgroup);
-        }
-    }
-
-    function sortAsc(a, b) {
-        if (a < b) {
-            return 1;
-        }
-        else if (b < a) {
-            return -1;
-        }
-        else {
-            return 0;
-        }
-    }
-
-    function sortDesc(a, b) {
-        if (a < b) {
-            return -1;
-        }
-        else if (b < a) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    }
-
-    function onDataTypeChanged(e) {
-        const value = data_type.value;
-
-        let filter_name;
-        let filter;
-        let skill_filters;
-        let content;
-
-        if (value == 'unit') {
-            filter_name = '所属：'
-            filter = attribute_filter;
-            skill_filters = unit_skill_filter;
-            content = unit_content;
-        }
-        else if (value == 'equip') {
-            filter_name = 'ランク：'
-            filter = rarelity_filter;
-            skill_filters = equip_skill_filter;
-            content = equip_content;
-        }
-
-        if (e && e.target == data_type) {
-            updateFormGroup(data_filter, filter, filter_name);
-            updateFormGroup(skill_filter, skill_filters);
-            updateFormGroup(data_content, content, 'コンテンツ：');
-        }
-
-        const data = BGR_DATA[value];
-        if (current_sort[value] && current_sort[value].column) {
-            data.sort((a, b) =>
-                (current_sort[value].descending ? sortAsc : sortDesc)(current_sort[value].column.read(a), current_sort[value].column.read(b)));
-        }
-
-        clearChildren(data_table);
-        data_table.appendChild(makeHeader(value, content));
-        for (let i in data) {
-            let matched = applyFilters(data[i], filter);
-            skill_filters.forEach(function(f) {
-                matched = matched && applyFilters(data[i], [ f ]);
-            });
-            if (matched) {
-                data_table.appendChild(dataToRow(data[i], content));
-            }
-        }
-    }
-
-    return {
-        onLoad() {
-            data_type = document.getElementById("data-type");
-            data_table = document.getElementById("data-table");                 
-            data_filter = document.getElementById("data-filter");
-            skill_filter = document.getElementById("skill-filter");
-            data_content = document.getElementById("data-content");
-
-            data_type.addEventListener('change', onDataTypeChanged);
-
-            [
-                attribute_filter,
-                unit_skill_filter,
-                unit_content,
-                rarelity_filter,
-                equip_skill_filter,
-                equip_content
-            ].forEach(function(filter) {
-                filter.forEach(function(f) {
-                    f.form.onChanged(onDataTypeChanged);
-                });    
-            });
-
-            data_type.dispatchEvent(new Event('change'));
-        }
-    }
-}());
-
-onload = main.onLoad.bind(main);
+    table.register()();
+});
