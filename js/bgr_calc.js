@@ -160,7 +160,6 @@ addEventListener('load', function() {
     MaximizedUnit.MAX_SPEED = 2000;
     MaximizedUnit.MAX_CRITICAL = 1.0;
     MaximizedUnit.MAX_MOVE = 500;
-    MaximizedUnit.MAX_SPEED_EFFECTIVE = 1945;
 
     /**
      * 
@@ -169,7 +168,7 @@ addEventListener('load', function() {
      * @param {number} crit_buff critical buffer
      * @returns {(object | null)} equipped unit
      */
-    MaximizedUnit.prototype.equip = function(equipped, spd_limit, crit_buff) {
+    MaximizedUnit.prototype.equip = function(equipped, spd_buff, crit_buff) {
         equipped = equipped.filter((x) => x);
         if (2 <= equipped.reduce(countZingi, 0)) {
             return null;
@@ -201,9 +200,11 @@ addEventListener('load', function() {
         params.spd = Math.min(MaximizedUnit.MAX_SPEED, params.spd);
         params.crit = Math.min(MaximizedUnit.MAX_CRITICAL, params.crit * 1.28);
         params.move = Math.min(MaximizedUnit.MAX_MOVE, params.move);
+
+        const frames = parseInt(60000 / Math.min(MaximizedUnit.MAX_SPEED, params.spd * (1 + spd_buff)) + 0.15);
         params.score = params.atk * this.unit.atkScale()
-            * Math.min(MaximizedUnit.MAX_SPEED_EFFECTIVE, params.spd * MaximizedUnit.MAX_SPEED_EFFECTIVE / spd_limit)
-            * (1 + Math.min(MaximizedUnit.MAX_CRITICAL, params.crit + crit_buff)) / 1000;
+            * (60 / frames)
+            * (1 + Math.min(MaximizedUnit.MAX_CRITICAL, params.crit + crit_buff));
 
         return params;
     }
@@ -219,7 +220,7 @@ addEventListener('load', function() {
         }
 
         const maximized_unit = new MaximizedUnit(unit);
-        const spd_limit = parseInt(spd_selecter.value);
+        const spd_buff = parseFloat(spd_selecter.value);
         const crit_buff = parseInt(crit_selecter.value);
 
         /**
@@ -252,7 +253,7 @@ addEventListener('load', function() {
                 continue;
             }
 
-            const res = maximized_unit.equip(index.map((x) => equips[x]), spd_limit, crit_buff);
+            const res = maximized_unit.equip(index.map((x) => equips[x]), spd_buff, crit_buff);
             if (res) {
                 result.push(res);
             }
@@ -274,7 +275,7 @@ addEventListener('load', function() {
                     continue;
                 }
 
-                const r = maximized_unit.equip(child, spd_limit, crit_buff);
+                const r = maximized_unit.equip(child, spd_buff, crit_buff);
                 if (r && result[max_candidate - 1]['score'] < r['score']) {
                     const unique = result.reduce((accum, x) => accum && x['score'] != r['score'], true);
                     if (unique) {
@@ -296,7 +297,8 @@ addEventListener('load', function() {
                 clearChildren(search_table);
 
                 const thead = createTableHeader();
-                thead.appendChild(createTableHeaderCell('ダメージ'));
+                thead.appendChild(createTableHeaderCell('DPS'));
+                thead.lastChild.setAttribute('title', '計算上のDPSです。\n実際のDPSはキャラクタのモーション等によって減少します。');
                 thead.appendChild(createTableHeaderCell('攻撃'));
                 thead.appendChild(createTableHeaderCell('攻速'));
                 thead.appendChild(createTableHeaderCell('CRIT'));
@@ -399,7 +401,7 @@ addEventListener('load', function() {
     function onChanged() {
         const unit = getUnit();
         const max_unit = new MaximizedUnit(unit);
-        const params = max_unit.equip(equip_selecters.map((x) => getEquip(x)), MaximizedUnit.MAX_SPEED_EFFECTIVE, 0);
+        const params = max_unit.equip(equip_selecters.map((x) => getEquip(x)), 0, 0);
         if (params) {
             unit_hp.value   = params.hp;
             unit_atk.value  = params.atk;
@@ -412,8 +414,6 @@ addEventListener('load', function() {
             unit_skillbuffer1.value = unit.attackSkillBuffer1();
             unit_skillbuffer2.value = unit.attackSkillBuffer2();
             unit_leaderskill.value = unit.leaderSkill();
-
-            console.log(params.hp, unit_hp, unit_hp.value);
         }
     }
 
@@ -431,4 +431,6 @@ addEventListener('load', function() {
     });
 
     search_button.addEventListener('click', onSearchRequested);
+
+    onChanged();
 });
