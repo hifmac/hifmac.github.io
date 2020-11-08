@@ -229,7 +229,7 @@ addEventListener('load', function() {
 
         const maximized_unit = new MaximizedUnit(unit);
         const spd_buff = parseFloat(spd_selecter.value);
-        const crit_buff = parseInt(crit_selecter.value);
+        const crit_buff = parseFloat(crit_selecter.value);
         const def_target = toInt(def_selecter.value);
 
         /**
@@ -342,7 +342,7 @@ addEventListener('load', function() {
                 search_table.appendChild(thead);
 
                 const tbody = document.createElement('tbody');
-                const candidate = results;//.slice(0, 30);
+                const candidate = results.slice(0, max_candidate);
                 for (let i in candidate) {
                     const tr = document.createElement('tr');
                     const r = candidate[i];

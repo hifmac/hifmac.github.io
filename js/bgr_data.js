@@ -443,7 +443,7 @@ addEventListener('load', function() {
 
     const content = [
         new Column('equip-name', '名前', (x) => x.name()),
-        new Column('equip-hp', 'ランク', (x) => x.rank()),
+        new Column('equip-rank', 'ランク', (x) => x.rank()),
         new Column('equip-level', '最大レベル', (x) => x.level()),
         new Column('equip-hp', 'HP', (x) => x.hp(), {format: parseInt}),
         new Column('equip-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
