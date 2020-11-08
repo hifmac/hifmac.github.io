@@ -58,75 +58,61 @@
                 <div class="tab-pane fade p-2" id="status-calc">
                     <div class="border pt-2 pb-2 mb-2">
                         <div class="row">
-                            <label class="col-3 text-right" for="unit-selecter">ユニット</label>
-                            <select class="col-6 form-control" id="unit-selecter"></select>    
+                            <label class="col-2 text-right" for="unit-selecter">ユニット</label>
+                            <select class="col-3 form-control" id="unit-selecter"></select>    
+                            <label class="col-2 text-right" for="equip3">装備３</label>
+                            <select class="col-3 form-control" id="equip3"></select>    
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="equip1">装備１</label>
-                            <select class="col-6 form-control" id="equip1"></select>    
+                            <label class="col-2 text-right" for="equip1">装備１</label>
+                            <select class="col-3 form-control" id="equip1"></select>    
+                            <label class="col-2 text-right" for="equip4">装備４</label>
+                            <select class="col-3 form-control" id="equip4"></select>    
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="equip2">装備２</label>
-                            <select class="col-6 form-control" id="equip2"></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="equip3">装備３</label>
-                            <select class="col-6 form-control" id="equip3"></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="equip4">装備４</label>
-                            <select class="col-6 form-control" id="equip4"></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="equip5">装備５</label>
-                            <select class="col-6 form-control" id="equip5"></select>    
+                            <label class="col-2 text-right" for="equip2">装備２</label>
+                            <select class="col-3 form-control" id="equip2"></select>    
+                            <label class="col-2 text-right" for="equip5">装備５</label>
+                            <select class="col-3 form-control" id="equip5"></select>    
                         </div>
                     </div>
         
                     <div class="border pt-2 pb-2 mb-2">
                         <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-hp">HP</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-hp" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-hp">HP</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-hp" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-def">防御力</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-def" readonly></select>      
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-atk">攻撃力</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-atk" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-atk">攻撃力</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-atk" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-move">移動速度</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-move" readonly></select>    
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-def">防御力</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-def" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-atkscale">攻撃倍率</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-atkscale" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-skillcd">スキルクールダウン</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-skillcd" readonly></select>    
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-spd">攻撃速度</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-spd" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-spd">攻撃速度</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-spd" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-skillbuffer1">スキル効果1</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-skillbuffer1" readonly></select>    
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-move">移動速度</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-move" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-atkrange">攻撃距離</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-atkrange" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-skillbuffer2">スキル効果2</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-skillbuffer2" readonly></select>    
                         </div>
                         <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-crit">クリティカル</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-crit" readonly></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-atkscale">攻撃倍率</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-atkscale" readonly></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-atkrange">攻撃距離</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-atkrange" readonly></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-skillbuffer1">スキル効果1</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-skillbuffer1" readonly></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-skillbuffer2">スキル効果2</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-skillbuffer2" readonly></select>    
-                        </div>
-                        <div class="row">
-                            <label class="col-3 text-right" for="calc-unit-leaderskill">隊長スキル</label>
-                            <input class="col-6 form-control" type="text" id="calc-unit-leaderskill" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-crit">クリティカル</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-crit" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-leaderskill">隊長スキル</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-leaderskill" readonly></select>    
                         </div>
                     </div>
         
@@ -146,14 +132,17 @@
                                 <option value="0.29">攻速1508(+29%)</option>
                             </select>
                             <label for="crit-selecter">CRITバフ</label>
-                            <select class="form-control" id="crit-selecter">
+                            <select class="form-control mr-2" id="crit-selecter">
                                 <option value="0.00">CRIT100%(+0%)</option>
                                 <option value="0.07">CRIT93%(+7%)</option>
                             </select>
+                            <label for="def-selecter">目標防御</label>
+                            <input type="text" class="form-control" id="def-selecter" placeholder="防御"></input>
                         </div>
+                        <div>※　DPSは敵防御力を0とした理論値です。信じないでください。<br>※　5秒間で良さげな装備を探す機能です。最適解が見つかるとは限りません。</div>
         
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%" id="search-progress"></div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="search-progress"></div>
                         </div>
                         <table id='search-table' class="table table-hover table-striped table-bordered"></table>
                     </div>

@@ -138,6 +138,15 @@ BgrUnit.prototype.attackSkillTarget = function BgrUnit_attackSkillTarget() {
     return null;
 };
 
+BgrUnit.prototype.attackSkillCooldown = function BgrUnit_attackSkillCooldown() {
+    const skill = this.unit_data['askill'];
+    if (skill) {
+        return skill['first_cd'] + '秒/' + skill['cd'] + '秒';
+    }
+    return null;
+};
+
+
 /**
  * BGR equipment data
  * @param {object} equip 
@@ -164,6 +173,13 @@ BgrEquip.prototype.calculate = function(param, param_rate, obj) {
 BgrEquip.prototype.formatBuffer = function(buffers, prob) {
     return BgrLib.formatBuffers(buffers, prob, this.paramLevel());
 }
+
+/**
+ * @returns {number} id
+ */
+BgrEquip.prototype.id = function BgrEquip_id() {
+    return BgrLib.toInt(this.equip_data['id']);
+};
 
 /**
  * @returns {string} name
@@ -239,6 +255,10 @@ BgrEquip.prototype.skillScale = function BgrEquip_skillScale() {
 
 BgrEquip.prototype.skillBP = function BgrEquip_skillBP() {
     return this.calculate('bp', 'bp_rate', this.equip_data['skill']);
+};
+
+BgrEquip.prototype.dropStage = function BgrEquip_dropStage() {
+    return this.equip_data.stage.map((x) => x.replace(/\n/g, '')).join('\n');
 };
 
 const BgrLib = {

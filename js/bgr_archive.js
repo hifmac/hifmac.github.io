@@ -1,6 +1,7 @@
 BgrLib.load({
   "equip":[
     {
+      "id":0,
       "name":" [EXP]古代の槌",
       "rank":"N",
       "base_lv_max":"5",
@@ -15,9 +16,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":1,
       "name":"[EXP2倍]古代の兜",
       "rank":"N",
       "base_lv_max":"5",
@@ -32,9 +35,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":2,
       "name":"[EXP]古代の紋章",
       "rank":"R",
       "base_lv_max":"20",
@@ -49,9 +54,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":3,
       "name":"[EXP]古代の鎧",
       "rank":"SR",
       "base_lv_max":"35",
@@ -66,9 +73,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":4,
       "name":"[EXP]古代の盾",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -83,9 +92,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":5,
       "name":"[EXP]古代の指輪",
       "rank":"UR",
       "base_lv_max":"65",
@@ -100,9 +111,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":6,
       "name":"ジョセフィーの内緒のお願い☆",
       "rank":"UR",
       "base_lv_max":"65",
@@ -117,9 +130,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":7,
       "name":"妖精の御業",
       "rank":"UR",
       "base_lv_max":"65",
@@ -134,9 +149,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":8,
       "name":"ヒノキの杖",
       "rank":"N",
       "base_lv_max":"5",
@@ -151,9 +168,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "第三章\nブランの地へ/ブランの地へ5",
+        "第三章\nブランの地へ/ブランの地へ6",
+        "第三章\nブランの地へ/ブランの地へ7",
+        "第三章\nブランの地へ/ブランの地へ8"
+      ],
       "skill":null
     },
     {
+      "id":9,
       "name":"ソーサラーケーン",
       "rank":"N",
       "base_lv_max":"5",
@@ -168,9 +192,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":10,
       "name":"短剣",
       "rank":"N",
       "base_lv_max":"5",
@@ -185,9 +211,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第一章\n序章/序章1",
+        "第一章\n序章/序章2",
+        "第一章\n序章/序章3",
+        "第一章\n序章/序章4",
+        "第一章\n序章/序章5"
+      ],
       "skill":null
     },
     {
+      "id":11,
       "name":"鋼の剣",
       "rank":"N",
       "base_lv_max":"5",
@@ -202,9 +236,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第四章\n一触即発/一触即発5",
+        "第四章\n一触即発/一触即発6",
+        "第四章\n一触即発/一触即発7",
+        "第四章\n一触即発/一触即発8"
+      ],
       "skill":null
     },
     {
+      "id":12,
       "name":"バトルハンマー",
       "rank":"N",
       "base_lv_max":"5",
@@ -219,9 +260,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":13,
       "name":"アイアンハンマー",
       "rank":"N",
       "base_lv_max":"5",
@@ -236,9 +279,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":14,
       "name":"ショートボウ",
       "rank":"N",
       "base_lv_max":"5",
@@ -253,9 +298,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.03",
+      "stage":[
+        "第二章\nサンディカ/サンディカ5",
+        "第二章\nサンディカ/サンディカ6",
+        "第二章\nサンディカ/サンディカ7",
+        "第二章\nサンディカ/サンディカ8"
+      ],
       "skill":null
     },
     {
+      "id":15,
       "name":"シダーウッドボウ",
       "rank":"N",
       "base_lv_max":"5",
@@ -270,9 +322,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
+      "stage":[],
       "skill":null
     },
     {
+      "id":16,
       "name":"鋼鉄の鎧",
       "rank":"N",
       "base_lv_max":"5",
@@ -287,9 +341,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":17,
       "name":"旧式軍用鎧",
       "rank":"N",
       "base_lv_max":"5",
@@ -304,9 +360,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":18,
       "name":"布の服",
       "rank":"N",
       "base_lv_max":"5",
@@ -321,9 +379,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":19,
       "name":"ウッドシールド",
       "rank":"N",
       "base_lv_max":"5",
@@ -338,9 +398,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第三章\nブランの地へ/ブランの地へ1",
+        "第三章\nブランの地へ/ブランの地へ2",
+        "第三章\nブランの地へ/ブランの地へ3",
+        "第三章\nブランの地へ/ブランの地へ4"
+      ],
       "skill":null
     },
     {
+      "id":20,
       "name":"ブロンズシールド",
       "rank":"N",
       "base_lv_max":"5",
@@ -355,9 +422,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":21,
       "name":"レザーフード",
       "rank":"N",
       "base_lv_max":"5",
@@ -372,9 +441,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第四章\n一触即発/一触即発1",
+        "第四章\n一触即発/一触即発2",
+        "第四章\n一触即発/一触即発3",
+        "第四章\n一触即発/一触即発4"
+      ],
       "skill":null
     },
     {
+      "id":22,
       "name":"蹄鉄",
       "rank":"N",
       "base_lv_max":"5",
@@ -389,9 +465,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"30",
       "crit":null,
+      "stage":[
+        "第五章\nジェイドの少女/ジェイドの少女1",
+        "第五章\nジェイドの少女/ジェイドの少女2",
+        "第五章\nジェイドの少女/ジェイドの少女3",
+        "第五章\nジェイドの少女/ジェイドの少女4"
+      ],
       "skill":null
     },
     {
+      "id":23,
       "name":"オークガントレット",
       "rank":"N",
       "base_lv_max":"5",
@@ -406,9 +489,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":24,
       "name":"野牛の角",
       "rank":"N",
       "base_lv_max":"5",
@@ -423,9 +508,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第五章\nジェイドの少女/ジェイドの少女5",
+        "第五章\nジェイドの少女/ジェイドの少女6",
+        "第五章\nジェイドの少女/ジェイドの少女7",
+        "第五章\nジェイドの少女/ジェイドの少女8"
+      ],
       "skill":null
     },
     {
+      "id":25,
       "name":"レイヴンフェザー",
       "rank":"N",
       "base_lv_max":"5",
@@ -440,9 +532,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "第二章\nサンディカ/サンディカ1",
+        "第二章\nサンディカ/サンディカ2",
+        "第二章\nサンディカ/サンディカ3",
+        "第二章\nサンディカ/サンディカ4"
+      ],
       "skill":null
     },
     {
+      "id":26,
       "name":"魔女の杖",
       "rank":"R",
       "base_lv_max":"20",
@@ -457,9 +556,20 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入1",
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入2",
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入3",
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入4",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる5",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる6",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる7",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる8"
+      ],
       "skill":null
     },
     {
+      "id":27,
       "name":"マジッククリスタルロッド",
       "rank":"R",
       "base_lv_max":"20",
@@ -474,9 +584,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "第十一章\nかつての憧憬/かつての憧憬5",
+        "第十一章\nかつての憧憬/かつての憧憬6",
+        "第十一章\nかつての憧憬/かつての憧憬7",
+        "第十一章\nかつての憧憬/かつての憧憬8"
+      ],
       "skill":null
     },
     {
+      "id":28,
       "name":"正規軍用剣",
       "rank":"R",
       "base_lv_max":"20",
@@ -491,9 +608,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ5",
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ6",
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ7",
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ8"
+      ],
       "skill":null
     },
     {
+      "id":29,
       "name":"ファイティングエッジ",
       "rank":"R",
       "base_lv_max":"20",
@@ -508,9 +632,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十三章\n選ぶべき道/選ぶべき道5",
+        "第十三章\n選ぶべき道/選ぶべき道6",
+        "第十三章\n選ぶべき道/選ぶべき道7",
+        "第十三章\n選ぶべき道/選ぶべき道8"
+      ],
       "skill":null
     },
     {
+      "id":30,
       "name":"シールドブレイカー",
       "rank":"R",
       "base_lv_max":"20",
@@ -525,9 +656,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第九章\nフィーネ騎士団/フィーネ騎士団5",
+        "第九章\nフィーネ騎士団/フィーネ騎士団6",
+        "第九章\nフィーネ騎士団/フィーネ騎士団7",
+        "第九章\nフィーネ騎士団/フィーネ騎士団8"
+      ],
       "skill":null
     },
     {
+      "id":31,
       "name":"ウォーハンマー",
       "rank":"R",
       "base_lv_max":"20",
@@ -542,9 +680,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第六章\n聖剣探索/聖剣探索1",
+        "第六章\n聖剣探索/聖剣探索2",
+        "第六章\n聖剣探索/聖剣探索3",
+        "第六章\n聖剣探索/聖剣探索4",
+        "第十五章\n追いすがった先に/追いすがった先に1",
+        "第十五章\n追いすがった先に/追いすがった先に2",
+        "第十五章\n追いすがった先に/追いすがった先に3",
+        "第十五章\n追いすがった先に/追いすがった先に4"
+      ],
       "skill":null
     },
     {
+      "id":32,
       "name":"新月の弓",
       "rank":"R",
       "base_lv_max":"20",
@@ -559,9 +708,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
+      "stage":[
+        "第七章\n目指すは\nアージェント/目指すはアージェント1",
+        "第七章\n目指すは\nアージェント/目指すはアージェント2",
+        "第七章\n目指すは\nアージェント/目指すはアージェント3",
+        "第七章\n目指すは\nアージェント/目指すはアージェント4"
+      ],
       "skill":null
     },
     {
+      "id":33,
       "name":"スナイパーボウ",
       "rank":"R",
       "base_lv_max":"20",
@@ -576,9 +732,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.06",
+      "stage":[
+        "第十二章\n決意と再会/決意と再会5",
+        "第十二章\n決意と再会/決意と再会6",
+        "第十二章\n決意と再会/決意と再会7",
+        "第十二章\n決意と再会/決意と再会8"
+      ],
       "skill":null
     },
     {
+      "id":34,
       "name":"プレートメイル",
       "rank":"R",
       "base_lv_max":"20",
@@ -593,9 +756,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-90",
       "crit":null,
+      "stage":[
+        "第七章\n目指すは\nアージェント/目指すはアージェント5",
+        "第七章\n目指すは\nアージェント/目指すはアージェント6",
+        "第七章\n目指すは\nアージェント/目指すはアージェント7",
+        "第七章\n目指すは\nアージェント/目指すはアージェント8"
+      ],
       "skill":null
     },
     {
+      "id":35,
       "name":"強化合金の鎧",
       "rank":"R",
       "base_lv_max":"20",
@@ -610,9 +780,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-90",
       "crit":null,
+      "stage":[
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻1",
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻2",
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻3",
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻4"
+      ],
       "skill":null
     },
     {
+      "id":36,
       "name":"シルクの服",
       "rank":"R",
       "base_lv_max":"20",
@@ -627,9 +804,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "第十八章\n全面衝突/全面衝突1",
+        "第十八章\n全面衝突/全面衝突2",
+        "第十八章\n全面衝突/全面衝突3",
+        "第十八章\n全面衝突/全面衝突4",
+        "第十八章\n全面衝突/全面衝突5",
+        "第十八章\n全面衝突/全面衝突6",
+        "第十八章\n全面衝突/全面衝突7",
+        "第十八章\n全面衝突/全面衝突8"
+      ],
       "skill":null
     },
     {
+      "id":37,
       "name":"豪華な服",
       "rank":"R",
       "base_lv_max":"20",
@@ -644,9 +832,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":38,
       "name":"アイアンシールド",
       "rank":"R",
       "base_lv_max":"20",
@@ -661,9 +851,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第六章\n聖剣探索/聖剣探索5",
+        "第六章\n聖剣探索/聖剣探索6",
+        "第六章\n聖剣探索/聖剣探索7",
+        "第六章\n聖剣探索/聖剣探索8",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる1",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる2",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる3",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる4"
+      ],
       "skill":null
     },
     {
+      "id":39,
       "name":"スチールシールド",
       "rank":"R",
       "base_lv_max":"20",
@@ -678,9 +879,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十三章\n選ぶべき道/選ぶべき道1",
+        "第十三章\n選ぶべき道/選ぶべき道2",
+        "第十三章\n選ぶべき道/選ぶべき道3",
+        "第十三章\n選ぶべき道/選ぶべき道4",
+        "第十二章\n決意と再会/決意と再会1",
+        "第十二章\n決意と再会/決意と再会2",
+        "第十二章\n決意と再会/決意と再会3",
+        "第十二章\n決意と再会/決意と再会4"
+      ],
       "skill":null
     },
     {
+      "id":40,
       "name":"正規軍用ヘルム",
       "rank":"R",
       "base_lv_max":"20",
@@ -695,9 +907,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ1",
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ2",
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ3",
+        "第十章\n傭兵団、\n北へ/傭兵団、北へ4"
+      ],
       "skill":null
     },
     {
+      "id":41,
       "name":"ナイトヘルム",
       "rank":"R",
       "base_lv_max":"20",
@@ -712,9 +931,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻5",
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻6",
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻7",
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻8"
+      ],
       "skill":null
     },
     {
+      "id":42,
       "name":"白銀の蹄鉄",
       "rank":"R",
       "base_lv_max":"20",
@@ -729,9 +955,20 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"75",
       "crit":null,
+      "stage":[
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去1",
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去2",
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去3",
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去4",
+        "第十五章\n追いすがった先に/追いすがった先に5",
+        "第十五章\n追いすがった先に/追いすがった先に6",
+        "第十五章\n追いすがった先に/追いすがった先に7",
+        "第十五章\n追いすがった先に/追いすがった先に8"
+      ],
       "skill":null
     },
     {
+      "id":43,
       "name":"スノウブーツ",
       "rank":"R",
       "base_lv_max":"20",
@@ -746,9 +983,16 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"50",
       "crit":null,
+      "stage":[
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去5",
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去6",
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去7",
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去8"
+      ],
       "skill":null
     },
     {
+      "id":44,
       "name":"ブロンズガントレット",
       "rank":"R",
       "base_lv_max":"20",
@@ -763,9 +1007,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十一章\nかつての憧憬/かつての憧憬1",
+        "第十一章\nかつての憧憬/かつての憧憬2",
+        "第十一章\nかつての憧憬/かつての憧憬3",
+        "第十一章\nかつての憧憬/かつての憧憬4"
+      ],
       "skill":null
     },
     {
+      "id":45,
       "name":"アイアンガントレット",
       "rank":"R",
       "base_lv_max":"20",
@@ -780,9 +1031,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":46,
       "name":"雄鹿の角",
       "rank":"R",
       "base_lv_max":"20",
@@ -797,9 +1050,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第九章\nフィーネ騎士団/フィーネ騎士団1",
+        "第九章\nフィーネ騎士団/フィーネ騎士団2",
+        "第九章\nフィーネ騎士団/フィーネ騎士団3",
+        "第九章\nフィーネ騎士団/フィーネ騎士団4"
+      ],
       "skill":null
     },
     {
+      "id":47,
       "name":"ブルーバードフェザー",
       "rank":"R",
       "base_lv_max":"20",
@@ -814,9 +1074,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入5",
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入6",
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入7",
+        "第八章\nクーレイン城、\n突入/クーレイン城、突入8"
+      ],
       "skill":null
     },
     {
+      "id":48,
       "name":"[神器]アミキーティア",
       "rank":"R",
       "base_lv_max":"20",
@@ -831,6 +1098,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":{
         "name":"[イード]アキビオ・エグリトラ",
         "number":null,
@@ -858,6 +1126,7 @@ BgrLib.load({
       }
     },
     {
+      "id":49,
       "name":"知力の杖",
       "rank":"SR",
       "base_lv_max":"35",
@@ -872,9 +1141,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":50,
       "name":"ミスリルの剣",
       "rank":"SR",
       "base_lv_max":"35",
@@ -889,9 +1160,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十三章\n選ぶべき道/選ぶべき道8"
+      ],
       "skill":null
     },
     {
+      "id":51,
       "name":"クラッシャーハンマー",
       "rank":"SR",
       "base_lv_max":"35",
@@ -906,9 +1181,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":52,
       "name":"ダークウッドボウ",
       "rank":"SR",
       "base_lv_max":"35",
@@ -923,9 +1200,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.09",
+      "stage":[],
       "skill":null
     },
     {
+      "id":53,
       "name":"皇国軍正式ヘビィアーマー",
       "rank":"SR",
       "base_lv_max":"35",
@@ -940,9 +1219,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":54,
       "name":"ゴールデン・フリース",
       "rank":"SR",
       "base_lv_max":"35",
@@ -957,9 +1238,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":55,
       "name":"プレートシールド",
       "rank":"SR",
       "base_lv_max":"35",
@@ -974,9 +1257,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":56,
       "name":"プレートヘルム",
       "rank":"SR",
       "base_lv_max":"35",
@@ -991,9 +1276,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":57,
       "name":"黄金の蹄鉄",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1008,9 +1295,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"120",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":58,
       "name":"ミスリルガントレット",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1025,9 +1314,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻8"
+      ],
       "skill":null
     },
     {
+      "id":59,
       "name":"公羊の角",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1042,9 +1335,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":60,
       "name":"ホワイトシーガルフェザー",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1059,9 +1354,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":61,
       "name":"サンストーンリング",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1076,9 +1373,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去8",
+        "第十五章\n追いすがった先に/追いすがった先に8",
+        "第十六章\nそして、\n相まみえる/そして、相まみえる8"
+      ],
       "skill":null
     },
     {
+      "id":62,
       "name":"ムーンストーンリング",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1093,9 +1396,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":63,
       "name":"ショットダウンズアミュレット",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1110,9 +1415,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "ドラクルマスター\nへの道/竜と遊ぼう(上級)",
+        "ドラクルマスター\nへの道/竜と遊ぼう(超級)"
+      ],
       "skill":null
     },
     {
+      "id":64,
       "name":"バレットペンダント",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1127,9 +1437,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.07",
+      "stage":[],
       "skill":null
     },
     {
+      "id":65,
       "name":"ミグラトリーバードバッジ",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1144,9 +1456,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "天空からの\n来訪者たち/天穹ノ彼方からの使者(上級)",
+        "天空からの\n来訪者たち/天穹ノ彼方からの使者(神級)",
+        "天空からの\n来訪者たち/天穹ノ彼方からの使者(神級+)",
+        "天空からの\n来訪者たち/天穹ノ彼方からの使者(超級)",
+        "天空からの\n来訪者たち/天穹ノ彼方からの使者(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":66,
       "name":"ラビットフット",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1161,9 +1481,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":"0.06",
+      "stage":[
+        "第十二章\n決意と再会/決意と再会8"
+      ],
       "skill":null
     },
     {
+      "id":67,
       "name":"東方の飾り餅",
       "rank":"SR",
       "base_lv_max":"35",
@@ -1178,9 +1502,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":68,
       "name":"ダークワンド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1195,9 +1521,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連続戦闘ステージ"
+      ],
       "skill":null
     },
     {
+      "id":69,
       "name":"フレイムソード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1212,9 +1542,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "傭兵団\nエレフセリア/追跡(上級)",
+        "傭兵団\nエレフセリア/追跡(超級)",
+        "傭兵団\nエレフセリア/追跡(超級+)",
+        "傭兵団\nエレフセリア/遭遇(上級)",
+        "傭兵団\nエレフセリア/遭遇(超級)"
+      ],
       "skill":null
     },
     {
+      "id":70,
       "name":"破城槌",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1229,9 +1567,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":71,
       "name":"ヴァーダントゲイル",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1246,9 +1586,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "怪奇！ 蠢く蔦/次なる研究(神級)",
+        "怪奇！ 蠢く蔦/次なる研究(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":72,
       "name":"ドラゴンメイル",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1263,9 +1608,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":73,
       "name":"グリフォンの服",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1280,9 +1627,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "大鷲狩り/大鷲狩り(上級)",
+        "大鷲狩り/大鷲狩り(超級)"
+      ],
       "skill":null
     },
     {
+      "id":74,
       "name":"ドラゴンシールド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1297,9 +1649,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "キノコの襲撃/キノコの襲撃(上級)",
+        "キノコの襲撃/キノコの襲撃(超級)"
+      ],
       "skill":null
     },
     {
+      "id":75,
       "name":"ドラゴンヘルム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1314,9 +1671,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":76,
       "name":"ドラゴンガントレット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1331,9 +1690,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":77,
       "name":"魔獣の角",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1348,9 +1709,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":78,
       "name":"ウィードダケ記章",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1365,9 +1728,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"90",
       "crit":null,
+      "stage":[
+        "洞窟探索任務/演習依頼(上級)",
+        "洞窟探索任務/演習依頼(超級)"
+      ],
       "skill":null
     },
     {
+      "id":79,
       "name":"セントキャンディワンド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1382,9 +1750,15 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "少女達の聖戦/少女たちの聖戦(上級)",
+        "少女達の聖戦/少女たちの聖戦(超級)",
+        "少女達の聖戦/少女たちの聖戦(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":80,
       "name":"セントツリーブレイド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1399,9 +1773,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[
+        "少女達の聖戦/少女たちの聖戦(神級)",
+        "少女達の聖戦/少女たちの聖戦(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":81,
       "name":"危ないサンタ服",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1416,9 +1795,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":82,
       "name":"殴打用ターキー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1433,9 +1814,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":83,
       "name":"新春羽子板",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1450,9 +1833,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":84,
       "name":"紅桜",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1467,9 +1852,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
+      "stage":[
+        "傭兵団の年始め/新年から大騷動(上級)",
+        "傭兵団の年始め/新年から大騷動(超級)"
+      ],
       "skill":null
     },
     {
+      "id":85,
       "name":"金申棒",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1484,9 +1874,11 @@ BgrLib.load({
       "spd_rate":"1.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":86,
       "name":"東方の祭事服",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1501,9 +1893,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":87,
       "name":"フロストリング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1518,9 +1912,17 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.11",
+      "stage":[
+        "教官の教え/教官への挑戦(上級)",
+        "教官の教え/教官への挑戦(神級)",
+        "教官の教え/教官への挑戦(神級+)",
+        "教官の教え/教官への挑戦(超級)",
+        "教官の教え/教官への挑戦(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":88,
       "name":"フロストシールド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1535,9 +1937,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
+      "stage":[],
       "skill":null
     },
     {
+      "id":89,
       "name":"フロストソード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1552,9 +1956,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"45",
       "crit":"0.01",
+      "stage":[],
       "skill":null
     },
     {
+      "id":90,
       "name":"フラワーソード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1569,9 +1975,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":"0.02",
+      "stage":[
+        "甘い甘い騒動/イベントレベル(超級)I",
+        "甘い甘い騒動/イベントレベル(超級)II",
+        "甘い甘い騒動/団長主催パーティー(上級)",
+        "甘い甘い騒動/団長主催パーティー(超級)",
+        "甘い甘い騒動/団長主催パーティー(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":91,
       "name":"真紅のコート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1586,9 +2000,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":92,
       "name":"ローズリング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1603,9 +2019,14 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":"10",
       "crit":"0.08",
+      "stage":[
+        "狙うはお宝/狙うはお宝(上級)",
+        "狙うはお宝/狙うはお宝(超級)"
+      ],
       "skill":null
     },
     {
+      "id":93,
       "name":"ブレイクシールド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1620,9 +2041,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":94,
       "name":"ラブリーバッグ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1637,9 +2060,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.12",
+      "stage":[
+        "運命の日は\n誰の手に/続・お菓子対決(上級)",
+        "運命の日は\n誰の手に/続・お菓子対決(超級)",
+        "運命の日は\n誰の手に/続・お菓子対決(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":95,
       "name":"リボンシールド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1654,9 +2083,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":96,
       "name":"プロミスドリング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1671,9 +2102,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
+      "stage":[
+        "愛しき人の好みに染まる/愛しき人の好みに染まる(上級)",
+        "愛しき人の好みに染まる/愛しき人の好みに染まる(超級)",
+        "愛しき人の好みに染まる/愛しき人の好みに染まる(超級+)",
+        "甘い甘い騒動/団長主催パーティー(神級)",
+        "甘い甘い騒動/団長主催パーティー(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":97,
       "name":"マーダーエッジ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1688,9 +2127,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":"0.05",
+      "stage":[],
       "skill":null
     },
     {
+      "id":98,
       "name":"ガーディアンアーマー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1705,9 +2146,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":99,
       "name":"インヴェイドグリーブ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1722,9 +2165,14 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":"130",
       "crit":"0.02",
+      "stage":[
+        "撃滅の傭兵団/【超絶】撃滅の傭兵団",
+        "撃滅の傭兵団/【超絶】進撃の傭兵団"
+      ],
       "skill":null
     },
     {
+      "id":100,
       "name":"閃光の法杖",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1739,9 +2187,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":101,
       "name":"ノーブルクラウン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1756,9 +2206,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
+      "stage":[
+        "おニューな衣装を求めて②/おニューな衣装を求めて(上級)",
+        "おニューな衣装を求めて②/おニューな衣装を求めて(超級)",
+        "おニューな衣装を求めて②/おニューな衣装を求めて(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":102,
       "name":"アイオロスローブ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1773,9 +2229,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "ジェイドの精霊/精霊との知恵くらべ(上級)",
+        "ジェイドの精霊/精霊との知恵くらべ(神級)",
+        "ジェイドの精霊/精霊との知恵くらべ(神級+)",
+        "ジェイドの精霊/精霊との知恵くらべ(超級)",
+        "ジェイドの精霊/精霊との知恵くらべ(超級+)",
+        "ジェイドの精霊/精霊の審判(上級)",
+        "ジェイドの精霊/精霊の審判(超級)"
+      ],
       "skill":null
     },
     {
+      "id":103,
       "name":"リンバーヴィレージュ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1790,9 +2256,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":"0.1",
+      "stage":[
+        "怪奇！ 蠢く蔦/次なる研究(上級)",
+        "怪奇！ 蠢く蔦/次なる研究(超級)",
+        "怪奇！ 蠢く蔦/次なる研究(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":104,
       "name":"ロフォカーレ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1807,9 +2279,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.02",
+      "stage":[],
       "skill":null
     },
     {
+      "id":105,
       "name":"シルヴェストバンシー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1824,9 +2298,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.18",
+      "stage":[
+        "撃滅の傭兵団/【超絶】撃滅の傭兵団",
+        "撃滅の傭兵団/【超絶】殲滅の傭兵団"
+      ],
       "skill":null
     },
     {
+      "id":106,
       "name":"ハンターボウ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1841,9 +2320,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
+      "stage":[
+        "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(上級)",
+        "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(超級)",
+        "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":107,
       "name":"クライマーズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1858,9 +2343,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "洞窟探索任務/実地演習(神級)",
+        "洞窟探索任務/実地演習(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":108,
       "name":"いちごのヘアピン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1875,9 +2365,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":109,
       "name":"パーティドレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1892,9 +2384,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":110,
       "name":"バトルグローブ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1909,9 +2403,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":111,
       "name":"月来光",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1926,9 +2422,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":112,
       "name":"ビーストフェイス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1943,9 +2441,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":113,
       "name":"武光",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1960,9 +2460,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-120",
       "crit":null,
+      "stage":[
+        "傭兵団\nエレフセリア/追跡(神級)",
+        "傭兵団\nエレフセリア/追跡(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":114,
       "name":"マギエパンヌス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1977,9 +2482,11 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":115,
       "name":"ジェラシックハンニャ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -1994,9 +2501,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"-0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":116,
       "name":"ブラッディソード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2011,9 +2520,19 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":null,
       "crit":null,
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(上級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(神級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(神級+)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(超級)",
+        "聖剣の精霊/聖剣の精霊(上級)",
+        "聖剣の精霊/聖剣の精霊(超級)",
+        "聖剣の精霊/聖剣の精霊(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":117,
       "name":"[神器]ブレスドソード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2028,6 +2547,7 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.05",
+      "stage":[],
       "skill":{
         "name":"[アンヘル]プレイド・グリーフ",
         "number":null,
@@ -2066,6 +2586,7 @@ BgrLib.load({
       }
     },
     {
+      "id":118,
       "name":"君主の剣",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2080,9 +2601,11 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":"25",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":119,
       "name":"マッドシーカー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2097,9 +2620,15 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.2",
+      "stage":[
+        "洞窟探索任務/実地演習(上級)",
+        "洞窟探索任務/実地演習(超級)",
+        "洞窟探索任務/実地演習(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":120,
       "name":"桜花の簪",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2114,9 +2643,15 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"13",
       "crit":null,
+      "stage":[
+        "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(上級)",
+        "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(超級)",
+        "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":121,
       "name":"桜花ドレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2131,9 +2666,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "うららかな刺激を！/うららかな刺激を！(神級)",
+        "うららかな刺激を！/うららかな刺激を！(神級+)",
+        "すべては\n目標のために/借金返済の道(神級)",
+        "すべては\n目標のために/借金返済の道(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":122,
       "name":"桜花うちわ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2148,9 +2690,11 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.1",
+      "stage":[],
       "skill":null
     },
     {
+      "id":123,
       "name":"桜花傘",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2165,9 +2709,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "すべては\n目標のために/借金返済の道(上級)",
+        "すべては\n目標のために/借金返済の道(超級)",
+        "すべては\n目標のために/借金返済の道(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":124,
       "name":"桜花の杖",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2182,9 +2732,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"10",
       "crit":"0.06",
+      "stage":[],
       "skill":null
     },
     {
+      "id":125,
       "name":"騎士団見習い制服(下)",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2199,9 +2751,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":"20",
       "crit":"0.06",
+      "stage":[],
       "skill":null
     },
     {
+      "id":126,
       "name":"魔術師団見習い制服(下)",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2216,9 +2770,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":127,
       "name":"ブロッサムシールド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2233,9 +2789,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"35",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":128,
       "name":"パピヨンブローチ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2250,9 +2808,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":129,
       "name":"騎士団見習い制服(上)",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2267,9 +2827,11 @@ BgrLib.load({
       "spd_rate":"0",
       "move":"60",
       "crit":"0",
+      "stage":[],
       "skill":null
     },
     {
+      "id":130,
       "name":"魔術師団見習い制服(上)",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2284,9 +2846,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":131,
       "name":"バドハンド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2301,9 +2865,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "春の日和に、君と/夜店デートのために(上級)",
+        "春の日和に、君と/夜店デートのために(超級)",
+        "春の日和に、君と/夜店デートのために(超級+)",
+        "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(上級)",
+        "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(超級)",
+        "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":132,
       "name":"ソルセルフルール",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2318,9 +2891,16 @@ BgrLib.load({
       "spd_rate":"0.4",
       "move":null,
       "crit":"0.07",
+      "stage":[
+        "春の日和に、君と/夜店デートのために(神級)",
+        "春の日和に、君と/夜店デートのために(神級+)",
+        "春爛漫♡恋の装い/春爛漫♡恋の装い(神級)",
+        "春爛漫♡恋の装い/春爛漫♡恋の装い(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":133,
       "name":"ツアーチケット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2335,9 +2915,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":134,
       "name":"世界の駆け方",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2352,9 +2934,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.12",
+      "stage":[],
       "skill":null
     },
     {
+      "id":135,
       "name":"ニークリワンピ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2369,9 +2953,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[
+        "秘宝の噂を追って/秘宝の噂を追って(神級)",
+        "秘宝の噂を追って/秘宝の噂を追って(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":136,
       "name":"麦わら帽子",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2386,9 +2975,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "傭兵団の夏休み/サマータイムバカンス(上級)",
+        "傭兵団の夏休み/サマータイムバカンス(超級)",
+        "傭兵団の夏休み/サマータイムバカンス(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":137,
       "name":"ニークリウォーク",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2403,9 +2998,15 @@ BgrLib.load({
       "spd_rate":"2",
       "move":"60",
       "crit":"0.2",
+      "stage":[
+        "秘宝の噂を追って/秘宝の噂を追って(上級)",
+        "秘宝の噂を追って/秘宝の噂を追って(超級)",
+        "秘宝の噂を追って/秘宝の噂を追って(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":138,
       "name":"擬装・コイノボリ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2420,9 +3021,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":"0.01",
+      "stage":[
+        "小さな少女たち\nの冒険/追いかけっこ？(上級)",
+        "小さな少女たち\nの冒険/追いかけっこ？(超級)",
+        "小さな少女たち\nの冒険/追いかけっこ？(超級+)",
+        "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(神級)",
+        "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":139,
       "name":"アクアエレメンツ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2437,9 +3046,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":140,
       "name":"ラビちゃん",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2454,9 +3065,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":141,
       "name":"マジックバルーン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2471,9 +3084,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"-50",
       "crit":"0.08",
+      "stage":[],
       "skill":null
     },
     {
+      "id":142,
       "name":"アレット・スクラウド号",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2488,9 +3103,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "小さな少女たち\nの冒険/追いかけっこ？(神級)",
+        "小さな少女たち\nの冒険/追いかけっこ？(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":143,
       "name":"エビルビロウズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2505,9 +3125,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":"0.01",
+      "stage":[],
       "skill":null
     },
     {
+      "id":144,
       "name":"クラックボムズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2522,9 +3144,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"50",
       "crit":"0.1",
+      "stage":[],
       "skill":null
     },
     {
+      "id":145,
       "name":"ウェディングドレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2539,9 +3163,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "幼馴染な花嫁たち/次なる幸せの行方(神級)",
+        "幼馴染な花嫁たち/次なる幸せの行方(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":146,
       "name":"ウェディンググローブ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2556,9 +3185,15 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.1",
+      "stage":[
+        "幼馴染な花嫁たち/次なる幸せの行方(上級)",
+        "幼馴染な花嫁たち/次なる幸せの行方(超級)",
+        "幼馴染な花嫁たち/次なる幸せの行方(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":147,
       "name":"ブレスリング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2573,9 +3208,11 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":"10",
       "crit":"0.06",
+      "stage":[],
       "skill":null
     },
     {
+      "id":148,
       "name":"ブライダルシューズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2590,9 +3227,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":"100",
       "crit":"0.05",
+      "stage":[],
       "skill":null
     },
     {
+      "id":149,
       "name":"ブレッシングフロート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2607,9 +3246,18 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":"5",
       "crit":"0.09",
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(上級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(超級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(超級+)",
+        "団長主催・\n深夜の大パーティ/サンセットサマーハイ(上級)",
+        "団長主催・\n深夜の大パーティ/サンセットサマーハイ(超級)",
+        "団長主催・\n深夜の大パーティ/サンセットサマーハイ(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":150,
       "name":"バウンスビーチ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2624,9 +3272,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.1",
+      "stage":[],
       "skill":null
     },
     {
+      "id":151,
       "name":"ヴィーナスヒート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2641,9 +3291,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(神級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(神級+)",
+        "団長主催・\n深夜の大パーティ/サンセットサマーハイ(神級)",
+        "団長主催・\n深夜の大パーティ/サンセットサマーハイ(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":152,
       "name":"マーメイドスナッチ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2658,9 +3315,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
+      "stage":[
+        "傭兵団の夏休み/サマータイムバカンス(神級)",
+        "傭兵団の夏休み/サマータイムバカンス(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":153,
       "name":"スナドリゴテ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2675,9 +3337,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[
+        "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(上級)",
+        "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(超級)",
+        "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":154,
       "name":"ボーンフェイス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2692,9 +3360,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":155,
       "name":"ベルディアルの目玉",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2709,9 +3379,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":156,
       "name":"黄泉の装束",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2726,9 +3398,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[
+        "夏の夜空に\n咲く花々/お楽しみはこれから！(上級)",
+        "夏の夜空に\n咲く花々/お楽しみはこれから！(超級)",
+        "夏の夜空に\n咲く花々/お楽しみはこれから！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":157,
       "name":"化け提灯",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2743,9 +3421,11 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":"120",
       "crit":"0.01",
+      "stage":[],
       "skill":null
     },
     {
+      "id":158,
       "name":"セレンの鬼火",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2760,9 +3440,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.12",
+      "stage":[
+        "夏の夜空に\n咲く花々/お楽しみはこれから！(神級)",
+        "夏の夜空に\n咲く花々/お楽しみはこれから！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":159,
       "name":"オータムガーメント",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2777,9 +3462,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "お好みは\nどんな秋？/狂騒のお月見(上級)",
+        "お好みは\nどんな秋？/狂騒のお月見(超級)",
+        "お好みは\nどんな秋？/狂騒のお月見(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":160,
       "name":"グローアップエフェクト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2794,9 +3485,11 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":"20",
       "crit":"0.11",
+      "stage":[],
       "skill":null
     },
     {
+      "id":161,
       "name":"グレースリーフ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2811,9 +3504,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":162,
       "name":"バイタリティループ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2828,9 +3523,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "お好みは\nどんな秋？/狂騒のお月見(神級)",
+        "お好みは\nどんな秋？/狂騒のお月見(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":163,
       "name":"エレクトスフェイア",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2845,9 +3545,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.12",
+      "stage":[],
       "skill":null
     },
     {
+      "id":164,
       "name":"レイジオブパンプキン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2862,9 +3564,18 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":"10",
       "crit":"0.05",
+      "stage":[
+        "祭典の魔女/お祭り騒ぎは続く(上級)",
+        "祭典の魔女/お祭り騒ぎは続く(超級)",
+        "祭典の魔女/お祭り騒ぎは続く(超級+)",
+        "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(上級)",
+        "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(超級)",
+        "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":165,
       "name":"ノワールバンド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2879,9 +3590,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":166,
       "name":"ノワールドレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2896,9 +3609,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "祭典の魔女/お祭り騒ぎは続く(神級)",
+        "祭典の魔女/お祭り騒ぎは続く(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":167,
       "name":"闇夜のステッキ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2913,9 +3631,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[
+        "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(上級)",
+        "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(超級)",
+        "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":168,
       "name":"コンジュラーアピアランス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2930,9 +3654,14 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":null,
       "crit":null,
+      "stage":[
+        "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(神級)",
+        "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":169,
       "name":"クイーンオブコンジュラー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2947,9 +3676,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.1",
+      "stage":[
+        "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(神級)",
+        "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":170,
       "name":"モッフルハンズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2964,9 +3698,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
+      "stage":[
+        "おニューな衣装を求めて/おニューな衣装を求めて(上級)",
+        "おニューな衣装を求めて/おニューな衣装を求めて(超級)",
+        "おニューな衣装を求めて/おニューな衣装を求めて(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":171,
       "name":"モッフルウォーム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2981,9 +3721,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.1",
+      "stage":[
+        "ある初雪の日に/周囲の散策(神級)",
+        "ある初雪の日に/周囲の散策(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":172,
       "name":"モッフルトレッド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -2998,9 +3743,15 @@ BgrLib.load({
       "spd_rate":"1.5",
       "move":"-50",
       "crit":null,
+      "stage":[
+        "ある初雪の日に/周囲の散策(上級)",
+        "ある初雪の日に/周囲の散策(超級)",
+        "ある初雪の日に/周囲の散策(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":173,
       "name":"ジングルリン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3015,9 +3766,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"115",
       "crit":"-0.05",
+      "stage":[
+        "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(上級)",
+        "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(超級)",
+        "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(超級+)",
+        "聖夜のための\n準備祭/団長がサンタクロース！(上級)",
+        "聖夜のための\n準備祭/団長がサンタクロース！(超級)",
+        "聖夜のための\n準備祭/団長がサンタクロース！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":174,
       "name":"チェリーノーズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3032,9 +3792,14 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":null,
+      "stage":[
+        "聖夜のための\n準備祭/団長がサンタクロース！(神級)",
+        "聖夜のための\n準備祭/団長がサンタクロース！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":175,
       "name":"シュガープレート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3049,9 +3814,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"-60",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":176,
       "name":"暁天の白矢",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3066,9 +3833,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.09",
+      "stage":[],
       "skill":null
     },
     {
+      "id":177,
       "name":"暁闇の衣",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3083,9 +3852,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"90",
       "crit":"0.05",
+      "stage":[
+        "新たなる年を\n迎えに/新年の仕事始め(神級)",
+        "新たなる年を\n迎えに/新年の仕事始め(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":178,
       "name":"祈りの花紐",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3100,9 +3874,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
+      "stage":[
+        "新たなる年を\n迎えに/新年の仕事始め(上級)",
+        "新たなる年を\n迎えに/新年の仕事始め(超級)",
+        "新たなる年を\n迎えに/新年の仕事始め(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":179,
       "name":"キャッツスクラッチャー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3117,9 +3897,18 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":null,
       "crit":"0.19",
+      "stage":[
+        "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(上級)",
+        "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(超級)",
+        "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(超級+)",
+        "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(上級)",
+        "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(超級)",
+        "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":180,
       "name":"モータルロアー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3134,9 +3923,11 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":"-30",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":181,
       "name":"ヒプノスマスク",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3151,9 +3942,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"80",
       "crit":"0.05",
+      "stage":[
+        "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(神級)",
+        "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":182,
       "name":"ビブウィズラブ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3168,9 +3964,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(上級)",
+        "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(超級)",
+        "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":183,
       "name":"キューティーナップ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3185,9 +3987,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(神級)",
+        "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":184,
       "name":"メルティーチュウ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3202,9 +4009,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":185,
       "name":"情熱のダーツ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3219,9 +4028,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"90",
       "crit":"0.12",
+      "stage":[],
       "skill":null
     },
     {
+      "id":186,
       "name":"ロイヤルシルバーナイフ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3236,9 +4047,15 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "傭兵団カフェへ\nようこそ/団長からの返礼(上級)",
+        "傭兵団カフェへ\nようこそ/団長からの返礼(超級)",
+        "傭兵団カフェへ\nようこそ/団長からの返礼(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":187,
       "name":"フルライトリング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3253,9 +4070,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "傭兵団カフェへ\nようこそ/団長からの返礼(神級)",
+        "傭兵団カフェへ\nようこそ/団長からの返礼(神級+)",
+        "愛しき人の好みに染まる/愛しき人の好みに染まる(神級)",
+        "愛しき人の好みに染まる/愛しき人の好みに染まる(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":188,
       "name":"シルバーディッシュ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3270,9 +4094,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":"0.03",
+      "stage":[],
       "skill":null
     },
     {
+      "id":189,
       "name":"レブルシエンティア",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3287,9 +4113,18 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.04",
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(上級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(超級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(超級+)",
+        "失われし魔術/失われし魔術(上級)",
+        "失われし魔術/失われし魔術(超級)",
+        "失われし魔術/失われし魔術(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":190,
       "name":"エンシェントルーン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3304,9 +4139,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(神級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(神級+)",
+        "失われし魔術/失われし魔術(神級)",
+        "失われし魔術/失われし魔術(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":191,
       "name":"八重咲ドレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3321,9 +4163,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[
+        "美しく咲く花の\n下で/花筏の合戦(上級)",
+        "美しく咲く花の\n下で/花筏の合戦(超級)",
+        "美しく咲く花の\n下で/花筏の合戦(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":192,
       "name":"フライトフラワー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3338,9 +4186,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"100",
       "crit":"0.1",
+      "stage":[],
       "skill":null
     },
     {
+      "id":193,
       "name":"ラブチェックブラウス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3355,9 +4205,15 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":"0.05",
+      "stage":[
+        "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(上級)",
+        "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(超級)",
+        "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":194,
       "name":"ペティチャーム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3372,9 +4228,14 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(神級)",
+        "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":195,
       "name":"チャップベレー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3389,9 +4250,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.1",
+      "stage":[],
       "skill":null
     },
     {
+      "id":196,
       "name":"東方鉄器",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3406,9 +4269,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":197,
       "name":"約束のクロス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3423,9 +4288,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.19",
+      "stage":[
+        "パーティは\n花嫁たちと/踏み出せ乙女パワー！(上級)",
+        "パーティは\n花嫁たちと/踏み出せ乙女パワー！(超級)",
+        "パーティは\n花嫁たちと/踏み出せ乙女パワー！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":198,
       "name":"祝ロングケーキランス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3440,9 +4311,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
+      "stage":[
+        "パーティは\n花嫁たちと/踏み出せ乙女パワー！(神級)",
+        "パーティは\n花嫁たちと/踏み出せ乙女パワー！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":199,
       "name":"ウェディングヴェール",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3457,9 +4333,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
+      "stage":[],
       "skill":null
     },
     {
+      "id":200,
       "name":"シャイニィオーシャン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3474,9 +4352,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":"0.04",
+      "stage":[
+        "灼熱の祭典・前/サンシャインオンタイム(上級)",
+        "灼熱の祭典・前/サンシャインオンタイム(超級)",
+        "灼熱の祭典・前/サンシャインオンタイム(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":201,
       "name":"ビーナスインビテーション",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3491,9 +4375,16 @@ BgrLib.load({
       "spd_rate":"3.2",
       "move":null,
       "crit":null,
+      "stage":[
+        "灼熱の祭典・前/サンシャインオンタイム(神級)",
+        "灼熱の祭典・前/サンシャインオンタイム(神級+)",
+        "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(神級)",
+        "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":202,
       "name":"秘密兵器：DOLPHINA",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3508,9 +4399,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"200",
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":203,
       "name":"ロード・オブ・オーシャン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3525,9 +4418,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"20",
       "crit":"0.02",
+      "stage":[
+        "灼熱の祭典・後/カクテルオンザビーチ(上級)",
+        "灼熱の祭典・後/カクテルオンザビーチ(超級)",
+        "灼熱の祭典・後/カクテルオンザビーチ(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":204,
       "name":"マリスドランジュ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3542,9 +4441,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "灼熱の祭典・後/カクテルオンザビーチ(神級)",
+        "灼熱の祭典・後/カクテルオンザビーチ(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":205,
       "name":"サンドバケット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3559,9 +4463,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":206,
       "name":"鳥羽独歩",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3576,9 +4482,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"100",
       "crit":"0.09",
+      "stage":[
+        "大輪はいずこから\n咲く？/祭の思い出(上級)",
+        "大輪はいずこから\n咲く？/祭の思い出(超級)",
+        "大輪はいずこから\n咲く？/祭の思い出(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":207,
       "name":"紫陽月草",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3593,9 +4505,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[
+        "大輪はいずこから\n咲く？/祭の思い出(神級)",
+        "大輪はいずこから\n咲く？/祭の思い出(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":208,
       "name":"華焔連装砲",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3610,9 +4527,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":209,
       "name":"フトゥーロブリス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3627,9 +4546,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(上級)",
+        "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(神級)",
+        "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(神級+)",
+        "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(超級)",
+        "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":210,
       "name":"ラヴィエパティシア",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3644,9 +4571,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "おニューな衣装を求めて/おニューな衣装を求めて(神級)",
+        "おニューな衣装を求めて/おニューな衣装を求めて(神級+)",
+        "初夏の日差しを浴びて/初夏の日差しを浴びて(上級)",
+        "初夏の日差しを浴びて/初夏の日差しを浴びて(超級)",
+        "初夏の日差しを浴びて/初夏の日差しを浴びて(超級+)",
+        "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(上級)",
+        "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(超級)",
+        "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":211,
       "name":"ブリオッシュバタイユ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3661,9 +4599,14 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.2",
+      "stage":[
+        "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(神級)",
+        "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":212,
       "name":"ドュースメイユール",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3678,9 +4621,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":213,
       "name":"約束のアミークス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3695,9 +4640,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(神級)",
+        "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":214,
       "name":"ギャストリーブック",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3712,9 +4662,11 @@ BgrLib.load({
       "spd_rate":"2.2",
       "move":null,
       "crit":"0.14",
+      "stage":[],
       "skill":null
     },
     {
+      "id":215,
       "name":"ノイジーイレーズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3729,9 +4681,18 @@ BgrLib.load({
       "spd_rate":"0.48",
       "move":"40",
       "crit":"0.11",
+      "stage":[
+        "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(上級)",
+        "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(超級)",
+        "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(超級+)",
+        "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(上級)",
+        "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(超級)",
+        "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":216,
       "name":"プリテンドゴースト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3746,9 +4707,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[
+        "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(神級)",
+        "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":217,
       "name":"モフリアムブーツ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3763,9 +4729,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.13",
+      "stage":[],
       "skill":null
     },
     {
+      "id":218,
       "name":"クリッターグラッジ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3780,9 +4748,15 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.05",
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(上級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(超級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":219,
       "name":"モフリアムスプリーム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3797,9 +4771,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(神級)",
+        "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(神級+)",
+        "おニューな衣装を求めて②/おニューな衣装を求めて(神級)",
+        "おニューな衣装を求めて②/おニューな衣装を求めて(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":220,
       "name":"グラースマジーア",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3814,9 +4795,15 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":"0.04",
+      "stage":[
+        "傭兵団の大合宿/極寒！雪山！サバイバル！(上級)",
+        "傭兵団の大合宿/極寒！雪山！サバイバル！(超級)",
+        "傭兵団の大合宿/極寒！雪山！サバイバル！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":221,
       "name":"グラースイリュジオン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3831,9 +4818,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "傭兵団の大合宿/極寒！雪山！サバイバル！(神級)",
+        "傭兵団の大合宿/極寒！雪山！サバイバル！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":222,
       "name":"グラースシャルム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3848,9 +4840,11 @@ BgrLib.load({
       "spd_rate":"1.9",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":223,
       "name":"セオリカステンプラー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3865,9 +4859,11 @@ BgrLib.load({
       "spd_rate":"1.9",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":224,
       "name":"ベラトールアミュレット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3882,9 +4878,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-20",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":225,
       "name":"イーグルウィンド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3899,9 +4897,14 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "聖剣の精霊/聖剣の精霊(神級)",
+        "聖剣の精霊/聖剣の精霊(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":226,
       "name":"祝福のシャルドレン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3916,9 +4919,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":227,
       "name":"ワルツァゴスペラ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3933,9 +4938,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"120",
       "crit":"0.08",
+      "stage":[],
       "skill":null
     },
     {
+      "id":228,
       "name":"サイレントバイト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3950,9 +4957,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"15",
       "crit":"0.02",
+      "stage":[
+        "聖なる夜に降\nる祝福/聖夜の大泥棒？(上級)",
+        "聖なる夜に降\nる祝福/聖夜の大泥棒？(超級)",
+        "聖なる夜に降\nる祝福/聖夜の大泥棒？(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":229,
       "name":"ハートビーター",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3967,9 +4980,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "聖なる夜に降\nる祝福/聖夜の大泥棒？(神級)",
+        "聖なる夜に降\nる祝福/聖夜の大泥棒？(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":230,
       "name":"ノーミンズノー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -3984,9 +5002,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":"0.1",
+      "stage":[],
       "skill":null
     },
     {
+      "id":231,
       "name":"トキメキメルター",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4001,9 +5021,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "年越しは\nバニーと共に/幸運を掴むために(上級)",
+        "年越しは\nバニーと共に/幸運を掴むために(超級)",
+        "年越しは\nバニーと共に/幸運を掴むために(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":232,
       "name":"エンプティレーヴ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4018,9 +5044,18 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "初夏の日差しを浴びて/初夏の日差しを浴びて(神級)",
+        "初夏の日差しを浴びて/初夏の日差しを浴びて(神級+)",
+        "年越しは\nバニーと共に/幸運を掴むために(神級)",
+        "年越しは\nバニーと共に/幸運を掴むために(神級+)",
+        "神官様のお忍び勝負服！/神官様のお忍び勝負服！(神級)",
+        "神官様のお忍び勝負服！/神官様のお忍び勝負服！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":233,
       "name":"クロースコラーゾン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4035,9 +5070,11 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.19",
+      "stage":[],
       "skill":null
     },
     {
+      "id":234,
       "name":"スレーブミトラ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4052,9 +5089,21 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "うららかな刺激を！/うららかな刺激を！(上級)",
+        "うららかな刺激を！/うららかな刺激を！(超級)",
+        "うららかな刺激を！/うららかな刺激を！(超級+)",
+        "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(上級)",
+        "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(超級)",
+        "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(超級+)",
+        "春風舞うひと時/春風舞うひと時(神級)",
+        "春風舞うひと時/春風舞うひと時(神級+)",
+        "春風舞うひと時/春風舞うひと時(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":235,
       "name":"キュンとミラージュ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4069,9 +5118,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.03",
+      "stage":[
+        "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(神級)",
+        "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":236,
       "name":"ローリエコルペット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4086,9 +5140,17 @@ BgrLib.load({
       "spd_rate":"2.2",
       "move":null,
       "crit":"0.12",
+      "stage":[
+        "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(上級)",
+        "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(神級)",
+        "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(神級+)",
+        "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(超級)",
+        "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":237,
       "name":"ディープアーモル",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4103,9 +5165,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "運命の日は\n誰の手に/続・お菓子対決(神級)",
+        "運命の日は\n誰の手に/続・お菓子対決(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":238,
       "name":"ソリティアーテ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4120,9 +5187,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-90",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":239,
       "name":"フアンペネトレート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4137,9 +5206,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"10",
       "crit":"0.03",
+      "stage":[
+        "小さな恋の\nらいばる！/告白チャンスは誰の手に？(上級)",
+        "小さな恋の\nらいばる！/告白チャンスは誰の手に？(超級)",
+        "小さな恋の\nらいばる！/告白チャンスは誰の手に？(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":240,
       "name":"ティアラモード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4154,9 +5229,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(神級)",
+        "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(神級+)",
+        "小さな恋の\nらいばる！/告白チャンスは誰の手に？(神級)",
+        "小さな恋の\nらいばる！/告白チャンスは誰の手に？(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":241,
       "name":"アメガン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4171,9 +5253,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.06",
+      "stage":[],
       "skill":null
     },
     {
+      "id":242,
       "name":"クアンテナシオ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4188,9 +5272,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "お返しは白き秘宝/白き日も少女達の戦場(上級)",
+        "お返しは白き秘宝/白き日も少女達の戦場(超級)",
+        "お返しは白き秘宝/白き日も少女達の戦場(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":243,
       "name":"アルヴァビーター",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4205,9 +5295,14 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "お返しは白き秘宝/白き日も少女達の戦場(神級)",
+        "お返しは白き秘宝/白き日も少女達の戦場(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":244,
       "name":"ウェルテクスラミナ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4222,9 +5317,11 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":null,
       "crit":"0.14",
+      "stage":[],
       "skill":null
     },
     {
+      "id":245,
       "name":"ラメールアビテ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4239,9 +5336,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[
+        "春爛漫♡恋の装い/春爛漫♡恋の装い(上級)",
+        "春爛漫♡恋の装い/春爛漫♡恋の装い(超級)",
+        "春爛漫♡恋の装い/春爛漫♡恋の装い(超級+)",
+        "秘宝の噂を追って/Re：秘宝の噂を追って(上級)",
+        "秘宝の噂を追って/Re：秘宝の噂を追って(超級)",
+        "秘宝の噂を追って/Re：秘宝の噂を追って(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":246,
       "name":"ニゲルレベリオ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4256,9 +5362,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.21",
+      "stage":[
+        "秘宝の噂を追って/Re：秘宝の噂を追って(神級)",
+        "秘宝の噂を追って/Re：秘宝の噂を追って(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":247,
       "name":"オーガスクーラ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4273,9 +5384,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"15",
       "crit":"0.06",
+      "stage":[
+        "まぼろしの\nチップ運命戦/表は花、裏は蛇(上級)",
+        "まぼろしの\nチップ運命戦/表は花、裏は蛇(神級)",
+        "まぼろしの\nチップ運命戦/表は花、裏は蛇(神級+)",
+        "まぼろしの\nチップ運命戦/表は花、裏は蛇(超級)",
+        "まぼろしの\nチップ運命戦/表は花、裏は蛇(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":248,
       "name":"学級日誌",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4290,9 +5409,11 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.07",
+      "stage":[],
       "skill":null
     },
     {
+      "id":249,
       "name":"アブソリューヴェン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4307,9 +5428,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "潜入先は名門学園/校舎裏の覇権争い(上級)",
+        "潜入先は名門学園/校舎裏の覇権争い(超級)",
+        "潜入先は名門学園/校舎裏の覇権争い(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":250,
       "name":"カーディガン(指定)",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4324,9 +5451,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "潜入先は名門学園/校舎裏の覇権争い(神級)",
+        "潜入先は名門学園/校舎裏の覇権争い(神級+)",
+        "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(神級)",
+        "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":251,
       "name":"バタフライルミナ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4341,9 +5475,17 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.15",
+      "stage":[
+        "不思議なバトン捜索戦/似た者同士の四人(上級)",
+        "不思議なバトン捜索戦/似た者同士の四人(神級)",
+        "不思議なバトン捜索戦/似た者同士の四人(神級+)",
+        "不思議なバトン捜索戦/似た者同士の四人(超級)",
+        "不思議なバトン捜索戦/似た者同士の四人(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":252,
       "name":"ニャンバレット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4358,9 +5500,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":253,
       "name":"ヴェリテミロワール",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4375,9 +5519,15 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.05",
+      "stage":[
+        "小さな少女たちの楽園/たんていさんごっこ(上級)",
+        "小さな少女たちの楽園/たんていさんごっこ(超級)",
+        "小さな少女たちの楽園/たんていさんごっこ(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":254,
       "name":"モッフルグッスリン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4392,9 +5542,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "小さな少女たちの楽園/たんていさんごっこ(神級)",
+        "小さな少女たちの楽園/たんていさんごっこ(神級+)",
+        "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(神級)",
+        "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":255,
       "name":"ベルフェーレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4409,9 +5566,15 @@ BgrLib.load({
       "spd_rate":"3.2",
       "move":null,
       "crit":null,
+      "stage":[
+        "神官様のお忍び勝負服！/神官様のお忍び勝負服！(上級)",
+        "神官様のお忍び勝負服！/神官様のお忍び勝負服！(超級)",
+        "神官様のお忍び勝負服！/神官様のお忍び勝負服！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":256,
       "name":"エヴァーラプレス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4426,9 +5589,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(神級)",
+        "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":257,
       "name":"オラトレイアム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4443,9 +5611,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"5",
       "crit":"0.03",
+      "stage":[
+        "一番になりたくて/幸せ運ぶ鐘(上級)",
+        "一番になりたくて/幸せ運ぶ鐘(超級)",
+        "一番になりたくて/幸せ運ぶ鐘(超級+)",
+        "春風舞うひと時/春風舞うひと時(上級)",
+        "春風舞うひと時/春風舞うひと時(超級)"
+      ],
       "skill":null
     },
     {
+      "id":258,
       "name":"リシュプリテンダー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4460,9 +5636,14 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "一番になりたくて/幸せ運ぶ鐘(神級)",
+        "一番になりたくて/幸せ運ぶ鐘(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":259,
       "name":"パラグアスプエラ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4477,9 +5658,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
+      "stage":[
+        "花嫁アフター回収戦/新郎新婦のいない式場(上級)",
+        "花嫁アフター回収戦/新郎新婦のいない式場(神級)",
+        "花嫁アフター回収戦/新郎新婦のいない式場(神級+)",
+        "花嫁アフター回収戦/新郎新婦のいない式場(超級)",
+        "花嫁アフター回収戦/新郎新婦のいない式場(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":260,
       "name":"サーフシュリンカー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4494,9 +5683,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":261,
       "name":"マッシュペンデュラム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4511,9 +5702,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"10",
       "crit":"0.02",
+      "stage":[
+        "船上彩る真夏の花々/みんなで大航海！(上級)",
+        "船上彩る真夏の花々/みんなで大航海！(超級)",
+        "船上彩る真夏の花々/みんなで大航海！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":262,
       "name":"ブレイジング・ナイト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4528,9 +5725,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "船上彩る真夏の花々/みんなで大航海！(神級)",
+        "船上彩る真夏の花々/みんなで大航海！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":263,
       "name":"トールバン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4545,9 +5747,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":264,
       "name":"オルビストゥキス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4562,9 +5766,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
+      "stage":[
+        "熱き浜辺で身を焦がし/招かれざる海の客人(上級)",
+        "熱き浜辺で身を焦がし/招かれざる海の客人(超級)",
+        "熱き浜辺で身を焦がし/招かれざる海の客人(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":265,
       "name":"レディバルディッシュ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4579,9 +5789,16 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "春の陽気に\n誘われて/春の陽気に誘われて(神級)",
+        "春の陽気に\n誘われて/春の陽気に誘われて(神級+)",
+        "熱き浜辺で身を焦がし/招かれざる海の客人(神級)",
+        "熱き浜辺で身を焦がし/招かれざる海の客人(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":266,
       "name":"蒼月光",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4596,9 +5813,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.14",
+      "stage":[],
       "skill":null
     },
     {
+      "id":267,
       "name":"妖狐憑依",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4613,9 +5832,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "激突！\n秋の大体育祭/体育祭STAGE4",
+        "祭り囃子と華やぐ光/夜空に咲く華と共に(上級)",
+        "祭り囃子と華やぐ光/夜空に咲く華と共に(超級)",
+        "祭り囃子と華やぐ光/夜空に咲く華と共に(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":268,
       "name":"紅斬鉄",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4630,9 +5856,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"10",
       "crit":"0.04",
+      "stage":[
+        "祭り囃子と華やぐ光/夜空に咲く華と共に(神級)",
+        "祭り囃子と華やぐ光/夜空に咲く華と共に(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":269,
       "name":"プリームスフロース",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4647,9 +5878,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "夏のピリオド拾集戦/種が花開くのは誰？(上級)",
+        "夏のピリオド拾集戦/種が花開くのは誰？(神級)",
+        "夏のピリオド拾集戦/種が花開くのは誰？(神級+)",
+        "夏のピリオド拾集戦/種が花開くのは誰？(超級)",
+        "夏のピリオド拾集戦/種が花開くのは誰？(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":270,
       "name":"ヴィクトリーガデス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4664,9 +5903,11 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":"60",
       "crit":"0.21",
+      "stage":[],
       "skill":null
     },
     {
+      "id":271,
       "name":"ブレンネンロート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4681,9 +5922,19 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.08",
+      "stage":[
+        "春の陽気に\n誘われて/春の陽気に誘われて(上級)",
+        "春の陽気に\n誘われて/春の陽気に誘われて(超級)",
+        "春の陽気に\n誘われて/春の陽気に誘われて(超級+)",
+        "激突！\n秋の大体育祭/激闘の果てに(上級)",
+        "激突！\n秋の大体育祭/激闘の果てに(超級)",
+        "激突！\n秋の大体育祭/激闘の果てに(超級+)",
+        "激突！\n秋の大体育祭/規格外の助っ人"
+      ],
       "skill":null
     },
     {
+      "id":272,
       "name":"フォルスブランシュ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4698,9 +5949,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[
+        "激突！\n秋の大体育祭/激闘の果てに(神級)",
+        "激突！\n秋の大体育祭/激闘の果てに(神級+)",
+        "激突！\n秋の大体育祭/煌白の体操着",
+        "激突！\n秋の大体育祭/苛烈な応援娘"
+      ],
       "skill":null
     },
     {
+      "id":273,
       "name":"ベツァオバーントドミナ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4715,9 +5973,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":274,
       "name":"ファンタスマカンビオ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4732,9 +5992,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":275,
       "name":"ファンタブルーム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4749,9 +6011,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
+      "stage":[
+        "夢と光のまほろば/リトルデビルの大暴走(上級)",
+        "夢と光のまほろば/リトルデビルの大暴走(超級)",
+        "夢と光のまほろば/リトルデビルの大暴走(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":276,
       "name":"インフェルノジャニター",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4766,9 +6034,14 @@ BgrLib.load({
       "spd_rate":"2.5",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "夢と光のまほろば/リトルデビルの大暴走(神級)",
+        "夢と光のまほろば/リトルデビルの大暴走(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":277,
       "name":"ケロンコリニスト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4783,9 +6056,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "涼宮ハルヒの来訪/冒険でしょでしょ？(上級)",
+        "涼宮ハルヒの来訪/冒険でしょでしょ？(超級)",
+        "涼宮ハルヒの来訪/冒険でしょでしょ？(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":278,
       "name":"ミスフルスウィング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4800,9 +6079,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"5",
       "crit":"0.02",
+      "stage":[
+        "涼宮ハルヒの来訪/冒険でしょでしょ？(神級)",
+        "涼宮ハルヒの来訪/冒険でしょでしょ？(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":279,
       "name":"コンパッションシャポー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4817,9 +6101,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":280,
       "name":"ボンデージドール",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4834,9 +6120,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
+      "stage":[
+        "白衣の天使たち/発熱☆検温タイム！",
+        "白衣の天使たち/診療所ではお静かに！(上級)",
+        "白衣の天使たち/診療所ではお静かに！(超級)",
+        "白衣の天使たち/診療所ではお静かに！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":281,
       "name":"ラドラーウィップ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4851,9 +6144,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "白衣の天使たち/快感☆病みつきお注射！",
+        "白衣の天使たち/診療所ではお静かに！(神級)",
+        "白衣の天使たち/診療所ではお静かに！(神級+)",
+        "白衣の天使たち/零キョリ☆密着・聴診！"
+      ],
       "skill":null
     },
     {
+      "id":282,
       "name":"リベールランス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4868,9 +6168,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":283,
       "name":"サリュートボム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4885,9 +6187,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.03",
+      "stage":[
+        "聖夜の前の一仕事/ツリー・モンスター(上級)",
+        "聖夜の前の一仕事/ツリー・モンスター(超級)",
+        "聖夜の前の一仕事/ツリー・モンスター(超級+)",
+        "聖夜の前の一仕事/御馳走の前から動かぬ者"
+      ],
       "skill":null
     },
     {
+      "id":284,
       "name":"ジングルニャット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4902,9 +6211,16 @@ BgrLib.load({
       "spd_rate":"2.4",
       "move":null,
       "crit":"0.15",
+      "stage":[
+        "聖夜の前の一仕事/ツリー・モンスター(神級)",
+        "聖夜の前の一仕事/ツリー・モンスター(神級+)",
+        "聖夜の前の一仕事/パーティーの主催者",
+        "聖夜の前の一仕事/熱い視線を鑑定する者"
+      ],
       "skill":null
     },
     {
+      "id":285,
       "name":"ダリスヒルト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4919,9 +6235,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":286,
       "name":"セルブクロウ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4936,9 +6254,15 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "年明けは\n福の宿りし旅館で/お正月の食材求めて(上級)",
+        "年明けは\n福の宿りし旅館で/お正月の食材求めて(超級)",
+        "年明けは\n福の宿りし旅館で/お正月の食材求めて(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":287,
       "name":"モザイクバニッシャー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4953,9 +6277,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "年明けは\n福の宿りし旅館で/お正月の食材求めて(神級)",
+        "年明けは\n福の宿りし旅館で/お正月の食材求めて(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":288,
       "name":"聖杖・ヒビキ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4970,9 +6299,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":289,
       "name":"ヤクナギ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -4987,9 +6318,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "欲に素直な年明けの宴/巫女さんの精神修行(上級)",
+        "欲に素直な年明けの宴/巫女さんの精神修行(超級)",
+        "欲に素直な年明けの宴/巫女さんの精神修行(超級+)",
+        "欲に素直な年明けの宴/心地良き悪態！寝起きの昼寝娘！"
+      ],
       "skill":null
     },
     {
+      "id":290,
       "name":"絶対撃滅ディッパー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5004,9 +6342,16 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "欲に素直な年明けの宴/圧倒的重量感！ぷるんぷるん姉妹！",
+        "欲に素直な年明けの宴/巫女さんの精神修行(神級)",
+        "欲に素直な年明けの宴/巫女さんの精神修行(神級+)",
+        "欲に素直な年明けの宴/茶菓子で誘惑！兄様大好き天然娘！"
+      ],
       "skill":null
     },
     {
+      "id":291,
       "name":"疑似エルフィム耳",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5021,9 +6366,11 @@ BgrLib.load({
       "spd_rate":"2.4",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":292,
       "name":"パティスアーチ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5038,9 +6385,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":293,
       "name":"歴戦型クックガーター",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5055,9 +6404,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
+      "stage":[
+        "乙女の\nバレンタイン講座/恋愛プロショコラ：ウブな味",
+        "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(上級)",
+        "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(超級)",
+        "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":294,
       "name":"バスター・ド・ショコラ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5072,9 +6428,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "乙女の\nバレンタイン講座/御奉仕ショコラ：躾の味",
+        "乙女の\nバレンタイン講座/思い出ショコラ：幼馴染の味",
+        "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(神級)",
+        "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":295,
       "name":"ミルソリッド",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5089,9 +6452,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":296,
       "name":"取締用ビリダート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5106,9 +6471,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
+      "stage":[
+        "行進、お兄ちゃん憲兵隊！/「お兄ちゃん」おませな妹編",
+        "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(上級)",
+        "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(超級)",
+        "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":297,
       "name":"デスワップカフ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5123,9 +6495,16 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "行進、お兄ちゃん憲兵隊！/「おにぃちゃん……」囁く妹編",
+        "行進、お兄ちゃん憲兵隊！/「兄さん！」少し厳しめな妹編",
+        "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(神級)",
+        "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":298,
       "name":"ブラッキンイレイザー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5140,9 +6519,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-95",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":299,
       "name":"教育的志刀",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5157,9 +6538,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "奇妙な噂の溢れし学び舎/秘密の清掃イベント(上級)",
+        "奇妙な噂の溢れし学び舎/秘密の清掃イベント(超級)",
+        "奇妙な噂の溢れし学び舎/秘密の清掃イベント(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":300,
       "name":"ディマイスメジャー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5174,9 +6561,14 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.19",
+      "stage":[
+        "奇妙な噂の溢れし学び舎/秘密の清掃イベント(神級)",
+        "奇妙な噂の溢れし学び舎/秘密の清掃イベント(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":301,
       "name":"もふもふアリシーナ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5191,9 +6583,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":302,
       "name":"スモフロ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5208,9 +6602,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "ちっちゃな笑顔たちの祭典/保護欲MAX泣き虫ちゃん",
+        "ちっちゃな笑顔たちの祭典/迷子警報発令中(上級)",
+        "ちっちゃな笑顔たちの祭典/迷子警報発令中(超級)",
+        "ちっちゃな笑顔たちの祭典/迷子警報発令中(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":303,
       "name":"えっくすかりばあ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5225,9 +6626,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "ちっちゃな笑顔たちの祭典/ちっちゃくても大きいおませちゃん",
+        "ちっちゃな笑顔たちの祭典/気分は姫様ケモミミちゃん",
+        "ちっちゃな笑顔たちの祭典/迷子警報発令中(神級)",
+        "ちっちゃな笑顔たちの祭典/迷子警報発令中(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":304,
       "name":"マリアージュレガン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5242,9 +6650,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-85",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":305,
       "name":"コムネージュパニエ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5259,9 +6669,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "祝福と誓い\nのかたち/ナイショな結婚式(上級)",
+        "祝福と誓い\nのかたち/ナイショな結婚式(超級)",
+        "祝福と誓い\nのかたち/ナイショな結婚式(超級+)",
+        "祝福と誓い\nのかたち/ヤキモチ焼きな花嫁さん"
+      ],
       "skill":null
     },
     {
+      "id":306,
       "name":"レモリアバレッタ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5276,9 +6693,16 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "祝福と誓い\nのかたち/ぶりっ子歌姫な花嫁さん",
+        "祝福と誓い\nのかたち/ナイショな結婚式(神級)",
+        "祝福と誓い\nのかたち/ナイショな結婚式(神級+)",
+        "祝福と誓い\nのかたち/謙虚で聖女な花嫁さん"
+      ],
       "skill":null
     },
     {
+      "id":307,
       "name":"グラスパルセーナ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5293,9 +6717,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":308,
       "name":"ヴェンティルドール",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5310,9 +6736,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
+      "stage":[
+        "さざ波聴こえる海のお屋敷/ビーチサイドの小悪魔様",
+        "さざ波聴こえる海のお屋敷/港街バカンス(上級)",
+        "さざ波聴こえる海のお屋敷/港街バカンス(超級)",
+        "さざ波聴こえる海のお屋敷/港街バカンス(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":309,
       "name":"バルクぺスカ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5327,9 +6760,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "さざ波聴こえる海のお屋敷/浜辺に咲く高嶺の花",
+        "さざ波聴こえる海のお屋敷/港街のセレブリティ",
+        "さざ波聴こえる海のお屋敷/港街バカンス(神級)",
+        "さざ波聴こえる海のお屋敷/港街バカンス(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":310,
       "name":"シャンガルヴィーツ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5344,9 +6784,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":311,
       "name":"ペルテーネリエ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5361,9 +6803,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "夏空きらめく海の思い出/ここからが夏本番！(上級)",
+        "夏空きらめく海の思い出/ここからが夏本番！(超級)",
+        "夏空きらめく海の思い出/ここからが夏本番！(超級+)",
+        "夏空きらめく海の思い出/夏を謳歌する天然スマイル"
+      ],
       "skill":null
     },
     {
+      "id":312,
       "name":"アドミューシオン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5378,9 +6827,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "夏空きらめく海の思い出/ここからが夏本番！(神級)",
+        "夏空きらめく海の思い出/ここからが夏本番！(神級+)",
+        "夏空きらめく海の思い出/夏にも負けない陽気な笑顔",
+        "夏空きらめく海の思い出/夏を制する不適な微笑み"
+      ],
       "skill":null
     },
     {
+      "id":313,
       "name":"白狐の装身具",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5395,9 +6851,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":314,
       "name":"涼魚摂金",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5412,9 +6870,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "灯りと思いの\n流れる夏の夜/　祭で奮闘するシャイな乙女",
+        "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(上級)",
+        "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(超級)",
+        "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":315,
       "name":"カラマリスレイヤー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5429,9 +6894,16 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
+      "stage":[
+        "灯りと思いの\n流れる夏の夜/　祭に心躍る恋深き乙女",
+        "灯りと思いの\n流れる夏の夜/　祭に高揚する純な乙女",
+        "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(神級)",
+        "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":316,
       "name":"花蝶待宵",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5446,9 +6918,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":317,
       "name":"月神羽衣",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5463,9 +6937,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"45",
       "crit":null,
+      "stage":[
+        "中秋の名月にいたずらを/お月見よりもイタズラを！",
+        "中秋の名月にいたずらを/月が照らす静かな街で(上級)",
+        "中秋の名月にいたずらを/月が照らす静かな街で(超級)",
+        "中秋の名月にいたずらを/月が照らす静かな街で(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":318,
       "name":"芒ノ剣",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5480,9 +6961,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.12",
+      "stage":[
+        "中秋の名月にいたずらを/たまには甘～いひと時を！",
+        "中秋の名月にいたずらを/月が照らす静かな街で(神級)",
+        "中秋の名月にいたずらを/月が照らす静かな街で(神級+)",
+        "中秋の名月にいたずらを/紅葉よりも赤い血を！"
+      ],
       "skill":null
     },
     {
+      "id":319,
       "name":"モフカルラクン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5497,9 +6985,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":320,
       "name":"コウカラメッラ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5514,9 +7004,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[
+        "饗宴が見せる夢/叫声止まぬ戦慄の一夜(上級)",
+        "饗宴が見せる夢/叫声止まぬ戦慄の一夜(超級)",
+        "饗宴が見せる夢/叫声止まぬ戦慄の一夜(超級+)",
+        "饗宴が見せる夢/気まぐれキャット"
+      ],
       "skill":null
     },
     {
+      "id":321,
       "name":"サングエファヴォレ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5531,9 +7028,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "饗宴が見せる夢/叫声止まぬ戦慄の一夜(神級)",
+        "饗宴が見せる夢/叫声止まぬ戦慄の一夜(神級+)",
+        "饗宴が見せる夢/暴れん坊ジャック",
+        "饗宴が見せる夢/淑やかキョンシー"
+      ],
       "skill":null
     },
     {
+      "id":322,
       "name":"エスプリラピヌ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5548,9 +7052,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.14",
+      "stage":[],
       "skill":null
     },
     {
+      "id":323,
       "name":"シュネーミーツェ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5565,9 +7071,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "雪降る街で\n交わした約束/寒い時こそ熱い接客",
+        "雪降る街で\n交わした約束/寒月照らす雪国調査(上級)",
+        "雪降る街で\n交わした約束/寒月照らす雪国調査(超級)",
+        "雪降る街で\n交わした約束/寒月照らす雪国調査(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":324,
       "name":"グラセエーペ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5582,9 +7095,16 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
+      "stage":[
+        "雪降る街で\n交わした約束/寒中ならではの恋の戦法",
+        "雪降る街で\n交わした約束/寒月照らす雪国調査(神級)",
+        "雪降る街で\n交わした約束/寒月照らす雪国調査(神級+)",
+        "雪降る街で\n交わした約束/極寒の秘境への探求心"
+      ],
       "skill":null
     },
     {
+      "id":325,
       "name":"ベヴァンダ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5599,9 +7119,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":326,
       "name":"ビテルジューズ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5616,9 +7138,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.12",
+      "stage":[
+        "聖夜へ向けての\n大騒ぎ/プレゼントは甘いお菓子を",
+        "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(上級)",
+        "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(超級)",
+        "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":327,
       "name":"エテルネルリート",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5633,9 +7162,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "聖夜へ向けての\n大騒ぎ/プレゼントはカラフルな絵画を",
+        "聖夜へ向けての\n大騒ぎ/プレゼントは特別な想いを",
+        "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(神級)",
+        "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":328,
       "name":"チルコンチジオ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5650,9 +7186,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
+      "stage":[],
       "skill":null
     },
     {
+      "id":329,
       "name":"プリニーネ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5667,9 +7205,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
+      "stage":[
+        "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(上級)",
+        "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(超級)",
+        "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":330,
       "name":"ロミンクライト",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5684,9 +7228,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(神級)",
+        "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":331,
       "name":"タリザオーネ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5701,9 +7250,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":332,
       "name":"卜ルストゥイ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5718,9 +7269,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.12",
+      "stage":[
+        "雪原を彩る\n少女の願い/突撃！デモニア流雪玉砲！",
+        "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(上級)",
+        "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(超級)",
+        "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":333,
       "name":"プシクーロン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5735,9 +7293,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "雪原を彩る\n少女の願い/突撃！護衛団の特大ハンマー！",
+        "雪原を彩る\n少女の願い/突撃？雪で作ったうさぎさん！",
+        "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(神級)",
+        "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":334,
       "name":"ドルショトー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5752,9 +7317,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":335,
       "name":"レミークルム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5769,9 +7336,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "バレンタインは\n誰のために/まだまだ続く恋の戦(上級)",
+        "バレンタインは\n誰のために/まだまだ続く恋の戦(超級)",
+        "バレンタインは\n誰のために/まだまだ続く恋の戦(超級+)",
+        "バレンタインは\n誰のために/予測不能な神通力"
+      ],
       "skill":null
     },
     {
+      "id":336,
       "name":"チョコラ・ハンター",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5786,9 +7360,16 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.15",
+      "stage":[
+        "バレンタインは\n誰のために/まだまだ続く恋の戦(神級)",
+        "バレンタインは\n誰のために/まだまだ続く恋の戦(神級+)",
+        "バレンタインは\n誰のために/巷で噂の恋占い",
+        "バレンタインは\n誰のために/甘美な愛の導き"
+      ],
       "skill":null
     },
     {
+      "id":337,
       "name":"ピュアネスログ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5803,9 +7384,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":338,
       "name":"プリンツクローネ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5820,9 +7403,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
+      "stage":[
+        "再会は白き日の装いと共に/懐に込めた保存食を",
+        "再会は白き日の装いと共に/熱烈アンコール！(上級)",
+        "再会は白き日の装いと共に/熱烈アンコール！(超級)",
+        "再会は白き日の装いと共に/熱烈アンコール！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":339,
       "name":"シュウエットプランス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5837,9 +7427,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "再会は白き日の装いと共に/愛を込めた甘い言葉を",
+        "再会は白き日の装いと共に/感謝を込めた花束を",
+        "再会は白き日の装いと共に/熱烈アンコール！(神級)",
+        "再会は白き日の装いと共に/熱烈アンコール！(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":340,
       "name":"グリモペンタクロス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5854,9 +7451,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":341,
       "name":"フェイトホルダー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5871,9 +7470,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "名門学園の魔術書騒動/真夜中の図書館(上級)",
+        "名門学園の魔術書騒動/真夜中の図書館(超級)",
+        "名門学園の魔術書騒動/真夜中の図書館(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":342,
       "name":"デコレスクバット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5888,9 +7493,14 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "名門学園の魔術書騒動/真夜中の図書館(神級)",
+        "名門学園の魔術書騒動/真夜中の図書館(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":343,
       "name":"ぐるぐるぽっぷすてっき",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5905,9 +7515,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":344,
       "name":"アブソディエロー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5922,9 +7534,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"45",
       "crit":null,
+      "stage":[
+        "小さな少女たちとお遊戯場/おとな顔負けの剣さばき！",
+        "小さな少女たちとお遊戯場/騒乱のわんぱく広場(上級)",
+        "小さな少女たちとお遊戯場/騒乱のわんぱく広場(超級)",
+        "小さな少女たちとお遊戯場/騒乱のわんぱく広場(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":345,
       "name":"ベトパンリズム",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5939,9 +7558,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "小さな少女たちとお遊戯場/ちいさいお姉さんのビリビリ魔力！",
+        "小さな少女たちとお遊戯場/ちっちゃくたって狙い撃ち！",
+        "小さな少女たちとお遊戯場/騒乱のわんぱく広場(神級)",
+        "小さな少女たちとお遊戯場/騒乱のわんぱく広場(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":346,
       "name":"シルベルクス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5956,9 +7582,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
+      "stage":[],
       "skill":null
     },
     {
+      "id":347,
       "name":"スノウパールの雫",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5973,9 +7601,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
+      "stage":[
+        "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(上級)",
+        "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(超級)",
+        "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(超級+)",
+        "花嫁を\n物語る筆と歌/魔力に込める強き絆"
+      ],
       "skill":null
     },
     {
+      "id":348,
       "name":"ブレスデュオダガー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -5990,9 +7625,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(神級)",
+        "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(神級+)",
+        "花嫁を\n物語る筆と歌/剣に誓う永遠の愛",
+        "花嫁を\n物語る筆と歌/解き放つ想いの矢"
+      ],
       "skill":null
     },
     {
+      "id":349,
       "name":"マニピュウェイブ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6007,9 +7649,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":350,
       "name":"キャプテンフック",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6024,9 +7668,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.1",
+      "stage":[
+        "傭兵団・\n夏の大決戦/浅瀬での秘密訓練",
+        "傭兵団・\n夏の大決戦/深海大調査！(上級)",
+        "傭兵団・\n夏の大決戦/深海大調査！(超級)",
+        "傭兵団・\n夏の大決戦/深海大調査！(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":351,
       "name":"セーラーマリン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6041,9 +7692,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "傭兵団・\n夏の大決戦/深海への手招き",
+        "傭兵団・\n夏の大決戦/深海大調査！(神級)",
+        "傭兵団・\n夏の大決戦/深海大調査！(神級+)",
+        "傭兵団・\n夏の大決戦/高波への飽くなき挑戦"
+      ],
       "skill":null
     },
     {
+      "id":352,
       "name":"セイレント・オ・レイユ",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6058,9 +7716,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":353,
       "name":"カリブシャンキング",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6075,9 +7735,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[
+        "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(上級)",
+        "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(超級)",
+        "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(超級+)",
+        "傭兵団・\n夏の大脱出/目を光らせる救助員"
+      ],
       "skill":null
     },
     {
+      "id":354,
       "name":"漣コード",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6092,9 +7759,16 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(神級)",
+        "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(神級+)",
+        "傭兵団・\n夏の大脱出/磨けば光る希少原石",
+        "傭兵団・\n夏の大脱出/開けてびっくり二枚貝"
+      ],
       "skill":null
     },
     {
+      "id":355,
       "name":"妖煙香鳥",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6109,9 +7783,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":356,
       "name":"鼓舞太鼓",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6126,9 +7802,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[
+        "晩夏の祭りと心模様/奇抜！虹色綿菓子",
+        "晩夏の祭りと心模様/祭囃子を聴きながら(上級)",
+        "晩夏の祭りと心模様/祭囃子を聴きながら(超級)",
+        "晩夏の祭りと心模様/祭囃子を聴きながら(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":357,
       "name":"恨々頭巾",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6143,9 +7826,16 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
+      "stage":[
+        "晩夏の祭りと心模様/優雅！美しい旋律",
+        "晩夏の祭りと心模様/強力！人力扇風機",
+        "晩夏の祭りと心模様/祭囃子を聴きながら(神級)",
+        "晩夏の祭りと心模様/祭囃子を聴きながら(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":358,
       "name":"爆足コーナー",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6160,9 +7850,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":"200",
       "crit":"0.14",
+      "stage":[],
       "skill":null
     },
     {
+      "id":359,
       "name":"セフロスロドコン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6177,9 +7869,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[
+        "応援団と王の道/後夜祭のそのあとに(上級)",
+        "応援団と王の道/後夜祭のそのあとに(超級)",
+        "応援団と王の道/後夜祭のそのあとに(超級+)",
+        "応援団と王の道/赤組の熱血応援団員"
+      ],
       "skill":null
     },
     {
+      "id":360,
       "name":"アオハルライン",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6194,9 +7893,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "応援団と王の道/後夜祭のそのあとに(神級)",
+        "応援団と王の道/後夜祭のそのあとに(神級+)",
+        "応援団と王の道/赤組の実質総大将",
+        "応援団と王の道/赤組の見習いチアガール"
+      ],
       "skill":null
     },
     {
+      "id":361,
       "name":"タランチュピネット",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6211,9 +7917,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":362,
       "name":"シュトライクロス",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6228,9 +7936,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":null,
+      "stage":[
+        "おもてなしのワイルドハント/Sっ気伯爵",
+        "おもてなしのワイルドハント/あの世とこの世の架け橋(上級)",
+        "おもてなしのワイルドハント/あの世とこの世の架け橋(超級)",
+        "おもてなしのワイルドハント/あの世とこの世の架け橋(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":363,
       "name":"ドキメロメピア",
       "rank":"SSR",
       "base_lv_max":"50",
@@ -6245,9 +7960,16 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
+      "stage":[
+        "おもてなしのワイルドハント/あの世とこの世の架け橋(神級)",
+        "おもてなしのワイルドハント/あの世とこの世の架け橋(神級+)",
+        "おもてなしのワイルドハント/慎ましげ小悪魔",
+        "おもてなしのワイルドハント/茶目っ気くまさん"
+      ],
       "skill":null
     },
     {
+      "id":364,
       "name":"賢者の杖",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6262,9 +7984,11 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.04",
+      "stage":[],
       "skill":null
     },
     {
+      "id":365,
       "name":"オリアスブレード",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6279,9 +8003,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":366,
       "name":"ミェニルコラング",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6296,9 +8022,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":367,
       "name":"アルテミスボウ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6313,9 +8041,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.16",
+      "stage":[
+        "希少鉱石を採取せよ/希少鉱石を採取せよ(上級)",
+        "希少鉱石を採取せよ/希少鉱石を採取せよ(超級)"
+      ],
       "skill":null
     },
     {
+      "id":368,
       "name":"ロイヤルヴァーミリオン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6330,9 +8063,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":369,
       "name":"デュナミスアルヴィエール",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6347,9 +8082,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
+      "stage":[
+        "祝うべきこの日に/争奪！？投票券(上級)",
+        "祝うべきこの日に/争奪！？投票券(神級)",
+        "祝うべきこの日に/争奪！？投票券(神級+)",
+        "祝うべきこの日に/争奪！？投票券(超級)",
+        "祝うべきこの日に/争奪！？投票券(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":370,
       "name":"ボイドシールド",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6364,9 +8107,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
+      "stage":[
+        "眠れる獅子の財宝/獅子の財宝(上級)",
+        "眠れる獅子の財宝/獅子の財宝(超級)"
+      ],
       "skill":null
     },
     {
+      "id":371,
       "name":"アルビオンナイツ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6381,9 +8129,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":372,
       "name":"[神器]クオルディア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6398,6 +8148,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-花落つる調べ(上級)",
+        "10連戦-花落つる調べ(超級) "
+      ],
       "skill":{
         "name":"[イード]ルベル・レゲーレ",
         "number":null,
@@ -6436,6 +8190,7 @@ BgrLib.load({
       }
     },
     {
+      "id":373,
       "name":"[神器]インサーニオ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6450,6 +8205,9 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
+      "stage":[
+        "10連戦-邪蛇の禍(超級)"
+      ],
       "skill":{
         "name":"[イード] ウィリデ・ヴィルズ",
         "number":null,
@@ -6477,6 +8235,7 @@ BgrLib.load({
       }
     },
     {
+      "id":374,
       "name":"[神器]アルゲオール",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6491,6 +8250,9 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-氷雪の谷(超級)"
+      ],
       "skill":{
         "name":"[フル]アルブ・グラキエ",
         "number":null,
@@ -6518,6 +8280,7 @@ BgrLib.load({
       }
     },
     {
+      "id":375,
       "name":"[神器]ラヴキューピット",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6532,6 +8295,10 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.1",
+      "stage":[
+        "10連戦-恋の戦場(上級)",
+        "10連戦-恋の戦場(超級) "
+      ],
       "skill":{
         "name":"[ヴァル]恋三昧",
         "number":null,
@@ -6559,6 +8326,7 @@ BgrLib.load({
       }
     },
     {
+      "id":376,
       "name":"[神器]ラヴユアハート",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6573,6 +8341,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":{
         "name":"[ヴァル]甘くささやく声",
         "number":null,
@@ -6600,6 +8369,7 @@ BgrLib.load({
       }
     },
     {
+      "id":377,
       "name":"[神器]レギオニール",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6614,6 +8384,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-蒼雷の嵐(超級)",
+        "10連戦ステージ(上級)"
+      ],
       "skill":{
         "name":"[フル]キュムロヌ・トニト",
         "number":null,
@@ -6651,6 +8425,7 @@ BgrLib.load({
       }
     },
     {
+      "id":378,
       "name":"[神器]ニコローラル",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6665,6 +8440,9 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-狂騒の大地(超級)"
+      ],
       "skill":{
         "name":"[フル]アネモス・フルーレ",
         "number":null,
@@ -6692,6 +8470,7 @@ BgrLib.load({
       }
     },
     {
+      "id":379,
       "name":"[神器]ロサレクス",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6706,6 +8485,10 @@ BgrLib.load({
       "spd_rate":"0.4",
       "move":null,
       "crit":"0.07",
+      "stage":[
+        "10連戦-傾覆の峠(上級)",
+        "10連戦-傾覆の峠(超級) "
+      ],
       "skill":{
         "name":"[メデ]レヴォ・フォルス",
         "number":null,
@@ -6744,6 +8527,7 @@ BgrLib.load({
       }
     },
     {
+      "id":380,
       "name":"[神器]夏恋彩夜",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6758,6 +8542,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-夜空に咲く花(上級)",
+        "10連戦-夜空に咲く花(超級) "
+      ],
       "skill":{
         "name":"[ヴァル]アクセプト・オール",
         "number":null,
@@ -6785,6 +8573,7 @@ BgrLib.load({
       }
     },
     {
+      "id":381,
       "name":"[神器]ハッピーブーケ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6799,6 +8588,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-花嫁修業(上級)",
+        "10連戦-花嫁修業(超級) "
+      ],
       "skill":{
         "name":"[ヴァル]カウンターラヴ",
         "number":null,
@@ -6837,6 +8630,7 @@ BgrLib.load({
       }
     },
     {
+      "id":382,
       "name":"[神器]ディバインスター",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6851,6 +8645,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-光満つ浜(上級)",
+        "10連戦-光満つ浜(超級)"
+      ],
       "skill":{
         "name":"[フル]ソーラル・ピラー",
         "number":null,
@@ -6889,6 +8687,7 @@ BgrLib.load({
       }
     },
     {
+      "id":383,
       "name":"[神器]氷結のシルバーアロー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6903,6 +8702,10 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-闇夜を照らす輝き(上級)",
+        "10連戦-闇夜を照らす輝き(超級) "
+      ],
       "skill":{
         "name":"[フル]レイジング・ルナ",
         "number":null,
@@ -6919,6 +8722,7 @@ BgrLib.load({
       }
     },
     {
+      "id":384,
       "name":"[神器]マギエっ子ドリーム",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6933,6 +8737,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-悪霊漂う街(上級)",
+        "10連戦-悪霊漂う街(神級) ",
+        "10連戦-悪霊漂う街(超級) "
+      ],
       "skill":{
         "name":"[イード]スィートウイッチアワー",
         "number":null,
@@ -6949,6 +8758,7 @@ BgrLib.load({
       }
     },
     {
+      "id":385,
       "name":"[神器]フォー・ユー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -6963,6 +8773,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"130",
       "crit":null,
+      "stage":[
+        "10連戦-想いをお届けに(上級) ",
+        "10連戦-想いをお届けに(超級) ",
+        "11連戦-想いをお届けに(神級) "
+      ],
       "skill":{
         "name":"[フル]ロブステート",
         "number":null,
@@ -6990,6 +8805,7 @@ BgrLib.load({
       }
     },
     {
+      "id":386,
       "name":"[神器]運命ノ祈槌",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7004,6 +8820,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.08",
+      "stage":[
+        "10連戦-新年ご挨拶回り(上級) ",
+        "10連戦-新年ご挨拶回り(超級) ",
+        "11連戦-新年ご挨拶回り(神級) "
+      ],
       "skill":{
         "name":"[ナリコ]ウチデ・ブランディッシュ",
         "number":null,
@@ -7020,6 +8841,7 @@ BgrLib.load({
       }
     },
     {
+      "id":387,
       "name":"[神器]トランプル・ゲイル",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7034,6 +8856,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-第二次闇鍋大会(上級)",
+        "10連戦-第二次闇鍋大会(神級) ",
+        "10連戦-第二次闇鍋大会(超級) "
+      ],
       "skill":{
         "name":"[アンヘル]レイド・ウラガーン",
         "number":null,
@@ -7082,6 +8909,7 @@ BgrLib.load({
       }
     },
     {
+      "id":388,
       "name":"ドゥエ・ピストイナ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7096,9 +8924,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":"0.25",
+      "stage":[],
       "skill":null
     },
     {
+      "id":389,
       "name":"ゲベールシャルル",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7113,9 +8943,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":390,
       "name":"暁月牡丹",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7130,9 +8962,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":391,
       "name":"[神器]スウィートオンユー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7147,6 +8981,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-甘々対決の審判(上級) ",
+        "10連戦-甘々対決の審判(超級) ",
+        "11連戦-甘々対決の審判(神級) "
+      ],
       "skill":{
         "name":"[神器]スウィートオンユー",
         "number":null,
@@ -7171,7 +9010,7 @@ BgrLib.load({
         "buffer1_prob":"1",
         "buffer2":[
           {
-            "name":"デモニア所有攻撃上昇",
+            "name":"デモニアの攻撃力上昇",
             "scale":"0.02",
             "scale_rate":"0.002",
             "value":"200",
@@ -7185,6 +9024,7 @@ BgrLib.load({
       }
     },
     {
+      "id":392,
       "name":"[神器]スターコンティネント",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7199,6 +9039,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-真心と乙女心(上級)",
+        "10連戦-真心と乙女心(神級)",
+        "10連戦-真心と乙女心(超級)"
+      ],
       "skill":{
         "name":"[アンヘル]ユニデボーション",
         "number":null,
@@ -7237,6 +9082,7 @@ BgrLib.load({
       }
     },
     {
+      "id":393,
       "name":"簪：乱れ咲き",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7251,9 +9097,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[
+        "10連戦-(上級)",
+        "10連戦-(神級)",
+        "10連戦-(超級)",
+        "美しく咲く花の\n下で/花筏の合戦(神級)",
+        "美しく咲く花の\n下で/花筏の合戦(神級+)"
+      ],
       "skill":null
     },
     {
+      "id":394,
       "name":"[神器]花照之灯",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7268,6 +9122,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-花だ、宴だ、大騒ぎ！(上級)",
+        "10連戦-花だ、宴だ、大騒ぎ！(神級) ",
+        "10連戦-花だ、宴だ、大騒ぎ！(超級) "
+      ],
       "skill":{
         "name":"[ナリコ]花舞踊・ソーレナノジャ",
         "number":null,
@@ -7306,6 +9165,7 @@ BgrLib.load({
       }
     },
     {
+      "id":395,
       "name":"[神器]スタッフィングガオー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7320,6 +9180,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-みんなでだいぼうけん(上級)",
+        "10連戦-みんなでだいぼうけん(神級) ",
+        "10連戦-みんなでだいぼうけん(超級) "
+      ],
       "skill":{
         "name":"[フル]アリトルマーチ",
         "number":null,
@@ -7347,6 +9212,7 @@ BgrLib.load({
       }
     },
     {
+      "id":396,
       "name":"[神器]ピューリィバッグス",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7361,6 +9227,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.11",
+      "stage":[
+        "10連戦-愛の決戦場(上級)",
+        "10連戦-愛の決戦場(神級) ",
+        "10連戦-愛の決戦場(超級) "
+      ],
       "skill":{
         "name":"[アンヘル]ブレッシングメッセ",
         "number":null,
@@ -7399,6 +9270,7 @@ BgrLib.load({
       }
     },
     {
+      "id":397,
       "name":"[神器]デア・ハルピュイア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7413,6 +9285,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-太陽よりも暑い渚(上級)",
+        "10連戦-太陽よりも暑い渚(超級)",
+        "11連戦-太陽よりも暑い渚(神級)"
+      ],
       "skill":{
         "name":"[イード]ラストコンシャス",
         "number":null,
@@ -7440,6 +9317,7 @@ BgrLib.load({
       }
     },
     {
+      "id":398,
       "name":"[神器]閃光を見る者",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7454,6 +9332,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-輝く女神達の浜(上級)",
+        "10連戦-輝く女神達の浜(超級)",
+        "11連戦-輝く女神達の浜(神級)"
+      ],
       "skill":{
         "name":"[フル]サンライトチャーム",
         "number":null,
@@ -7481,6 +9364,7 @@ BgrLib.load({
       }
     },
     {
+      "id":399,
       "name":"[神器]天兎神輿",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7495,6 +9379,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-荒ぶる女神の祭(上級)",
+        "10連戦-荒ぶる女神の祭(超級)",
+        "11連戦-荒ぶる女神の祭(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]月兎の通り道",
         "number":null,
@@ -7533,6 +9422,7 @@ BgrLib.load({
       }
     },
     {
+      "id":400,
       "name":"[神器]炎獄のエクスキューション",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7547,6 +9437,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-豊満な果実による宴(上級)",
+        "10連戦-豊満な果実による宴(超級)",
+        "11連戦-豊満な果実による宴(神級)"
+      ],
       "skill":{
         "name":"[フル]スリーピング・テンダー",
         "number":null,
@@ -7574,6 +9469,7 @@ BgrLib.load({
       }
     },
     {
+      "id":401,
       "name":"フェリシタルレイ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7588,9 +9484,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.16",
+      "stage":[
+        "猫の導く夢の国/夢を追い続けて(上級)",
+        "猫の導く夢の国/夢を追い続けて(神級)",
+        "猫の導く夢の国/夢を追い続けて(神級+)",
+        "猫の導く夢の国/夢を追い続けて(超級)",
+        "猫の導く夢の国/夢を追い続けて(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":402,
       "name":"[神器]ナイトフィースト",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7605,6 +9509,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-亡者達への鎮魂歌(上級)",
+        "10連戦-亡者達への鎮魂歌(超級)",
+        "11連戦-亡者達への鎮魂歌(神級)"
+      ],
       "skill":{
         "name":"[イード]ジェスター・カーニバル",
         "number":null,
@@ -7643,6 +9552,7 @@ BgrLib.load({
       }
     },
     {
+      "id":403,
       "name":"[神器]ジーヴルラージュ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7657,6 +9567,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-氷の世界の住人達(上級)",
+        "10連戦-氷の世界の住人達(超級)",
+        "11連戦-氷の世界の住人達(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]グランド・ブルー",
         "number":null,
@@ -7695,6 +9610,7 @@ BgrLib.load({
       }
     },
     {
+      "id":404,
       "name":"[神器]アベセーベセデイ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7709,6 +9625,11 @@ BgrLib.load({
       "spd_rate":"0.9",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-星を仇なす者(上級)",
+        "10連戦-星を仇なす者(超級)",
+        "11連戦-星を仇なす者(神級)"
+      ],
       "skill":{
         "name":"[フル]セインツ・マーチ",
         "number":null,
@@ -7756,6 +9677,7 @@ BgrLib.load({
       }
     },
     {
+      "id":405,
       "name":"[神器]鉄火場のアンセム",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7770,6 +9692,11 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-新たな刻の始まり(上級)",
+        "10連戦-新たな刻の始まり(超級)",
+        "11連戦-新たな刻の始まり(神級)"
+      ],
       "skill":{
         "name":"[メデ]バッド・リベリオン",
         "number":null,
@@ -7808,6 +9735,7 @@ BgrLib.load({
       }
     },
     {
+      "id":406,
       "name":"[神器]まいふぇあ・せのーる",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7822,6 +9750,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-主従の想いを重ねて(上級)",
+        "10連戦-主従の想いを重ねて(超級)",
+        "11連戦-主従の想いを重ねて(神級)"
+      ],
       "skill":{
         "name":"[フル]テンダネス・トリート",
         "number":null,
@@ -7860,6 +9793,7 @@ BgrLib.load({
       }
     },
     {
+      "id":407,
       "name":"[神器]打ち明けるディアレスト",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7874,6 +9808,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-ビターとスイートの調停(上級)",
+        "10連戦-ビターとスイートの調停(超級)",
+        "11連戦-ビターとスイートの調停(神級)"
+      ],
       "skill":{
         "name":"[フル]ファミリア・ ディスタンス",
         "number":null,
@@ -7912,6 +9851,7 @@ BgrLib.load({
       }
     },
     {
+      "id":408,
       "name":"[神器]アヴァリティ・アンサー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7926,6 +9866,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
+      "stage":[
+        "10連戦-動乱のホワイトデイズ(上級)",
+        "10連戦-動乱のホワイトデイズ(超級)",
+        "11連戦-動乱のホワイトデイズ(神級)"
+      ],
       "skill":{
         "name":"[メデ]ヴォートル・クール",
         "number":null,
@@ -7974,6 +9919,7 @@ BgrLib.load({
       }
     },
     {
+      "id":409,
       "name":"[神器]お姉ちゃんのたてぶえ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -7988,6 +9934,11 @@ BgrLib.load({
       "spd_rate":"1.4",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-激闘！裏学生会大戦！(上級)",
+        "10連戦-激闘！裏学生会大戦！(超級)",
+        "11連戦-激闘！裏学生会大戦！(神級)"
+      ],
       "skill":{
         "name":"[メデ]グランディス・サロス",
         "number":null,
@@ -8026,6 +9977,7 @@ BgrLib.load({
       }
     },
     {
+      "id":410,
       "name":"[神器]おもちゃのへいたいさん",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8040,6 +9992,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-りとるがーるれいうんず(上級)",
+        "10連戦-りとるがーるれいうんず(超級)",
+        "11連戦-りとるがーるれいうんず(神級)"
+      ],
       "skill":{
         "name":"[フル]エマ－ブル・セントリー",
         "number":null,
@@ -8078,6 +10035,7 @@ BgrLib.load({
       }
     },
     {
+      "id":411,
       "name":"[神器]久遠のインターリュード",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8092,6 +10050,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.1",
+      "stage":[
+        "10連戦-二人の心をひとつに(上級)",
+        "10連戦-二人の心をひとつに(超級)",
+        "11連戦-二人の心をひとつに(神級)"
+      ],
       "skill":{
         "name":"[アンヘル] アンゲルス・ウォカーレ",
         "number":null,
@@ -8130,6 +10093,7 @@ BgrLib.load({
       }
     },
     {
+      "id":412,
       "name":"サーヴァントアビス",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8144,9 +10108,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.22",
+      "stage":[],
       "skill":null
     },
     {
+      "id":413,
       "name":"[神器]紐解くコーザリティ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8161,6 +10127,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-大冒険家の足跡(上級)",
+        "10連戦-大冒険家の足跡(超級)",
+        "11連戦-大冒険家の足跡(神級)"
+      ],
       "skill":{
         "name":"[ヴァル] ソール・ リートゥス",
         "number":null,
@@ -8199,6 +10170,7 @@ BgrLib.load({
       }
     },
     {
+      "id":414,
       "name":"[神器]忘れじのコロナ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8213,6 +10185,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.07",
+      "stage":[
+        "10連戦-夜月は太陽よりも熱く(上級)",
+        "10連戦-夜月は太陽よりも熱く(超級)",
+        "11連戦-夜月は太陽よりも熱く(神級)"
+      ],
       "skill":{
         "name":"[フル] ウェリタス・メーメント",
         "number":null,
@@ -8251,6 +10228,7 @@ BgrLib.load({
       }
     },
     {
+      "id":415,
       "name":"ルーナアルクス",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8265,9 +10243,11 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":416,
       "name":"[神器]風鳴ノ鈴",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8282,6 +10262,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-祭りを愛し狂う者達(上級)",
+        "10連戦-祭りを愛し狂う者達(超級)",
+        "11連戦-祭りを愛し狂う者達(神級)"
+      ],
       "skill":{
         "name":"[メデ] 精霊の息吹",
         "number":null,
@@ -8320,6 +10305,7 @@ BgrLib.load({
       }
     },
     {
+      "id":417,
       "name":"アルスマグナ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8334,9 +10320,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":418,
       "name":"[神器]栄光のメモリア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8351,6 +10339,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-ファイトオブエタニティ(上級)",
+        "10連戦-ファイトオブエタニティ(超級)",
+        "11連戦-ファイトオブエタニティ(神級)"
+      ],
       "skill":{
         "name":"[イード]アウルム・ポエニクス",
         "number":null,
@@ -8389,6 +10382,7 @@ BgrLib.load({
       }
     },
     {
+      "id":419,
       "name":"フォースエクラ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8403,9 +10397,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
+      "stage":[],
       "skill":null
     },
     {
+      "id":420,
       "name":"ジ・タパーティエンズ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8420,9 +10416,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
+      "stage":[
+        "輝きの乙女たち/輝きの乙女たち(上級)",
+        "輝きの乙女たち/輝きの乙女たち(神級)",
+        "輝きの乙女たち/輝きの乙女たち(神級+)",
+        "輝きの乙女たち/輝きの乙女たち(超級)",
+        "輝きの乙女たち/輝きの乙女たち(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":421,
       "name":"ディメントラディウス",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8437,9 +10441,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":422,
       "name":"[神器]ジャックショック",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8454,6 +10460,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-ガヤお化け達の余興(上級)",
+        "10連戦-ガヤお化け達の余興(超級)",
+        "11連戦-ガヤお化け達の余興(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]ブルローネ・モストロ",
         "number":null,
@@ -8481,6 +10492,7 @@ BgrLib.load({
       }
     },
     {
+      "id":423,
       "name":"ジェミニトゥリシューラ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8495,9 +10507,11 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":424,
       "name":"[神器]元気になるお薬♡",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8512,6 +10526,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-メディカル・パニック(上級)",
+        "10連戦-メディカル・パニック(超級)",
+        "11連戦-メディカル・パニック(神級)"
+      ],
       "skill":{
         "name":"[ヴァル]ポレモス・ファルマコ",
         "number":null,
@@ -8550,6 +10569,7 @@ BgrLib.load({
       }
     },
     {
+      "id":425,
       "name":"[神器]疎外のインヴィディア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8564,6 +10584,11 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-撲滅☆プレゼント泥棒(上級)",
+        "10連戦-撲滅☆プレゼント泥棒(超級)",
+        "11連戦-撲滅☆プレゼント泥棒(神級)"
+      ],
       "skill":{
         "name":"[フル]アギオ・プトス",
         "number":null,
@@ -8591,6 +10616,7 @@ BgrLib.load({
       }
     },
     {
+      "id":426,
       "name":"エスティエラブリッツ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8605,9 +10631,11 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.18",
+      "stage":[],
       "skill":null
     },
     {
+      "id":427,
       "name":"デルニエルゾート",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8622,9 +10650,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":428,
       "name":"[神器]激烈スーパーメガツイスト！",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8639,6 +10669,11 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-マジ卍！初日の出戦争(上級)",
+        "10連戦-マジ卍！初日の出戦争(超級)",
+        "11連戦-マジ卍！初日の出戦争(神級)"
+      ],
       "skill":{
         "name":"[メデ]チンギャーレ・パウーラ",
         "number":null,
@@ -8666,6 +10701,7 @@ BgrLib.load({
       }
     },
     {
+      "id":429,
       "name":"[神器]天駆",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8680,6 +10716,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-守り抜け！ナリコの社！(上級)",
+        "10連戦-守り抜け！ナリコの社！(超級)",
+        "11連戦-守り抜け！ナリコの社！(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]カラミタ・パーチェ",
         "number":null,
@@ -8718,6 +10759,7 @@ BgrLib.load({
       }
     },
     {
+      "id":430,
       "name":"ボアーリュス（双頭式）",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8732,9 +10774,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"20",
       "crit":"0.04",
+      "stage":[],
       "skill":null
     },
     {
+      "id":431,
       "name":"[神器]ラブマスター",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8749,6 +10793,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-甘くない強敵現る！(上級)",
+        "10連戦-甘くない強敵現る！(超級)",
+        "11連戦-甘くない強敵現る！(神級)"
+      ],
       "skill":{
         "name":"[メデ]エメ・クリエ",
         "number":null,
@@ -8776,6 +10825,7 @@ BgrLib.load({
       }
     },
     {
+      "id":432,
       "name":"リベリティア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8790,9 +10840,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.23",
+      "stage":[],
       "skill":null
     },
     {
+      "id":433,
       "name":"[神器]警戒ファイスル（使用済）",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8807,6 +10859,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-甘いお返しを届けよう！(上級)",
+        "10連戦-甘いお返しを届けよう！(超級)",
+        "11連戦-甘いお返しを届けよう！(神級)"
+      ],
       "skill":{
         "name":"[フル]プロテジェ・フォール",
         "number":null,
@@ -8834,6 +10891,7 @@ BgrLib.load({
       }
     },
     {
+      "id":434,
       "name":"エスカリボルア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8848,9 +10906,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
+      "stage":[],
       "skill":null
     },
     {
+      "id":435,
       "name":"裁断型ニャクラム",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8865,9 +10925,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.04",
+      "stage":[],
       "skill":null
     },
     {
+      "id":436,
       "name":"[神器]バリーケッドスカート（発光型）",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8882,6 +10944,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.11",
+      "stage":[
+        "10連戦-学園のイケナイ遊び(上級)",
+        "10連戦-学園のイケナイ遊び(超級)",
+        "11連戦-学園のイケナイ遊び(神級)"
+      ],
       "skill":{
         "name":"[メデ]アンサ・ミレーチェ",
         "number":null,
@@ -8920,6 +10987,7 @@ BgrLib.load({
       }
     },
     {
+      "id":437,
       "name":"[神器]スリンクネステッキ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8934,6 +11002,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-秘密のお遊戯会(上級)",
+        "10連戦-秘密のお遊戯会(超級)",
+        "11連戦-秘密のお遊戯会(神級)"
+      ],
       "skill":{
         "name":"[イード]クラージュ・フィーユ",
         "number":null,
@@ -8961,6 +11034,7 @@ BgrLib.load({
       }
     },
     {
+      "id":438,
       "name":"ドラグアンクロー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8975,9 +11049,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":439,
       "name":"マキナスセイブ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -8992,9 +11068,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
+      "stage":[],
       "skill":null
     },
     {
+      "id":440,
       "name":"[神器]ペルルモニーレ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9009,6 +11087,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-絶対防衛!嫁を守り抜け!(上級)",
+        "10連戦-絶対防衛!嫁を守り抜け!(超級)",
+        "11連戦-絶対防衛!嫁を守り抜け!(神級)"
+      ],
       "skill":{
         "name":"[ヴァル]アムル・ディエース",
         "number":null,
@@ -9036,6 +11119,7 @@ BgrLib.load({
       }
     },
     {
+      "id":441,
       "name":"[神器]グェインフェイン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9050,6 +11134,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-輝く海辺のセレブたち！(上級)",
+        "10連戦-輝く海辺のセレブたち！(超級)",
+        "11連戦-輝く海辺のセレブたち！(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]モーリ・カリス",
         "number":null,
@@ -9077,6 +11166,7 @@ BgrLib.load({
       }
     },
     {
+      "id":442,
       "name":"インヴェルズカール",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9091,9 +11181,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
+      "stage":[],
       "skill":null
     },
     {
+      "id":443,
       "name":"[神器]カリノエスター",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9108,6 +11200,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-デモニア達との熱い宴(上級)",
+        "10連戦-デモニア達との熱い宴(超級)",
+        "11連戦-デモニア達との熱い宴(神級)"
+      ],
       "skill":{
         "name":"[イード]ヒュドル・ラヴァーレ",
         "number":null,
@@ -9135,6 +11232,7 @@ BgrLib.load({
       }
     },
     {
+      "id":444,
       "name":"天殴クリムゾニア",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9149,9 +11247,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.05",
+      "stage":[],
       "skill":null
     },
     {
+      "id":445,
       "name":"[神器]ジャヴェロットクリム",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9166,6 +11266,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-夏夜に上げる勝利の祝砲(上級)",
+        "10連戦-夏夜に上げる勝利の祝砲(超級)",
+        "11連戦-夏夜に上げる勝利の祝砲(神級)"
+      ],
       "skill":{
         "name":"[ヴァル]エイシュ・タフト",
         "number":null,
@@ -9193,6 +11298,7 @@ BgrLib.load({
       }
     },
     {
+      "id":446,
       "name":"ディリアムビュート",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9207,9 +11313,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":447,
       "name":"[神器]白露望月",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9224,6 +11332,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-月夜に忍び寄る影(上級)",
+        "10連戦-月夜に忍び寄る影(超級)",
+        "11連戦-月夜に忍び寄る影(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]ミナス・ルミエール",
         "number":null,
@@ -9251,6 +11364,7 @@ BgrLib.load({
       }
     },
     {
+      "id":448,
       "name":"エンデシュテルケ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9265,9 +11379,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"35",
       "crit":null,
+      "stage":[
+        "煌めきへの憧憬/煌めきへの憧憬(上級)",
+        "煌めきへの憧憬/煌めきへの憧憬(神級)",
+        "煌めきへの憧憬/煌めきへの憧憬(神級+)",
+        "煌めきへの憧憬/煌めきへの憧憬(超級)",
+        "煌めきへの憧憬/煌めきへの憧憬(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":449,
       "name":"エテルノ・ヴァイスハイト",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9282,9 +11404,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":450,
       "name":"ウール・エンデ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9299,9 +11423,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":451,
       "name":"[神器]モルテファーチェ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9316,6 +11442,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-ゴースト・カーニバル(上級)",
+        "10連戦-ゴースト・カーニバル(超級)",
+        "11連戦-ゴースト・カーニバル(神級)"
+      ],
       "skill":{
         "name":"[イード]ファルチェ・ルマパティ",
         "number":null,
@@ -9354,6 +11485,7 @@ BgrLib.load({
       }
     },
     {
+      "id":452,
       "name":"デュールブクリエ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9368,9 +11500,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-65",
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":453,
       "name":"[神器]コンジェラシオン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9385,6 +11519,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.16",
+      "stage":[
+        "10連戦-闘志燃やす雪上戦(上級)",
+        "10連戦-闘志燃やす雪上戦(超級)",
+        "11連戦-闘志燃やす雪上戦(神級)"
+      ],
       "skill":{
         "name":"[ヴァル]アースィファト・タルジュ",
         "number":null,
@@ -9412,6 +11551,7 @@ BgrLib.load({
       }
     },
     {
+      "id":454,
       "name":"[神器]ハイリヒチュエ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9426,6 +11566,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.11",
+      "stage":[
+        "10連戦-プレゼント争奪戦(上級)",
+        "10連戦-プレゼント争奪戦(超級)",
+        "11連戦-プレゼント争奪戦(神級)"
+      ],
       "skill":{
         "name":"[フル]ディアルモ・ヴァロ",
         "number":null,
@@ -9464,6 +11609,7 @@ BgrLib.load({
       }
     },
     {
+      "id":455,
       "name":"[神器]ソルセジーク",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9478,6 +11624,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.16",
+      "stage":[
+        "10連戦-新春！厄除け大作戦(上級)",
+        "10連戦-新春！厄除け大作戦(超級)",
+        "11連戦-新春！厄除け大作戦(神級)"
+      ],
       "skill":{
         "name":"[メデ]フェレス・ラウーラ",
         "number":null,
@@ -9516,6 +11667,7 @@ BgrLib.load({
       }
     },
     {
+      "id":456,
       "name":"ゼークベッロム",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9530,9 +11682,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[],
       "skill":null
     },
     {
+      "id":457,
       "name":"ムンスリーサン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9547,9 +11701,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":458,
       "name":"グリュントリー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9564,9 +11720,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"15",
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":459,
       "name":"[神器]イノサンヴェル",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9581,6 +11739,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-これが本当の雪合戦！？(上級)",
+        "10連戦-これが本当の雪合戦！？(超級)",
+        "11連戦-これが本当の雪合戦！？(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]ネヴィア・アバトス",
         "number":null,
@@ -9619,6 +11782,7 @@ BgrLib.load({
       }
     },
     {
+      "id":460,
       "name":"[神器]オペラネン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9633,6 +11797,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "10連戦-激甘スイーツラッシュ！(上級)",
+        "10連戦-激甘スイーツラッシュ！(超級)",
+        "11連戦-激甘スイーツラッシュ！(神級)"
+      ],
       "skill":{
         "name":"[イード]ダルタ・キュモス",
         "number":null,
@@ -9671,6 +11840,7 @@ BgrLib.load({
       }
     },
     {
+      "id":461,
       "name":"トゥンデクロス",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9685,9 +11855,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":462,
       "name":"[神器]絶対王政(小道具)",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9702,6 +11874,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-密かな菓子作り修行(上級)",
+        "10連戦-密かな菓子作り修行(超級)",
+        "11連戦-密かな菓子作り修行(神級)"
+      ],
       "skill":{
         "name":"[イード]マリク・カヌーン",
         "number":null,
@@ -9740,6 +11917,7 @@ BgrLib.load({
       }
     },
     {
+      "id":463,
       "name":"時ノ歯車",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9754,9 +11932,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":464,
       "name":"[神器]ラヴウィップ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9771,6 +11951,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.14",
+      "stage":[
+        "10連戦-文武両道の心得(上級)",
+        "10連戦-文武両道の心得(超級)",
+        "11連戦-文武両道の心得(神級)"
+      ],
       "skill":{
         "name":"[フル]エテュード・サウト",
         "number":null,
@@ -9809,6 +11994,7 @@ BgrLib.load({
       }
     },
     {
+      "id":465,
       "name":"ルベウスシャイン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9823,9 +12009,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.04",
+      "stage":[],
       "skill":null
     },
     {
+      "id":466,
       "name":"[神器]チルズキッチン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9840,6 +12028,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-突撃！ちびっこ軍団(上級)",
+        "10連戦-突撃！ちびっこ軍団(超級)",
+        "11連戦-突撃！ちびっこ軍団(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]ベルギス・ルジュエ",
         "number":null,
@@ -9878,6 +12071,7 @@ BgrLib.load({
       }
     },
     {
+      "id":467,
       "name":"ニャンクロファイター",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9892,9 +12086,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
+      "stage":[],
       "skill":null
     },
     {
+      "id":468,
       "name":"[神器]祝福の翼",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9909,6 +12105,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
+      "stage":[
+        "10連戦-共に乗り越える壁(上級)",
+        "10連戦-共に乗り越える壁(超級)",
+        "11連戦-共に乗り越える壁(神級)"
+      ],
       "skill":{
         "name":"[イード]ウルス・フェオネ",
         "number":null,
@@ -9947,6 +12148,7 @@ BgrLib.load({
       }
     },
     {
+      "id":469,
       "name":"シュヴァルシュナイデン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9961,9 +12163,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":470,
       "name":"[神器]始まりの咆哮",
       "rank":"UR",
       "base_lv_max":"65",
@@ -9978,6 +12182,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-海中大決戦！(上級)",
+        "10連戦-海中大決戦！(超級)",
+        "11連戦-海中大決戦！(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]マルスク・ローア",
         "number":null,
@@ -10016,6 +12225,7 @@ BgrLib.load({
       }
     },
     {
+      "id":471,
       "name":"メーアンエルガー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10030,9 +12240,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":472,
       "name":"[神器]ゴールデン・スカルダー",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10047,6 +12259,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
+      "stage":[
+        "10連戦-未確認海域調査(上級)",
+        "10連戦-未確認海域調査(超級)",
+        "11連戦-未確認海域調査(神級)"
+      ],
       "skill":{
         "name":"[ヴァル]ゲネロス・シェデル",
         "number":null,
@@ -10085,6 +12302,7 @@ BgrLib.load({
       }
     },
     {
+      "id":473,
       "name":"[神器]日華之大和",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10099,6 +12317,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
+      "stage":[
+        "10連戦-夏が魅せる特別な力(上級)",
+        "10連戦-夏が魅せる特別な力(超級)",
+        "11連戦-夏が魅せる特別な力(神級)"
+      ],
       "skill":{
         "name":"[イード]紅華炎舞",
         "number":null,
@@ -10126,6 +12349,7 @@ BgrLib.load({
       }
     },
     {
+      "id":474,
       "name":"レベンシト・シュベル",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10140,9 +12364,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
+      "stage":[],
       "skill":null
     },
     {
+      "id":475,
       "name":"[神器]燦然黄金杯",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10157,6 +12383,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
+      "stage":[
+        "10連戦-白熱！応援合戦！(上級)",
+        "10連戦-白熱！応援合戦！(超級)",
+        "11連戦-白熱！応援合戦！(神級)"
+      ],
       "skill":{
         "name":"[フル]ハウト・ブリンク",
         "number":null,
@@ -10195,6 +12426,7 @@ BgrLib.load({
       }
     },
     {
+      "id":476,
       "name":"華炎我流：護武術",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10209,9 +12441,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
+      "stage":[],
       "skill":null
     },
     {
+      "id":477,
       "name":"ロゼンアモレージ",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10226,9 +12460,17 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":"15",
       "crit":"0.05",
+      "stage":[
+        "栄冠をその手に/栄冠をその手に(上級)",
+        "栄冠をその手に/栄冠をその手に(神級)",
+        "栄冠をその手に/栄冠をその手に(神級+)",
+        "栄冠をその手に/栄冠をその手に(超級)",
+        "栄冠をその手に/栄冠をその手に(超級+)"
+      ],
       "skill":null
     },
     {
+      "id":478,
       "name":"[神器]禁・リボンハンド",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10243,6 +12485,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
+      "stage":[
+        "10連戦-ようこそ現世へ！(上級)",
+        "10連戦-ようこそ現世へ！(超級)",
+        "11連戦-ようこそ現世へ！(神級)"
+      ],
       "skill":{
         "name":"[アンヘル]モルト・ラヴィーチ",
         "number":null,
@@ -10291,6 +12538,7 @@ BgrLib.load({
       }
     },
     {
+      "id":479,
       "name":"ウィントブルムン",
       "rank":"UR",
       "base_lv_max":"65",
@@ -10305,6 +12553,7 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.12",
+      "stage":[],
       "skill":null
     }
   ],
@@ -10333,6 +12582,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -10380,6 +12631,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"82",
+        "cd":"10",
+        "first_cd":"10",
         "buffer1":[
           {
             "name":"移動速度低下",
@@ -10427,6 +12680,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -10474,6 +12729,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -10521,6 +12778,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -10568,6 +12827,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"79",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"封印",
@@ -10615,6 +12876,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"71",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -10662,6 +12925,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"90",
+        "cd":"11",
+        "first_cd":"11",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -10709,6 +12974,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"クリティカル率低下",
@@ -10756,6 +13023,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"82",
+        "cd":"10",
+        "first_cd":"10",
         "buffer1":[
           {
             "name":"眩暈",
@@ -10803,6 +13072,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"毒",
@@ -10850,6 +13121,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"移動速度低下",
@@ -10897,6 +13170,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"75",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"眩暈",
@@ -10944,6 +13219,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"37",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -10991,6 +13268,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"90",
+        "cd":"11",
+        "first_cd":"11",
         "buffer1":[
           {
             "name":"眩暈",
@@ -11038,6 +13317,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -11085,6 +13366,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -11132,6 +13415,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"眩暈",
@@ -11179,6 +13464,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"眩暈",
@@ -11226,6 +13513,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -11273,6 +13562,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"移動速度低下",
@@ -11320,6 +13611,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -11367,6 +13660,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"毒",
@@ -11414,6 +13709,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -11461,6 +13758,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"75",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -11508,6 +13807,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -11555,6 +13856,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"毒",
@@ -11602,6 +13905,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"90",
+        "cd":"11",
+        "first_cd":"11",
         "buffer1":[
           {
             "name":"封印",
@@ -11649,6 +13954,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -11696,6 +14003,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"56",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -11743,6 +14052,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -11790,6 +14101,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"クリティカル率低下",
@@ -11837,6 +14150,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"78",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -11884,6 +14199,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"73",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -11931,6 +14248,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -11978,6 +14297,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -12025,6 +14346,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -12072,6 +14395,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"63",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -12119,6 +14444,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"75",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"封印",
@@ -12166,6 +14493,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"75",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"封印",
@@ -12213,6 +14542,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"75",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -12260,6 +14591,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"72",
+        "cd":"9",
+        "first_cd":"9",
         "buffer1":[
           {
             "name":"封印",
@@ -12307,6 +14640,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"75",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -12354,6 +14689,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"移動速度低下",
@@ -12401,6 +14738,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"83",
+        "cd":"10",
+        "first_cd":"10",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -12448,6 +14787,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"49",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"毒",
@@ -12495,6 +14836,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"50",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"毒",
@@ -12542,6 +14885,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -12589,6 +14934,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -12636,6 +14983,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"59",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -12683,6 +15032,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"60",
+        "cd":"8",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"封印",
@@ -12730,6 +15081,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -12777,6 +15130,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"67",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -12824,6 +15179,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -12871,6 +15228,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -12918,6 +15277,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -12965,6 +15326,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"69",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13012,6 +15375,8 @@ BgrLib.load({
         "scale":"3",
         "value":null,
         "sp":"54",
+        "cd":"20",
+        "first_cd":"10",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -13059,6 +15424,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"67",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -13106,6 +15473,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13153,6 +15522,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"55",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -13200,6 +15571,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13247,6 +15620,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -13294,6 +15669,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"50",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"クリティカル率上昇",
@@ -13341,6 +15718,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"50",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃力上昇  ",
@@ -13388,6 +15767,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13435,6 +15816,8 @@ BgrLib.load({
         "scale":"0.8",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"移動速度低下",
@@ -13489,6 +15872,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"60",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -13536,6 +15921,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13583,6 +15970,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -13630,6 +16019,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"9",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13677,6 +16068,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13724,6 +16117,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -13771,6 +16166,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13818,6 +16215,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -13865,6 +16264,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -13912,6 +16313,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -13959,6 +16362,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -14006,6 +16411,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -14053,6 +16460,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14100,6 +16509,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -14147,6 +16558,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -14194,6 +16607,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"59",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -14241,6 +16656,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14288,6 +16705,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -14335,6 +16754,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"55",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14382,6 +16803,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14429,6 +16852,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -14476,6 +16901,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"55",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14523,6 +16950,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14570,6 +16999,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14617,6 +17048,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"撃退",
@@ -14672,6 +17105,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"68",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -14719,6 +17154,8 @@ BgrLib.load({
         "scale":"0.8",
         "value":null,
         "sp":"63",
+        "cd":"6",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"移動速度低下",
@@ -14774,6 +17211,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"68",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -14821,6 +17260,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14876,6 +17317,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -14923,6 +17366,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"62",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -14970,6 +17415,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -15017,6 +17464,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"64",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -15064,6 +17513,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"62",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -15119,6 +17570,8 @@ BgrLib.load({
         "scale":"2",
         "value":null,
         "sp":"55",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -15166,6 +17619,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -15213,6 +17668,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"54",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"状態異常解除",
@@ -15260,6 +17717,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -15307,6 +17766,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"70",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -15354,6 +17815,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -15401,6 +17864,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -15448,6 +17913,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -15503,6 +17970,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"69",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -15558,6 +18027,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -15605,6 +18076,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -15652,6 +18125,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -15707,6 +18182,8 @@ BgrLib.load({
         "scale":"0.85",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -15754,6 +18231,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -15801,6 +18280,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -15848,6 +18329,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -15895,6 +18378,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"62",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -15942,6 +18427,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -15997,6 +18484,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -16052,6 +18541,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"67",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -16107,6 +18598,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"68",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -16162,6 +18655,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"61",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -16217,6 +18712,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"58",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -16264,6 +18761,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"27",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"状態異常解除",
@@ -16311,6 +18810,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"67",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -16366,6 +18867,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -16413,6 +18916,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -16468,6 +18973,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"37",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -16515,6 +19022,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -16562,6 +19071,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"66",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -16617,6 +19128,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"30",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -16672,6 +19185,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"57",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -16719,6 +19234,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -16766,6 +19283,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"61",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -16813,6 +19332,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"64",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -16868,6 +19389,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"39",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -16915,6 +19438,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -16962,6 +19487,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"8",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"バフ状態消去",
@@ -17009,6 +19536,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"51",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17056,6 +19585,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17111,6 +19642,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"68",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -17166,6 +19699,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"68",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -17213,6 +19748,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"62",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -17260,6 +19797,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"46",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -17315,6 +19854,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -17370,6 +19911,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"66",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -17425,6 +19968,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -17472,6 +20017,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17519,6 +20066,8 @@ BgrLib.load({
         "scale":"1.8",
         "value":null,
         "sp":"59",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -17566,6 +20115,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"52",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17613,6 +20164,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"59",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17660,6 +20213,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"36",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17707,6 +20262,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17754,6 +20311,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -17801,6 +20360,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"68",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -17856,6 +20417,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"66",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17903,6 +20466,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"50",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -17950,6 +20515,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"48",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -17997,6 +20564,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -18044,6 +20613,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"58",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -18099,6 +20670,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -18154,6 +20727,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"57",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -18201,6 +20776,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"57",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -18248,6 +20825,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"62",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18295,6 +20874,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"55",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -18342,6 +20923,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18389,6 +20972,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"57",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -18436,6 +21021,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18483,6 +21070,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"25",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -18530,6 +21119,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"47",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18577,6 +21168,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"52",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -18624,6 +21217,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"50",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18671,6 +21266,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18726,6 +21323,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"50",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -18773,6 +21372,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18820,6 +21421,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -18875,6 +21478,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -18922,6 +21527,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"38",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -18969,6 +21576,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19016,6 +21625,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19063,6 +21674,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"44",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -19110,6 +21723,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"58",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -19157,6 +21772,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"50",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19204,6 +21821,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"55",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -19251,6 +21870,8 @@ BgrLib.load({
         "scale":"2",
         "value":null,
         "sp":"51",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[],
         "buffer1_prob":null,
         "buffer2":[],
@@ -19290,6 +21911,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -19337,6 +21960,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"38",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -19384,6 +22009,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"62",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19431,6 +22058,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"52",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -19478,6 +22107,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -19525,6 +22156,8 @@ BgrLib.load({
         "scale":"1.8",
         "value":null,
         "sp":"47",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19572,6 +22205,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"66",
+        "cd":"9",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -19619,6 +22254,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"47",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -19666,6 +22303,8 @@ BgrLib.load({
         "scale":"1.8",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19713,6 +22352,8 @@ BgrLib.load({
         "scale":"1.65",
         "value":null,
         "sp":"61",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -19760,6 +22401,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"56",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -19807,6 +22450,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"47",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19854,6 +22499,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"46",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -19901,6 +22548,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -19948,6 +22597,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"59",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -19995,6 +22646,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"48",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20050,6 +22703,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"60",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -20097,6 +22752,8 @@ BgrLib.load({
         "scale":"0.7",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20144,6 +22801,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"51",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -20191,6 +22850,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20238,6 +22899,8 @@ BgrLib.load({
         "scale":"1.05",
         "value":null,
         "sp":"68",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -20293,6 +22956,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20340,6 +23005,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"49",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20387,6 +23054,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"47",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20434,6 +23103,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"56",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -20481,6 +23152,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"53",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -20528,6 +23201,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"46",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20575,6 +23250,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"55",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"クリティカル率上昇",
@@ -20622,6 +23299,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -20669,6 +23348,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"57",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20716,6 +23397,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"53",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -20763,6 +23446,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -20810,6 +23495,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -20857,6 +23544,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"5",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"撃退",
@@ -20912,6 +23601,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"32",
+        "cd":"10",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"HP持続回復",
@@ -20967,6 +23658,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"43",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"HP持続回復",
@@ -21014,6 +23707,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -21061,6 +23756,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"61",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"クリティカル率上昇",
@@ -21116,6 +23813,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"59",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -21163,6 +23862,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"58",
+        "cd":"9",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -21218,6 +23919,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"65",
+        "cd":"9",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -21265,6 +23968,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -21320,6 +24025,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -21367,6 +24074,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"55",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -21414,6 +24123,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"59",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -21461,6 +24172,8 @@ BgrLib.load({
         "scale":null,
         "value":"1250",
         "sp":"68",
+        "cd":"9",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"状態異常解除",
@@ -21508,6 +24221,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"75",
+        "cd":"10",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -21555,6 +24270,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"50",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -21610,6 +24327,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -21665,6 +24384,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"固定ダメージ",
@@ -21720,6 +24441,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"28",
+        "cd":"9",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"防御力上昇",
@@ -21767,6 +24490,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"51",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -21822,6 +24547,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"64",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -21877,6 +24604,8 @@ BgrLib.load({
         "scale":null,
         "value":"2000",
         "sp":"57",
+        "cd":"9",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -21924,6 +24653,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"56",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"撃退",
@@ -21979,6 +24710,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22026,6 +24759,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"67",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -22081,6 +24816,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -22136,6 +24873,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"62",
+        "cd":"6",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22183,6 +24922,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"62",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -22238,6 +24979,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -22293,6 +25036,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"29",
+        "cd":"6",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"防御力上昇",
@@ -22340,6 +25085,8 @@ BgrLib.load({
         "scale":"1.05",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -22395,6 +25142,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"56",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22442,6 +25191,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -22489,6 +25240,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"59",
+        "cd":"5",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -22544,6 +25297,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22591,6 +25346,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"固定ダメージ",
@@ -22646,6 +25403,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"68",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22701,6 +25460,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"50",
+        "cd":"9",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"恐怖",
@@ -22748,6 +25509,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22803,6 +25566,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"46",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22858,6 +25623,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"75",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -22912,6 +25679,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -22966,6 +25735,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"70",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23013,6 +25784,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"75",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -23060,6 +25833,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"封印",
@@ -23107,6 +25882,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23154,6 +25931,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -23201,6 +25980,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"75",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23248,6 +26029,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"25",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃力上昇  ",
@@ -23295,6 +26078,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"50",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -23342,6 +26127,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"69",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -23389,6 +26176,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"25",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"防御力上昇",
@@ -23436,6 +26225,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -23483,6 +26274,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23530,6 +26323,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"65",
+        "cd":"9",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23577,6 +26372,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"49",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -23624,6 +26421,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"50",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -23671,6 +26470,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -23718,6 +26519,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23765,6 +26568,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23812,6 +26617,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -23859,6 +26666,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -23906,6 +26715,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"50",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -23953,6 +26764,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -24000,6 +26813,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24047,6 +26862,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"55",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -24094,6 +26911,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -24141,6 +26960,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24188,6 +27009,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"55",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24235,6 +27058,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -24282,6 +27107,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"58",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -24329,6 +27156,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -24376,6 +27205,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24423,6 +27254,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"60",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -24470,6 +27303,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24517,6 +27352,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24564,6 +27401,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"68",
+        "cd":"9",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -24611,6 +27450,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"65",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24666,6 +27507,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"67",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24721,6 +27564,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -24768,6 +27613,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"66",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -24823,6 +27670,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24870,6 +27719,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -24917,6 +27768,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -24964,6 +27817,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"70",
+        "cd":"9",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -25011,6 +27866,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"57",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -25058,6 +27915,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"8",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"バフ状態消去",
@@ -25105,6 +27964,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"62",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -25152,6 +28013,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"58",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -25199,6 +28062,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"固定ダメージ",
@@ -25254,6 +28119,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"67",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -25309,6 +28176,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -25356,6 +28225,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -25411,6 +28282,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"39",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -25458,6 +28331,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"71",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -25513,6 +28388,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -25568,6 +28445,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"77",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -25615,6 +28494,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"9",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -25670,6 +28551,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -25717,6 +28600,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -25764,6 +28649,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -25819,6 +28706,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"66",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -25866,6 +28755,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -25913,6 +28804,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -25960,6 +28853,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"68",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26007,6 +28902,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -26054,6 +28951,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -26101,6 +29000,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -26148,6 +29049,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -26195,6 +29098,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -26242,6 +29147,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -26289,6 +29196,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"42",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26336,6 +29245,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"69",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26383,6 +29294,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"66",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -26438,6 +29351,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26485,6 +29400,8 @@ BgrLib.load({
         "scale":"1.0",
         "value":null,
         "sp":"71",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -26532,6 +29449,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26587,6 +29506,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"38",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -26634,6 +29555,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -26681,6 +29604,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"71",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -26728,6 +29653,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"68",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26783,6 +29710,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -26830,6 +29759,8 @@ BgrLib.load({
         "scale":"1.05",
         "value":null,
         "sp":"65",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26877,6 +29808,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"39",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -26924,6 +29857,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"57",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -26971,6 +29906,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -27018,6 +29955,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"44",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -27065,6 +30004,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -27120,6 +30061,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -27175,6 +30118,8 @@ BgrLib.load({
         "scale":"1.8",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -27222,6 +30167,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"69",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -27269,6 +30216,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"59",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -27316,6 +30265,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -27363,6 +30314,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"48",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -27410,6 +30363,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"51",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -27457,6 +30412,8 @@ BgrLib.load({
         "scale":"1.8",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -27504,6 +30461,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -27551,6 +30510,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"69",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -27598,6 +30559,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -27645,6 +30608,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"51",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -27692,6 +30657,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"48",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -27739,6 +30706,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -27786,6 +30755,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -27833,6 +30804,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"55",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"撃退",
@@ -27888,6 +30861,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"47",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -27935,6 +30910,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -27982,6 +30959,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -28029,6 +31008,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"43",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -28076,6 +31057,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -28123,6 +31106,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -28170,6 +31155,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"49",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28217,6 +31204,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28264,6 +31253,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -28311,6 +31302,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -28366,6 +31359,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"40",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28413,6 +31408,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"67",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -28460,6 +31457,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"61",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -28515,6 +31514,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"53",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -28570,6 +31571,8 @@ BgrLib.load({
         "scale":"1.8",
         "value":null,
         "sp":"46",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28617,6 +31620,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28664,6 +31669,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"58",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -28711,6 +31718,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28758,6 +31767,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -28805,6 +31816,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"50",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -28852,6 +31865,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"62",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -28907,6 +31922,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -28954,6 +31971,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"60",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -29001,6 +32020,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"46",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -29048,6 +32069,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"59",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -29095,6 +32118,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29142,6 +32167,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"41",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -29189,6 +32216,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"52",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -29236,6 +32265,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"39",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -29283,6 +32314,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"25",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃力上昇  ",
@@ -29330,6 +32363,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"57",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -29377,6 +32412,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"49",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -29424,6 +32461,8 @@ BgrLib.load({
         "scale":"1.55",
         "value":null,
         "sp":"54",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -29471,6 +32510,8 @@ BgrLib.load({
         "scale":"1",
         "value":null,
         "sp":"59",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -29518,6 +32559,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"52",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -29565,6 +32608,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29612,6 +32657,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"46",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29659,6 +32706,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"49",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -29706,6 +32755,8 @@ BgrLib.load({
         "scale":"1.65",
         "value":null,
         "sp":"63",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29753,6 +32804,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"62",
+        "cd":"11",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29800,6 +32853,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29847,6 +32902,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -29894,6 +32951,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"59",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -29941,6 +33000,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -29996,6 +33057,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -30043,6 +33106,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -30090,6 +33155,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"54",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -30137,6 +33204,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"39",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -30184,6 +33253,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"47",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -30231,6 +33302,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -30286,6 +33359,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"58",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -30333,6 +33408,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -30380,6 +33457,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -30427,6 +33506,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"67",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -30474,6 +33555,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -30521,6 +33604,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"55",
+        "cd":"10",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -30568,6 +33653,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -30615,6 +33702,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"55",
+        "cd":"9",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"攻撃速度上昇 ",
@@ -30662,6 +33751,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -30709,6 +33800,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"63",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -30756,6 +33849,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"66",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -30803,6 +33898,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"63",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -30850,6 +33947,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -30897,6 +33996,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"62",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -30944,6 +34045,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"70",
+        "cd":"10",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力上昇  ",
@@ -30999,6 +34102,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"48",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -31046,6 +34151,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -31093,6 +34200,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"68",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -31140,6 +34249,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"62",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -31195,6 +34306,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"52",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -31242,6 +34355,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"78",
+        "cd":"10",
+        "first_cd":"8",
         "buffer1":[
           {
             "name":"ダメージ吸収",
@@ -31289,6 +34404,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"66",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -31336,6 +34453,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -31383,6 +34502,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"撃退",
@@ -31438,6 +34559,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -31485,6 +34608,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"55",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -31532,6 +34657,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -31579,6 +34706,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -31634,6 +34763,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"53",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -31681,6 +34812,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"42",
+        "cd":"10",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -31736,6 +34869,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"48",
+        "cd":"8",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"状態異常耐性増加",
@@ -31791,6 +34926,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"64",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -31838,6 +34975,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"42",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"勢力転換（ブラン）",
@@ -31885,6 +35024,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"68",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"固定ダメージ",
@@ -31940,6 +35081,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -31995,6 +35138,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"固定ダメージ",
@@ -32050,6 +35195,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -32105,6 +35252,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"66",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -32160,6 +35309,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"57",
+        "cd":"6",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -32215,6 +35366,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -32270,6 +35423,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"35",
+        "cd":"8",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"HP持続回復",
@@ -32325,6 +35480,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"52",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"バフ状態消去",
@@ -32372,6 +35529,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"勢力転換（ジェイド）",
@@ -32427,6 +35586,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"68",
+        "cd":"5",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -32474,6 +35635,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"61",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -32529,6 +35692,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"59",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"撃退",
@@ -32584,6 +35749,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"46",
+        "cd":"4",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -32631,6 +35798,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"61",
+        "cd":"5",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力上昇  ",
@@ -32678,6 +35847,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -32725,6 +35896,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"32",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力上昇",
@@ -32780,6 +35953,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"61",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -32835,6 +36010,8 @@ BgrLib.load({
         "scale":null,
         "value":null,
         "sp":"27",
+        "cd":"8",
+        "first_cd":"2",
         "buffer1":[
           {
             "name":"攻撃力上昇  ",
@@ -32890,6 +36067,8 @@ BgrLib.load({
         "scale":"1.85",
         "value":null,
         "sp":"51",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"ダメージ吸収",
@@ -32945,6 +36124,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"63",
+        "cd":"8",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"恐怖",
@@ -33000,6 +36181,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -33055,6 +36238,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"48",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"バフ状態消去",
@@ -33102,6 +36287,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33149,6 +36336,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"57",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33196,6 +36385,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -33243,6 +36434,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33290,6 +36483,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"45",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33337,6 +36532,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"55",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -33384,6 +36581,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"60",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"毒",
@@ -33431,6 +36630,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33478,6 +36679,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33525,6 +36728,8 @@ BgrLib.load({
         "scale":"1.45",
         "value":null,
         "sp":"50",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33572,6 +36777,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -33619,6 +36826,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -33666,6 +36875,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"60",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",
@@ -33713,6 +36924,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"53",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -33760,6 +36973,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"60",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33807,6 +37022,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"67",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -33854,6 +37071,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"63",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -33901,6 +37120,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"68",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -33948,6 +37169,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"66",
+        "cd":"9",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -33995,6 +37218,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"65",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34042,6 +37267,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"69",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -34089,6 +37316,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"53",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34136,6 +37365,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"70",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -34183,6 +37414,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"69",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -34230,6 +37463,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"51",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -34277,6 +37512,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"59",
+        "cd":"6",
+        "first_cd":"7",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34324,6 +37561,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"64",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -34371,6 +37610,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"69",
+        "cd":"8",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34418,6 +37659,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"44",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34465,6 +37708,8 @@ BgrLib.load({
         "scale":"1.15",
         "value":null,
         "sp":"65",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -34520,6 +37765,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"52",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"毒",
@@ -34567,6 +37814,8 @@ BgrLib.load({
         "scale":"1.6",
         "value":null,
         "sp":"56",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -34622,6 +37871,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"58",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -34677,6 +37928,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34724,6 +37977,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"51",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -34771,6 +38026,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"48",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34818,6 +38075,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"55",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34873,6 +38132,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"52",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -34920,6 +38181,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"63",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -34975,6 +38238,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35022,6 +38287,8 @@ BgrLib.load({
         "scale":"1.1",
         "value":null,
         "sp":"66",
+        "cd":"10",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35069,6 +38336,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"70",
+        "cd":"8",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃速度低下",
@@ -35124,6 +38393,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"46",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"封印",
@@ -35171,6 +38442,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"55",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"封印",
@@ -35218,6 +38491,8 @@ BgrLib.load({
         "scale":"1.3",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35265,6 +38540,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"53",
+        "cd":"6",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -35312,6 +38589,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"50",
+        "cd":"8",
+        "first_cd":"3",
         "buffer1":[
           {
             "name":"バフ状態消去",
@@ -35359,6 +38638,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"55",
+        "cd":"7",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35406,6 +38687,8 @@ BgrLib.load({
         "scale":"1.25",
         "value":null,
         "sp":"62",
+        "cd":"5",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35453,6 +38736,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"58",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35508,6 +38793,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"58",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35555,6 +38842,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"54",
+        "cd":"6",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35602,6 +38891,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"54",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35649,6 +38940,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"52",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35696,6 +38989,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"56",
+        "cd":"7",
+        "first_cd":"5",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35743,6 +39038,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"55",
+        "cd":"5",
+        "first_cd":"4",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35790,6 +39087,8 @@ BgrLib.load({
         "scale":"1.5",
         "value":null,
         "sp":"56",
+        "cd":"5",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"眩暈",
@@ -35837,6 +39136,8 @@ BgrLib.load({
         "scale":"1.35",
         "value":null,
         "sp":"57",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"攻撃力低下",
@@ -35892,6 +39193,8 @@ BgrLib.load({
         "scale":"1.4",
         "value":null,
         "sp":"56",
+        "cd":"6",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"防御力低下",
@@ -35939,6 +39242,8 @@ BgrLib.load({
         "scale":"1.2",
         "value":null,
         "sp":"63",
+        "cd":"7",
+        "first_cd":"6",
         "buffer1":[
           {
             "name":"封印",

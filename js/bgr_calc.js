@@ -32,6 +32,8 @@ addEventListener('load', function() {
     const unit_skillbuffer2 = document.getElementById('calc-unit-skillbuffer2');
     /** @type {HTMLInputElement} */
     const unit_leaderskill = document.getElementById('calc-unit-leaderskill');
+    /** @type {HTMLInputElement} */
+    const unit_skillcd = document.getElementById('calc-unit-skillcd');
     /** @type {HTMLButtonElement} */
     const search_button = document.getElementById('search-button');
     /** @type {HTMLTableElement} */
@@ -40,8 +42,11 @@ addEventListener('load', function() {
     const spd_selecter = document.getElementById('spd-selecter');
     /** @type {HTMLSelectElement} */
     const crit_selecter = document.getElementById('crit-selecter');
+    /** @type {HTMLSelectElement} */
+    const def_selecter = document.getElementById('def-selecter');
     /** @type {HTMLDivElement} */
     const search_progress = document.getElementById('search-progress');
+
 
     const UNIT = BgrLib.getUnit().slice();
     const EQUIP = BgrLib.getEquip().slice();
@@ -49,6 +54,7 @@ addEventListener('load', function() {
     const {
         xorShift,
         toInt,
+        toFloat,
         percentize,
         compareDesc,
         compareAsc,
@@ -107,7 +113,7 @@ addEventListener('load', function() {
      */
     function getEquip(equip_selecter) {
         for (let i in EQUIP) {
-            if (equip_selecter.value == EQUIP[i].name()) {
+            if (equip_selecter.value == EQUIP[i].id()) {
                 return EQUIP[i];
             }
         }
@@ -121,7 +127,7 @@ addEventListener('load', function() {
      * @returns {1 | -1 | 0} score comparing result
      */
     function compareScore(a, b) {
-        return compareDesc(a['score'], b['score']);
+        return compareDesc(a.score, b.score);
     }
 
     /**
@@ -168,7 +174,7 @@ addEventListener('load', function() {
      * @param {number} crit_buff critical buffer
      * @returns {(object | null)} equipped unit
      */
-    MaximizedUnit.prototype.equip = function(equipped, spd_buff, crit_buff) {
+    MaximizedUnit.prototype.equip = function(equipped, spd_buff, crit_buff, def_target) {
         equipped = equipped.filter((x) => x);
         if (2 <= equipped.reduce(countZingi, 0)) {
             return null;
@@ -186,25 +192,27 @@ addEventListener('load', function() {
             def: this.base_def,
             move: this.base_move,
             score: 0,
+            dps: 0,
         };
 
         for (let i in equipped) {
             params.hp += toInt(equipped[i].hp());
             params.atk += toInt(equipped[i].atk());
             params.spd += toInt(equipped[i].spd());
-            params.crit += equipped[i].crit();
+            params.crit += toFloat(equipped[i].crit());
             params.def += toInt(equipped[i].def());
             params.move += toInt(equipped[i].move());
         }
 
         params.spd = Math.min(MaximizedUnit.MAX_SPEED, params.spd);
-        params.crit = Math.min(MaximizedUnit.MAX_CRITICAL, params.crit * 1.28);
+        params.crit = Math.min(MaximizedUnit.MAX_CRITICAL, toInt(128 * params.crit + 0.05) / 100);
         params.move = Math.min(MaximizedUnit.MAX_MOVE, params.move);
 
         const frames = parseInt(60000 / Math.min(MaximizedUnit.MAX_SPEED, params.spd * (1 + spd_buff)) + 0.15);
-        params.score = params.atk * this.unit.atkScale()
+        params.dps = params.atk * this.unit.atkScale()
             * (60 / frames)
             * (1 + Math.min(MaximizedUnit.MAX_CRITICAL, params.crit + crit_buff));
+        params.score = params.dps * Math.min(1.0, Math.pow(params.def / def_target, 2));
 
         return params;
     }
@@ -222,78 +230,101 @@ addEventListener('load', function() {
         const maximized_unit = new MaximizedUnit(unit);
         const spd_buff = parseFloat(spd_selecter.value);
         const crit_buff = parseInt(crit_selecter.value);
+        const def_target = toInt(def_selecter.value);
 
         /**
          * 3 x number of equips would be enough to random search
          */
-        const max_candidate = parseInt(equips.length * 3 / 5);
-        const result = [];
+        const max_candidate = 30;
+        const max_group = 3;
+        const result_groups = [];
 
-        const search_step = 10000;
-        const search_grow = 1000;
-        let search_count = 0;
-        let search_limit = search_step;
+        const search_begin = Date.now();
+        const search_duration = 5000;
+        const search_end = search_begin + search_duration;
+
+        const isUnique = function(equipped) {
+            return result_groups.reduce(function(accum1, results) {
+                return accum1 && results.reduce(function(accum2, res) {
+                    return accum2 && !res['equipped'].every((value, index) => value.name() == equipped[index].name());
+                }, true);
+            }, true);
+        };
 
         /*
          * make initial randomized equips
-         */
-        while (result.length < max_candidate) {
-            const index = [
-                xorShift() % equips.length,
-                xorShift() % equips.length,
-                xorShift() % equips.length,
-                xorShift() % equips.length,
-                xorShift() % equips.length
-            ];
+         */ 
+        while (result_groups.length < max_group) {
+           const results = []
+           while (results.length < max_candidate) {
+                const index = [
+                    xorShift() % equips.length,
+                    xorShift() % equips.length,
+                    xorShift() % equips.length,
+                    xorShift() % equips.length,
+                    xorShift() % equips.length
+                ];
 
-            /*
-             * each equip should be unique
-             */
-            if (new Set(index).size < 5) {
-                continue;
-            }
-
-            const res = maximized_unit.equip(index.map((x) => equips[x]), spd_buff, crit_buff);
-            if (res) {
-                result.push(res);
-            }
-        }
-        result.sort(compareScore);
-
-        /**
-         * 
-         */
-        const timer = function () {
-            let update = false;
-    
-            for (let i = 0; i < search_step && search_count < search_limit; ++i, ++search_count) {
-                /** @type {BgrEquip[]} */
-                const parent = result[xorShift() % result.length]['equipped'];
-                const child = parent.slice();
-                child[xorShift() % 5] = equips[xorShift() % equips.length];
-                if (new Set(child).size < 5) {
+                /*
+                * each equip should be unique
+                */
+                if (new Set(index).size < 5) {
                     continue;
                 }
 
-                const r = maximized_unit.equip(child, spd_buff, crit_buff);
-                if (r && result[max_candidate - 1]['score'] < r['score']) {
-                    const unique = result.reduce((accum, x) => accum && x['score'] != r['score'], true);
-                    if (unique) {
-                        result.push(r);
-                        result.sort(compareScore);
-                        result.pop();
-                        search_limit += search_grow;
-                        update = true;
+                const res = maximized_unit.equip(index.map((x) => equips[x]), spd_buff, crit_buff, def_target);
+                if (res && isUnique(res['equipped'])) {
+                    results.push(res);
+                }
+            }
+            results.sort(compareScore);
+
+            result_groups.push(results);
+        }
+
+        const timer = function () {
+            let update = false;
+            /** @type {BgrEquip[]} */
+
+            const results = result_groups[xorShift() % max_group];
+            for (let count = 0, end = Math.min(Date.now() + 200, search_end); (count & 0xfff) || Date.now() < end; ++count) {
+                let child;
+                while (true) {
+                    const parent = [
+                        results[xorShift() % results.length].equipped,
+                        results[xorShift() % results.length].equipped,
+                    ];
+                    child = [
+                        parent[xorShift() & 0x01][0],
+                        parent[xorShift() & 0x01][1],
+                        parent[xorShift() & 0x01][2],
+                        parent[xorShift() & 0x01][3],
+                        parent[xorShift() & 0x01][4]
+                    ];
+                    //child[xorShift() % 5] = equips[xorShift() % equips.length];
+                    child[xorShift() % 5] = equips[xorShift() % equips.length];
+
+                    if (new Set(child).size == 5) {
+                        break;
                     }
+                }
+
+                const res = maximized_unit.equip(child, spd_buff, crit_buff, def_target);
+                if (res && results[max_candidate - 1].score < res.score && isUnique(res.equipped)) {
+                    results.push(res);
+                    results.sort(compareScore);
+                    results.pop();
+                    update = true;
                 }
             }
 
-            const progress = parseInt(100 * search_count / search_limit);
-            search_progress.setAttribute('aria-valuenow', progress);
-            search_progress.textContent = progress + '%';
-            search_progress.style.width = progress + '%';
-
             if (update) {
+                let results = [];
+                for (let i in result_groups) {
+                    results = results.concat(result_groups[i]);
+                }
+                results.sort(compareScore);
+
                 clearChildren(search_table);
 
                 const thead = createTableHeader();
@@ -311,15 +342,15 @@ addEventListener('load', function() {
                 search_table.appendChild(thead);
 
                 const tbody = document.createElement('tbody');
-                const candidate = result.slice(0, 30);
+                const candidate = results;//.slice(0, 30);
                 for (let i in candidate) {
                     const tr = document.createElement('tr');
                     const r = candidate[i];
                     [
-                        parseInt(r['score']),
+                        parseInt(r['dps']),
                         r['atk'],
                         r['spd'],
-                        percentize(Math.min(r['crit'], 1.0)),
+                        percentize(r['crit']),
                         r['def'],
                         r['equipped'][0].name(),
                         r['equipped'][1].name(),
@@ -331,7 +362,7 @@ addEventListener('load', function() {
                     });
                     tr.addEventListener('click', function() {
                         for (let j in equip_selecters) {
-                            equip_selecters[j].value = r['equipped'][j].name();
+                            equip_selecters[j].value = r['equipped'][j].id();
                         }
                         unit_selecter.dispatchEvent(new Event('change'));
                     })
@@ -340,7 +371,12 @@ addEventListener('load', function() {
                 search_table.appendChild(tbody);
             }
 
-            if (search_count < search_limit) {
+            const progress = parseInt(100 * (Date.now() - search_begin) / search_duration);
+            search_progress.setAttribute('aria-valuenow', progress);
+            search_progress.textContent = progress + '%';
+            search_progress.style.width = progress + '%';
+
+            if (Date.now() < search_end) {
                 search_timer = setTimeout(timer, 0);
             }
             else {
@@ -401,7 +437,7 @@ addEventListener('load', function() {
     function onChanged() {
         const unit = getUnit();
         const max_unit = new MaximizedUnit(unit);
-        const params = max_unit.equip(equip_selecters.map((x) => getEquip(x)), 0, 0);
+        const params = max_unit.equip(equip_selecters.map((x) => getEquip(x)), 0, 0, 0);
         if (params) {
             unit_hp.value   = params.hp;
             unit_atk.value  = params.atk;
@@ -414,6 +450,7 @@ addEventListener('load', function() {
             unit_skillbuffer1.value = unit.attackSkillBuffer1();
             unit_skillbuffer2.value = unit.attackSkillBuffer2();
             unit_leaderskill.value = unit.leaderSkill();
+            unit_skillcd.value = unit.attackSkillCooldown();
         }
     }
 
@@ -425,7 +462,7 @@ addEventListener('load', function() {
     equip_selecters.forEach(function(e) {
         e.appendChild(BgrLib.createElement('option', '無し'));
         for (let i in EQUIP) {
-            e.appendChild(BgrLib.createElement('option', EQUIP[i].name(), { value: EQUIP[i].name() }));
+            e.appendChild(BgrLib.createElement('option', EQUIP[i].name(), { value: EQUIP[i].id() }));
         }
         e.addEventListener('change', onChanged);
     });

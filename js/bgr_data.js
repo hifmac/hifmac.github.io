@@ -62,13 +62,14 @@ Form.prototype.onChanged = function Form_onChanged(value) {
  * inline form
  * @param {string} id 
  * @param {string} text
+ * @param {boolean} checked
  */
-function Checkbox(id, text) {
+function Checkbox(id, text, checked) {
     let form_check_input = document.createElement('input');
     form_check_input.id = id;
     form_check_input.setAttribute('type', 'checkbox');
     form_check_input.setAttribute('class', 'form-check-input');
-    form_check_input.checked = true;
+    form_check_input.checked = typeof checked === 'undefined' ? true : checked;
 
     let form_check_label =document.createElement('label');
     form_check_label.setAttribute('class', 'form-check-label');
@@ -167,11 +168,14 @@ Filter.prototype.apply = function Filter_apply(obj) {
  * content column selecter
  * @param {string} id
  * @param {string} text
+ * @param {object} kwargs
  */
-function Column(id, text, read, formatter) {
-    this.form = new Checkbox(id, text);
+function Column(id, text, read, kwargs) {
+    this.form = new Checkbox(id, text, kwargs && kwargs.checked);
     this.read = read;
-    this.formatter = formatter;
+    if (kwargs && kwargs.format) {
+        this.formatter = kwargs.format;
+    }
 }
 
 /**
@@ -441,16 +445,17 @@ addEventListener('load', function() {
         new Column('equip-name', '名前', (x) => x.name()),
         new Column('equip-hp', 'ランク', (x) => x.rank()),
         new Column('equip-level', '最大レベル', (x) => x.level()),
-        new Column('equip-hp', 'HP', (x) => x.hp(), parseInt),
-        new Column('equip-atk', '攻撃', (x) => x.atk(), parseInt),
-        new Column('equip-spd', '攻撃速度', (x) => x.spd(), parseInt),
-        new Column('equip-critical', 'クリティカル', (x) => x.crit(), BgrLib.percentize),
-        new Column('equip-def', '防御', (x) => x.def(), parseInt),
+        new Column('equip-hp', 'HP', (x) => x.hp(), {format: parseInt}),
+        new Column('equip-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
+        new Column('equip-spd', '攻撃速度', (x) => x.spd(), {format: parseInt}),
+        new Column('equip-critical', 'クリティカル', (x) => x.crit(), {format: BgrLib.percentize}),
+        new Column('equip-def', '防御', (x) => x.def(), {format: parseInt}),
         new Column('equip-move', '移動速度', (x) => x.move()),
-        new Column('equip-skillbuffer1', 'スキル効果1', (x) => x.skillBuffer1()),
-        new Column('equip-skillbuffer2', 'スキル効果2', (x) => x.skillBuffer2()),
-        new Column('equip-skillscale', 'スキル倍率', (x) => x.skillScale(), BgrLib.percentize),
-        new Column('equip-skillbp', 'スキルBP', (x) => x.skillBP()),
+        new Column('equip-skillbuffer1', 'スキル効果1', (x) => x.skillBuffer1(), {checked: false}),
+        new Column('equip-skillbuffer2', 'スキル効果2', (x) => x.skillBuffer2(), {checked: false}),
+        new Column('equip-skillscale', 'スキル倍率', (x) => x.skillScale(), {checked: false, format: BgrLib.percentize}),
+        new Column('equip-skillbp', 'スキルBP', (x) => x.skillBP(), {checked: false}),
+        new Column('equip-dropstage', 'ドロップ', (x) => x.dropStage(), {checked: false}),
     ];
 
     const table = new DataTable(
@@ -539,20 +544,21 @@ addEventListener('load', function() {
         new Column('unit-id', 'ID', (x) => x.id()),
         new Column('unit-name', '名前', (x) => x.name()),
         new Column('unit-attr', '所属', (x) => x.attr()),
-        new Column('unit-hp', 'HP', (x) => x.hp(), parseInt),
-        new Column('unit-atk', '攻撃', (x) => x.atk(), parseInt),
-        new Column('unit-atkscale', '攻撃倍率', (x) => x.atkScale(), BgrLib.percentize),
-        new Column('unit-spd', '攻撃速度', (x) => x.spd(), parseInt),
+        new Column('unit-hp', 'HP', (x) => x.hp(), {format: parseInt}),
+        new Column('unit-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
+        new Column('unit-atkscale', '攻撃倍率', (x) => x.atkScale(), {format: BgrLib.percentize}),
+        new Column('unit-spd', '攻撃速度', (x) => x.spd(), {format: parseInt}),
         new Column('unit-atkrange', '攻撃距離', (x) => x.atkRange()),
-        new Column('unit-critical', 'クリティカル', (x) => x.crit(), BgrLib.percentize),
-        new Column('unit-def', '防御', (x) => x.def(), parseInt),
-        new Column('unit-move', '移動速度', (x) => x.move(), parseInt),
+        new Column('unit-critical', 'クリティカル', (x) => x.crit(), {format: BgrLib.percentize}),
+        new Column('unit-def', '防御', (x) => x.def(), {format: parseInt}),
+        new Column('unit-move', '移動速度', (x) => x.move(), {format: parseInt}),
         new Column('unit-leaderskill', '隊長スキル', (x) => x.leaderSkill()),
         new Column('unit-skillbuffer1', 'スキル効果1', (x) => x.attackSkillBuffer1()),
         new Column('unit-skillbuffer2', 'スキル効果2', (x) => x.attackSkillBuffer2()),
-        new Column('unit-skillsp', 'スキルSP', (x) => x.attackSkillSP()),
-        new Column('unit-skilltarget', 'スキル対象', (x) => x.attackSkillTarget()),
-        new Column('unit-skillscale', 'スキル倍率', (x) => x.attackSkillScale(), BgrLib.percentize),
+        new Column('unit-skillcd', 'スキルCD', (x) => x.attackSkillCooldown(), {checked: false}),
+        new Column('unit-skillsp', 'スキルSP', (x) => x.attackSkillSP(), {checked: false}),
+        new Column('unit-skilltarget', 'スキル対象', (x) => x.attackSkillTarget(), {checked: false}),
+        new Column('unit-skillscale', 'スキル倍率', (x) => x.attackSkillScale(), {checked: false, format: BgrLib.percentize}),
     ];
 
     const table = new DataTable(
