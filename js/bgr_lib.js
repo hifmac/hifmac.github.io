@@ -315,7 +315,11 @@ BgrEquip.prototype.skillBP = function BgrEquip_skillBP() {
 };
 
 BgrEquip.prototype.dropStage = function BgrEquip_dropStage() {
-    return this.equip_data.stage.map((x) => x.replace(/\n/g, '')).join('\n');
+    return this.equip_data.drop_stage.map((x) => x.replace(/\n/g, '')).join('\n');
+};
+
+BgrEquip.prototype.itembox = function BgrEquip_itembox() {
+    return this.equip_data.itembox.map((x) => x.replace(/\n/g, '')).join('\n');
 };
 
 const BgrLib = {
@@ -531,6 +535,20 @@ const BgrLib = {
     speedToFrame(speed) {
         return parseInt((1000 * GAME_FPS / speed) + ATTACK_FRAME_DELAY);
     },
+
+    updateTooltip: (function() {
+        let updateTimer = null;
+        function updater() {
+            $('[data-toggle="tooltip"]').tooltip({html: true});
+            updateTimer = null;
+        };
+
+        return function() {
+            if (updateTimer == null) {
+                updateTimer = setTimeout(updater, 2000);
+            }
+        };
+    }())
 };
 
 /**
@@ -540,21 +558,25 @@ const BgrLib = {
  * @param {function((BgrUnit | BgrEquip)): (number | string)} read 
  * @param {function((number | string)): string} format 
  */
-function TableColumn(name, enabled, read, format) {
+function TableColumn(name, enabled, read, kwargs) {
     this.name = name;
     this.isEnabled = enabled;
     this.read = read;
-    this.format = format;
+    this.format = (kwargs && 'format' in kwargs) ? kwargs.format : null;
+    this.tooltip = (kwargs && 'tooltip' in kwargs) ? kwargs.tooltip : null;
 }
 
 /** @type {function(): boolean} */
 TableColumn.prototype.isEnabled = null;
 
-/** @type {function((BgrUnit | BgrEquip)): (number | string)} */
+/** @type {function((BgrUnit | BgrEquip | EquippedUnit)): (number | string)} */
 TableColumn.prototype.read = null;
 
 /** @type {function((number | string)): string} */
 TableColumn.prototype.format = null;
+
+/** @type {function((BgrUnit | BgrEquip)): string} */
+TableColumn.prototype.tooltip = null;
 
 /**
  * @param {HTMLTableElement} element
@@ -562,6 +584,10 @@ TableColumn.prototype.format = null;
 function Table(element) {
     this.element = element;
 }
+
+Table.CELL_ATTR = {
+    'style': 'white-space: pre-wrap;'
+};
 
 /** @type {TableColumn[]} */
 Table.prototype.column = null;
@@ -580,6 +606,11 @@ Table.prototype.sort_desc = false;
 
 /** @type {(function(TableColumn): void)[]} */
 Table.prototype.headerClickListeners = [];
+
+/** @type {(function(object): void)[]} */
+Table.prototype.bodyClickListeners = [];
+
+Table.prototype.hasTooltip = false;
 
 Table.prototype.clearTable = function Table_clearTable() {
     BgrLib.clearChildren(this.element);
@@ -619,6 +650,8 @@ Table.prototype.makeBody = function Table_makeBody() {
         this.data.sort((a, b) => compare(this.sort_column.read(a), this.sort_column.read(b)));
     }
 
+
+
     const body = document.createElement('tbody');
     for (let i in this.data) {
         const data = this.data[i];
@@ -627,12 +660,13 @@ Table.prototype.makeBody = function Table_makeBody() {
             continue;
         }
         const row = document.createElement('tr');
+        row.addEventListener('click', this.onBodyClicked.bind(this, data));
         for (let j in this.column) {
             const column = this.column[j];
             if (column.isEnabled()) {
                 const column_value = column.read(data);
-                const col = BgrLib.createTableCell(column.format ? column.format(column_value) : column_value);
-                col.style.whiteSpace = 'pre-wrap';
+                const column_attr = column.tooltip ? this.createTooltip(column.tooltip(data)) : Table.CELL_ATTR;   
+                const col = BgrLib.createTableCell(column.format ? column.format(column_value) : column_value, column_attr);
                 row.appendChild(col);
             }
         }
@@ -645,7 +679,21 @@ Table.prototype.update = function() {
     this.clearTable();
     this.element.appendChild(this.makeHeader());
     this.element.appendChild(this.makeBody());
+
+    if (this.hasTooltip) {
+        BgrLib.updateTooltip();
+    }
 };
+
+Table.prototype.createTooltip = function (title) {
+    this.hasTooltip = true;
+    return {
+        'style': Table.CELL_ATTR.style,
+        'data-toggle': 'tooltip',
+        'data-placement': 'top',
+        title,
+    };
+}
 
 /**
  * 
@@ -664,5 +712,15 @@ Table.prototype.onHeaderClicked = function(column) {
 
     for (let i in this.headerClickListeners) {
         this.headerClickListeners[i](column);
+    }
+};
+
+/**
+ * 
+ * @param {object} data 
+ */
+Table.prototype.onBodyClicked = function(data) {
+    for (let i in this.bodyClickListeners) {
+        this.bodyClickListeners[i](data);
     }
 };

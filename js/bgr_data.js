@@ -69,7 +69,7 @@ function Checkbox(id, text, checked) {
     form_check_input.id = id;
     form_check_input.setAttribute('type', 'checkbox');
     form_check_input.setAttribute('class', 'form-check-input');
-    form_check_input.checked = typeof checked == 'undefined' ? true : checked;
+    form_check_input.checked = typeof checked === 'undefined' ? true : checked;
 
     let form_check_label =document.createElement('label');
     form_check_label.setAttribute('class', 'form-check-label mr-2');
@@ -107,7 +107,7 @@ function CheckboxColumn(id, text, read, kwargs) {
         text,
         this.checkbox.checked.bind(this.checkbox),
         read,
-        kwargs ? kwargs.format : null);
+        kwargs);
 }
 
 
@@ -246,6 +246,7 @@ addEventListener('load', function() {
         new CheckboxColumn('equip-skillscale', 'スキル倍率', (x) => x.skillScale(), {checked: false, format: BgrLib.percentize}),
         new CheckboxColumn('equip-skillbp', 'スキルBP', (x) => x.skillBP(), {checked: false}),
         new CheckboxColumn('equip-dropstage', 'ドロップ', (x) => x.dropStage(), {checked: false}),
+        new CheckboxColumn('equip-itembox', '箱', (x) => x.itembox(), {checked: false}),
     ];
 
     const rank_checkbox = [

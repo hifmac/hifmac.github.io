@@ -16,7 +16,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -35,7 +36,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -54,7 +56,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -73,7 +76,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -92,7 +96,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -111,7 +116,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -130,7 +136,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -149,7 +156,8 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -168,12 +176,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第三章\nブランの地へ/ブランの地へ5",
         "第三章\nブランの地へ/ブランの地へ6",
         "第三章\nブランの地へ/ブランの地へ7",
         "第三章\nブランの地へ/ブランの地へ8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -192,7 +201,8 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -211,13 +221,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第一章\n序章/序章1",
         "第一章\n序章/序章2",
         "第一章\n序章/序章3",
         "第一章\n序章/序章4",
         "第一章\n序章/序章5"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -236,12 +247,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第四章\n一触即発/一触即発5",
         "第四章\n一触即発/一触即発6",
         "第四章\n一触即発/一触即発7",
         "第四章\n一触即発/一触即発8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -260,7 +272,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -279,7 +292,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -298,12 +312,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.03",
-      "stage":[
+      "drop_stage":[
         "第二章\nサンディカ/サンディカ5",
         "第二章\nサンディカ/サンディカ6",
         "第二章\nサンディカ/サンディカ7",
         "第二章\nサンディカ/サンディカ8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -322,7 +337,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -341,7 +357,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -360,7 +377,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -379,7 +397,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -398,12 +417,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第三章\nブランの地へ/ブランの地へ1",
         "第三章\nブランの地へ/ブランの地へ2",
         "第三章\nブランの地へ/ブランの地へ3",
         "第三章\nブランの地へ/ブランの地へ4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -422,7 +442,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -441,12 +462,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第四章\n一触即発/一触即発1",
         "第四章\n一触即発/一触即発2",
         "第四章\n一触即発/一触即発3",
         "第四章\n一触即発/一触即発4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -465,12 +487,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"30",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第五章\nジェイドの少女/ジェイドの少女1",
         "第五章\nジェイドの少女/ジェイドの少女2",
         "第五章\nジェイドの少女/ジェイドの少女3",
         "第五章\nジェイドの少女/ジェイドの少女4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -489,7 +512,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -508,12 +532,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第五章\nジェイドの少女/ジェイドの少女5",
         "第五章\nジェイドの少女/ジェイドの少女6",
         "第五章\nジェイドの少女/ジェイドの少女7",
         "第五章\nジェイドの少女/ジェイドの少女8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -532,12 +557,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第二章\nサンディカ/サンディカ1",
         "第二章\nサンディカ/サンディカ2",
         "第二章\nサンディカ/サンディカ3",
         "第二章\nサンディカ/サンディカ4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -556,7 +582,7 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第八章\nクーレイン城、\n突入/クーレイン城、突入1",
         "第八章\nクーレイン城、\n突入/クーレイン城、突入2",
         "第八章\nクーレイン城、\n突入/クーレイン城、突入3",
@@ -566,6 +592,7 @@ BgrLib.load({
         "第十六章\nそして、\n相まみえる/そして、相まみえる7",
         "第十六章\nそして、\n相まみえる/そして、相まみえる8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -584,12 +611,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十一章\nかつての憧憬/かつての憧憬5",
         "第十一章\nかつての憧憬/かつての憧憬6",
         "第十一章\nかつての憧憬/かつての憧憬7",
         "第十一章\nかつての憧憬/かつての憧憬8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -608,12 +636,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十章\n傭兵団、\n北へ/傭兵団、北へ5",
         "第十章\n傭兵団、\n北へ/傭兵団、北へ6",
         "第十章\n傭兵団、\n北へ/傭兵団、北へ7",
         "第十章\n傭兵団、\n北へ/傭兵団、北へ8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -632,12 +661,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十三章\n選ぶべき道/選ぶべき道5",
         "第十三章\n選ぶべき道/選ぶべき道6",
         "第十三章\n選ぶべき道/選ぶべき道7",
         "第十三章\n選ぶべき道/選ぶべき道8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -656,12 +686,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第九章\nフィーネ騎士団/フィーネ騎士団5",
         "第九章\nフィーネ騎士団/フィーネ騎士団6",
         "第九章\nフィーネ騎士団/フィーネ騎士団7",
         "第九章\nフィーネ騎士団/フィーネ騎士団8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -680,7 +711,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第六章\n聖剣探索/聖剣探索1",
         "第六章\n聖剣探索/聖剣探索2",
         "第六章\n聖剣探索/聖剣探索3",
@@ -690,6 +721,7 @@ BgrLib.load({
         "第十五章\n追いすがった先に/追いすがった先に3",
         "第十五章\n追いすがった先に/追いすがった先に4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -708,12 +740,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "第七章\n目指すは\nアージェント/目指すはアージェント1",
         "第七章\n目指すは\nアージェント/目指すはアージェント2",
         "第七章\n目指すは\nアージェント/目指すはアージェント3",
         "第七章\n目指すは\nアージェント/目指すはアージェント4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -732,12 +765,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.06",
-      "stage":[
+      "drop_stage":[
         "第十二章\n決意と再会/決意と再会5",
         "第十二章\n決意と再会/決意と再会6",
         "第十二章\n決意と再会/決意と再会7",
         "第十二章\n決意と再会/決意と再会8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -756,12 +790,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-90",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第七章\n目指すは\nアージェント/目指すはアージェント5",
         "第七章\n目指すは\nアージェント/目指すはアージェント6",
         "第七章\n目指すは\nアージェント/目指すはアージェント7",
         "第七章\n目指すは\nアージェント/目指すはアージェント8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -780,12 +815,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-90",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻1",
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻2",
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻3",
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -804,7 +840,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十八章\n全面衝突/全面衝突1",
         "第十八章\n全面衝突/全面衝突2",
         "第十八章\n全面衝突/全面衝突3",
@@ -814,6 +850,7 @@ BgrLib.load({
         "第十八章\n全面衝突/全面衝突7",
         "第十八章\n全面衝突/全面衝突8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -832,7 +869,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -851,7 +889,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第六章\n聖剣探索/聖剣探索5",
         "第六章\n聖剣探索/聖剣探索6",
         "第六章\n聖剣探索/聖剣探索7",
@@ -861,6 +899,7 @@ BgrLib.load({
         "第十六章\nそして、\n相まみえる/そして、相まみえる3",
         "第十六章\nそして、\n相まみえる/そして、相まみえる4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -879,7 +918,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十三章\n選ぶべき道/選ぶべき道1",
         "第十三章\n選ぶべき道/選ぶべき道2",
         "第十三章\n選ぶべき道/選ぶべき道3",
@@ -889,6 +928,7 @@ BgrLib.load({
         "第十二章\n決意と再会/決意と再会3",
         "第十二章\n決意と再会/決意と再会4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -907,12 +947,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十章\n傭兵団、\n北へ/傭兵団、北へ1",
         "第十章\n傭兵団、\n北へ/傭兵団、北へ2",
         "第十章\n傭兵団、\n北へ/傭兵団、北へ3",
         "第十章\n傭兵団、\n北へ/傭兵団、北へ4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -931,12 +972,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻5",
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻6",
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻7",
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -955,7 +997,7 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"75",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去1",
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去2",
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去3",
@@ -965,6 +1007,7 @@ BgrLib.load({
         "第十五章\n追いすがった先に/追いすがった先に7",
         "第十五章\n追いすがった先に/追いすがった先に8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -983,12 +1026,13 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去5",
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去6",
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去7",
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1007,12 +1051,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十一章\nかつての憧憬/かつての憧憬1",
         "第十一章\nかつての憧憬/かつての憧憬2",
         "第十一章\nかつての憧憬/かつての憧憬3",
         "第十一章\nかつての憧憬/かつての憧憬4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1031,7 +1076,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1050,12 +1096,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第九章\nフィーネ騎士団/フィーネ騎士団1",
         "第九章\nフィーネ騎士団/フィーネ騎士団2",
         "第九章\nフィーネ騎士団/フィーネ騎士団3",
         "第九章\nフィーネ騎士団/フィーネ騎士団4"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1074,12 +1121,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第八章\nクーレイン城、\n突入/クーレイン城、突入5",
         "第八章\nクーレイン城、\n突入/クーレイン城、突入6",
         "第八章\nクーレイン城、\n突入/クーレイン城、突入7",
         "第八章\nクーレイン城、\n突入/クーレイン城、突入8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1098,7 +1146,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":{
         "name":"[イード]アキビオ・エグリトラ",
         "number":null,
@@ -1141,7 +1190,8 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1160,9 +1210,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十三章\n選ぶべき道/選ぶべき道8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1181,7 +1232,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1200,7 +1252,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.09",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1219,7 +1272,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1238,7 +1292,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1257,7 +1312,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1276,7 +1332,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1295,7 +1352,8 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"120",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1314,9 +1372,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十四章\nエレフセリア、\n侵攻/エレフセリア、侵攻8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1335,7 +1394,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1354,7 +1414,8 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1373,11 +1434,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "第十七章\n禁断の地、\n眠る過去/禁断の地、眠る過去8",
         "第十五章\n追いすがった先に/追いすがった先に8",
         "第十六章\nそして、\n相まみえる/そして、相まみえる8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1396,7 +1458,8 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1415,10 +1478,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "ドラクルマスター\nへの道/竜と遊ぼう(上級)",
         "ドラクルマスター\nへの道/竜と遊ぼう(超級)"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1437,7 +1501,8 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.07",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1456,13 +1521,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "天空からの\n来訪者たち/天穹ノ彼方からの使者(上級)",
         "天空からの\n来訪者たち/天穹ノ彼方からの使者(神級)",
         "天空からの\n来訪者たち/天穹ノ彼方からの使者(神級+)",
         "天空からの\n来訪者たち/天穹ノ彼方からの使者(超級)",
         "天空からの\n来訪者たち/天穹ノ彼方からの使者(超級+)"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1481,9 +1547,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":"0.06",
-      "stage":[
+      "drop_stage":[
         "第十二章\n決意と再会/決意と再会8"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1502,7 +1569,8 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[],
       "skill":null
     },
     {
@@ -1521,8 +1589,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連続戦闘ステージ"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "装備ボックスIV"
       ],
       "skill":null
     },
@@ -1542,12 +1615,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団\nエレフセリア/追跡(上級)",
         "傭兵団\nエレフセリア/追跡(超級)",
         "傭兵団\nエレフセリア/追跡(超級+)",
         "傭兵団\nエレフセリア/遭遇(上級)",
         "傭兵団\nエレフセリア/遭遇(超級)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "ローグズボックス"
       ],
       "skill":null
     },
@@ -1567,7 +1645,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "装備ボックスIV"
+      ],
       "skill":null
     },
     {
@@ -1586,9 +1669,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "怪奇！ 蠢く蔦/次なる研究(神級)",
         "怪奇！ 蠢く蔦/次なる研究(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -1608,7 +1695,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "装備ボックスIV"
+      ],
       "skill":null
     },
     {
@@ -1627,9 +1719,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "大鷲狩り/大鷲狩り(上級)",
         "大鷲狩り/大鷲狩り(超級)"
+      ],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスVI",
+        "SP装備ボックスXIII",
+        "SP装備ボックスⅨ",
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "グリフォンボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -1649,9 +1751,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "キノコの襲撃/キノコの襲撃(上級)",
         "キノコの襲撃/キノコの襲撃(超級)"
+      ],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -1671,7 +1778,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "装備ボックスIV"
+      ],
       "skill":null
     },
     {
@@ -1690,7 +1802,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "魔光石ボックス"
+      ],
       "skill":null
     },
     {
@@ -1709,7 +1825,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "装備ボックスIV"
+      ],
       "skill":null
     },
     {
@@ -1728,9 +1849,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"90",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "洞窟探索任務/演習依頼(上級)",
         "洞窟探索任務/演習依頼(超級)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -1750,10 +1875,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "少女達の聖戦/少女たちの聖戦(上級)",
         "少女達の聖戦/少女たちの聖戦(超級)",
         "少女達の聖戦/少女たちの聖戦(超級+)"
+      ],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "ラッピングボックス"
       ],
       "skill":null
     },
@@ -1773,9 +1904,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "少女達の聖戦/少女たちの聖戦(神級)",
         "少女達の聖戦/少女たちの聖戦(神級+)"
+      ],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -1795,7 +1931,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスXXXVI",
+        "SP装備ボックスⅩ",
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -1814,7 +1958,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "腹ペコ解消調理セット"
+      ],
       "skill":null
     },
     {
@@ -1833,7 +1983,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -1852,9 +2007,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団の年始め/新年から大騷動(上級)",
         "傭兵団の年始め/新年から大騷動(超級)"
+      ],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスV",
+        "SP装備ボックスⅢ",
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -1874,7 +2037,12 @@ BgrLib.load({
       "spd_rate":"1.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -1893,7 +2061,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "フロフロッグコフレ",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -1912,12 +2086,20 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.11",
-      "stage":[
+      "drop_stage":[
         "教官の教え/教官への挑戦(上級)",
         "教官の教え/教官への挑戦(神級)",
         "教官の教え/教官への挑戦(神級+)",
         "教官の教え/教官への挑戦(超級)",
         "教官の教え/教官への挑戦(超級+)"
+      ],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "トゥーネソルボックス",
+        "ブラン教官の指導箱",
+        "プリシラとの武器取引書",
+        "ヴェボット"
       ],
       "skill":null
     },
@@ -1937,7 +2119,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "オルタンシアボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -1956,7 +2144,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"45",
       "crit":"0.01",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SSR装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "オルタンシアボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -1975,12 +2169,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "甘い甘い騒動/イベントレベル(超級)I",
         "甘い甘い騒動/イベントレベル(超級)II",
         "甘い甘い騒動/団長主催パーティー(上級)",
         "甘い甘い騒動/団長主催パーティー(超級)",
         "甘い甘い騒動/団長主催パーティー(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "グラーティアボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -2000,7 +2199,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2019,9 +2225,15 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":"10",
       "crit":"0.08",
-      "stage":[
+      "drop_stage":[
         "狙うはお宝/狙うはお宝(上級)",
         "狙うはお宝/狙うはお宝(超級)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ジュエルボックス",
+        "プリシラとの武器取引書",
+        "ローズマリーボックス"
       ],
       "skill":null
     },
@@ -2041,7 +2253,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -2060,10 +2276,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.12",
-      "stage":[
+      "drop_stage":[
         "運命の日は\n誰の手に/続・お菓子対決(上級)",
         "運命の日は\n誰の手に/続・お菓子対決(超級)",
         "運命の日は\n誰の手に/続・お菓子対決(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスVI",
+        "SP装備ボックスⅢ",
+        "SP装備ボックスⅣ",
+        "[SSR]装備セレクトボックス",
+        "アフェクションボックス",
+        "カメリアボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -2083,7 +2309,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -2102,12 +2332,24 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "愛しき人の好みに染まる/愛しき人の好みに染まる(上級)",
         "愛しき人の好みに染まる/愛しき人の好みに染まる(超級)",
         "愛しき人の好みに染まる/愛しき人の好みに染まる(超級+)",
         "甘い甘い騒動/団長主催パーティー(神級)",
         "甘い甘い騒動/団長主催パーティー(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスVI",
+        "SP装備ボックスXII",
+        "[SSR]装備セレクトボックス",
+        "カメリアボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2127,7 +2369,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":"0.05",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "トゥーネソルボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2146,7 +2397,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスⅢ",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -2165,9 +2422,18 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":"130",
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "撃滅の傭兵団/【超絶】撃滅の傭兵団",
         "撃滅の傭兵団/【超絶】進撃の傭兵団"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "トゥーネソルボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2187,7 +2453,17 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "ローズマリーボックス",
+        "新年装備ボックス",
+        "神様のささやき"
+      ],
       "skill":null
     },
     {
@@ -2206,10 +2482,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "おニューな衣装を求めて②/おニューな衣装を求めて(上級)",
         "おニューな衣装を求めて②/おニューな衣装を求めて(超級)",
         "おニューな衣装を求めて②/おニューな衣装を求めて(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリサンセドール",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2229,7 +2514,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "ジェイドの精霊/精霊との知恵くらべ(上級)",
         "ジェイドの精霊/精霊との知恵くらべ(神級)",
         "ジェイドの精霊/精霊との知恵くらべ(神級+)",
@@ -2237,6 +2522,20 @@ BgrLib.load({
         "ジェイドの精霊/精霊との知恵くらべ(超級+)",
         "ジェイドの精霊/精霊の審判(上級)",
         "ジェイドの精霊/精霊の審判(超級)"
+      ],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスXXXIV",
+        "SP装備ボックスⅨ",
+        "[SSR]装備セレクトボックス",
+        "オオハルシャボックス",
+        "オルタンシアボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "精霊からの贈り物"
       ],
       "skill":null
     },
@@ -2256,10 +2555,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "怪奇！ 蠢く蔦/次なる研究(上級)",
         "怪奇！ 蠢く蔦/次なる研究(超級)",
         "怪奇！ 蠢く蔦/次なる研究(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ケミカルボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2279,7 +2587,16 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.02",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "オルタンシアボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2298,9 +2615,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.18",
-      "stage":[
+      "drop_stage":[
         "撃滅の傭兵団/【超絶】撃滅の傭兵団",
         "撃滅の傭兵団/【超絶】殲滅の傭兵団"
+      ],
+      "itembox":[
+        "SP装備ボックスXV",
+        "SP装備ボックスXXVII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2320,10 +2646,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
-      "stage":[
+      "drop_stage":[
         "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(上級)",
         "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(超級)",
         "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -2343,9 +2673,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "洞窟探索任務/実地演習(神級)",
         "洞窟探索任務/実地演習(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ブエナスエール"
       ],
       "skill":null
     },
@@ -2365,7 +2699,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "メトヒゲベート",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2384,7 +2727,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2403,7 +2754,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "ローズマリーボックス"
+      ],
       "skill":null
     },
     {
@@ -2422,7 +2778,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスVII",
+        "SP装備ボックスXXVII",
+        "SP装備ボックスⅩ",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2441,7 +2807,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "オオハルシャボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2460,9 +2835,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-120",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団\nエレフセリア/追跡(神級)",
         "傭兵団\nエレフセリア/追跡(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2482,7 +2864,14 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2501,7 +2890,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"-0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2520,7 +2916,7 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(上級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(神級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]聖剣の精霊(神級+)",
@@ -2528,6 +2924,20 @@ BgrLib.load({
         "聖剣の精霊/聖剣の精霊(上級)",
         "聖剣の精霊/聖剣の精霊(超級)",
         "聖剣の精霊/聖剣の精霊(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVII",
+        "SP装備ボックスXXVI",
+        "SP装備ボックスXXXVII",
+        "SP装備ボックスⅣ",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "精霊の箱",
+        "聖剣からの託宣"
       ],
       "skill":null
     },
@@ -2547,7 +2957,10 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.05",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[神器]装備セレクトボックス"
+      ],
       "skill":{
         "name":"[アンヘル]プレイド・グリーフ",
         "number":null,
@@ -2601,7 +3014,17 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":"25",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "オオハルシャボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "錆刀が眠る場所"
+      ],
       "skill":null
     },
     {
@@ -2620,10 +3043,23 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.2",
-      "stage":[
+      "drop_stage":[
         "洞窟探索任務/実地演習(上級)",
         "洞窟探索任務/実地演習(超級)",
         "洞窟探索任務/実地演習(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスV",
+        "SP装備ボックスXXVII",
+        "SP装備ボックスⅣ",
+        "SP装備ボックスⅨ",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "トラストボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2643,10 +3079,15 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"13",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(上級)",
         "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(超級)",
         "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXXI",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -2666,11 +3107,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "うららかな刺激を！/うららかな刺激を！(神級)",
         "うららかな刺激を！/うららかな刺激を！(神級+)",
         "すべては\n目標のために/借金返済の道(神級)",
         "すべては\n目標のために/借金返済の道(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVII",
+        "SP装備ボックスXI",
+        "SP装備ボックスXXXII",
+        "[SSR]装備セレクトボックス",
+        "トゥーネソルボックス",
+        "プリシラとの武器取引書",
+        "プリミティブメディ"
       ],
       "skill":null
     },
@@ -2690,7 +3140,14 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.1",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスV",
+        "SP装備ボックスXI",
+        "SP装備ボックスXXXIII",
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -2709,10 +3166,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "すべては\n目標のために/借金返済の道(上級)",
         "すべては\n目標のために/借金返済の道(超級)",
         "すべては\n目標のために/借金返済の道(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXVI",
+        "SP装備ボックスXXVI",
+        "SP装備ボックスⅢ",
+        "[SSR]装備セレクトボックス",
+        "オオハルシャボックス",
+        "プリシラとの武器取引書",
+        "レイジーボックス"
       ],
       "skill":null
     },
@@ -2732,7 +3198,12 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":"10",
       "crit":"0.06",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "カメリアボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -2751,7 +3222,17 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":"20",
       "crit":"0.06",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXV",
+        "SP装備ボックスXXXII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2770,7 +3251,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2789,7 +3278,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"35",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アルブリラロクサ",
+        "クリスマス装備ボックス",
+        "ファルテウス家の紅茶箱",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2808,7 +3307,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "シュスカテン",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2827,7 +3334,17 @@ BgrLib.load({
       "spd_rate":"0",
       "move":"60",
       "crit":"0",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXVI",
+        "SP装備ボックスⅣ",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2846,7 +3363,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2865,13 +3390,26 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "春の日和に、君と/夜店デートのために(上級)",
         "春の日和に、君と/夜店デートのために(超級)",
         "春の日和に、君と/夜店デートのために(超級+)",
         "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(上級)",
         "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(超級)",
         "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスV",
+        "SP装備ボックスXXX",
+        "SP装備ボックスⅢ",
+        "SP装備ボックスⅣ",
+        "[SSR]装備セレクトボックス",
+        "カーニバルボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2891,11 +3429,20 @@ BgrLib.load({
       "spd_rate":"0.4",
       "move":null,
       "crit":"0.07",
-      "stage":[
+      "drop_stage":[
         "春の日和に、君と/夜店デートのために(神級)",
         "春の日和に、君と/夜店デートのために(神級+)",
         "春爛漫♡恋の装い/春爛漫♡恋の装い(神級)",
         "春爛漫♡恋の装い/春爛漫♡恋の装い(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "一緒にごろごろにゃんにゃんセット",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -2915,7 +3462,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "トリッテ・グロワールお詫びボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2934,7 +3490,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.12",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "レーゼアボン",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -2953,9 +3518,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "秘宝の噂を追って/秘宝の噂を追って(神級)",
         "秘宝の噂を追って/秘宝の噂を追って(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ハーフミリオンボックス",
+        "小型の純白救急箱"
       ],
       "skill":null
     },
@@ -2975,10 +3545,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団の夏休み/サマータイムバカンス(上級)",
         "傭兵団の夏休み/サマータイムバカンス(超級)",
         "傭兵団の夏休み/サマータイムバカンス(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスV",
+        "SP装備ボックスXII",
+        "SP装備ボックスXXXV",
+        "SP装備ボックスⅩ",
+        "[SSR]装備セレクトボックス",
+        "オーシャンメモリーズ",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -2998,10 +3577,16 @@ BgrLib.load({
       "spd_rate":"2",
       "move":"60",
       "crit":"0.2",
-      "stage":[
+      "drop_stage":[
         "秘宝の噂を追って/秘宝の噂を追って(上級)",
         "秘宝の噂を追って/秘宝の噂を追って(超級)",
         "秘宝の噂を追って/秘宝の噂を追って(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスX",
+        "SP装備ボックスXXX",
+        "[SSR]装備セレクトボックス",
+        "ハーフミリオンボックス"
       ],
       "skill":null
     },
@@ -3021,12 +3606,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":"0.01",
-      "stage":[
+      "drop_stage":[
         "小さな少女たち\nの冒険/追いかけっこ？(上級)",
         "小さな少女たち\nの冒険/追いかけっこ？(超級)",
         "小さな少女たち\nの冒険/追いかけっこ？(超級+)",
         "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(神級)",
         "暖かな笑顔\n咲く冬日和/暖かな笑顔咲く冬日和(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "リデレボックス"
       ],
       "skill":null
     },
@@ -3046,7 +3636,12 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVIII",
+        "SP装備ボックスXXIX",
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -3065,7 +3660,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "おませさんの宝箱",
+        "カメリアボックス",
+        "プリシラとの武器取引書",
+        "ルミエ・スウルスお詫びボックス"
+      ],
       "skill":null
     },
     {
@@ -3084,7 +3686,11 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"-50",
       "crit":"0.08",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -3103,9 +3709,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "小さな少女たち\nの冒険/追いかけっこ？(神級)",
         "小さな少女たち\nの冒険/追いかけっこ？(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "ローズマリーボックス"
       ],
       "skill":null
     },
@@ -3125,7 +3736,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":"0.01",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3144,7 +3763,15 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"50",
       "crit":"0.1",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "クレアちゃんのコスメボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3163,9 +3790,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "幼馴染な花嫁たち/次なる幸せの行方(神級)",
         "幼馴染な花嫁たち/次なる幸せの行方(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3185,10 +3820,19 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "幼馴染な花嫁たち/次なる幸せの行方(上級)",
         "幼馴染な花嫁たち/次なる幸せの行方(超級)",
         "幼馴染な花嫁たち/次なる幸せの行方(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ウェディングギフト",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3208,7 +3852,11 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":"10",
       "crit":"0.06",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -3227,7 +3875,15 @@ BgrLib.load({
       "spd_rate":"2",
       "move":"100",
       "crit":"0.05",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3246,13 +3902,24 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":"5",
       "crit":"0.09",
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(上級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(超級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(超級+)",
         "団長主催・\n深夜の大パーティ/サンセットサマーハイ(上級)",
         "団長主催・\n深夜の大パーティ/サンセットサマーハイ(超級)",
         "団長主催・\n深夜の大パーティ/サンセットサマーハイ(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスX",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "夏の贈り物",
+        "新年装備ボックス",
+        "浜のハートビート"
       ],
       "skill":null
     },
@@ -3272,7 +3939,15 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.1",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "トリッテ・グロワールお詫びボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3291,11 +3966,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(神級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]サンセットサマーハイ(神級+)",
         "団長主催・\n深夜の大パーティ/サンセットサマーハイ(神級)",
         "団長主催・\n深夜の大パーティ/サンセットサマーハイ(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "浜のハートビート"
       ],
       "skill":null
     },
@@ -3315,9 +3999,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":"75",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団の夏休み/サマータイムバカンス(神級)",
         "傭兵団の夏休み/サマータイムバカンス(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVIII",
+        "SP装備ボックスXVI",
+        "SP装備ボックスXXVIII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3337,10 +4032,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(上級)",
         "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(超級)",
         "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3360,7 +4062,18 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXV",
+        "SP装備ボックスXXXI",
+        "[SSR]装備セレクトボックス",
+        "エステルのびっくり箱",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3379,7 +4092,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスVIII",
+        "SP装備ボックスXXXIII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3398,10 +4121,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "夏の夜空に\n咲く花々/お楽しみはこれから！(上級)",
         "夏の夜空に\n咲く花々/お楽しみはこれから！(超級)",
         "夏の夜空に\n咲く花々/お楽しみはこれから！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "サマーナイトフレア",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3421,7 +4153,15 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":"120",
       "crit":"0.01",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3440,9 +4180,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.12",
-      "stage":[
+      "drop_stage":[
         "夏の夜空に\n咲く花々/お楽しみはこれから！(神級)",
         "夏の夜空に\n咲く花々/お楽しみはこれから！(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVII",
+        "SP装備ボックスXXVII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3462,10 +4212,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "お好みは\nどんな秋？/狂騒のお月見(上級)",
         "お好みは\nどんな秋？/狂騒のお月見(超級)",
         "お好みは\nどんな秋？/狂騒のお月見(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "オータムクローゼット",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3485,7 +4243,15 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":"20",
       "crit":"0.11",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "ラビリョーシカ",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3504,7 +4270,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスVI",
+        "SP装備ボックスXI",
+        "SP装備ボックスⅨ",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3523,9 +4300,21 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "お好みは\nどんな秋？/狂騒のお月見(神級)",
         "お好みは\nどんな秋？/狂騒のお月見(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVI",
+        "SP装備ボックスVIII",
+        "SP装備ボックスXII",
+        "SP装備ボックスⅩ",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "プリシラとの武器取引書",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3545,7 +4334,17 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.12",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXV",
+        "SP装備ボックスXXV",
+        "SP装備ボックスXXXV",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3564,13 +4363,22 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":"10",
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "祭典の魔女/お祭り騒ぎは続く(上級)",
         "祭典の魔女/お祭り騒ぎは続く(超級)",
         "祭典の魔女/お祭り騒ぎは続く(超級+)",
         "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(上級)",
         "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(超級)",
         "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(超級+)"
+      ],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "スイーツボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3590,7 +4398,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3609,9 +4424,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "祭典の魔女/お祭り騒ぎは続く(神級)",
         "祭典の魔女/お祭り騒ぎは続く(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3631,10 +4453,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(上級)",
         "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(超級)",
         "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "トリートボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3654,9 +4484,16 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(神級)",
         "ひとひらの紅葉と\n夕焼けの麗人/ひとひらの紅葉と夕焼けの麗人(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3676,9 +4513,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(神級)",
         "仮装屋台へ\nようこそ/ようこそ悪戯仮装パーティー(神級+)"
+      ],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3698,10 +4543,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "おニューな衣装を求めて/おニューな衣装を求めて(上級)",
         "おニューな衣装を求めて/おニューな衣装を求めて(超級)",
         "おニューな衣装を求めて/おニューな衣装を求めて(超級+)"
+      ],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "甲斐甲斐しい面影"
       ],
       "skill":null
     },
@@ -3721,9 +4575,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "ある初雪の日に/周囲の散策(神級)",
         "ある初雪の日に/周囲の散策(神級+)"
+      ],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3743,10 +4605,19 @@ BgrLib.load({
       "spd_rate":"1.5",
       "move":"-50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "ある初雪の日に/周囲の散策(上級)",
         "ある初雪の日に/周囲の散策(超級)",
         "ある初雪の日に/周囲の散策(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "フロストボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "見え透く狐耳の心"
       ],
       "skill":null
     },
@@ -3766,13 +4637,21 @@ BgrLib.load({
       "spd_rate":null,
       "move":"115",
       "crit":"-0.05",
-      "stage":[
+      "drop_stage":[
         "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(上級)",
         "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(超級)",
         "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(超級+)",
         "聖夜のための\n準備祭/団長がサンタクロース！(上級)",
         "聖夜のための\n準備祭/団長がサンタクロース！(超級)",
         "聖夜のための\n準備祭/団長がサンタクロース！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "良い子への贈り物"
       ],
       "skill":null
     },
@@ -3792,9 +4671,18 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "聖夜のための\n準備祭/団長がサンタクロース！(神級)",
         "聖夜のための\n準備祭/団長がサンタクロース！(神級+)"
+      ],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "秘蔵の珍味コレクション"
       ],
       "skill":null
     },
@@ -3814,7 +4702,18 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"-60",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "SP装備ボックスXIII",
+        "SP装備ボックスXXVII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "未来覗く鏡箱"
+      ],
       "skill":null
     },
     {
@@ -3833,7 +4732,16 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.09",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "SP装備ボックスXXXI",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3852,9 +4760,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"90",
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "新たなる年を\n迎えに/新年の仕事始め(神級)",
         "新たなる年を\n迎えに/新年の仕事始め(神級+)"
+      ],
+      "itembox":[
+        "60万人記念装備ボックス",
+        "SP装備ボックスXIV",
+        "SP装備ボックスXXX",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3874,10 +4792,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
-      "stage":[
+      "drop_stage":[
         "新たなる年を\n迎えに/新年の仕事始め(上級)",
         "新たなる年を\n迎えに/新年の仕事始め(超級)",
         "新たなる年を\n迎えに/新年の仕事始め(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "シスターからの祝福",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "新春おみくじボックス"
       ],
       "skill":null
     },
@@ -3897,13 +4824,21 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":null,
       "crit":"0.19",
-      "stage":[
+      "drop_stage":[
         "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(上級)",
         "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(超級)",
         "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(超級+)",
         "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(上級)",
         "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(超級)",
         "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "ラッキーボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3923,7 +4858,17 @@ BgrLib.load({
       "spd_rate":"0.2",
       "move":"-30",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVI",
+        "SP装備ボックスXXII  ",
+        "SP装備ボックスXXXV",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -3942,9 +4887,19 @@ BgrLib.load({
       "spd_rate":"1",
       "move":"80",
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(神級)",
         "惑わすは、奇術か\n過去か 吹奏か/寒さで枯れない花を求めて(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXIV",
+        "SP装備ボックスXXII  ",
+        "SP装備ボックスXXXVI",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3964,10 +4919,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(上級)",
         "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(超級)",
         "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "キュアベリー",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -3987,9 +4950,16 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(神級)",
         "栄光のアーチを\nくぐるために/想いは同じ、渡し方は…(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4009,7 +4979,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クオイカステン",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "種も仕掛けもない奇術箱"
+      ],
       "skill":null
     },
     {
@@ -4028,7 +5007,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"90",
       "crit":"0.12",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アデライトの極秘弾薬箱",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4047,10 +5034,21 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "傭兵団カフェへ\nようこそ/団長からの返礼(上級)",
         "傭兵団カフェへ\nようこそ/団長からの返礼(超級)",
         "傭兵団カフェへ\nようこそ/団長からの返礼(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVII",
+        "SP装備ボックスXI",
+        "SP装備ボックスXXVI",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "白い思い出箱"
       ],
       "skill":null
     },
@@ -4070,11 +5068,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団カフェへ\nようこそ/団長からの返礼(神級)",
         "傭兵団カフェへ\nようこそ/団長からの返礼(神級+)",
         "愛しき人の好みに染まる/愛しき人の好みに染まる(神級)",
         "愛しき人の好みに染まる/愛しき人の好みに染まる(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4094,7 +5099,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":"0.03",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "一番弟子のキモチ",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4113,13 +5126,25 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.04",
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(上級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(超級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(超級+)",
         "失われし魔術/失われし魔術(上級)",
         "失われし魔術/失われし魔術(超級)",
         "失われし魔術/失われし魔術(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXI",
+        "SP装備ボックスXIV",
+        "SP装備ボックスXXII  ",
+        "[SSR]装備セレクトボックス",
+        "アデプタスアーカイブ",
+        "アルテナライブラリ",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4139,11 +5164,23 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(神級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]失われし魔術(神級+)",
         "失われし魔術/失われし魔術(神級)",
         "失われし魔術/失われし魔術(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVIII",
+        "SP装備ボックスXIII",
+        "SP装備ボックスXXXII",
+        "SP装備ボックスⅨ",
+        "[SSR]装備セレクトボックス",
+        "アデプタスアーカイブ",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4163,10 +5200,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "美しく咲く花の\n下で/花筏の合戦(上級)",
         "美しく咲く花の\n下で/花筏の合戦(超級)",
         "美しく咲く花の\n下で/花筏の合戦(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "シフォン愛用の裁縫箱",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "花彩重箱"
       ],
       "skill":null
     },
@@ -4186,7 +5232,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"100",
       "crit":"0.1",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXIII",
+        "SP装備ボックスXXIV",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4205,10 +5260,18 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(上級)",
         "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(超級)",
         "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ブリキのトイボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4228,9 +5291,17 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(神級)",
         "小さな少女たちの\n祭典/ちっちゃくてもようへいだん(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "エルフィム姉の思い",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4250,7 +5321,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.1",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVI",
+        "SP装備ボックスXXVIII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4269,7 +5349,14 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4288,10 +5375,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.19",
-      "stage":[
+      "drop_stage":[
         "パーティは\n花嫁たちと/踏み出せ乙女パワー！(上級)",
         "パーティは\n花嫁たちと/踏み出せ乙女パワー！(超級)",
         "パーティは\n花嫁たちと/踏み出せ乙女パワー！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "祝福のお返し袋"
       ],
       "skill":null
     },
@@ -4311,9 +5406,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "パーティは\n花嫁たちと/踏み出せ乙女パワー！(神級)",
         "パーティは\n花嫁たちと/踏み出せ乙女パワー！(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4333,7 +5435,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4352,10 +5461,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":"0.04",
-      "stage":[
+      "drop_stage":[
         "灼熱の祭典・前/サンシャインオンタイム(上級)",
         "灼熱の祭典・前/サンシャインオンタイム(超級)",
         "灼熱の祭典・前/サンシャインオンタイム(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "クーラーマジック",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4375,11 +5492,18 @@ BgrLib.load({
       "spd_rate":"3.2",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "灼熱の祭典・前/サンシャインオンタイム(神級)",
         "灼熱の祭典・前/サンシャインオンタイム(神級+)",
         "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(神級)",
         "貴族の優雅な\n春コーデ/貴族の優雅な春コーデ(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4399,7 +5523,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"200",
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4418,10 +5549,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"20",
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "灼熱の祭典・後/カクテルオンザビーチ(上級)",
         "灼熱の祭典・後/カクテルオンザビーチ(超級)",
         "灼熱の祭典・後/カクテルオンザビーチ(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アキドリグリ",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス",
+        "竜の刻刻箱"
       ],
       "skill":null
     },
@@ -4441,9 +5581,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "灼熱の祭典・後/カクテルオンザビーチ(神級)",
         "灼熱の祭典・後/カクテルオンザビーチ(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4463,7 +5610,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXI",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4482,10 +5637,20 @@ BgrLib.load({
       "spd_rate":null,
       "move":"100",
       "crit":"0.09",
-      "stage":[
+      "drop_stage":[
         "大輪はいずこから\n咲く？/祭の思い出(上級)",
         "大輪はいずこから\n咲く？/祭の思い出(超級)",
         "大輪はいずこから\n咲く？/祭の思い出(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスVIII",
+        "SP装備ボックスXXX",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "コライユの包み",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4505,9 +5670,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "大輪はいずこから\n咲く？/祭の思い出(神級)",
         "大輪はいずこから\n咲く？/祭の思い出(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスX",
+        "SP装備ボックスXXIX",
+        "SP装備ボックスXXXVII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4527,7 +5702,16 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXIX",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "ルミエ・スウルスお詫びボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4546,12 +5730,24 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(上級)",
         "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(神級)",
         "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(神級+)",
         "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(超級)",
         "伝説のブーケ\n争奪戦/ブーケにまみれる幸せを(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスX",
+        "SP装備ボックスXXVI",
+        "SP装備ボックスXXXIV",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "幸せの青い箱",
+        "幼き日の思い出",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4571,7 +5767,7 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "おニューな衣装を求めて/おニューな衣装を求めて(神級)",
         "おニューな衣装を求めて/おニューな衣装を求めて(神級+)",
         "初夏の日差しを浴びて/初夏の日差しを浴びて(上級)",
@@ -4580,6 +5776,14 @@ BgrLib.load({
         "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(上級)",
         "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(超級)",
         "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ベーカリーレガロ",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4599,9 +5803,20 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.2",
-      "stage":[
+      "drop_stage":[
         "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(神級)",
         "食欲の秋、\nパンフェアの秋/行列のできるパン屋さん(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXIV",
+        "SP装備ボックスXXI ",
+        "SP装備ボックスXXXVII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "一人旅の必需品",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4621,7 +5836,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -4640,9 +5862,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(神級)",
         "寒日掻き消す元気な輝き/寒日掻き消す元気な輝き(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXIX",
+        "SP装備ボックスXXXIII",
+        "[SSR]装備セレクトボックス",
+        "クリスマス装備ボックス",
+        "ホワイトデー装備ボックス",
+        "メイド記念装備ボックス",
+        "新年装備ボックス"
       ],
       "skill":null
     },
@@ -4662,7 +5893,10 @@ BgrLib.load({
       "spd_rate":"2.2",
       "move":null,
       "crit":"0.14",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -4681,13 +5915,18 @@ BgrLib.load({
       "spd_rate":"0.48",
       "move":"40",
       "crit":"0.11",
-      "stage":[
+      "drop_stage":[
         "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(上級)",
         "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(超級)",
         "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(超級+)",
         "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(上級)",
         "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(超級)",
         "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ミスチフボックス",
+        "ルミエ・スウルスお詫びボックス"
       ],
       "skill":null
     },
@@ -4707,9 +5946,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(神級)",
         "ハロウィンの夜\nには霊が集う？/街外れのお化け屋敷(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXI ",
+        "SP装備ボックスXXXV",
+        "SP装備ボックスⅩ",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -4729,7 +5974,12 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.13",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIII",
+        "SP装備ボックスXXX",
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -4748,10 +5998,14 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(上級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(超級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ベニーヤボックス"
       ],
       "skill":null
     },
@@ -4771,11 +6025,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(神級)",
         "[共闘戦]\n彷徨いの狼/[共闘戦]彷徨いの狼(神級+)",
         "おニューな衣装を求めて②/おニューな衣装を求めて(神級)",
         "おニューな衣装を求めて②/おニューな衣装を求めて(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXIII",
+        "SP装備ボックスXXIV",
+        "SP装備ボックスXXXVI",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -4795,10 +6055,17 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":"0.04",
-      "stage":[
+      "drop_stage":[
         "傭兵団の大合宿/極寒！雪山！サバイバル！(上級)",
         "傭兵団の大合宿/極寒！雪山！サバイバル！(超級)",
         "傭兵団の大合宿/極寒！雪山！サバイバル！(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXX",
+        "SP装備ボックスXXXV",
+        "[SSR]装備セレクトボックス",
+        "やりくり貯金箱",
+        "フローワクラスタ"
       ],
       "skill":null
     },
@@ -4818,9 +6085,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団の大合宿/極寒！雪山！サバイバル！(神級)",
         "傭兵団の大合宿/極寒！雪山！サバイバル！(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXV",
+        "SP装備ボックスXXII  ",
+        "SP装備ボックスXXXIII",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -4840,7 +6113,12 @@ BgrLib.load({
       "spd_rate":"1.9",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "イヴェールパルレ",
+        "薔薇十字のジュエリーケース"
+      ],
       "skill":null
     },
     {
@@ -4859,7 +6137,10 @@ BgrLib.load({
       "spd_rate":"1.9",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -4878,7 +6159,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-20",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXII",
+        "SP装備ボックスXXVIII",
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -4897,9 +6183,12 @@ BgrLib.load({
       "spd_rate":"1.6",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "聖剣の精霊/聖剣の精霊(神級)",
         "聖剣の精霊/聖剣の精霊(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -4919,7 +6208,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アリエル♡愛のコレクション"
+      ],
       "skill":null
     },
     {
@@ -4938,7 +6231,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"120",
       "crit":"0.08",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プレシャスペクト",
+        "ルミエ・スウルスお詫びボックス"
+      ],
       "skill":null
     },
     {
@@ -4957,10 +6255,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"15",
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "聖なる夜に降\nる祝福/聖夜の大泥棒？(上級)",
         "聖なる夜に降\nる祝福/聖夜の大泥棒？(超級)",
         "聖なる夜に降\nる祝福/聖夜の大泥棒？(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -4980,9 +6281,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "聖なる夜に降\nる祝福/聖夜の大泥棒？(神級)",
         "聖なる夜に降\nる祝福/聖夜の大泥棒？(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5002,7 +6306,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":"0.1",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIX",
+        "SP装備ボックスXXV",
+        "SP装備ボックスXXXVII",
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -5021,10 +6331,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "年越しは\nバニーと共に/幸運を掴むために(上級)",
         "年越しは\nバニーと共に/幸運を掴むために(超級)",
         "年越しは\nバニーと共に/幸運を掴むために(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アンオラクル",
+        "トリッテ・グロワールお詫びボックス"
       ],
       "skill":null
     },
@@ -5044,13 +6359,16 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "初夏の日差しを浴びて/初夏の日差しを浴びて(神級)",
         "初夏の日差しを浴びて/初夏の日差しを浴びて(神級+)",
         "年越しは\nバニーと共に/幸運を掴むために(神級)",
         "年越しは\nバニーと共に/幸運を掴むために(神級+)",
         "神官様のお忍び勝負服！/神官様のお忍び勝負服！(神級)",
         "神官様のお忍び勝負服！/神官様のお忍び勝負服！(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5070,7 +6388,15 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.19",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIII",
+        "SP装備ボックスXXIII",
+        "SP装備ボックスXXIV",
+        "[SSR]装備セレクトボックス",
+        "ドキドキ☆私物コレクション",
+        "力漲るスタミナ弁当箱"
+      ],
       "skill":null
     },
     {
@@ -5089,7 +6415,7 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "うららかな刺激を！/うららかな刺激を！(上級)",
         "うららかな刺激を！/うららかな刺激を！(超級)",
         "うららかな刺激を！/うららかな刺激を！(超級+)",
@@ -5099,6 +6425,9 @@ BgrLib.load({
         "春風舞うひと時/春風舞うひと時(神級)",
         "春風舞うひと時/春風舞うひと時(神級+)",
         "春風舞うひと時/春風舞うひと時(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5118,9 +6447,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.03",
-      "stage":[
+      "drop_stage":[
         "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(神級)",
         "お帰りなさいませ\nご奉仕カフェへ/メイド仕事は大忙し(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "メイドさんの落し物"
       ],
       "skill":null
     },
@@ -5140,12 +6473,17 @@ BgrLib.load({
       "spd_rate":"2.2",
       "move":null,
       "crit":"0.12",
-      "stage":[
+      "drop_stage":[
         "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(上級)",
         "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(神級)",
         "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(神級+)",
         "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(超級)",
         "おしゃれコーデ\n決定戦/着こなし上手の乙女たち(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "おしゃれなギャラリーで賞",
+        "トリッテ・グロワールお詫びボックス"
       ],
       "skill":null
     },
@@ -5165,9 +6503,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "運命の日は\n誰の手に/続・お菓子対決(神級)",
         "運命の日は\n誰の手に/続・お菓子対決(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5187,7 +6528,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-90",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIV",
+        "SP装備ボックスXVIII",
+        "SP装備ボックスXXV",
+        "[SSR]装備セレクトボックス",
+        "ルパーキャリア"
+      ],
       "skill":null
     },
     {
@@ -5206,10 +6554,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"10",
       "crit":"0.03",
-      "stage":[
+      "drop_stage":[
         "小さな恋の\nらいばる！/告白チャンスは誰の手に？(上級)",
         "小さな恋の\nらいばる！/告白チャンスは誰の手に？(超級)",
         "小さな恋の\nらいばる！/告白チャンスは誰の手に？(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXI ",
+        "SP装備ボックスXXXIV",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5229,11 +6582,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(神級)",
         "まばゆい魅力と\n陽光の下で/まばゆい魅力と陽光の下で(神級+)",
         "小さな恋の\nらいばる！/告白チャンスは誰の手に？(神級)",
         "小さな恋の\nらいばる！/告白チャンスは誰の手に？(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5253,7 +6609,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.06",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ロリポップハウス"
+      ],
       "skill":null
     },
     {
@@ -5272,10 +6632,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "お返しは白き秘宝/白き日も少女達の戦場(上級)",
         "お返しは白き秘宝/白き日も少女達の戦場(超級)",
         "お返しは白き秘宝/白き日も少女達の戦場(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "チェリッサムサンドボックス"
       ],
       "skill":null
     },
@@ -5295,9 +6659,14 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "お返しは白き秘宝/白き日も少女達の戦場(神級)",
         "お返しは白き秘宝/白き日も少女達の戦場(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXIX",
+        "SP装備ボックスXXXVI",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5317,7 +6686,10 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":null,
       "crit":"0.14",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -5336,13 +6708,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "春爛漫♡恋の装い/春爛漫♡恋の装い(上級)",
         "春爛漫♡恋の装い/春爛漫♡恋の装い(超級)",
         "春爛漫♡恋の装い/春爛漫♡恋の装い(超級+)",
         "秘宝の噂を追って/Re：秘宝の噂を追って(上級)",
         "秘宝の噂を追って/Re：秘宝の噂を追って(超級)",
         "秘宝の噂を追って/Re：秘宝の噂を追って(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5362,9 +6737,16 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.21",
-      "stage":[
+      "drop_stage":[
         "秘宝の噂を追って/Re：秘宝の噂を追って(神級)",
         "秘宝の噂を追って/Re：秘宝の噂を追って(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXII",
+        "SP装備ボックスXXII  ",
+        "SP装備ボックスXXVIII",
+        "[SSR]装備セレクトボックス",
+        "トレイニーマギエボックス"
       ],
       "skill":null
     },
@@ -5384,12 +6766,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"15",
       "crit":"0.06",
-      "stage":[
+      "drop_stage":[
         "まぼろしの\nチップ運命戦/表は花、裏は蛇(上級)",
         "まぼろしの\nチップ運命戦/表は花、裏は蛇(神級)",
         "まぼろしの\nチップ運命戦/表は花、裏は蛇(神級+)",
         "まぼろしの\nチップ運命戦/表は花、裏は蛇(超級)",
         "まぼろしの\nチップ運命戦/表は花、裏は蛇(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXX",
+        "SP装備ボックスXXXVI",
+        "[SSR]装備セレクトボックス",
+        "ゴーフォリット"
       ],
       "skill":null
     },
@@ -5409,7 +6797,10 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.07",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -5428,10 +6819,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "潜入先は名門学園/校舎裏の覇権争い(上級)",
         "潜入先は名門学園/校舎裏の覇権争い(超級)",
         "潜入先は名門学園/校舎裏の覇権争い(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "もちけん"
       ],
       "skill":null
     },
@@ -5451,11 +6846,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "潜入先は名門学園/校舎裏の覇権争い(神級)",
         "潜入先は名門学園/校舎裏の覇権争い(神級+)",
         "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(神級)",
         "騎士団長の秘めやかな休日/騎士団長の秘めやかな休日(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5475,12 +6873,18 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.15",
-      "stage":[
+      "drop_stage":[
         "不思議なバトン捜索戦/似た者同士の四人(上級)",
         "不思議なバトン捜索戦/似た者同士の四人(神級)",
         "不思議なバトン捜索戦/似た者同士の四人(神級+)",
         "不思議なバトン捜索戦/似た者同士の四人(超級)",
         "不思議なバトン捜索戦/似た者同士の四人(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXX",
+        "SP装備ボックスXXXIV",
+        "[SSR]装備セレクトボックス",
+        "フォーワードボックス"
       ],
       "skill":null
     },
@@ -5500,7 +6904,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVIII",
+        "SP装備ボックスXXVIII",
+        "[SSR]装備セレクトボックス",
+        "アセンブリーブロック"
+      ],
       "skill":null
     },
     {
@@ -5519,10 +6929,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "小さな少女たちの楽園/たんていさんごっこ(上級)",
         "小さな少女たちの楽園/たんていさんごっこ(超級)",
         "小さな少女たちの楽園/たんていさんごっこ(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "とうしゅのヒメごと"
       ],
       "skill":null
     },
@@ -5542,11 +6956,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "小さな少女たちの楽園/たんていさんごっこ(神級)",
         "小さな少女たちの楽園/たんていさんごっこ(神級+)",
         "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(神級)",
         "秋のせせらぎを\n聴きながら/秋のせせらぎを聴きながら(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5566,10 +6983,15 @@ BgrLib.load({
       "spd_rate":"3.2",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "神官様のお忍び勝負服！/神官様のお忍び勝負服！(上級)",
         "神官様のお忍び勝負服！/神官様のお忍び勝負服！(超級)",
         "神官様のお忍び勝負服！/神官様のお忍び勝負服！(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXVIII",
+        "SP装備ボックスXXIX",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5589,9 +7011,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(神級)",
         "秋色華やぐ\nお洒落な趣き/秋色華やぐお洒落な趣き(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ハンドパータム"
       ],
       "skill":null
     },
@@ -5611,12 +7037,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"5",
       "crit":"0.03",
-      "stage":[
+      "drop_stage":[
         "一番になりたくて/幸せ運ぶ鐘(上級)",
         "一番になりたくて/幸せ運ぶ鐘(超級)",
         "一番になりたくて/幸せ運ぶ鐘(超級+)",
         "春風舞うひと時/春風舞うひと時(上級)",
         "春風舞うひと時/春風舞うひと時(超級)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXI ",
+        "SP装備ボックスXXXIII",
+        "[SSR]装備セレクトボックス",
+        "カセッタ・アトレッチ"
       ],
       "skill":null
     },
@@ -5636,9 +7068,14 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "一番になりたくて/幸せ運ぶ鐘(神級)",
         "一番になりたくて/幸せ運ぶ鐘(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXIII",
+        "SP装備ボックスXXIV",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5658,12 +7095,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "花嫁アフター回収戦/新郎新婦のいない式場(上級)",
         "花嫁アフター回収戦/新郎新婦のいない式場(神級)",
         "花嫁アフター回収戦/新郎新婦のいない式場(神級+)",
         "花嫁アフター回収戦/新郎新婦のいない式場(超級)",
         "花嫁アフター回収戦/新郎新婦のいない式場(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスX",
+        "SP装備ボックスXXV",
+        "[SSR]装備セレクトボックス",
+        "インベルアミサ"
       ],
       "skill":null
     },
@@ -5683,7 +7126,13 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVI",
+        "SP装備ボックスXX",
+        "[SSR]装備セレクトボックス",
+        "ニーニョスケイプ"
+      ],
       "skill":null
     },
     {
@@ -5702,10 +7151,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":"10",
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "船上彩る真夏の花々/みんなで大航海！(上級)",
         "船上彩る真夏の花々/みんなで大航海！(超級)",
         "船上彩る真夏の花々/みんなで大航海！(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXIX",
+        "SP装備ボックスXXIX",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5725,9 +7179,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "船上彩る真夏の花々/みんなで大航海！(神級)",
         "船上彩る真夏の花々/みんなで大航海！(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5747,7 +7204,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXX",
+        "SP装備ボックスXXXII",
+        "[SSR]装備セレクトボックス",
+        "グラトニクス"
+      ],
       "skill":null
     },
     {
@@ -5766,10 +7229,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "熱き浜辺で身を焦がし/招かれざる海の客人(上級)",
         "熱き浜辺で身を焦がし/招かれざる海の客人(超級)",
         "熱き浜辺で身を焦がし/招かれざる海の客人(超級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXIII",
+        "SP装備ボックスXXIV",
+        "SP装備ボックスXXXVII",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5789,11 +7258,16 @@ BgrLib.load({
       "spd_rate":"2.3",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "春の陽気に\n誘われて/春の陽気に誘われて(神級)",
         "春の陽気に\n誘われて/春の陽気に誘われて(神級+)",
         "熱き浜辺で身を焦がし/招かれざる海の客人(神級)",
         "熱き浜辺で身を焦がし/招かれざる海の客人(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXXI ",
+        "SP装備ボックスXXXI",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5813,7 +7287,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.14",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "夏の大一番"
+      ],
       "skill":null
     },
     {
@@ -5832,11 +7310,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "激突！\n秋の大体育祭/体育祭STAGE4",
         "祭り囃子と華やぐ光/夜空に咲く華と共に(上級)",
         "祭り囃子と華やぐ光/夜空に咲く華と共に(超級)",
         "祭り囃子と華やぐ光/夜空に咲く華と共に(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5856,9 +7337,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"10",
       "crit":"0.04",
-      "stage":[
+      "drop_stage":[
         "祭り囃子と華やぐ光/夜空に咲く華と共に(神級)",
         "祭り囃子と華やぐ光/夜空に咲く華と共に(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5878,12 +7362,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "夏のピリオド拾集戦/種が花開くのは誰？(上級)",
         "夏のピリオド拾集戦/種が花開くのは誰？(神級)",
         "夏のピリオド拾集戦/種が花開くのは誰？(神級+)",
         "夏のピリオド拾集戦/種が花開くのは誰？(超級)",
         "夏のピリオド拾集戦/種が花開くのは誰？(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "フラワーウィスパー"
       ],
       "skill":null
     },
@@ -5903,7 +7391,15 @@ BgrLib.load({
       "spd_rate":"1.8",
       "move":"60",
       "crit":"0.21",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVIII",
+        "SP装備ボックスXXV",
+        "SP装備ボックスXXXIV",
+        "[SSR]装備セレクトボックス",
+        "イモータルスタミナ",
+        "パンサタ"
+      ],
       "skill":null
     },
     {
@@ -5922,7 +7418,7 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.08",
-      "stage":[
+      "drop_stage":[
         "春の陽気に\n誘われて/春の陽気に誘われて(上級)",
         "春の陽気に\n誘われて/春の陽気に誘われて(超級)",
         "春の陽気に\n誘われて/春の陽気に誘われて(超級+)",
@@ -5930,6 +7426,9 @@ BgrLib.load({
         "激突！\n秋の大体育祭/激闘の果てに(超級)",
         "激突！\n秋の大体育祭/激闘の果てに(超級+)",
         "激突！\n秋の大体育祭/規格外の助っ人"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5949,11 +7448,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "激突！\n秋の大体育祭/激闘の果てに(神級)",
         "激突！\n秋の大体育祭/激闘の果てに(神級+)",
         "激突！\n秋の大体育祭/煌白の体操着",
         "激突！\n秋の大体育祭/苛烈な応援娘"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -5973,7 +7475,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -5992,7 +7497,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ブーバッグ"
+      ],
       "skill":null
     },
     {
@@ -6011,10 +7520,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
-      "stage":[
+      "drop_stage":[
         "夢と光のまほろば/リトルデビルの大暴走(上級)",
         "夢と光のまほろば/リトルデビルの大暴走(超級)",
         "夢と光のまほろば/リトルデビルの大暴走(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6034,9 +7546,14 @@ BgrLib.load({
       "spd_rate":"2.5",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "夢と光のまほろば/リトルデビルの大暴走(神級)",
         "夢と光のまほろば/リトルデビルの大暴走(神級+)"
+      ],
+      "itembox":[
+        "SP装備ボックスXIX",
+        "SP装備ボックスXXXII",
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6056,11 +7573,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "涼宮ハルヒの来訪/冒険でしょでしょ？(上級)",
         "涼宮ハルヒの来訪/冒険でしょでしょ？(超級)",
         "涼宮ハルヒの来訪/冒険でしょでしょ？(超級+)"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -6079,9 +7597,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"5",
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "涼宮ハルヒの来訪/冒険でしょでしょ？(神級)",
         "涼宮ハルヒの来訪/冒険でしょでしょ？(神級+)"
+      ],
+      "itembox":[
+        "パンデミックフラグス"
       ],
       "skill":null
     },
@@ -6101,7 +7622,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "レスプトパッケージ "
+      ],
       "skill":null
     },
     {
@@ -6120,11 +7645,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "白衣の天使たち/発熱☆検温タイム！",
         "白衣の天使たち/診療所ではお静かに！(上級)",
         "白衣の天使たち/診療所ではお静かに！(超級)",
         "白衣の天使たち/診療所ではお静かに！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6144,11 +7672,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "白衣の天使たち/快感☆病みつきお注射！",
         "白衣の天使たち/診療所ではお静かに！(神級)",
         "白衣の天使たち/診療所ではお静かに！(神級+)",
         "白衣の天使たち/零キョリ☆密着・聴診！"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6168,7 +7699,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ロッカスレトス"
+      ],
       "skill":null
     },
     {
@@ -6187,11 +7722,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.03",
-      "stage":[
+      "drop_stage":[
         "聖夜の前の一仕事/ツリー・モンスター(上級)",
         "聖夜の前の一仕事/ツリー・モンスター(超級)",
         "聖夜の前の一仕事/ツリー・モンスター(超級+)",
         "聖夜の前の一仕事/御馳走の前から動かぬ者"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6211,11 +7749,14 @@ BgrLib.load({
       "spd_rate":"2.4",
       "move":null,
       "crit":"0.15",
-      "stage":[
+      "drop_stage":[
         "聖夜の前の一仕事/ツリー・モンスター(神級)",
         "聖夜の前の一仕事/ツリー・モンスター(神級+)",
         "聖夜の前の一仕事/パーティーの主催者",
         "聖夜の前の一仕事/熱い視線を鑑定する者"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6235,7 +7776,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "オラティオビル"
+      ],
       "skill":null
     },
     {
@@ -6254,10 +7799,13 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "年明けは\n福の宿りし旅館で/お正月の食材求めて(上級)",
         "年明けは\n福の宿りし旅館で/お正月の食材求めて(超級)",
         "年明けは\n福の宿りし旅館で/お正月の食材求めて(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6277,9 +7825,12 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "年明けは\n福の宿りし旅館で/お正月の食材求めて(神級)",
         "年明けは\n福の宿りし旅館で/お正月の食材求めて(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6299,7 +7850,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "万占ノ鏡"
+      ],
       "skill":null
     },
     {
@@ -6318,11 +7873,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "欲に素直な年明けの宴/巫女さんの精神修行(上級)",
         "欲に素直な年明けの宴/巫女さんの精神修行(超級)",
         "欲に素直な年明けの宴/巫女さんの精神修行(超級+)",
         "欲に素直な年明けの宴/心地良き悪態！寝起きの昼寝娘！"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6342,11 +7900,14 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "欲に素直な年明けの宴/圧倒的重量感！ぷるんぷるん姉妹！",
         "欲に素直な年明けの宴/巫女さんの精神修行(神級)",
         "欲に素直な年明けの宴/巫女さんの精神修行(神級+)",
         "欲に素直な年明けの宴/茶菓子で誘惑！兄様大好き天然娘！"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6366,7 +7927,11 @@ BgrLib.load({
       "spd_rate":"2.4",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アンティパウシェ"
+      ],
       "skill":null
     },
     {
@@ -6385,7 +7950,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ヤンダイズ"
+      ],
       "skill":null
     },
     {
@@ -6404,11 +7973,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "乙女の\nバレンタイン講座/恋愛プロショコラ：ウブな味",
         "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(上級)",
         "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(超級)",
         "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6428,11 +8000,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "乙女の\nバレンタイン講座/御奉仕ショコラ：躾の味",
         "乙女の\nバレンタイン講座/思い出ショコラ：幼馴染の味",
         "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(神級)",
         "乙女の\nバレンタイン講座/溶ける前に召し上がれ！(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6452,7 +8027,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "憲兵用グロブル"
+      ],
       "skill":null
     },
     {
@@ -6471,11 +8050,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.02",
-      "stage":[
+      "drop_stage":[
         "行進、お兄ちゃん憲兵隊！/「お兄ちゃん」おませな妹編",
         "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(上級)",
         "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(超級)",
         "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6495,11 +8077,14 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "行進、お兄ちゃん憲兵隊！/「おにぃちゃん……」囁く妹編",
         "行進、お兄ちゃん憲兵隊！/「兄さん！」少し厳しめな妹編",
         "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(神級)",
         "行進、お兄ちゃん憲兵隊！/憲兵隊の危ない巡回(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6519,7 +8104,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-95",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "リンリンマーク",
+        "兎印のアタッシュケース"
+      ],
       "skill":null
     },
     {
@@ -6538,10 +8128,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "奇妙な噂の溢れし学び舎/秘密の清掃イベント(上級)",
         "奇妙な噂の溢れし学び舎/秘密の清掃イベント(超級)",
         "奇妙な噂の溢れし学び舎/秘密の清掃イベント(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6561,9 +8154,12 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":"0.19",
-      "stage":[
+      "drop_stage":[
         "奇妙な噂の溢れし学び舎/秘密の清掃イベント(神級)",
         "奇妙な噂の溢れし学び舎/秘密の清掃イベント(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6583,7 +8179,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "プレパラネイト"
+      ],
       "skill":null
     },
     {
@@ -6602,11 +8202,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "ちっちゃな笑顔たちの祭典/保護欲MAX泣き虫ちゃん",
         "ちっちゃな笑顔たちの祭典/迷子警報発令中(上級)",
         "ちっちゃな笑顔たちの祭典/迷子警報発令中(超級)",
         "ちっちゃな笑顔たちの祭典/迷子警報発令中(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6626,11 +8229,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "ちっちゃな笑顔たちの祭典/ちっちゃくても大きいおませちゃん",
         "ちっちゃな笑顔たちの祭典/気分は姫様ケモミミちゃん",
         "ちっちゃな笑顔たちの祭典/迷子警報発令中(神級)",
         "ちっちゃな笑顔たちの祭典/迷子警報発令中(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6650,7 +8256,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-85",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "メイクボックス"
+      ],
       "skill":null
     },
     {
@@ -6669,11 +8279,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "祝福と誓い\nのかたち/ナイショな結婚式(上級)",
         "祝福と誓い\nのかたち/ナイショな結婚式(超級)",
         "祝福と誓い\nのかたち/ナイショな結婚式(超級+)",
         "祝福と誓い\nのかたち/ヤキモチ焼きな花嫁さん"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6693,11 +8306,14 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "祝福と誓い\nのかたち/ぶりっ子歌姫な花嫁さん",
         "祝福と誓い\nのかたち/ナイショな結婚式(神級)",
         "祝福と誓い\nのかたち/ナイショな結婚式(神級+)",
         "祝福と誓い\nのかたち/謙虚で聖女な花嫁さん"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6717,7 +8333,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "フレッジボックス"
+      ],
       "skill":null
     },
     {
@@ -6736,11 +8356,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "さざ波聴こえる海のお屋敷/ビーチサイドの小悪魔様",
         "さざ波聴こえる海のお屋敷/港街バカンス(上級)",
         "さざ波聴こえる海のお屋敷/港街バカンス(超級)",
         "さざ波聴こえる海のお屋敷/港街バカンス(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6760,11 +8383,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "さざ波聴こえる海のお屋敷/浜辺に咲く高嶺の花",
         "さざ波聴こえる海のお屋敷/港街のセレブリティ",
         "さざ波聴こえる海のお屋敷/港街バカンス(神級)",
         "さざ波聴こえる海のお屋敷/港街バカンス(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6784,7 +8410,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アロミジアケイス"
+      ],
       "skill":null
     },
     {
@@ -6803,11 +8433,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "夏空きらめく海の思い出/ここからが夏本番！(上級)",
         "夏空きらめく海の思い出/ここからが夏本番！(超級)",
         "夏空きらめく海の思い出/ここからが夏本番！(超級+)",
         "夏空きらめく海の思い出/夏を謳歌する天然スマイル"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6827,11 +8460,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "夏空きらめく海の思い出/ここからが夏本番！(神級)",
         "夏空きらめく海の思い出/ここからが夏本番！(神級+)",
         "夏空きらめく海の思い出/夏にも負けない陽気な笑顔",
         "夏空きらめく海の思い出/夏を制する不適な微笑み"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6851,7 +8487,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "乙女のお供巾着"
+      ],
       "skill":null
     },
     {
@@ -6870,11 +8510,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "灯りと思いの\n流れる夏の夜/　祭で奮闘するシャイな乙女",
         "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(上級)",
         "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(超級)",
         "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6894,11 +8537,14 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
-      "stage":[
+      "drop_stage":[
         "灯りと思いの\n流れる夏の夜/　祭に心躍る恋深き乙女",
         "灯りと思いの\n流れる夏の夜/　祭に高揚する純な乙女",
         "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(神級)",
         "灯りと思いの\n流れる夏の夜/煌く縁日の愉しみかた(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6918,7 +8564,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "セレーネルチェ"
+      ],
       "skill":null
     },
     {
@@ -6937,11 +8587,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"45",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "中秋の名月にいたずらを/お月見よりもイタズラを！",
         "中秋の名月にいたずらを/月が照らす静かな街で(上級)",
         "中秋の名月にいたずらを/月が照らす静かな街で(超級)",
         "中秋の名月にいたずらを/月が照らす静かな街で(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6961,11 +8614,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.12",
-      "stage":[
+      "drop_stage":[
         "中秋の名月にいたずらを/たまには甘～いひと時を！",
         "中秋の名月にいたずらを/月が照らす静かな街で(神級)",
         "中秋の名月にいたずらを/月が照らす静かな街で(神級+)",
         "中秋の名月にいたずらを/紅葉よりも赤い血を！"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -6985,7 +8641,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "キギルミューム"
+      ],
       "skill":null
     },
     {
@@ -7004,11 +8664,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[
+      "drop_stage":[
         "饗宴が見せる夢/叫声止まぬ戦慄の一夜(上級)",
         "饗宴が見せる夢/叫声止まぬ戦慄の一夜(超級)",
         "饗宴が見せる夢/叫声止まぬ戦慄の一夜(超級+)",
         "饗宴が見せる夢/気まぐれキャット"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7028,11 +8691,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "饗宴が見せる夢/叫声止まぬ戦慄の一夜(神級)",
         "饗宴が見せる夢/叫声止まぬ戦慄の一夜(神級+)",
         "饗宴が見せる夢/暴れん坊ジャック",
         "饗宴が見せる夢/淑やかキョンシー"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7052,7 +8718,11 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.14",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "コリカルシミニョン"
+      ],
       "skill":null
     },
     {
@@ -7071,11 +8741,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "雪降る街で\n交わした約束/寒い時こそ熱い接客",
         "雪降る街で\n交わした約束/寒月照らす雪国調査(上級)",
         "雪降る街で\n交わした約束/寒月照らす雪国調査(超級)",
         "雪降る街で\n交わした約束/寒月照らす雪国調査(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7095,11 +8768,14 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
-      "stage":[
+      "drop_stage":[
         "雪降る街で\n交わした約束/寒中ならではの恋の戦法",
         "雪降る街で\n交わした約束/寒月照らす雪国調査(神級)",
         "雪降る街で\n交わした約束/寒月照らす雪国調査(神級+)",
         "雪降る街で\n交わした約束/極寒の秘境への探求心"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7119,7 +8795,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "テゾーロベッラ"
+      ],
       "skill":null
     },
     {
@@ -7138,11 +8818,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.12",
-      "stage":[
+      "drop_stage":[
         "聖夜へ向けての\n大騒ぎ/プレゼントは甘いお菓子を",
         "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(上級)",
         "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(超級)",
         "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7162,11 +8845,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "聖夜へ向けての\n大騒ぎ/プレゼントはカラフルな絵画を",
         "聖夜へ向けての\n大騒ぎ/プレゼントは特別な想いを",
         "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(神級)",
         "聖夜へ向けての\n大騒ぎ/聖なる夜の来訪者(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7186,7 +8872,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ミ・コンレ"
+      ],
       "skill":null
     },
     {
@@ -7205,10 +8895,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"60",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(上級)",
         "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(超級)",
         "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7228,9 +8921,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(神級)",
         "新年の訪れは\n鐘の音と共に/御来光を拝みに行こう(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7250,7 +8946,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アルクスプル"
+      ],
       "skill":null
     },
     {
@@ -7269,11 +8969,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.12",
-      "stage":[
+      "drop_stage":[
         "雪原を彩る\n少女の願い/突撃！デモニア流雪玉砲！",
         "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(上級)",
         "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(超級)",
         "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7293,11 +8996,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "雪原を彩る\n少女の願い/突撃！護衛団の特大ハンマー！",
         "雪原を彩る\n少女の願い/突撃？雪で作ったうさぎさん！",
         "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(神級)",
         "雪原を彩る\n少女の願い/雪と氷が魅せる幻想(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7317,7 +9023,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "パダラーフ"
+      ],
       "skill":null
     },
     {
@@ -7336,11 +9046,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "バレンタインは\n誰のために/まだまだ続く恋の戦(上級)",
         "バレンタインは\n誰のために/まだまだ続く恋の戦(超級)",
         "バレンタインは\n誰のために/まだまだ続く恋の戦(超級+)",
         "バレンタインは\n誰のために/予測不能な神通力"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7360,11 +9073,14 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.15",
-      "stage":[
+      "drop_stage":[
         "バレンタインは\n誰のために/まだまだ続く恋の戦(神級)",
         "バレンタインは\n誰のために/まだまだ続く恋の戦(神級+)",
         "バレンタインは\n誰のために/巷で噂の恋占い",
         "バレンタインは\n誰のために/甘美な愛の導き"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7384,7 +9100,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "リベゲフュール"
+      ],
       "skill":null
     },
     {
@@ -7403,11 +9123,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"70",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "再会は白き日の装いと共に/懐に込めた保存食を",
         "再会は白き日の装いと共に/熱烈アンコール！(上級)",
         "再会は白き日の装いと共に/熱烈アンコール！(超級)",
         "再会は白き日の装いと共に/熱烈アンコール！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7427,11 +9150,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "再会は白き日の装いと共に/愛を込めた甘い言葉を",
         "再会は白き日の装いと共に/感謝を込めた花束を",
         "再会は白き日の装いと共に/熱烈アンコール！(神級)",
         "再会は白き日の装いと共に/熱烈アンコール！(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7451,7 +9177,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "赤丸ペーパー"
+      ],
       "skill":null
     },
     {
@@ -7470,10 +9200,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "名門学園の魔術書騒動/真夜中の図書館(上級)",
         "名門学園の魔術書騒動/真夜中の図書館(超級)",
         "名門学園の魔術書騒動/真夜中の図書館(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7493,9 +9226,12 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "名門学園の魔術書騒動/真夜中の図書館(神級)",
         "名門学園の魔術書騒動/真夜中の図書館(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7515,7 +9251,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "アヤメクレフル"
+      ],
       "skill":null
     },
     {
@@ -7534,11 +9274,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"45",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "小さな少女たちとお遊戯場/おとな顔負けの剣さばき！",
         "小さな少女たちとお遊戯場/騒乱のわんぱく広場(上級)",
         "小さな少女たちとお遊戯場/騒乱のわんぱく広場(超級)",
         "小さな少女たちとお遊戯場/騒乱のわんぱく広場(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7558,11 +9301,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "小さな少女たちとお遊戯場/ちいさいお姉さんのビリビリ魔力！",
         "小さな少女たちとお遊戯場/ちっちゃくたって狙い撃ち！",
         "小さな少女たちとお遊戯場/騒乱のわんぱく広場(神級)",
         "小さな少女たちとお遊戯場/騒乱のわんぱく広場(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7582,7 +9328,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "メモリアーネーション"
+      ],
       "skill":null
     },
     {
@@ -7601,11 +9351,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(上級)",
         "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(超級)",
         "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(超級+)",
         "花嫁を\n物語る筆と歌/魔力に込める強き絆"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7625,11 +9378,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(神級)",
         "花嫁を\n物語る筆と歌/二人を照らす華燭の灯り(神級+)",
         "花嫁を\n物語る筆と歌/剣に誓う永遠の愛",
         "花嫁を\n物語る筆と歌/解き放つ想いの矢"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7649,7 +9405,11 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "ＢIG・シードリチャンス"
+      ],
       "skill":null
     },
     {
@@ -7668,11 +9428,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "傭兵団・\n夏の大決戦/浅瀬での秘密訓練",
         "傭兵団・\n夏の大決戦/深海大調査！(上級)",
         "傭兵団・\n夏の大決戦/深海大調査！(超級)",
         "傭兵団・\n夏の大決戦/深海大調査！(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7692,11 +9455,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団・\n夏の大決戦/深海への手招き",
         "傭兵団・\n夏の大決戦/深海大調査！(神級)",
         "傭兵団・\n夏の大決戦/深海大調査！(神級+)",
         "傭兵団・\n夏の大決戦/高波への飽くなき挑戦"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7716,7 +9482,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "忘却の秘宝"
+      ],
       "skill":null
     },
     {
@@ -7735,11 +9505,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(上級)",
         "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(超級)",
         "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(超級+)",
         "傭兵団・\n夏の大脱出/目を光らせる救助員"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7759,11 +9532,14 @@ BgrLib.load({
       "spd_rate":"2.7",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(神級)",
         "傭兵団・\n夏の大脱出/海は不思議と危険がいっぱい(神級+)",
         "傭兵団・\n夏の大脱出/磨けば光る希少原石",
         "傭兵団・\n夏の大脱出/開けてびっくり二枚貝"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7783,7 +9559,11 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[SSR]装備セレクトボックス",
+        "削堀砂糖菓子"
+      ],
       "skill":null
     },
     {
@@ -7802,11 +9582,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "晩夏の祭りと心模様/奇抜！虹色綿菓子",
         "晩夏の祭りと心模様/祭囃子を聴きながら(上級)",
         "晩夏の祭りと心模様/祭囃子を聴きながら(超級)",
         "晩夏の祭りと心模様/祭囃子を聴きながら(超級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7826,11 +9609,14 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.18",
-      "stage":[
+      "drop_stage":[
         "晩夏の祭りと心模様/優雅！美しい旋律",
         "晩夏の祭りと心模様/強力！人力扇風機",
         "晩夏の祭りと心模様/祭囃子を聴きながら(神級)",
         "晩夏の祭りと心模様/祭囃子を聴きながら(神級+)"
+      ],
+      "itembox":[
+        "[SSR]装備セレクトボックス"
       ],
       "skill":null
     },
@@ -7850,7 +9636,10 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":"200",
       "crit":"0.14",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "バロチャレBOX"
+      ],
       "skill":null
     },
     {
@@ -7869,12 +9658,13 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[
+      "drop_stage":[
         "応援団と王の道/後夜祭のそのあとに(上級)",
         "応援団と王の道/後夜祭のそのあとに(超級)",
         "応援団と王の道/後夜祭のそのあとに(超級+)",
         "応援団と王の道/赤組の熱血応援団員"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -7893,12 +9683,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "応援団と王の道/後夜祭のそのあとに(神級)",
         "応援団と王の道/後夜祭のそのあとに(神級+)",
         "応援団と王の道/赤組の実質総大将",
         "応援団と王の道/赤組の見習いチアガール"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -7917,7 +9708,10 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "ヴァンプルミール"
+      ],
       "skill":null
     },
     {
@@ -7936,12 +9730,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"25",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "おもてなしのワイルドハント/Sっ気伯爵",
         "おもてなしのワイルドハント/あの世とこの世の架け橋(上級)",
         "おもてなしのワイルドハント/あの世とこの世の架け橋(超級)",
         "おもてなしのワイルドハント/あの世とこの世の架け橋(超級+)"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -7960,12 +9755,13 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.13",
-      "stage":[
+      "drop_stage":[
         "おもてなしのワイルドハント/あの世とこの世の架け橋(神級)",
         "おもてなしのワイルドハント/あの世とこの世の架け橋(神級+)",
         "おもてなしのワイルドハント/慎ましげ小悪魔",
         "おもてなしのワイルドハント/茶目っ気くまさん"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -7984,7 +9780,13 @@ BgrLib.load({
       "spd_rate":"0.8",
       "move":null,
       "crit":"0.04",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "ドラクルボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8003,7 +9805,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "魔光石ボックス"
+      ],
       "skill":null
     },
     {
@@ -8022,7 +9829,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスVI",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "所属指定特典募集おまけセット",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8041,9 +9855,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.16",
-      "stage":[
+      "drop_stage":[
         "希少鉱石を採取せよ/希少鉱石を採取せよ(上級)",
         "希少鉱石を採取せよ/希少鉱石を採取せよ(超級)"
+      ],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
       ],
       "skill":null
     },
@@ -8063,7 +9882,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-100",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスV",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "所属指定特典募集おまけセット",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8082,12 +9908,19 @@ BgrLib.load({
       "spd_rate":null,
       "move":"80",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "祝うべきこの日に/争奪！？投票券(上級)",
         "祝うべきこの日に/争奪！？投票券(神級)",
         "祝うべきこの日に/争奪！？投票券(神級+)",
         "祝うべきこの日に/争奪！？投票券(超級)",
         "祝うべきこの日に/争奪！？投票券(超級+)"
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "60万人記念装備ボックス",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
       ],
       "skill":null
     },
@@ -8107,9 +9940,18 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
-      "stage":[
+      "drop_stage":[
         "眠れる獅子の財宝/獅子の財宝(上級)",
         "眠れる獅子の財宝/獅子の財宝(超級)"
+      ],
+      "itembox":[
+        "SP装備ボックス",
+        "SP装備ボックスⅢ",
+        "SP装備ボックスⅣ",
+        "[UR]装備セレクトボックス",
+        "ネメオーンボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
       ],
       "skill":null
     },
@@ -8129,7 +9971,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスⅨ",
+        "[UR]装備セレクトボックス",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8148,9 +9995,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-花落つる調べ(上級)",
         "10連戦-花落つる調べ(超級) "
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]ルベル・レゲーレ",
@@ -8205,8 +10057,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-邪蛇の禍(超級)"
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]愛的寶箱",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード] ウィリデ・ヴィルズ",
@@ -8250,8 +10108,14 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-氷雪の谷(超級)"
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]愛的寶箱",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]アルブ・グラキエ",
@@ -8295,9 +10159,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "10連戦-恋の戦場(上級)",
         "10連戦-恋の戦場(超級) "
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]恋三昧",
@@ -8341,7 +10210,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]愛的寶箱",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":{
         "name":"[ヴァル]甘くささやく声",
         "number":null,
@@ -8384,9 +10259,15 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-蒼雷の嵐(超級)",
         "10連戦ステージ(上級)"
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]愛的寶箱",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]キュムロヌ・トニト",
@@ -8440,8 +10321,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-狂騒の大地(超級)"
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]アネモス・フルーレ",
@@ -8485,9 +10371,14 @@ BgrLib.load({
       "spd_rate":"0.4",
       "move":null,
       "crit":"0.07",
-      "stage":[
+      "drop_stage":[
         "10連戦-傾覆の峠(上級)",
         "10連戦-傾覆の峠(超級) "
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]レヴォ・フォルス",
@@ -8542,9 +10433,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-夜空に咲く花(上級)",
         "10連戦-夜空に咲く花(超級) "
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]アクセプト・オール",
@@ -8588,9 +10484,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-花嫁修業(上級)",
         "10連戦-花嫁修業(超級) "
+      ],
+      "itembox":[
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]カウンターラヴ",
@@ -8645,9 +10544,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-光満つ浜(上級)",
         "10連戦-光満つ浜(超級)"
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]ソーラル・ピラー",
@@ -8702,9 +10606,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-闇夜を照らす輝き(上級)",
         "10連戦-闇夜を照らす輝き(超級) "
+      ],
+      "itembox":[
+        "2016トップファンボックス",
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]レイジング・ルナ",
@@ -8737,10 +10646,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-悪霊漂う街(上級)",
         "10連戦-悪霊漂う街(神級) ",
         "10連戦-悪霊漂う街(超級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]スィートウイッチアワー",
@@ -8773,10 +10686,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"130",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-想いをお届けに(上級) ",
         "10連戦-想いをお届けに(超級) ",
         "11連戦-想いをお届けに(神級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]ロブステート",
@@ -8820,10 +10737,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.08",
-      "stage":[
+      "drop_stage":[
         "10連戦-新年ご挨拶回り(上級) ",
         "10連戦-新年ご挨拶回り(超級) ",
         "11連戦-新年ご挨拶回り(神級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ナリコ]ウチデ・ブランディッシュ",
@@ -8856,10 +10777,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-第二次闇鍋大会(上級)",
         "10連戦-第二次闇鍋大会(神級) ",
         "10連戦-第二次闇鍋大会(超級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]レイド・ウラガーン",
@@ -8924,7 +10849,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":"0.25",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスVIII",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8943,7 +10874,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8962,7 +10898,13 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスVII",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -8981,10 +10923,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-甘々対決の審判(上級) ",
         "10連戦-甘々対決の審判(超級) ",
         "11連戦-甘々対決の審判(神級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[神器]スウィートオンユー",
@@ -9039,10 +10984,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-真心と乙女心(上級)",
         "10連戦-真心と乙女心(神級)",
         "10連戦-真心と乙女心(超級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]ユニデボーション",
@@ -9097,12 +11046,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-(上級)",
         "10連戦-(神級)",
         "10連戦-(超級)",
         "美しく咲く花の\n下で/花筏の合戦(神級)",
         "美しく咲く花の\n下で/花筏の合戦(神級+)"
+      ],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
       ],
       "skill":null
     },
@@ -9122,10 +11076,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-花だ、宴だ、大騒ぎ！(上級)",
         "10連戦-花だ、宴だ、大騒ぎ！(神級) ",
         "10連戦-花だ、宴だ、大騒ぎ！(超級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ナリコ]花舞踊・ソーレナノジャ",
@@ -9180,10 +11138,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-みんなでだいぼうけん(上級)",
         "10連戦-みんなでだいぼうけん(神級) ",
         "10連戦-みんなでだいぼうけん(超級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]アリトルマーチ",
@@ -9227,10 +11189,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.11",
-      "stage":[
+      "drop_stage":[
         "10連戦-愛の決戦場(上級)",
         "10連戦-愛の決戦場(神級) ",
         "10連戦-愛の決戦場(超級) "
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]ブレッシングメッセ",
@@ -9285,10 +11251,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-太陽よりも暑い渚(上級)",
         "10連戦-太陽よりも暑い渚(超級)",
         "11連戦-太陽よりも暑い渚(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]ラストコンシャス",
@@ -9332,10 +11302,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-輝く女神達の浜(上級)",
         "10連戦-輝く女神達の浜(超級)",
         "11連戦-輝く女神達の浜(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]サンライトチャーム",
@@ -9379,10 +11353,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-荒ぶる女神の祭(上級)",
         "10連戦-荒ぶる女神の祭(超級)",
         "11連戦-荒ぶる女神の祭(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]月兎の通り道",
@@ -9437,10 +11415,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-豊満な果実による宴(上級)",
         "10連戦-豊満な果実による宴(超級)",
         "11連戦-豊満な果実による宴(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]スリーピング・テンダー",
@@ -9484,12 +11466,17 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.16",
-      "stage":[
+      "drop_stage":[
         "猫の導く夢の国/夢を追い続けて(上級)",
         "猫の導く夢の国/夢を追い続けて(神級)",
         "猫の導く夢の国/夢を追い続けて(神級+)",
         "猫の導く夢の国/夢を追い続けて(超級)",
         "猫の導く夢の国/夢を追い続けて(超級+)"
+      ],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
       ],
       "skill":null
     },
@@ -9509,10 +11496,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-亡者達への鎮魂歌(上級)",
         "10連戦-亡者達への鎮魂歌(超級)",
         "11連戦-亡者達への鎮魂歌(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]ジェスター・カーニバル",
@@ -9567,10 +11558,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-氷の世界の住人達(上級)",
         "10連戦-氷の世界の住人達(超級)",
         "11連戦-氷の世界の住人達(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]グランド・ブルー",
@@ -9625,10 +11620,14 @@ BgrLib.load({
       "spd_rate":"0.9",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-星を仇なす者(上級)",
         "10連戦-星を仇なす者(超級)",
         "11連戦-星を仇なす者(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]セインツ・マーチ",
@@ -9692,10 +11691,14 @@ BgrLib.load({
       "spd_rate":"1.1",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-新たな刻の始まり(上級)",
         "10連戦-新たな刻の始まり(超級)",
         "11連戦-新たな刻の始まり(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]バッド・リベリオン",
@@ -9750,10 +11753,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-主従の想いを重ねて(上級)",
         "10連戦-主従の想いを重ねて(超級)",
         "11連戦-主従の想いを重ねて(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]テンダネス・トリート",
@@ -9808,10 +11815,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-ビターとスイートの調停(上級)",
         "10連戦-ビターとスイートの調停(超級)",
         "11連戦-ビターとスイートの調停(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]ファミリア・ ディスタンス",
@@ -9866,10 +11877,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":"65",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-動乱のホワイトデイズ(上級)",
         "10連戦-動乱のホワイトデイズ(超級)",
         "11連戦-動乱のホワイトデイズ(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]ヴォートル・クール",
@@ -9934,10 +11949,14 @@ BgrLib.load({
       "spd_rate":"1.4",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-激闘！裏学生会大戦！(上級)",
         "10連戦-激闘！裏学生会大戦！(超級)",
         "11連戦-激闘！裏学生会大戦！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]グランディス・サロス",
@@ -9992,10 +12011,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-りとるがーるれいうんず(上級)",
         "10連戦-りとるがーるれいうんず(超級)",
         "11連戦-りとるがーるれいうんず(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]エマ－ブル・セントリー",
@@ -10050,10 +12073,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":"0.1",
-      "stage":[
+      "drop_stage":[
         "10連戦-二人の心をひとつに(上級)",
         "10連戦-二人の心をひとつに(超級)",
         "11連戦-二人の心をひとつに(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル] アンゲルス・ウォカーレ",
@@ -10108,7 +12135,13 @@ BgrLib.load({
       "spd_rate":"1.2",
       "move":null,
       "crit":"0.22",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスⅩ",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -10127,10 +12160,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-大冒険家の足跡(上級)",
         "10連戦-大冒険家の足跡(超級)",
         "11連戦-大冒険家の足跡(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル] ソール・ リートゥス",
@@ -10185,10 +12222,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.07",
-      "stage":[
+      "drop_stage":[
         "10連戦-夜月は太陽よりも熱く(上級)",
         "10連戦-夜月は太陽よりも熱く(超級)",
         "11連戦-夜月は太陽よりも熱く(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル] ウェリタス・メーメント",
@@ -10243,7 +12284,13 @@ BgrLib.load({
       "spd_rate":"0.3",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXI",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -10262,10 +12309,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-祭りを愛し狂う者達(上級)",
         "10連戦-祭りを愛し狂う者達(超級)",
         "11連戦-祭りを愛し狂う者達(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ] 精霊の息吹",
@@ -10320,7 +12371,13 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXII",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書",
+        "未所持UR装備ボックス"
+      ],
       "skill":null
     },
     {
@@ -10339,10 +12396,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-ファイトオブエタニティ(上級)",
         "10連戦-ファイトオブエタニティ(超級)",
         "11連戦-ファイトオブエタニティ(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]アウルム・ポエニクス",
@@ -10397,7 +12458,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.04",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10416,12 +12481,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"40",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "輝きの乙女たち/輝きの乙女たち(上級)",
         "輝きの乙女たち/輝きの乙女たち(神級)",
         "輝きの乙女たち/輝きの乙女たち(神級+)",
         "輝きの乙女たち/輝きの乙女たち(超級)",
         "輝きの乙女たち/輝きの乙女たち(超級+)"
+      ],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -10441,7 +12510,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIII",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10460,10 +12534,14 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-ガヤお化け達の余興(上級)",
         "10連戦-ガヤお化け達の余興(超級)",
         "11連戦-ガヤお化け達の余興(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]ブルローネ・モストロ",
@@ -10507,7 +12585,12 @@ BgrLib.load({
       "spd_rate":"1.7",
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIV",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10526,10 +12609,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-メディカル・パニック(上級)",
         "10連戦-メディカル・パニック(超級)",
         "11連戦-メディカル・パニック(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]ポレモス・ファルマコ",
@@ -10584,10 +12671,14 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-撲滅☆プレゼント泥棒(上級)",
         "10連戦-撲滅☆プレゼント泥棒(超級)",
         "11連戦-撲滅☆プレゼント泥棒(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]アギオ・プトス",
@@ -10631,7 +12722,12 @@ BgrLib.load({
       "spd_rate":"2",
       "move":null,
       "crit":"0.18",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXV",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10650,7 +12746,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10669,10 +12768,14 @@ BgrLib.load({
       "spd_rate":"0.6",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-マジ卍！初日の出戦争(上級)",
         "10連戦-マジ卍！初日の出戦争(超級)",
         "11連戦-マジ卍！初日の出戦争(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]チンギャーレ・パウーラ",
@@ -10716,10 +12819,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-守り抜け！ナリコの社！(上級)",
         "10連戦-守り抜け！ナリコの社！(超級)",
         "11連戦-守り抜け！ナリコの社！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]カラミタ・パーチェ",
@@ -10774,7 +12881,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"20",
       "crit":"0.04",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVI",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10793,10 +12905,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-甘くない強敵現る！(上級)",
         "10連戦-甘くない強敵現る！(超級)",
         "11連戦-甘くない強敵現る！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]エメ・クリエ",
@@ -10840,7 +12956,12 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.23",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスX",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10859,10 +12980,14 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-甘いお返しを届けよう！(上級)",
         "10連戦-甘いお返しを届けよう！(超級)",
         "11連戦-甘いお返しを届けよう！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[フル]プロテジェ・フォール",
@@ -10906,7 +13031,12 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXVIII",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10925,7 +13055,12 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.04",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXIX",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -10944,10 +13079,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.11",
-      "stage":[
+      "drop_stage":[
         "10連戦-学園のイケナイ遊び(上級)",
         "10連戦-学園のイケナイ遊び(超級)",
         "11連戦-学園のイケナイ遊び(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[メデ]アンサ・ミレーチェ",
@@ -11002,10 +13141,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-秘密のお遊戯会(上級)",
         "10連戦-秘密のお遊戯会(超級)",
         "11連戦-秘密のお遊戯会(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]クラージュ・フィーユ",
@@ -11049,7 +13192,12 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXX",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11068,7 +13216,12 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXI ",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11087,10 +13240,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-絶対防衛!嫁を守り抜け!(上級)",
         "10連戦-絶対防衛!嫁を守り抜け!(超級)",
         "11連戦-絶対防衛!嫁を守り抜け!(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]アムル・ディエース",
@@ -11134,10 +13291,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-輝く海辺のセレブたち！(上級)",
         "10連戦-輝く海辺のセレブたち！(超級)",
         "11連戦-輝く海辺のセレブたち！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]モーリ・カリス",
@@ -11181,7 +13342,12 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXII  ",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11200,10 +13366,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-デモニア達との熱い宴(上級)",
         "10連戦-デモニア達との熱い宴(超級)",
         "11連戦-デモニア達との熱い宴(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]ヒュドル・ラヴァーレ",
@@ -11247,7 +13417,12 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.05",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXIII",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11266,10 +13441,14 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-夏夜に上げる勝利の祝砲(上級)",
         "10連戦-夏夜に上げる勝利の祝砲(超級)",
         "11連戦-夏夜に上げる勝利の祝砲(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]エイシュ・タフト",
@@ -11313,7 +13492,12 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXIV",
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11332,10 +13516,14 @@ BgrLib.load({
       "spd_rate":"0.5",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-月夜に忍び寄る影(上級)",
         "10連戦-月夜に忍び寄る影(超級)",
         "11連戦-月夜に忍び寄る影(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[アンヘル]ミナス・ルミエール",
@@ -11379,12 +13567,16 @@ BgrLib.load({
       "spd_rate":null,
       "move":"35",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "煌めきへの憧憬/煌めきへの憧憬(上級)",
         "煌めきへの憧憬/煌めきへの憧憬(神級)",
         "煌めきへの憧憬/煌めきへの憧憬(神級+)",
         "煌めきへの憧憬/煌めきへの憧憬(超級)",
         "煌めきへの憧憬/煌めきへの憧憬(超級+)"
+      ],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":null
     },
@@ -11404,7 +13596,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "[UR]装備セレクトボックス",
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11423,7 +13619,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXV",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -11442,10 +13642,14 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-ゴースト・カーニバル(上級)",
         "10連戦-ゴースト・カーニバル(超級)",
         "11連戦-ゴースト・カーニバル(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[イード]ファルチェ・ルマパティ",
@@ -11500,7 +13704,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-65",
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXVI",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -11519,10 +13727,14 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.16",
-      "stage":[
+      "drop_stage":[
         "10連戦-闘志燃やす雪上戦(上級)",
         "10連戦-闘志燃やす雪上戦(超級)",
         "11連戦-闘志燃やす雪上戦(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス",
+        "プリシラとの武器取引書"
       ],
       "skill":{
         "name":"[ヴァル]アースィファト・タルジュ",
@@ -11566,10 +13778,13 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":null,
       "crit":"0.11",
-      "stage":[
+      "drop_stage":[
         "10連戦-プレゼント争奪戦(上級)",
         "10連戦-プレゼント争奪戦(超級)",
         "11連戦-プレゼント争奪戦(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[フル]ディアルモ・ヴァロ",
@@ -11624,10 +13839,13 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.16",
-      "stage":[
+      "drop_stage":[
         "10連戦-新春！厄除け大作戦(上級)",
         "10連戦-新春！厄除け大作戦(超級)",
         "11連戦-新春！厄除け大作戦(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[メデ]フェレス・ラウーラ",
@@ -11682,7 +13900,10 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "プリシラとの武器取引書"
+      ],
       "skill":null
     },
     {
@@ -11701,7 +13922,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXVII",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -11720,7 +13945,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":"15",
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXVIII",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -11739,10 +13968,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-これが本当の雪合戦！？(上級)",
         "10連戦-これが本当の雪合戦！？(超級)",
         "11連戦-これが本当の雪合戦！？(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[アンヘル]ネヴィア・アバトス",
@@ -11797,10 +14029,13 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "10連戦-激甘スイーツラッシュ！(上級)",
         "10連戦-激甘スイーツラッシュ！(超級)",
         "11連戦-激甘スイーツラッシュ！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[イード]ダルタ・キュモス",
@@ -11855,7 +14090,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXIX",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -11874,10 +14113,13 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-密かな菓子作り修行(上級)",
         "10連戦-密かな菓子作り修行(超級)",
         "11連戦-密かな菓子作り修行(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[イード]マリク・カヌーン",
@@ -11932,7 +14174,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXX",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -11951,10 +14197,13 @@ BgrLib.load({
       "spd_rate":"1",
       "move":null,
       "crit":"0.14",
-      "stage":[
+      "drop_stage":[
         "10連戦-文武両道の心得(上級)",
         "10連戦-文武両道の心得(超級)",
         "11連戦-文武両道の心得(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[フル]エテュード・サウト",
@@ -12009,7 +14258,11 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":"0.04",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXI",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -12028,10 +14281,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-突撃！ちびっこ軍団(上級)",
         "10連戦-突撃！ちびっこ軍団(超級)",
         "11連戦-突撃！ちびっこ軍団(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[アンヘル]ベルギス・ルジュエ",
@@ -12086,7 +14342,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.16",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXII",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -12105,10 +14365,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":"55",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-共に乗り越える壁(上級)",
         "10連戦-共に乗り越える壁(超級)",
         "11連戦-共に乗り越える壁(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[イード]ウルス・フェオネ",
@@ -12163,7 +14426,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXIII",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -12182,10 +14449,13 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-海中大決戦！(上級)",
         "10連戦-海中大決戦！(超級)",
         "11連戦-海中大決戦！(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[アンヘル]マルスク・ローア",
@@ -12240,7 +14510,11 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXIV",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -12259,10 +14533,13 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "10連戦-未確認海域調査(上級)",
         "10連戦-未確認海域調査(超級)",
         "11連戦-未確認海域調査(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[ヴァル]ゲネロス・シェデル",
@@ -12317,10 +14594,13 @@ BgrLib.load({
       "spd_rate":"0.7",
       "move":null,
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-夏が魅せる特別な力(上級)",
         "10連戦-夏が魅せる特別な力(超級)",
         "11連戦-夏が魅せる特別な力(神級)"
+      ],
+      "itembox":[
+        "[神器]装備セレクトボックス"
       ],
       "skill":{
         "name":"[イード]紅華炎舞",
@@ -12364,7 +14644,11 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.15",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXV",
+        "[UR]装備セレクトボックス"
+      ],
       "skill":null
     },
     {
@@ -12383,11 +14667,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":null,
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "10連戦-白熱！応援合戦！(上級)",
         "10連戦-白熱！応援合戦！(超級)",
         "11連戦-白熱！応援合戦！(神級)"
       ],
+      "itembox":[],
       "skill":{
         "name":"[フル]ハウト・ブリンク",
         "number":null,
@@ -12441,7 +14726,10 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.17",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXVI"
+      ],
       "skill":null
     },
     {
@@ -12460,13 +14748,14 @@ BgrLib.load({
       "spd_rate":"1.3",
       "move":"15",
       "crit":"0.05",
-      "stage":[
+      "drop_stage":[
         "栄冠をその手に/栄冠をその手に(上級)",
         "栄冠をその手に/栄冠をその手に(神級)",
         "栄冠をその手に/栄冠をその手に(神級+)",
         "栄冠をその手に/栄冠をその手に(超級)",
         "栄冠をその手に/栄冠をその手に(超級+)"
       ],
+      "itembox":[],
       "skill":null
     },
     {
@@ -12485,11 +14774,12 @@ BgrLib.load({
       "spd_rate":null,
       "move":"-50",
       "crit":null,
-      "stage":[
+      "drop_stage":[
         "10連戦-ようこそ現世へ！(上級)",
         "10連戦-ようこそ現世へ！(超級)",
         "11連戦-ようこそ現世へ！(神級)"
       ],
+      "itembox":[],
       "skill":{
         "name":"[アンヘル]モルト・ラヴィーチ",
         "number":null,
@@ -12553,7 +14843,10 @@ BgrLib.load({
       "spd_rate":"2.1",
       "move":null,
       "crit":"0.12",
-      "stage":[],
+      "drop_stage":[],
+      "itembox":[
+        "SP装備ボックスXXXVII"
+      ],
       "skill":null
     }
   ],

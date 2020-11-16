@@ -241,65 +241,6 @@ addEventListener('load', function() {
     EquippedUnit.prototype.dps = 0;
 
     /**
-     * @param {EquippedUnit[]} results sorted search results
-     */
-    function generateTable(results) {
-        clearChildren(search_table);
-
-        const thead = createTableHeader();
-        thead.appendChild(createTableHeaderCell('DPS'));
-        thead.appendChild(createTableHeaderCell('攻撃'));
-        thead.appendChild(createTableHeaderCell('攻速'));
-        thead.appendChild(createTableHeaderCell('CRIT'));
-        thead.appendChild(createTableHeaderCell('防御'));
-        thead.appendChild(createTableHeaderCell('装備1'));
-        thead.appendChild(createTableHeaderCell('装備2'));
-        thead.appendChild(createTableHeaderCell('装備3'));
-        thead.appendChild(createTableHeaderCell('装備4'));
-        thead.appendChild(createTableHeaderCell('装備5'));
-        search_table.appendChild(thead);
-
-        const tbody = document.createElement('tbody');
-        const candidate = results.slice(0, 30);
-        for (let i in candidate) {
-            const r = candidate[i];
-            const columns = [
-                parseInt(r.dps),
-                r.atk,
-                r.spd,
-                percentize(r.crit),
-                r.def,
-            ];
-
-            for (let j in r.equips) {
-                columns.push([
-                    r.equips[j].name(),
-                    [ r.equips[j].atk(), r.equips[j].spd(), percentize(r.equips[j].crit()) || '0%', r.equips[j].def() ].join('/')
-                ]);
-            }
-            
-            const tr = document.createElement('tr');
-            columns.forEach(function(value) {
-                if (Array.isArray(value)) {
-                    tr.appendChild(createTableCell(value[0], { 'title': value[1] }));
-                }
-                else {
-                    tr.appendChild(createTableCell(value));
-                }
-            });
-            tr.addEventListener('click', function() {
-                for (let j in equip_selecters) {
-                    equip_selecters[j].value = r.equips[j].id();
-                }
-                unit_selecter.dispatchEvent(new Event('change'));
-            })
-            tbody.appendChild(tr);
-        }
-        search_table.appendChild(tbody);
-
-    }
-
-    /**
      * search equip with right staff
      * @param {BgrUnit} unit 
      * @param {BgrEquip[]} weapons 
@@ -385,6 +326,43 @@ addEventListener('load', function() {
         return this.results;
     };
 
+    /**
+     * @param {BgrEquip} equip 
+     */
+    function makeEquipTooltip(equip) {
+        return 'HP：' + equip.hp() 
+            + '<br>攻撃：' + equip.atk()
+            + '<br>攻速：' + equip.def()
+            + '<br>CRIT：' + (percentize(equip.crit()) || '0%')
+            + '<br>防御：' + equip.def()
+            + '<br>移動：' + equip.move();
+        }
+
+    const search_result_table = new Table(search_table);
+    search_result_table.column = [
+        new TableColumn('SCORE', () => false, (x) => x.score),
+        new TableColumn('DPS', () => true, (x) => toInt(x.dps)),
+        new TableColumn('攻撃', () => true, (x) => x.atk),
+        new TableColumn('攻速', () => true, (x) => x.spd),
+        new TableColumn('CRIT', () => true, (x) => x.crit, { format: (x) => percentize(x) }),
+        new TableColumn('防御', () => true, (x) => x.def),
+        new TableColumn('装備1', () => true, (x) => x.equips[0].name(), { tooltip: (x) => makeEquipTooltip(x.equips[0]) }),
+        new TableColumn('装備2', () => true, (x) => x.equips[1].name(), { tooltip: (x) => makeEquipTooltip(x.equips[1]) }),
+        new TableColumn('装備3', () => true, (x) => x.equips[2].name(), { tooltip: (x) => makeEquipTooltip(x.equips[2]) }),
+        new TableColumn('装備4', () => true, (x) => x.equips[3].name(), { tooltip: (x) => makeEquipTooltip(x.equips[3]) }),
+        new TableColumn('装備5', () => true, (x) => x.equips[4].name(), { tooltip: (x) => makeEquipTooltip(x.equips[4]) }),
+    ];
+
+    search_result_table.sort_column = search_result_table.column[0];
+    search_result_table.sort_desc = true;
+    search_result_table.bodyClickListeners.push(function(data) {
+        for (let j in equip_selecters) {
+            equip_selecters[j].value = data.equips[j].id();
+        }
+        unit_selecter.dispatchEvent(new Event('change'));
+    });
+
+
     function onSearchRequested() {
         if (search_timer) {
             clearTimeout(search_timer);
@@ -400,7 +378,8 @@ addEventListener('load', function() {
             const search_step_end = Math.min(Date.now() + 200, search_end);
             const update = search.step(search_step_end);
             if (update) {
-                generateTable(search.getResult());
+                search_result_table.data = search.getResult().slice(0, 30);
+                search_result_table.update();
             }
 
             const progress = parseInt(100 * (Date.now() - search_begin) / search_duration);
