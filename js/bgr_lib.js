@@ -299,11 +299,19 @@ BgrEquip.prototype.skillBuffer2 = function BgrEquip_skillBuffer2() {
 };
 
 BgrEquip.prototype.skillScale = function BgrEquip_skillScale() {
-    return this.calculate('scale', 'scale_rate', this.equip_data['skill']);
+    const skill = this.equip_data['skill'];
+    if (skill) {
+        return this.calculate('scale', 'scale_rate', skill);
+    }
+    return 0;
 };
 
 BgrEquip.prototype.skillBP = function BgrEquip_skillBP() {
-    return this.calculate('bp', 'bp_rate', this.equip_data['skill']);
+    const skill = this.equip_data['skill'];
+    if (skill) {
+        return this.calculate('bp', 'bp_rate', skill);
+    }
+    return 0;
 };
 
 BgrEquip.prototype.dropStage = function BgrEquip_dropStage() {
