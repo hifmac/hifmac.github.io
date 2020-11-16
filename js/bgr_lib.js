@@ -1,3 +1,25 @@
+const GAME_FPS = 60;
+const ATTACK_FRAME_DELAY = 0.151;
+const UNIT_MAX_SPEED = 2000;
+const UNIT_MAX_SPEED_EFFECTIVE = parseInt(1000 * GAME_FPS / (GAME_FPS / 2 + 1 - ATTACK_FRAME_DELAY) + 0.5);
+const UNIT_MAX_CRITICAL = 1.0;
+const UNIT_MAX_MOVE = 500;
+
+const GP_BONUS_HP   = 900;
+const GP_BONUS_ATK  = 45;
+const GP_BONUS_DEF  = 45;
+const GP_BONUS_SPD  = 50;
+const GP_BONUS_CRIT = 0.03;
+const GP_BONUS_MOVE = 25;
+const GP_BONUS_ALL  = 0.03;
+
+const GUILD_SKILL_HP  = 0.06;
+const GUILD_SKILL_ATK = 0.058;
+const GUILD_SKILL_DEF = 0.058;
+const GUILD_SKILL_SPD = 0.03;
+
+const BLESS_BONUS = 0.25
+
 /**
  * BGR unit data
  * @param {object} unit 
@@ -146,6 +168,34 @@ BgrUnit.prototype.attackSkillCooldown = function BgrUnit_attackSkillCooldown() {
     return null;
 };
 
+BgrUnit.prototype.reinforcedHp = function BgrUnit_reinforcedHp() {
+    return this.hp() * (1 + BLESS_BONUS + GUILD_SKILL_HP + GP_BONUS_ALL) + GP_BONUS_HP;
+};
+
+BgrUnit.prototype.reinforcedAtk = function BgrUnit_reinforcedAtk() {
+    return this.atk() * (1 + BLESS_BONUS + GUILD_SKILL_ATK + GP_BONUS_ALL) + GP_BONUS_ATK;
+};
+
+BgrUnit.prototype.reinforcedSpd = function BgrUnit_reinforcedSpd() {
+    return this.spd() * (1 + BLESS_BONUS + GUILD_SKILL_SPD + GP_BONUS_ALL) + GP_BONUS_SPD;
+};
+
+BgrUnit.prototype.reinforcedDef = function BgrUnit_reinforcedDef() {
+    return this.def() * (1 + BLESS_BONUS + GUILD_SKILL_DEF + GP_BONUS_ALL) + GP_BONUS_DEF;
+};
+
+BgrUnit.prototype.reinforcedCrit = function BgrUnit_reinforcedCrit() {
+    return (this.crit() + GP_BONUS_CRIT) * this.bonusCritRate();
+};
+
+BgrUnit.prototype.bonusCritRate = function BgrUnit_bonusCritRate() {
+    return (1 + BLESS_BONUS + GP_BONUS_ALL);
+};
+
+BgrUnit.prototype.reinforcedMove = function BgrUnit_reinforcedMove() {
+    return (this.move() + GP_BONUS_MOVE) * (1 + BLESS_BONUS + GP_BONUS_ALL);
+};
+
 
 /**
  * BGR equipment data
@@ -161,7 +211,6 @@ function BgrEquip(equip) {
  * @param {string} param_rate parameter rate name
  */
 BgrEquip.prototype.calculate = function(param, param_rate, obj) {
-    obj = obj || this.equip_data;
     return BgrLib.calculate(obj[param], obj[param_rate], this.paramLevel());
 }
 
@@ -204,19 +253,19 @@ BgrEquip.prototype.paramLevel = function BgrEquip_paramLevel() {
 };
 
 BgrEquip.prototype.hp = function BgrEquip_hp() {
-    return this.calculate('hp', 'hp_rate');
+    return BgrLib.toInt(this.calculate('hp', 'hp_rate', this.equip_data));
 };
 
 BgrEquip.prototype.atk = function BgrEquip_atk() {
-    return this.calculate('atk', 'atk_rate');
+    return BgrLib.toInt(this.calculate('atk', 'atk_rate', this.equip_data));
 };
 
 BgrEquip.prototype.spd = function BgrEquip_spd() {
-    return this.calculate('spd', 'spd_rate');
+    return BgrLib.toInt(this.calculate('spd', 'spd_rate', this.equip_data));
 };
 
 BgrEquip.prototype.def = function BgrEquip_def() {
-    return this.calculate('def', 'def_rate');
+    return BgrLib.toInt(this.calculate('def', 'def_rate', this.equip_data));
 };
 
 BgrEquip.prototype.move = function BgrEquip_move() {
@@ -283,7 +332,7 @@ const BgrLib = {
             return BgrLib.toFloat(param) + BgrLib.toFloat(param_rate) * level;
         }
         else {
-            return null;
+            return 0;
         }
     },
 
@@ -294,10 +343,7 @@ const BgrLib = {
      * @return {number} integer value
      */
     toInt(value) {
-        if (value) {
-            return parseInt(value);
-        }
-        return 0;
+        return value ? parseInt(value) : 0;
     },
 
     /**
@@ -307,10 +353,7 @@ const BgrLib = {
      * @returns {number} float value
      */
     toFloat(value) {
-        if (value) {
-            return parseFloat(value);
-        }
-        return 0;
+        return value ? parseFloat(value) : 0;
     },
 
     /**
@@ -473,7 +516,145 @@ const BgrLib = {
      * @param {string} text 
      * @returns {HTMLTableDataCellElement} table cell
      */
-    createTableCell(text) {
-        return BgrLib.createElement('td', text);
+    createTableCell(text, attr) {
+        return BgrLib.createElement('td', text, attr);
     },
+
+    speedToFrame(speed) {
+        return parseInt((1000 * GAME_FPS / speed) + ATTACK_FRAME_DELAY);
+    },
+};
+
+/**
+ * Table class column
+ * @param {string} name 
+ * @param {function(): boolean} enabled 
+ * @param {function((BgrUnit | BgrEquip)): (number | string)} read 
+ * @param {function((number | string)): string} format 
+ */
+function TableColumn(name, enabled, read, format) {
+    this.name = name;
+    this.isEnabled = enabled;
+    this.read = read;
+    this.format = format;
+}
+
+/** @type {function(): boolean} */
+TableColumn.prototype.isEnabled = null;
+
+/** @type {function((BgrUnit | BgrEquip)): (number | string)} */
+TableColumn.prototype.read = null;
+
+/** @type {function((number | string)): string} */
+TableColumn.prototype.format = null;
+
+/**
+ * @param {HTMLTableElement} element
+ */
+function Table(element) {
+    this.element = element;
+}
+
+/** @type {TableColumn[]} */
+Table.prototype.column = null;
+
+/** @type {(BgrUnit[] | BgrEquip[])} */
+Table.prototype.data = null;
+
+/** @type {(function(object): boolean)[]} */
+Table.prototype.filters = [];
+
+/** @type {TableColumn} */
+Table.prototype.sort_column = null;
+
+/** @type {boolean} */
+Table.prototype.sort_desc = false;
+
+/** @type {(function(TableColumn): void)[]} */
+Table.prototype.headerClickListeners = [];
+
+Table.prototype.clearTable = function Table_clearTable() {
+    BgrLib.clearChildren(this.element);
+};
+
+/**
+ * make a table header
+ * @returns {HTMLTableCaptionElement} 
+ */
+Table.prototype.makeHeader = function Table_makeHeader() {
+    const header = BgrLib.createTableHeader();
+    const row = document.createElement('tr');
+    for (let i in this.column) {
+        const column = this.column[i];
+        if (column.isEnabled()) {
+            const th = BgrLib.createTableHeaderCell(column.name);
+            if (this.sort_column == column) {
+                th.textContent += this.sort_desc ? '▽' : '△';
+            }
+
+            th.addEventListener('click', this.onHeaderClicked.bind(this, column));
+
+            row.appendChild(th);
+        }
+    }
+    header.appendChild(row);
+    return header;
+};
+
+/**
+ * make a table body
+ * @returns {HTMLTableSectionElement}
+ */
+Table.prototype.makeBody = function Table_makeBody() {
+    if (this.sort_column) {
+        const compare = (this.sort_desc ? BgrLib.compareDesc : BgrLib.compareAsc);
+        this.data.sort((a, b) => compare(this.sort_column.read(a), this.sort_column.read(b)));
+    }
+
+    const body = document.createElement('tbody');
+    for (let i in this.data) {
+        const data = this.data[i];
+        const matched = this.filters.reduce((accum, x) => accum && x(data), true);
+        if (!matched) {
+            continue;
+        }
+        const row = document.createElement('tr');
+        for (let j in this.column) {
+            const column = this.column[j];
+            if (column.isEnabled()) {
+                const column_value = column.read(data);
+                const col = BgrLib.createTableCell(column.format ? column.format(column_value) : column_value);
+                col.style.whiteSpace = 'pre-wrap';
+                row.appendChild(col);
+            }
+        }
+        body.appendChild(row);
+    }
+    return body;
+};
+
+Table.prototype.update = function() {
+    this.clearTable();
+    this.element.appendChild(this.makeHeader());
+    this.element.appendChild(this.makeBody());
+};
+
+/**
+ * 
+ * @param {TableColumn} column 
+ */
+Table.prototype.onHeaderClicked = function(column) {
+    if (this.sort_column == column) {
+        this.sort_desc = !this.sort_desc;
+    }
+    else {
+        this.sort_column = column;
+        this.sort_desc = true;
+    }
+
+    this.update();
+
+    for (let i in this.headerClickListeners) {
+        this.headerClickListeners[i](column);
+    }
 };

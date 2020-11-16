@@ -69,10 +69,10 @@ function Checkbox(id, text, checked) {
     form_check_input.id = id;
     form_check_input.setAttribute('type', 'checkbox');
     form_check_input.setAttribute('class', 'form-check-input');
-    form_check_input.checked = typeof checked === 'undefined' ? true : checked;
+    form_check_input.checked = typeof checked == 'undefined' ? true : checked;
 
     let form_check_label =document.createElement('label');
-    form_check_label.setAttribute('class', 'form-check-label');
+    form_check_label.setAttribute('class', 'form-check-label mr-2');
     form_check_label.setAttribute('for', id);
     form_check_label.textContent = text;
 
@@ -89,8 +89,43 @@ BgrLib.inherits(Form, Checkbox);
 /**
  * @returns {string} filter value
  */
-Checkbox.prototype.value = function Form_value() {
+Checkbox.prototype.value = function Checkbox_value() {
     return this.label.textContent;
+};
+
+/**
+ * checkbox associated with a column
+ * @param {string} id 
+ * @param {string} text 
+ * @param {boolean} checked 
+ * @param {function((BgrUnit | BgrEquip)): (number | string)} read 
+ * @param {function((number | string)) : string} format 
+ */
+function CheckboxColumn(id, text, read, kwargs) {
+    this.checkbox = new Checkbox(id, text, kwargs ? kwargs.checked : undefined);
+    this.column = new TableColumn(
+        text,
+        this.checkbox.checked.bind(this.checkbox),
+        read,
+        kwargs ? kwargs.format : null);
+}
+
+
+/**
+ * checkbox list to filter function
+ * @param {Checkbox[]} checkboxes 
+ * @param {function((number | string), (BgrUnit | BgrEquip)): boolean} filterFunction
+ * @returns {function((BgrUnit | BgrEquip)) : boolean}
+ */
+function CheckboxToFilter(checkboxes, filterFunction) {
+    return function(data) {
+        for (let i in checkboxes) {
+            if (checkboxes[i].checked() && filterFunction(data, checkboxes[i].value())) {
+                return true;
+            }
+        }
+        return false;
+    };
 };
 
 /**
@@ -102,7 +137,7 @@ function Textbox(id, text) {
     let form_text_input = document.createElement('input');
     form_text_input.id = id;
     form_text_input.setAttribute('type', 'text');
-    form_text_input.setAttribute('class', 'form-control');
+    form_text_input.setAttribute('class', 'form-control mr-2');
     form_text_input.setAttribute('placeholder', text);
     form_text_input.checked = true;
 
@@ -136,261 +171,29 @@ Textbox.prototype.onChanged = function Textbox_onChanged(value) {
 };
 
 /**
- * content filter
- * @param {Form} form form object
- * @param {function((BgrUnit | BgrEquip), string): bool} func filter function
- */
-function Filter(form, func) {
-    this.form = form;
-    this.func = func;
-}
-
-/**
- * @type {Form}
- */
-Filter.prototype.form = null;
-
-/**
  * 
- * @type {function((BgrUnit | BgrEquip), string): bool}
+ * @param {Textbox} textbox
+ * @param {function((number | string), (BgrUnit | BgrEquip)): boolean} filterFunction
+ * @returns {function((BgrUnit | BgrEquip)) : boolean}
  */
-Filter.prototype.func = null;
-
-/**
- * apply filter to an object
- * @param {(BgrUnit | BgrEquip)} obj the object to be applied
- */
-Filter.prototype.apply = function Filter_apply(obj) {
-    return this.form.checked() && this.func(obj, this.form.value());
-}
-
-/**
- * content column selecter
- * @param {string} id
- * @param {string} text
- * @param {object} kwargs
- */
-function Column(id, text, read, kwargs) {
-    this.form = new Checkbox(id, text, kwargs && kwargs.checked);
-    this.read = read;
-    if (kwargs && kwargs.format) {
-        this.formatter = kwargs.format;
-    }
-}
-
-/**
- * @type {Checkbox}
- */
-Column.prototype.form = null;
-
-/**
- * @type {function((BgrUnit | BgrEquip)): (number | string)}
- */
-Column.prototype.read = null;
-
-/**
- * @type {function((number | string)) : string}
- */
-Column.prototype.formatter = null;
-
-/**
- * get column string
- * @param {(BgrUnit | BgrEquip)} obj column object to read
- */
-Column.prototype.string = function Column_string(obj) {
-    const value = this.read(obj);
-    if (value) {
-        return this.formatter ? this.formatter(value) : value;
-    }
-    return null;
-}
-
-/**
- * @param {HTMLElement} elem 
- * @param {Column[]} content 
- * @param {string} name 
- */
-function DataTableContent(elem, content, name) {
-    this.element = elem;
-    this.content = content;
-    this.name = name;
-};
-
-/**
- * @param {function(): void} callback 
- */
-DataTableContent.prototype.onChanged = function DataTableContent_onChanged(callback) {
-    for (let i in this.content) {
-        this.content[i].form.onChanged(callback);
-    }
-};
-
-/**
- * @param {HTMLElement} elem 
- * @param {Filter[]} filter 
- * @param {string} name 
- * @param {boolean} any whether filter is matched with any or all
- */
-function DataTableFilter(elem, filter, name, any) {
-    this.element = elem;
-    this.filter = filter;
-    this.name = name;
-    this.any = any;
-};
-
-/**
- * 
- * @param {(BgrUnit | BgrEquip)} obj 
- * @returns {boolean} whether filters are matched
- */
-DataTableFilter.prototype.apply = function DataTableFilter_apply(obj) {
-    if (this.any) {
-        return this.filter.reduce((accum, x) => accum || x.apply(obj), false);
-    }
-    else {
-        return this.filter.reduce((accum, x) => accum && x.apply(obj), true);
-    }
-};
-
-/**
- * @param {function(): void} callback 
- */
-DataTableFilter.prototype.onChanged = function DataTableFilter_onChanged(callback) {
-    for (let i in this.filter) {
-        this.filter[i].form.onChanged(callback);
-    }
-};
-
-/**
- * @param {HTMLTableElement} table
- * @param {(BgrUnit | BgrEquip)[]} data 
- * @param {DataTableContent} contents 
- * @param {DataTableFilter[]} filters 
- */
-function DataTable(table, data, contents, filters) {
-    this.table = table;
-    this.data = data;
-    this.contents = contents;
-    this.filters = filters;
-    this.sort = {
-        column: null,
-        descending: false,
-    }
-}
-
-/**
- * 
- * @param {object} sort 
- * @param {Column[]} contents 
- * @param {function(): void} callback 
- */
-DataTable.prototype.makeHeader = function DataTable_makeHeader(sort, contents, callback) {
-    const header = BgrLib.createTableHeader();
-    const row = document.createElement('tr')
-    for (let i in contents) {
-        if (contents[i].form.checked()) {
-            const th = BgrLib.createTableHeaderCell(contents[i].form.value());
-            if (sort.column == contents[i]) {
-                th.textContent += sort.descending ? '▽' : '△';
-            }
-
-            th.addEventListener('click', function() {
-                if (sort.column == contents[i]) {
-                    sort.descending = !sort.descending
-                }
-                else {
-                    sort.column = contents[i];
-                    sort.descending = true;
-                }
-                callback();
-            });
-
-            row.appendChild(th);
-        }
-    }
-    header.appendChild(row);
-    return header;
-};
-
-/**
- * equip to row
- * @param {(BgrUnit | BgrEquip))} data 
- * @param {Column[]} contents 
- */
-DataTable.prototype.dataToRow = function DataTable_dataToRow(data, contents) {
-    const row = document.createElement('tr');
-    for (let i in contents) {
-        if (contents[i].form.checked()) {
-            const col = BgrLib.createTableCell(contents[i].string(data));
-            col.style.whiteSpace = 'pre-wrap';
-            row.appendChild(col);
-        }
-    }
-    return row;
-};
-
-/**
- * update form a group with a label
- * @param {HTMLDivElement} formgroup the form group to contain
- * @param {(Filter | Column)[]} form_holder filtered to be contained the group
- * @param {string} labelname form group label
- */
-DataTable.prototype.updateFormGroup = function DataTable_updateFormGroup(formgroup, form_holder, labelname) {
-    BgrLib.clearChildren(formgroup);
-
-    if (labelname) {
-        const label = document.createElement('label');
-        label.textContent = labelname;
-        formgroup.appendChild(label);
-    }
-
-    for (let i in form_holder) {
-        form_holder[i].form.setParent(formgroup);
-    }
-};
-
-/**
- * @returns {function(): void} update callback
- */
-DataTable.prototype.register = function DataTable_register() {
-    const self = this;
-
-    const onUpdated = function() {
-        self.updateFormGroup(
-            self.contents.element,
-            self.contents.content,
-            self.contents.name);
-
-        for (let i in self.filters) {
-            self.updateFormGroup(
-                self.filters[i].element,
-                self.filters[i].filter,
-                self.filters[i].name);
-        }
-
-        if (self.sort.column) {
-            const compare = (self.sort.descending ? BgrLib.compareDesc : BgrLib.compareAsc);
-            self.data.sort((a, b) => compare(self.sort.column.read(a), self.sort.column.read(b)));
-        }
-
-        BgrLib.clearChildren(self.table);
-        self.table.appendChild(self.makeHeader(self.sort, self.contents.content, onUpdated));
-        const tbody = document.createElement('tbody');
-        for (let i in self.data) {
-            const matched = self.filters.reduce((accum, x) => accum && x.apply(self.data[i]), true);
-            if (matched) {
-                tbody.appendChild(self.dataToRow(self.data[i], self.contents.content));
-            }
-        }
-        self.table.appendChild(tbody);
+function TextboxToFilter(textbox, filterFunction) {
+    return function (data) { 
+        return filterFunction(data, textbox.value());
     };
+};
 
-
-    ([ this.contents ].concat(this.filters)).forEach(function(filter) {
-        filter.onChanged(onUpdated);
-    });
-
-    return onUpdated;
+/**
+ * set form group
+ * @param {(Checkbox[] | Textbox[])} forms 
+ */
+function setFormGroup(label, group, forms) {
+    BgrLib.clearChildren(group);
+    if (label) {
+        group.appendChild(BgrLib.createElement('label', label + '：'))
+    }
+    for (let i in forms) {
+        group.appendChild(forms[i].form);
+    }
 }
 
 addEventListener('load', function() {
@@ -428,46 +231,60 @@ addEventListener('load', function() {
     /** @type {HTMLDivElement} */
     const equip_content = document.getElementById("equip-content");
 
-    const rank_filter = [
-        new Filter(new Checkbox('N', 'N'), filterEquipRank),
-        new Filter(new Checkbox('R', 'R'), filterEquipRank),
-        new Filter(new Checkbox('SR', 'SR'), filterEquipRank),
-        new Filter(new Checkbox('SSR', 'SSR'), filterEquipRank),
-        new Filter(new Checkbox('UR', 'UR'), filterEquipRank),
-        new Filter(new Checkbox('Z', '神器'), filterEquipRank),
+    const column_checkbox = [
+        new CheckboxColumn('equip-name', '名前', (x) => x.name()),
+        new CheckboxColumn('equip-rank', 'ランク', (x) => x.rank()),
+        new CheckboxColumn('equip-level', '最大レベル', (x) => x.level()),
+        new CheckboxColumn('equip-hp', 'HP', (x) => x.hp(), {format: parseInt}),
+        new CheckboxColumn('equip-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
+        new CheckboxColumn('equip-spd', '攻撃速度', (x) => x.spd(), {format: parseInt}),
+        new CheckboxColumn('equip-critical', 'クリティカル', (x) => x.crit(), {format: BgrLib.percentize}),
+        new CheckboxColumn('equip-def', '防御', (x) => x.def(), {format: parseInt}),
+        new CheckboxColumn('equip-move', '移動速度', (x) => x.move()),
+        new CheckboxColumn('equip-skillbuffer1', 'スキル効果1', (x) => x.skillBuffer1(), {checked: false}),
+        new CheckboxColumn('equip-skillbuffer2', 'スキル効果2', (x) => x.skillBuffer2(), {checked: false}),
+        new CheckboxColumn('equip-skillscale', 'スキル倍率', (x) => x.skillScale(), {checked: false, format: BgrLib.percentize}),
+        new CheckboxColumn('equip-skillbp', 'スキルBP', (x) => x.skillBP(), {checked: false}),
+        new CheckboxColumn('equip-dropstage', 'ドロップ', (x) => x.dropStage(), {checked: false}),
     ];
 
-    const skill_filter = [
-        new Filter(new Textbox('skill-equip', 'スキル効果'), filterEquipSkill),
+    const rank_checkbox = [
+        new Checkbox('N', 'N'),
+        new Checkbox('R', 'R'),
+        new Checkbox('SR', 'SR'),
+        new Checkbox('SSR', 'SSR'),
+        new Checkbox('UR', 'UR'),
+        new Checkbox('Z', '神器'),
     ];
 
-    const content = [
-        new Column('equip-name', '名前', (x) => x.name()),
-        new Column('equip-rank', 'ランク', (x) => x.rank()),
-        new Column('equip-level', '最大レベル', (x) => x.level()),
-        new Column('equip-hp', 'HP', (x) => x.hp(), {format: parseInt}),
-        new Column('equip-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
-        new Column('equip-spd', '攻撃速度', (x) => x.spd(), {format: parseInt}),
-        new Column('equip-critical', 'クリティカル', (x) => x.crit(), {format: BgrLib.percentize}),
-        new Column('equip-def', '防御', (x) => x.def(), {format: parseInt}),
-        new Column('equip-move', '移動速度', (x) => x.move()),
-        new Column('equip-skillbuffer1', 'スキル効果1', (x) => x.skillBuffer1(), {checked: false}),
-        new Column('equip-skillbuffer2', 'スキル効果2', (x) => x.skillBuffer2(), {checked: false}),
-        new Column('equip-skillscale', 'スキル倍率', (x) => x.skillScale(), {checked: false, format: BgrLib.percentize}),
-        new Column('equip-skillbp', 'スキルBP', (x) => x.skillBP(), {checked: false}),
-        new Column('equip-dropstage', 'ドロップ', (x) => x.dropStage(), {checked: false}),
+    const skill_textbox = [
+        new Textbox('skill-equip', 'スキル効果'),
     ];
 
-    const table = new DataTable(
-        equip_table,
-        BgrLib.getEquip(), 
-        new DataTableContent(equip_content, content, 'コンテンツ：'),
-        [
-            new DataTableFilter(equip_rank_filter, rank_filter, 'ランク：', true),
-            new DataTableFilter(equip_skill_filter, skill_filter, null, false),
-        ]);
+    const table = new Table(equip_table);
+    table.data = BgrLib.getEquip().slice();
+    table.column = column_checkbox.map((x) => x.column);
+    table.filters = [
+        CheckboxToFilter(rank_checkbox, filterEquipRank),
+        TextboxToFilter(skill_textbox[0], filterEquipSkill),
+    ];
 
-    table.register()();
+    setFormGroup('列', equip_content, column_checkbox.map((x) => x.checkbox));
+    setFormGroup('ランク', equip_rank_filter, rank_checkbox);
+    setFormGroup(null, equip_skill_filter, skill_textbox);
+
+    const listener = table.update.bind(table);
+    [
+        column_checkbox.map((x) => x.checkbox),
+        rank_checkbox,
+        skill_textbox,
+    ].forEach(function (filters) {
+        for (let i in filters) {
+            filters[i].onChanged(listener);
+        }
+    });
+
+    table.update();
 });
 
 addEventListener('load', function() {
@@ -482,15 +299,6 @@ addEventListener('load', function() {
 
     /** @type {HTMLTableElement} */
     const unit_table = document.getElementById("unit-table");
-
-    /** 
-     * current sort column
-     * @type {object}
-     */
-    const sort = {
-        column: null,
-        descending: false,
-    };
 
     /**
      * filter unit by attack skill
@@ -526,49 +334,74 @@ addEventListener('load', function() {
         return unit.attr() == value;
     }
 
+    /**
+     * filter unit by attribute
+     * @param {BgrUnit} unit 
+     * @param {string} value 
+     */
+    function filterName(unit, value) {
+        return !value.length || unit.name().indexOf(value) != -1;
+    }
 
-    const attribute_filter = [
-        new Filter(new Checkbox('attr-sandica', 'サンディカ'), filterAttribute),
-        new Filter(new Checkbox('attr-demonia', 'デモニア'), filterAttribute),
-        new Filter(new Checkbox('attr-valmir', 'ヴァーミル'), filterAttribute),
-        new Filter(new Checkbox('attr-blanc', 'ブラン'), filterAttribute),
-        new Filter(new Checkbox('attr-jade', 'ジェイド'), filterAttribute),
+    const attribute_checkbox = [
+        new Checkbox('attr-sandica', 'サンディカ'),
+        new Checkbox('attr-demonia', 'デモニア'),
+        new Checkbox('attr-valmir', 'ヴァーミル'),
+        new Checkbox('attr-blanc', 'ブラン'),
+        new Checkbox('attr-jade', 'ジェイド'),
     ];
 
-    const skill_filter = [
-        new Filter(new Textbox('skill-leader', '隊長スキル'), filterLeaderSkill),
-        new Filter(new Textbox('skill-attack', 'スキル効果'), filterAttackSkill),
+    const textbox_filter = [
+        new Textbox('filter-name', '名前'),
+        new Textbox('skill-leader', '隊長スキル'),
+        new Textbox('skill-attack', 'スキル効果'),
     ];
 
-    const content = [
-        new Column('unit-id', 'ID', (x) => x.id()),
-        new Column('unit-name', '名前', (x) => x.name()),
-        new Column('unit-attr', '所属', (x) => x.attr()),
-        new Column('unit-hp', 'HP', (x) => x.hp(), {format: parseInt}),
-        new Column('unit-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
-        new Column('unit-atkscale', '攻撃倍率', (x) => x.atkScale(), {format: BgrLib.percentize}),
-        new Column('unit-spd', '攻撃速度', (x) => x.spd(), {format: parseInt}),
-        new Column('unit-atkrange', '攻撃距離', (x) => x.atkRange()),
-        new Column('unit-critical', 'クリティカル', (x) => x.crit(), {format: BgrLib.percentize}),
-        new Column('unit-def', '防御', (x) => x.def(), {format: parseInt}),
-        new Column('unit-move', '移動速度', (x) => x.move(), {format: parseInt}),
-        new Column('unit-leaderskill', '隊長スキル', (x) => x.leaderSkill()),
-        new Column('unit-skillbuffer1', 'スキル効果1', (x) => x.attackSkillBuffer1()),
-        new Column('unit-skillbuffer2', 'スキル効果2', (x) => x.attackSkillBuffer2()),
-        new Column('unit-skillcd', 'スキルCD', (x) => x.attackSkillCooldown(), {checked: false}),
-        new Column('unit-skillsp', 'スキルSP', (x) => x.attackSkillSP(), {checked: false}),
-        new Column('unit-skilltarget', 'スキル対象', (x) => x.attackSkillTarget(), {checked: false}),
-        new Column('unit-skillscale', 'スキル倍率', (x) => x.attackSkillScale(), {checked: false, format: BgrLib.percentize}),
+    const checkbox_column = [
+        new CheckboxColumn('unit-id', 'ID', (x) => x.id()),
+        new CheckboxColumn('unit-name', '名前', (x) => x.name()),
+        new CheckboxColumn('unit-attr', '所属', (x) => x.attr()),
+        new CheckboxColumn('unit-hp', 'HP', (x) => x.hp(), {format: parseInt}),
+        new CheckboxColumn('unit-atk', '攻撃', (x) => x.atk(), {format: parseInt}),
+        new CheckboxColumn('unit-atkscale', '攻撃倍率', (x) => x.atkScale(), {format: BgrLib.percentize}),
+        new CheckboxColumn('unit-spd', '攻撃速度', (x) => x.spd(), {format: parseInt}),
+        new CheckboxColumn('unit-atkrange', '攻撃距離', (x) => x.atkRange()),
+        new CheckboxColumn('unit-critical', 'クリティカル', (x) => x.crit(), {format: BgrLib.percentize}),
+        new CheckboxColumn('unit-def', '防御', (x) => x.def(), {format: parseInt}),
+        new CheckboxColumn('unit-move', '移動速度', (x) => x.move(), {format: parseInt}),
+        new CheckboxColumn('unit-leaderskill', '隊長スキル', (x) => x.leaderSkill()),
+        new CheckboxColumn('unit-skillbuffer1', 'スキル効果1', (x) => x.attackSkillBuffer1()),
+        new CheckboxColumn('unit-skillbuffer2', 'スキル効果2', (x) => x.attackSkillBuffer2()),
+        new CheckboxColumn('unit-skillcd', 'スキルCD', (x) => x.attackSkillCooldown(), {checked: false}),
+        new CheckboxColumn('unit-skillsp', 'スキルSP', (x) => x.attackSkillSP(), {checked: false}),
+        new CheckboxColumn('unit-skilltarget', 'スキル対象', (x) => x.attackSkillTarget(), {checked: false}),
+        new CheckboxColumn('unit-skillscale', 'スキル倍率', (x) => x.attackSkillScale(), {checked: false, format: BgrLib.percentize}),
     ];
 
-    const table = new DataTable(
-        unit_table,
-        BgrLib.getUnit(), 
-        new DataTableContent(unit_content, content, 'コンテンツ：'),
-        [
-            new DataTableFilter(unit_attr_filter, attribute_filter, '所属：', true),
-            new DataTableFilter(unit_skill_filter, skill_filter, null, false),
-        ]);
+    const table = new Table(unit_table);
+    table.data = BgrLib.getUnit().slice();
+    table.column = checkbox_column.map((x) => x.column);
+    table.filters = [
+        new CheckboxToFilter(attribute_checkbox, filterAttribute),
+        new TextboxToFilter(textbox_filter[0], filterName),
+        new TextboxToFilter(textbox_filter[1], filterLeaderSkill),
+        new TextboxToFilter(textbox_filter[2], filterAttackSkill),
+    ];
 
-    table.register()();
+    setFormGroup('列', unit_content, checkbox_column.map((x) => x.checkbox));
+    setFormGroup('所属', unit_attr_filter, attribute_checkbox);
+    setFormGroup(null, unit_skill_filter, textbox_filter);
+
+    const listener = table.update.bind(table);
+    [
+        checkbox_column.map((x) => x.checkbox),
+        attribute_checkbox,
+        textbox_filter,
+    ].forEach(function (filters) {
+        for (let i in filters) {
+            filters[i].onChanged(listener);
+        }
+    });
+
+    table.update();
 });

@@ -37,7 +37,7 @@
                         <div class="form-inline" id='unit-skill-filter'></div>
                         <div class="form-inline" id='unit-content'></div>
                     </div>
-                    <div class="border mb-2">
+                    <div class="mb-2">
                         <table id='unit-table' class="table table-hover table-striped table-bordered"></table>
                     </div>
                 </div>
@@ -49,13 +49,13 @@
                         <div class="form-inline" id='equip-skill-filter'></div>
                         <div class="form-inline" id='equip-content'></div>
                     </div>
-                    <div class="border mb-2">
+                    <div class="mb-2">
                         <table id='equip-table' class="table table-hover table-striped table-bordered"></table>
                     </div>
                 </div>
 
                 <!-- calc pane -->
-                <div class="tab-pane fade p-2" id="status-calc">
+                <div class="tab-pane fade p-2" style="max-width: 1280px" id="status-calc">
                     <div class="border pt-2 pb-2 mb-2">
                         <div class="row">
                             <label class="col-2 text-right" for="unit-selecter">ユニット</label>
@@ -78,6 +78,12 @@
                     </div>
         
                     <div class="border pt-2 pb-2 mb-2">
+                        <div class="row">
+                            <label class="col-2 text-right" for="calc-unit-id">ID</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-id" readonly></select>    
+                            <label class="col-2 text-right" for="calc-unit-attr">所属</label>
+                            <input class="col-3 form-control" type="text" id="calc-unit-attr" readonly></select>      
+                        </div>
                         <div class="row">
                             <label class="col-2 text-right" for="calc-unit-hp">HP</label>
                             <input class="col-3 form-control" type="text" id="calc-unit-hp" readonly></select>    
@@ -119,7 +125,7 @@
         
                     <div class="border mb-2">
                         <div class="form-inline p-2">
-                            <button class="btn btn-dark mr-2" id="search-button">検索</button> 
+                            <button class="btn btn-dark mr-2" id="search-button">適当装備検索</button> 
                             <label for="spd-selecter">攻速バフ</label>
                             <select class="form-control mr-2" id="spd-selecter">
                                 <option value="0.00">攻速1945(+0%)</option>
@@ -139,7 +145,9 @@
                             <label for="def-selecter">目標防御</label>
                             <input type="text" class="form-control" id="def-selecter" placeholder="防御"></input>
                         </div>
-                        <div>※　DPSは敵防御力を0とした理論値です。信じないでください。<br>※　5秒間で良さげな装備を探す機能です。最適解が見つかるとは限りません。</div>
+                        <div>※　DPSは敵防御力を0とした理論値です。信じないでください。<br>
+                            ※　10秒間ランダムに装備を探す機能です。最適解が見つかるとは限りません。
+                        </div>
         
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="search-progress"></div>
