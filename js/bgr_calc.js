@@ -51,6 +51,7 @@ addEventListener('load', function() {
     /** @type {HTMLDivElement} */
     const search_progress = document.getElementById('search-progress');
 
+    const NUMERIC = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     const UNIT = BgrLib.getUnit().slice();
     const EQUIP = BgrLib.getEquip().slice();
@@ -64,10 +65,8 @@ addEventListener('load', function() {
         percentize,
         compareDesc,
         compareAsc,
-        createTableCell,
-        createTableHeader,
-        createTableHeaderCell,
-        clearChildren,
+        trueType,
+        falseType,
     } = BgrLib;
 
     /**
@@ -156,8 +155,6 @@ addEventListener('load', function() {
     function countZingi(accum, equip) {
         return accum + (equip.rank() == '神器' ? 1 : 0);
     }
-
-    const NUMERIC = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     /**
      * make a hash of equip set
@@ -340,17 +337,17 @@ addEventListener('load', function() {
 
     const search_result_table = new Table(search_table);
     search_result_table.column = [
-        new TableColumn('SCORE', () => false, (x) => x.score),
-        new TableColumn('DPS', () => true, (x) => toInt(x.dps)),
-        new TableColumn('攻撃', () => true, (x) => x.atk),
-        new TableColumn('攻速', () => true, (x) => x.spd),
-        new TableColumn('CRIT', () => true, (x) => x.crit, { format: (x) => percentize(x) }),
-        new TableColumn('防御', () => true, (x) => x.def),
-        new TableColumn('装備1', () => true, (x) => x.equips[0].name(), { tooltip: (x) => makeEquipTooltip(x.equips[0]) }),
-        new TableColumn('装備2', () => true, (x) => x.equips[1].name(), { tooltip: (x) => makeEquipTooltip(x.equips[1]) }),
-        new TableColumn('装備3', () => true, (x) => x.equips[2].name(), { tooltip: (x) => makeEquipTooltip(x.equips[2]) }),
-        new TableColumn('装備4', () => true, (x) => x.equips[3].name(), { tooltip: (x) => makeEquipTooltip(x.equips[3]) }),
-        new TableColumn('装備5', () => true, (x) => x.equips[4].name(), { tooltip: (x) => makeEquipTooltip(x.equips[4]) }),
+        new TableColumn('SCORE', falseType, (x) => x.score),
+        new TableColumn('DPS', trueType, (x) => toInt(x.dps)),
+        new TableColumn('攻撃', trueType, (x) => x.atk),
+        new TableColumn('攻速', trueType, (x) => x.spd),
+        new TableColumn('CRIT', trueType, (x) => x.crit, { format: (x) => percentize(x) }),
+        new TableColumn('防御', trueType, (x) => x.def),
+        new TableColumn('装備1', trueType, (x) => x.equips[0].name(), { tooltip: (x) => makeEquipTooltip(x.equips[0]) }),
+        new TableColumn('装備2', trueType, (x) => x.equips[1].name(), { tooltip: (x) => makeEquipTooltip(x.equips[1]) }),
+        new TableColumn('装備3', trueType, (x) => x.equips[2].name(), { tooltip: (x) => makeEquipTooltip(x.equips[2]) }),
+        new TableColumn('装備4', trueType, (x) => x.equips[3].name(), { tooltip: (x) => makeEquipTooltip(x.equips[3]) }),
+        new TableColumn('装備5', trueType, (x) => x.equips[4].name(), { tooltip: (x) => makeEquipTooltip(x.equips[4]) }),
     ];
 
     search_result_table.sort_column = search_result_table.column[0];
@@ -362,37 +359,40 @@ addEventListener('load', function() {
         unit_selecter.dispatchEvent(new Event('change'));
     });
 
-
     function onSearchRequested() {
         if (search_timer) {
             clearTimeout(search_timer);
         }
 
         const search_begin = Date.now();
-        let search_duration = 10000;
+        const search_duration = 10000;
+        const search_end = search_begin + search_duration;
+        const search_step = 200;
+        const update_duration = 1000;
 
-        let search = new RSSearch(getUnit(), EQUIP.slice());
-
+        let last_update = 0;
+        let search = new RSSearch(getUnit(), EQUIP);
         let timer = function () {
-            const search_end = search_begin + search_duration;
-            const search_step_end = Math.min(Date.now() + 200, search_end);
-            const update = search.step(search_step_end);
-            if (update) {
-                search_result_table.data = search.getResult().slice(0, 30);
-                search_result_table.update();
-            }
-
+            const update = search.step(Math.min(Date.now() + search_step, search_end));
+            const now = Date.now();
             const progress = parseInt(100 * (Date.now() - search_begin) / search_duration);
             search_progress.setAttribute('aria-valuenow', progress);
             search_progress.textContent = progress + '%';
             search_progress.style.width = progress + '%';
 
             if (!update && search_end <= Date.now()) {
+                search_result_table.data = search.getResult().slice(0, 30);
+                search_result_table.update();
                 search_timer = null;
                 search = null;
                 timer = null;
             }
             else {
+                if (update && update_duration <= now - last_update) {
+                    last_update = now;
+                    search_result_table.data = search.getResult().slice(0, 30);
+                    search_result_table.update();
+                }    
                 search_timer = setTimeout(timer, 0);
             }
         };

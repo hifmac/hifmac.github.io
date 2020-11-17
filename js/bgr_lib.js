@@ -548,7 +548,15 @@ const BgrLib = {
                 updateTimer = setTimeout(updater, 2000);
             }
         };
-    }())
+    }()),
+
+    trueType() {
+        return true;
+    },
+
+    falseType() {
+        return false;
+    }
 };
 
 /**

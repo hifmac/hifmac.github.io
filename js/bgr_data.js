@@ -1,5 +1,4 @@
 /**
- * 
  * @param {HTMLLabelElement} label 
  * @param {HTMLInputElement} input 
  * @param {HTMLDivElement} form 
