@@ -329,7 +329,7 @@ addEventListener('load', function() {
     function makeEquipTooltip(equip) {
         return 'HP：' + equip.hp() 
             + '<br>攻撃：' + equip.atk()
-            + '<br>攻速：' + equip.def()
+            + '<br>攻速：' + equip.spd()
             + '<br>CRIT：' + (percentize(equip.crit()) || '0%')
             + '<br>防御：' + equip.def()
             + '<br>移動：' + equip.move();

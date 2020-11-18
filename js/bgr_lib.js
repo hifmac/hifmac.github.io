@@ -539,6 +539,13 @@ const BgrLib = {
     updateTooltip: (function() {
         let updateTimer = null;
         function updater() {
+            const tooltips = document.getElementsByClassName('tooltip');
+            for (let i in tooltips) {
+                if (tooltips[i].parentNode) {
+                    tooltips[i].parentNode.removeChild(tooltips[i]);
+                }
+            }
+
             $('[data-toggle="tooltip"]').tooltip({html: true});
             updateTimer = null;
         };
@@ -704,7 +711,7 @@ Table.prototype.createTooltip = function (title) {
 }
 
 /**
- * 
+ * the function called when table header clicked
  * @param {TableColumn} column 
  */
 Table.prototype.onHeaderClicked = function(column) {
@@ -724,8 +731,8 @@ Table.prototype.onHeaderClicked = function(column) {
 };
 
 /**
- * 
- * @param {object} data 
+ * the function called when table body clicked
+ * @param {Object} data 
  */
 Table.prototype.onBodyClicked = function(data) {
     for (let i in this.bodyClickListeners) {
