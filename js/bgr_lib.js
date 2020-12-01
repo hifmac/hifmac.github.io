@@ -1,30 +1,32 @@
-const GAME_FPS = 60;
-const ATTACK_FRAME_DELAY = 0.151;
-const UNIT_MAX_SPEED = 2000;
-const UNIT_MAX_SPEED_EFFECTIVE = parseInt(1000 * GAME_FPS / (GAME_FPS / 2 + 1 - ATTACK_FRAME_DELAY) + 0.5);
-const UNIT_MAX_CRITICAL = 1.0;
-const UNIT_MAX_MOVE = 500;
+import { DATA } from './bgr_archive.min.js'
 
-const GP_BONUS_HP   = 900;
-const GP_BONUS_ATK  = 45;
-const GP_BONUS_DEF  = 45;
-const GP_BONUS_SPD  = 50;
-const GP_BONUS_CRIT = 0.03;
-const GP_BONUS_MOVE = 25;
-const GP_BONUS_ALL  = 0.03;
+export const GAME_FPS = 60;
+export const ATTACK_FRAME_DELAY = 0.151;
+export const UNIT_MAX_SPEED = 2000;
+export const UNIT_MAX_SPEED_EFFECTIVE = parseInt(1000 * GAME_FPS / (GAME_FPS / 2 + 1 - ATTACK_FRAME_DELAY) + 0.5);
+export const UNIT_MAX_CRITICAL = 1.0;
+export const UNIT_MAX_MOVE = 500;
 
-const GUILD_SKILL_HP  = 0.06;
-const GUILD_SKILL_ATK = 0.058;
-const GUILD_SKILL_DEF = 0.058;
-const GUILD_SKILL_SPD = 0.03;
+export const GP_BONUS_HP   = 900;
+export const GP_BONUS_ATK  = 45;
+export const GP_BONUS_DEF  = 45;
+export const GP_BONUS_SPD  = 50;
+export const GP_BONUS_CRIT = 0.03;
+export const GP_BONUS_MOVE = 25;
+export const GP_BONUS_ALL  = 0.03;
 
-const BLESS_BONUS = 0.25
+export const GUILD_SKILL_HP  = 0.06;
+export const GUILD_SKILL_ATK = 0.058;
+export const GUILD_SKILL_DEF = 0.058;
+export const GUILD_SKILL_SPD = 0.03;
+
+export const BLESS_BONUS = 0.25
 
 /**
  * BGR unit data
  * @param {object} unit 
  */
-function BgrUnit(unit) {
+export function BgrUnit(unit) {
     /**
      * @type {object} unit data
      */
@@ -201,7 +203,7 @@ BgrUnit.prototype.reinforcedMove = function BgrUnit_reinforcedMove() {
  * BGR equipment data
  * @param {object} equip 
  */
-function BgrEquip(equip) {
+export function BgrEquip(equip) {
     this.equip_data = equip;
 }
 
@@ -322,7 +324,10 @@ BgrEquip.prototype.itembox = function BgrEquip_itembox() {
     return this.equip_data.itembox.map((x) => x.replace(/\n/g, '')).join('\n');
 };
 
-const BgrLib = {
+const BGR_UNIT = Array.from(DATA['unit'], (x) => new BgrUnit(x));
+const BGR_EQUIP = Array.from(DATA['equip'], (x) => new BgrEquip(x));        
+
+export const BgrLib = {
     /**
      * inherits a parent to a child
      * @param {function} parent object to be inherited
@@ -416,20 +421,22 @@ const BgrLib = {
     /**
      * @type {function(): BgrUnit[]} unit list
      */
-    getUnit: null,
+    getUnit() {
+        return BGR_UNIT;
+    },
 
     /**
      * @type {function(): BgrEquip[]} equip list
      */
-    getEquip: null,
+    getEquip() {
+        return BGR_EQUIP;
+    },
 
     /**
      * load BGR data object
      * @param {object} object 
      */
     load(object) {
-        const BGR_UNIT = object['unit'].map((x) => new BgrUnit(x));
-        const BGR_EQUIP = object['equip'].map((x) => new BgrEquip(x));        
 
         this.getUnit = () => BGR_UNIT;
         this.getEquip = () => BGR_EQUIP;
@@ -573,7 +580,7 @@ const BgrLib = {
  * @param {function((BgrUnit | BgrEquip)): (number | string)} read 
  * @param {function((number | string)): string} format 
  */
-function TableColumn(name, enabled, read, kwargs) {
+export function TableColumn(name, enabled, read, kwargs) {
     this.name = name;
     this.isEnabled = enabled;
     this.read = read;
@@ -596,7 +603,7 @@ TableColumn.prototype.tooltip = null;
 /**
  * @param {HTMLTableElement} element
  */
-function Table(element) {
+export function Table(element) {
     this.element = element;
 }
 

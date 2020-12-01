@@ -1,3 +1,14 @@
+import {
+    BgrLib,
+    Table,
+    TableColumn,
+    UNIT_MAX_SPEED,
+    UNIT_MAX_SPEED_EFFECTIVE,
+    UNIT_MAX_CRITICAL,
+    UNIT_MAX_MOVE,
+    BgrEquip,
+} from './bgr_lib.js';
+
 addEventListener('load', function() {
     /**
      * @type {HTMLSelectElement}
@@ -10,6 +21,7 @@ addEventListener('load', function() {
         document.getElementById('equip4'),
         document.getElementById('equip5')
     ];
+
     /** @type {HTMLInputElement} */
     const unit_id = document.getElementById('calc-unit-id');
     /** @type {HTMLInputElement} */
@@ -50,6 +62,13 @@ addEventListener('load', function() {
     const def_selecter = document.getElementById('def-selecter');
     /** @type {HTMLDivElement} */
     const search_progress = document.getElementById('search-progress');
+
+    const rare_n_checkbox = document.getElementById('rare-n-checkbox');
+    const rare_r_checkbox = document.getElementById('rare-r-checkbox');
+    const rare_sr_checkbox = document.getElementById('rare-sr-checkbox');
+    const rare_ssr_checkbox = document.getElementById('rare-ssr-checkbox');
+    const rare_ur_checkbox = document.getElementById('rare-ur-checkbox');
+    const rare_zingi_checkbox = document.getElementById('rare-zingi-checkbox');
 
     const NUMERIC = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
@@ -148,15 +167,6 @@ addEventListener('load', function() {
     }
 
     /**
-     * Zingi count accumlator
-     * @param {number} accum accumlator
-     * @param {BgrEquip} equip equipment
-     */
-    function countZingi(accum, equip) {
-        return accum + (equip.rank() == '神器' ? 1 : 0);
-    }
-
-    /**
      * make a hash of equip set
      * @param {BgrEquip[]} equips
      * @returns {strings} equip set hash
@@ -251,6 +261,40 @@ addEventListener('load', function() {
         /** @type {EquippedUnit[]} */
         this.results = [];
         this.last_hash = '';
+
+
+        const limitRareN = rare_n_checkbox.checked ? 5 : 0;
+        const limitRareR = rare_r_checkbox.checked ? 5 : 0;
+        const limitRareSR = rare_sr_checkbox.checked ? 5 : 0;
+        const limitRareSSR = rare_ssr_checkbox.checked ? 5 : 0;
+        const limitRareUR = rare_ur_checkbox.checked ? 5 : 0;
+        const limitRareZingi = rare_zingi_checkbox.checked ? 1 : 0;
+
+        /**
+         * 
+         * @param {BgrEquip[]} equips 
+         */
+        this.validateWeapon = function(equips) {
+            const numWeapons = {
+                N: limitRareN,
+                R: limitRareR,
+                SR: limitRareSR,
+                SSR: limitRareSSR,
+                UR: limitRareUR,
+                '神器': limitRareZingi
+            };
+    
+            for (let equip of equips) {
+                numWeapons[equip.rank()] -= 1;
+            }
+
+            return 0 <= numWeapons['神器']
+                && 0 <= numWeapons['UR']
+                && 0 <= numWeapons['SSR']
+                && 0 <= numWeapons['SR']
+                && 0 <= numWeapons['R']
+                && 0 <= numWeapons['N'];
+        };
     }
 
     RSSearch.NUM_RESULTS = 30;
@@ -270,7 +314,7 @@ addEventListener('load', function() {
                 weapons[2] = specials[xorShift() % speclal_length];
                 weapons[3] = specials[xorShift() % speclal_length];
                 weapons[4] = this.weapons[xorShift() % this.weapons.length];
-                if (new Set(weapons).size == weapons.length && weapons.reduce(countZingi, 0) <= 1) {
+                if (new Set(weapons).size == weapons.length && this.validateWeapon(weapons)) {
                     this.results.push(new EquippedUnit(this.unit, weapons, this.spd_buff, this.crit_buff, this.def_target));
                     if (RSSearch.SHRINK_THRESHOLD <= this.results.length) {
                         break;

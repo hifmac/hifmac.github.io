@@ -1,173 +1,33 @@
-/**
- * @param {HTMLLabelElement} label 
- * @param {HTMLInputElement} input 
- * @param {HTMLDivElement} form 
- */
-function Form(label, input, form) {
-    this.input = input;
-    this.label = label;
-    this.form = form;
-}
+import { BgrLib, Table, TableColumn } from './bgr_lib.js'
+import { Checkbox, Textbox } from 'https://hifmac.github.io/bgr-xml-tools/js/bgr/bgr.util.js'
 
 /**
- * filter input element
- * @type {HTMLDivElement}
- */
-Form.prototype.form = null;
-
-/**
- * filter input element
- * @type {HTMLInputElement}
- */
-Form.prototype.input = null;
-
-/**
- * filter input element
- * @type {HTMLLabelElement}
- */
-Form.prototype.label = null;
-
-/**
- * @returns {string} filter value
- */
-Form.prototype.value = function Form_value() {
-    return this.input.value;
-};
-
-/**
- * @returns {boolean} filter value
- */
-Form.prototype.checked = function Form_checked() {
-    return this.input.checked;
-};
-
-/**
- * set parent node for this
- * @param {HTMLElement} parent parent node to add child
- */
-Form.prototype.setParent = function Form_setParent(parent) {
-    parent.appendChild(this.form);
-};
-
-/**
- * set change event listener
- * @param {function(Event): void} value change event listener
- */
-Form.prototype.onChanged = function Form_onChanged(value) {
-    this.input.addEventListener('change', value);
-};
-
-/**
- * inline form
- * @param {string} id 
- * @param {string} text
- * @param {boolean} checked
- */
-function Checkbox(id, text, checked) {
-    let form_check_input = document.createElement('input');
-    form_check_input.id = id;
-    form_check_input.setAttribute('type', 'checkbox');
-    form_check_input.setAttribute('class', 'form-check-input');
-    form_check_input.checked = typeof checked === 'undefined' ? true : checked;
-
-    let form_check_label =document.createElement('label');
-    form_check_label.setAttribute('class', 'form-check-label mr-2');
-    form_check_label.setAttribute('for', id);
-    form_check_label.textContent = text;
-
-    let form_check = document.createElement('div');
-    form_check.setAttribute('class', 'form-check form-check-inline')
-    form_check.appendChild(form_check_input);
-    form_check.appendChild(form_check_label);
-
-    Form.call(this, form_check_label, form_check_input, form_check);
-}
-
-BgrLib.inherits(Form, Checkbox);
-
-/**
- * @returns {string} filter value
- */
-Checkbox.prototype.value = function Checkbox_value() {
-    return this.label.textContent;
-};
-
-/**
- * checkbox associated with a column
- * @param {string} id 
+ * 
+ * @param {(number | string)} id 
  * @param {string} text 
- * @param {boolean} checked 
  * @param {function((BgrUnit | BgrEquip)): (number | string)} read 
- * @param {function((number | string)) : string} format 
  */
-function CheckboxColumn(id, text, read, kwargs) {
-    this.checkbox = new Checkbox(id, text, kwargs ? kwargs.checked : undefined);
-    this.column = new TableColumn(
-        text,
-        this.checkbox.checked.bind(this.checkbox),
-        read,
-        kwargs);
-}
-
+function CheckboxColumn(id, text, read) {
+    this.checkbox = new Checkbox(id, text);
+    this.column = new TableColumn(text, () => this.checkbox.input.checked, read);
+};
 
 /**
- * checkbox list to filter function
+ * 
  * @param {Checkbox[]} checkboxes 
- * @param {function((number | string), (BgrUnit | BgrEquip)): boolean} filterFunction
+ * @param {function((number | string), (BgrUnit | BgrEquip)): boolean} fincterFunction 
  * @returns {function((BgrUnit | BgrEquip)) : boolean}
  */
 function CheckboxToFilter(checkboxes, filterFunction) {
-    return function(data) {
-        for (let i in checkboxes) {
-            if (checkboxes[i].checked() && filterFunction(data, checkboxes[i].value())) {
+    return function (data) {
+        for (let checkbox of checkboxes) {
+            if (checkbox.input.checked && filterFunction(data, checkbox.label.textContent)) {
                 return true;
             }
         }
         return false;
     };
-};
-
-/**
- * inline form
- * @param {string} id 
- * @param {string} text
- */
-function Textbox(id, text) {
-    let form_text_input = document.createElement('input');
-    form_text_input.id = id;
-    form_text_input.setAttribute('type', 'text');
-    form_text_input.setAttribute('class', 'form-control mr-2');
-    form_text_input.setAttribute('placeholder', text);
-    form_text_input.checked = true;
-
-    let form_text_label =document.createElement('label');
-    form_text_label.setAttribute('for', id);
-    form_text_label.textContent = text + "：";
-
-    let form_text = document.createElement('div');
-    form_text.setAttribute('class', 'form-group')
-    form_text.appendChild(form_text_label);
-    form_text.appendChild(form_text_input);
-
-    Form.call(this, form_text_label, form_text_input, form_text);
 }
-
-BgrLib.inherits(Form, Textbox);
-
-/**
- * @returns {boolean} filter value
- */
-Textbox.prototype.checked = function Textbox_checked() {
-    return true;
-};
-
-/**
- * set change event listener
- * @param {function(Event): void} value change event listener
- */
-Textbox.prototype.onChanged = function Textbox_onChanged(value) {
-    this.input.addEventListener('input', value);
-};
 
 /**
  * 
@@ -177,7 +37,7 @@ Textbox.prototype.onChanged = function Textbox_onChanged(value) {
  */
 function TextboxToFilter(textbox, filterFunction) {
     return function (data) { 
-        return filterFunction(data, textbox.value());
+        return filterFunction(data, textbox.input.value);
     };
 };
 
@@ -191,7 +51,7 @@ function setFormGroup(label, group, forms) {
         group.appendChild(BgrLib.createElement('label', label + '：'))
     }
     for (let i in forms) {
-        group.appendChild(forms[i].form);
+        group.appendChild(forms[i].div);
     }
 }
 
@@ -263,13 +123,13 @@ addEventListener('load', function() {
 
     const table = new Table(equip_table);
     table.data = BgrLib.getEquip().slice();
-    table.column = column_checkbox.map((x) => x.column);
+    table.column = Array.from(column_checkbox, (x) => x.column);
     table.filters = [
         CheckboxToFilter(rank_checkbox, filterEquipRank),
         TextboxToFilter(skill_textbox[0], filterEquipSkill),
     ];
 
-    setFormGroup('列', equip_content, column_checkbox.map((x) => x.checkbox));
+    setFormGroup('列', equip_content, Array.from(column_checkbox, (x) => x.checkbox));
     setFormGroup('ランク', equip_rank_filter, rank_checkbox);
     setFormGroup(null, equip_skill_filter, skill_textbox);
 
@@ -280,7 +140,8 @@ addEventListener('load', function() {
         skill_textbox,
     ].forEach(function (filters) {
         for (let i in filters) {
-            filters[i].onChanged(listener);
+            const type = filters[i].input.type == 'text' ? 'input' : 'change';
+            filters[i].input.addEventListener(type, listener);
         }
     });
 
@@ -380,7 +241,7 @@ addEventListener('load', function() {
 
     const table = new Table(unit_table);
     table.data = BgrLib.getUnit().slice();
-    table.column = checkbox_column.map((x) => x.column);
+    table.column = Array.from(checkbox_column, (x) => x.column);
     table.filters = [
         new CheckboxToFilter(attribute_checkbox, filterAttribute),
         new TextboxToFilter(textbox_filter[0], filterName),
@@ -388,7 +249,7 @@ addEventListener('load', function() {
         new TextboxToFilter(textbox_filter[2], filterAttackSkill),
     ];
 
-    setFormGroup('列', unit_content, checkbox_column.map((x) => x.checkbox));
+    setFormGroup('列', unit_content, Array.from(checkbox_column, (x) => x.checkbox));
     setFormGroup('所属', unit_attr_filter, attribute_checkbox);
     setFormGroup(null, unit_skill_filter, textbox_filter);
 
@@ -399,7 +260,8 @@ addEventListener('load', function() {
         textbox_filter,
     ].forEach(function (filters) {
         for (let i in filters) {
-            filters[i].onChanged(listener);
+            const type = filters[i].input.type == 'text' ? 'input' : 'change';
+            filters[i].input.addEventListener(type, listener);
         }
     });
 
