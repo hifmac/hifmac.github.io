@@ -271,8 +271,8 @@ addEventListener('load', function() {
         const limitRareZingi = rare_zingi_checkbox.checked ? 1 : 0;
 
         /**
-         * 
-         * @param {BgrEquip[]} equips 
+         * @param {BgrEquip[]} equips
+         * @returns {boolean} whether equips satisfy the limitation of number of weapons.
          */
         this.validateWeapon = function(equips) {
             const numWeapons = {
