@@ -8,7 +8,7 @@ import { Checkbox, Textbox } from 'https://hifmac.github.io/bgr-xml-tools/js/bgr
  * @param {function((BgrUnit | BgrEquip)): (number | string)} read 
  */
 function CheckboxColumn(id, text, read, attributes) {
-    this.checkbox = new Checkbox(id, text, attributes);
+    this.checkbox = new Checkbox(id, text, attributes ? attributes.checked : true);
     this.column = new TableColumn(text, () => this.checkbox.input.checked, read, attributes);
 };
 
