@@ -433,16 +433,6 @@ export const BgrLib = {
     },
 
     /**
-     * load BGR data object
-     * @param {object} object 
-     */
-    load(object) {
-
-        this.getUnit = () => BGR_UNIT;
-        this.getEquip = () => BGR_EQUIP;
-    },
-
-    /**
      * compare for descending
      * @param {object} a 
      * @param {object} b
