@@ -329,15 +329,6 @@ const BGR_EQUIP = Array.from(DATA['equip'], (x) => new BgrEquip(x));
 
 export const BgrLib = {
     /**
-     * inherits a parent to a child
-     * @param {function} parent object to be inherited
-     * @param {function} child object to inherit
-     */
-    inherits(parent, child) {
-        child.prototype = Object.create(parent.prototype);
-    },
-
-    /**
      * calculate parameter
      * @param {number} param parameter value
      * @param {number} param_rate parameter grow rate
@@ -479,7 +470,8 @@ export const BgrLib = {
     },
 
     /**
-     * @return {number} xor shift random number generator
+     * xor shift random number generator
+     * @return {number}
      */
     xorShift: (function(){
         let x = 123456789 * Date.now() | 0;
@@ -495,7 +487,7 @@ export const BgrLib = {
             w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));  
             return w;   
         };
-    }()),
+    })(),
 
     createElement(tag, text, attributes) {
         const elem = document.createElement(tag);
@@ -533,31 +525,85 @@ export const BgrLib = {
         return parseInt((1000 * GAME_FPS / speed) + ATTACK_FRAME_DELAY);
     },
 
+    /**
+     * update bootstrap tooltips
+     */
     updateTooltip: (function() {
-        let updateTimer = null;
-        function updater() {
-            const tooltips = document.getElementsByClassName('tooltip');
-            for (let i in tooltips) {
-                if (tooltips[i].parentNode) {
-                    tooltips[i].parentNode.removeChild(tooltips[i]);
-                }
-            }
+        let pending = false;
+        let pendingTimerId = null;
 
+        const update = function () {
+            pending = false;
+
+            const tooltips = document.getElementsByClassName('tooltip');
+            for (let tooltip of tooltips) {
+                if (tooltip.parentNode) {
+                    tooltip.parentNode.removeChild(tooltip);
+                }
+            }    
             $('[data-toggle="tooltip"]').tooltip({html: true});
-            updateTimer = null;
+        };
+    
+        const pendingTimeout = function() {
+            if (pending) {
+                update();
+            }
+            pendingTimerId = null;
         };
 
         return function() {
-            if (updateTimer == null) {
-                updateTimer = setTimeout(updater, 2000);
+            if (pendingTimerId == null) {
+                update();
+                pendingTimerId = setTimeout(pendingTimeout, 2000);
+            }
+            else {
+                pending = true;
             }
         };
-    }()),
+    })(),
 
+    /**
+     * test a string is included by another string
+     * @param {string} haystack string 
+     * @param {string | string[]} needles strings to be included by haystack
+     * @param {boolean} allOf all of strings to be included or any of
+     * @returns {boolean} whether all or any needle is in the haystack
+     */
+    includedBy(haystack, needles, allOf) {
+        if (!Array.isArray(needles)) {
+            needles = needles.split(' ');
+        }
+
+        if (allOf) {
+            for (let name of needles) {
+                if (name.length && haystack.indexOf(name) == -1) {
+                    return false;
+                }
+            }
+            return false;
+        }
+        else {
+            for (let name of needles) {
+                if (name.length && 0 <= haystack.indexOf(name)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    },
+
+    /**
+     * a function always return true
+     * @returns {boolean} true
+     */
     trueType() {
         return true;
     },
 
+    /**
+     * a function always return false
+     * @returns {boolean} false
+     */
     falseType() {
         return false;
     }

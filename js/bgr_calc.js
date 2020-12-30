@@ -13,6 +13,7 @@ addEventListener('load', function() {
     /**
      * @type {HTMLSelectElement}
      */
+    const unit_search = document.getElementById('unit-search');
     const unit_selecter = document.getElementById('unit-selecter');
     const equip_selecters = [
         document.getElementById('equip1'),
@@ -76,6 +77,7 @@ addEventListener('load', function() {
     const EQUIP = BgrLib.getEquip().slice();
 
     const {
+        clearChildren,
         createElement,
         speedToFrame,
         xorShift,
@@ -86,6 +88,7 @@ addEventListener('load', function() {
         compareAsc,
         trueType,
         falseType,
+        includedBy,
     } = BgrLib;
 
     /**
@@ -124,10 +127,27 @@ addEventListener('load', function() {
 
     EQUIP.sort((a, b) => compareAsc(a.name(), b.name()));
 
+    function updateUnit() {
+        clearChildren(unit_selecter);
+
+        if (unit_search.value.length) {
+            for (let unit of UNIT) {
+                if (includedBy(unit.name(), unit_search.value)) {
+                    unit_selecter.appendChild(createElement('option', unit.name(), { value: unit.id() }));
+                }
+            }    
+        }
+        else {
+            for (let unit of UNIT) {
+                unit_selecter.appendChild(createElement('option', unit.name(), { value: unit.id() }));
+            }
+        }
+    }
+
     function getUnit() {
-        for (let i in UNIT) {
-            if (unit_selecter.value == UNIT[i].id()) {
-                return UNIT[i];
+        for (let unit of UNIT) {
+            if (unit_selecter.value == unit.id()) {
+                return unit;
             }
         }
         return null;
@@ -269,6 +289,13 @@ addEventListener('load', function() {
         const limitRareSSR = rare_ssr_checkbox.checked ? 5 : 0;
         const limitRareUR = rare_ur_checkbox.checked ? 5 : 0;
         const limitRareZingi = rare_zingi_checkbox.checked ? 1 : 0;
+
+        this.weapons = this.weapons.filter((x) => limitRareN || x.rank() != 'N');
+        this.weapons = this.weapons.filter((x) => limitRareR || x.rank() != 'R');
+        this.weapons = this.weapons.filter((x) => limitRareSR || x.rank() != 'SR');
+        this.weapons = this.weapons.filter((x) => limitRareSSR || x.rank() != 'SSR');
+        this.weapons = this.weapons.filter((x) => limitRareUR || x.rank() != 'UR');
+        this.weapons = this.weapons.filter((x) => limitRareZingi || x.rank() != '神器');
 
         /**
          * @param {BgrEquip[]} equips
@@ -464,20 +491,23 @@ addEventListener('load', function() {
         }
     }
 
-    for (let i in UNIT) {
-        unit_selecter.appendChild(createElement('option', UNIT[i].name(), { value: UNIT[i].id() }));
-    }
+    unit_search.addEventListener('input', function() {
+        updateUnit();
+        onChanged();
+    });
+
     unit_selecter.addEventListener('change', onChanged);
 
     equip_selecters.forEach(function(e) {
         e.appendChild(createElement('option', '無し'));
-        for (let i in EQUIP) {
-            e.appendChild(createElement('option', EQUIP[i].name(), { value: EQUIP[i].id() }));
+        for (let equip of EQUIP) {
+            e.appendChild(createElement('option', equip.name(), { value: equip.id() }));
         }
         e.addEventListener('change', onChanged);
     });
 
     search_button.addEventListener('click', onSearchRequested);
 
+    updateUnit();
     onChanged();
 });

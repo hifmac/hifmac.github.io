@@ -70,6 +70,18 @@ addEventListener('load', function() {
     }
 
     /**
+     * filter equip by name
+     * @param {BgrEquip} equip 
+     * @param {string} value 
+     */
+    function filterEquipName(equip, value) {
+        if (value.length) {
+            return BgrLib.includedBy(equip.name(), value);
+        }
+        return true;       
+    }
+
+    /**
      * filter equip by rarelity
      * @param {BgrEquip} equip 
      * @param {string} value 
@@ -118,6 +130,7 @@ addEventListener('load', function() {
     ];
 
     const skill_textbox = [
+        new Textbox('name-equip', '名前'),
         new Textbox('skill-equip', 'スキル効果'),
     ];
 
@@ -126,7 +139,8 @@ addEventListener('load', function() {
     table.column = Array.from(column_checkbox, (x) => x.column);
     table.filters = [
         CheckboxToFilter(rank_checkbox, filterEquipRank),
-        TextboxToFilter(skill_textbox[0], filterEquipSkill),
+        TextboxToFilter(skill_textbox[1], filterEquipSkill),
+        TextboxToFilter(skill_textbox[0], filterEquipName),
     ];
 
     setFormGroup('列', equip_content, Array.from(column_checkbox, (x) => x.checkbox));
@@ -201,7 +215,7 @@ addEventListener('load', function() {
      * @param {string} value 
      */
     function filterName(unit, value) {
-        return !value.length || unit.name().indexOf(value) != -1;
+        return !value.length || BgrLib.includedBy(unit.name(), value);
     }
 
     const attribute_checkbox = [
