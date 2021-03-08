@@ -1,3 +1,5 @@
+'use strict';
+
 import { DATA } from './bgr_archive.min.js'
 
 export const GAME_FPS = 60;
