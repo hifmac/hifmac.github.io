@@ -230,7 +230,7 @@
 
                 let maxWorlds = 0;
                 for (let page = 0; page < 100; ++page) {
-                    const response = await fetch(`http://api.chirper.ai/v1/world?page=${page}`);
+                    const response = await fetch(`https://api.chirper.ai/v1/world?page=${page}`);
                     const responseJson = await response.json();
                     console.log(responseJson);
 
