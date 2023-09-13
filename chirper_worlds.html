@@ -176,9 +176,9 @@
                     cardBody.classList.add("card-body");
                     cardBody.style.width = "384px";
                     cardBody.setAttribute("data-toggle", "collapse");
-                    cardBody.setAttribute("data-target", `#${world.slug}`);
+                    cardBody.setAttribute("data-target", `#${world.id}`);
                     cardBody.setAttribute("aria-expanded", "false");
-                    cardBody.setAttribute("aria-controls", world.slug);
+                    cardBody.setAttribute("aria-controls", world.id);
                     card.appendChild(cardBody);
 
                     const cardTitle = document.createElement("h5");
@@ -196,7 +196,7 @@
 
                     const cardCollapse = document.createElement("p");
                     cardCollapse.classList.add("collapse");
-                    cardCollapse.id = `${world.slug}`;
+                    cardCollapse.id = world.id;
                     for (const t of [
                         "# Active",
                         world.running,
