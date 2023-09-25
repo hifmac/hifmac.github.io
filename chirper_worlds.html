@@ -71,6 +71,11 @@
                         </label>
                     </div>
                 </div>
+                <div class="col-auto border p-1 d-flex align-items-center">
+                    <select id="language" class="form-control">
+                        <option selected value="all">Lang: All</option>
+                    </select>
+                </div>
                 <div class="col-auto border p-1 d-flex align-items-center" >
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="privateWorld">
@@ -94,7 +99,8 @@
                             Exclude No Map
                         </label>
                     </div>
-                </div>                <div class="col-auto border p-1 d-flex align-items-center">
+                </div>
+                <div class="col-auto border p-1 d-flex align-items-center">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="stoppedWorld">
                         <label class="form-check-label" for="stoppedWorld">
@@ -131,6 +137,8 @@
                 const ascending = document.getElementById("ascending");
                 /** @type {HTMLSelectElement} */
                 const sortKey = document.getElementById("sortKey");
+                /** @type {HTMLSelectElement} */
+                const language = document.getElementById("language");
                 /** @type {HTMLInputElement} */
                 const mapView = document.getElementById("mapView");
 
@@ -142,6 +150,8 @@
                     return noChirpers.checked || (0 < x.chirpers);
                 }).filter((x) => {
                     return (!mapView.checked && !hasMap.checked) || (x?.mapImage?.url);
+                }).filter((x) => {
+                    return (language.value === "all") || (x?.lang === language.value);
                 });
 
                 const sorted = filtered.sort((a, b) => {
@@ -350,6 +360,16 @@
                 document.getElementById("noChirpers").addEventListener("change", showWorlds);
                 document.getElementById("ascending").addEventListener("change", showWorlds);
                 document.getElementById("sortKey").addEventListener("change", showWorlds);
+                document.getElementById("language").addEventListener("change", showWorlds);
+
+                // updage language
+                const languageElement = document.getElementById("language");
+                for (const lang of Array.from(new Set(worlds.map(x => x.lang))).sort()) {
+                    const opt = document.createElement("option");
+                    opt.value = lang;
+                    opt.textContent = `Lang: ${lang}`;
+                    languageElement.appendChild(opt);
+                }
 
                 // show first worlds
                 showWorlds();
