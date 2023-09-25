@@ -17,9 +17,25 @@
             label {
                 user-select: none;
             }
+
+            .mapModal {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                padding: 0px;
+                margin: 0px;
+                width: 100%;
+                height: 100%; 
+                overflow: none;
+                background-color: rgba(0, 0, 0, 0.9);
+            }
         </style>
 
         <title>Chirper World Showcase</title>
+
+        <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
+
     </head>
     <body>
         <div class="container-fluid">
@@ -29,6 +45,14 @@
             <div class="row m-2">
                 <div class="col-auto border p-1 d-flex align-items-center">
                     <label id="numWorlds" style="font-size: 1.2rem;">loading</label>
+                </div>
+                <div class="col-auto border p-1 d-flex align-items-center mr-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mapView">
+                        <label class="form-check-label" for="mapView">
+                            Map View
+                        </label>
+                    </div>
                 </div>
                 <div class="border p-1 d-flex align-items-center">
                     <select id="sortKey" class="form-control">
@@ -65,6 +89,13 @@
                 </div>
                 <div class="col-auto border p-1 d-flex align-items-center">
                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hasMap">
+                        <label class="form-check-label" for="hasMap">
+                            Exclude No Map
+                        </label>
+                    </div>
+                </div>                <div class="col-auto border p-1 d-flex align-items-center">
+                    <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="stoppedWorld">
                         <label class="form-check-label" for="stoppedWorld">
                             Stopped World
@@ -95,9 +126,13 @@
                 /** @type {HTMLInputElement} */
                 const noChirpers = document.getElementById("noChirpers");
                 /** @type {HTMLInputElement} */
+                const hasMap = document.getElementById("hasMap");
+                /** @type {HTMLInputElement} */
                 const ascending = document.getElementById("ascending");
                 /** @type {HTMLSelectElement} */
                 const sortKey = document.getElementById("sortKey");
+                /** @type {HTMLInputElement} */
+                const mapView = document.getElementById("mapView");
 
                 const filtered = worlds.filter((x) => {
                     return privateWorld.checked || x.public;
@@ -105,6 +140,8 @@
                     return stoppedWorld.checked || x.running;
                 }).filter((x) => {
                     return noChirpers.checked || (0 < x.chirpers);
+                }).filter((x) => {
+                    return (!mapView.checked && !hasMap.checked) || (x?.mapImage?.url);
                 });
 
                 const sorted = filtered.sort((a, b) => {
@@ -115,7 +152,7 @@
                         return -1;
                     }
                     else {
-                        return 0;
+                        return (a.name < b.name ? 1 : -1);
                     }
                 });
 
@@ -123,6 +160,9 @@
             }
 
             function showWorlds() {
+                /** @type {HTMLInputElement} */
+                const mapView = document.getElementById("mapView");
+
                 const root = document.getElementById("card-row");
                 root.textContent = null;
 
@@ -136,7 +176,6 @@
                 for (const world of shownWorlds) {
                     const column = document.createElement("div");
                     column.style.display = "inline-block";
-                    root.appendChild(column);
 
                     const card = document.createElement("div");
                     card.classList.add(
@@ -161,19 +200,61 @@
                     }
                     column.appendChild(card);
 
-                    const anchor = document.createElement("a");
-                    anchor.target = "_blank";
-                    anchor.href = `https://chirper.ai/worlds/${world.slug}`
-                    card.appendChild(anchor);
+                    if (mapView.checked) {
+                        const mapImage = document.createElement("img");
+                        mapImage.src = `https://cdn.chirper.ai/${world.mapImage.url}`;
+                        mapImage.width = 384;
+                        mapImage.height = 216;
+                        mapImage.addEventListener("click", (ev) => {
+                            ev.preventDefault();
+                            ev.stopPropagation();
+
+                            const modalImage = document.createElement("img");
+                            modalImage.src = mapImage.src;
+                            modalImage.style.border = "1px solid #ffffff";
+                            modalImage.style.objectFit = "contain";
+
+
+                            const modal = document.createElement("div");
+                            modal.classList.add("mapModal");
+                            modal.appendChild(modalImage);
+                            modal.addEventListener("click", (ev) => {
+                                if (ev.target === modal) {
+                                    ev.preventDefault();
+                                    ev.stopPropagation();
+                                    document.body.removeChild(modal);
+                                }
+                            });
+                            document.body.appendChild(modal);
+
+                            panzoom(modalImage, {
+                                maxScale: 100,
+                                minScale: 0.01,
+                                initialZoom: 0.5,
+                                zoomDoubleClickSpeed: 3, 
+                            });
+                        });
+                        card.appendChild(mapImage); 
+                    }
+                    else {
+                        const anchor = document.createElement("a");
+                        anchor.target = "_blank";
+                        anchor.href = `https://chirper.ai/worlds/${world.slug}`
+                        card.appendChild(anchor);
                     
-                    const image = document.createElement("img");
-                    image.src = `https://img.chirper.ai/${world.banner.url}`;
-                    image.style.width = "384px";
-                    image.style.height = "128px";
-                    anchor.appendChild(image);
+                        const image = document.createElement("img");
+                        image.src = `https://img.chirper.ai/${world.banner.url}`;
+                        image.style.width = "384px";
+                        image.style.height = "128px";
+                        anchor.appendChild(image);
+                    }
+
+                    root.appendChild(column);
+
+
 
                     const cardBody = document.createElement("div");
-                    cardBody.classList.add("card-body");
+                    cardBody.classList.add("card-body", "collapsed");
                     cardBody.style.width = "384px";
                     cardBody.setAttribute("data-toggle", "collapse");
                     cardBody.setAttribute("data-target", `#${world.id}`);
@@ -197,6 +278,7 @@
                     const cardCollapse = document.createElement("p");
                     cardCollapse.classList.add("collapse");
                     cardCollapse.id = world.id;
+
                     for (const t of [
                         "# Active",
                         world.running,
@@ -253,6 +335,8 @@
                 // set card update listeners
                 document.getElementById("privateWorld").addEventListener("change", showWorlds);
                 document.getElementById("stoppedWorld").addEventListener("change", showWorlds);
+                document.getElementById("hasMap").addEventListener("change", showWorlds);
+                document.getElementById("mapView").addEventListener("change", showWorlds);
                 document.getElementById("noChirpers").addEventListener("change", showWorlds);
                 document.getElementById("ascending").addEventListener("change", showWorlds);
                 document.getElementById("sortKey").addEventListener("change", showWorlds);
