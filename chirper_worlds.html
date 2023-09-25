@@ -214,17 +214,19 @@
                             modalImage.style.border = "1px solid #ffffff";
                             modalImage.style.objectFit = "contain";
 
-
                             const modal = document.createElement("div");
                             modal.classList.add("mapModal");
                             modal.appendChild(modalImage);
-                            modal.addEventListener("click", (ev) => {
+
+                            const closeModal = (ev) => {
                                 if (ev.target === modal) {
                                     ev.preventDefault();
                                     ev.stopPropagation();
                                     document.body.removeChild(modal);
                                 }
-                            });
+                            };
+                            modal.addEventListener("touchend", closeModal);
+                            modal.addEventListener("click",closeModal);
                             document.body.appendChild(modal);
 
                             panzoom(modalImage, {
