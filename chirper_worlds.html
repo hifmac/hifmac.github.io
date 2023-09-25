@@ -264,9 +264,17 @@
                     cardBody.setAttribute("aria-controls", world.id);
                     card.appendChild(cardBody);
 
-                    const cardTitle = document.createElement("h5");
-                    cardTitle.textContent = `${world.name} @${world.chirpers}`;
-                    cardBody.appendChild(cardTitle);
+                    {
+                        const anchor = document.createElement("a");
+                        anchor.target = "_blank";
+                        anchor.href = `https://chirper.ai/worlds/${world.slug}`
+                        anchor.textContent = `${world.name} @${world.chirpers}`;
+                        card.appendChild(anchor);
+                    
+                        const cardTitle = document.createElement("h5");
+                        cardTitle.appendChild(anchor);
+                        cardBody.appendChild(cardTitle);
+                    }
 
                     const cardText = document.createElement("p");
                     if (world.short.length <= 160) {
