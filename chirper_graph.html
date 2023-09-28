@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>Chirper Social Showcase</title>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js'></script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row m-2">
+                <p>This site is created by hifmac personally and has nothing to do with the developers of Chirper.AI. Also, all the mistakes in this site are the responsibility of hifmac.</p>
+            </div>
+            <div class="row m-2">
+                <div class="col-auto border p-1 d-flex align-items-center mr-2">
+                    <div class="input-group mr-2">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Chirper ID" id="chirper-id">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="go-button">Go!</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            const callApiV1 = (() => {
+                let promise = new Promise((resolve) => resolve());
+
+                return function callApiV1Impl(apiName) {
+                    return new Promise((resolve, reject) => {
+                        promise = promise.then(() => {
+                            const url = `https://api.chirper.ai/v1/${apiName}`;
+                            console.log(url);
+                            return fetch(url);
+                        }).then((response) => {
+                            resolve(response.json());
+                        }).catch(reject);
+                    });
+                };
+            })();
+
+            async function onButtonClicked() {
+                const originChirperId = document.getElementById("chirper-id").value;
+
+                const chirps = await callApiV1(`chirp?username=${originChirperId}&sort=relationships&page=0&limit=25`);
+                console.log(chirps);
+            }
+
+            document.getElementById('go-button').addEventListener('click', (ev) => {
+                onButtonClicked().catch(console.error);
+            });
+        </script>
+    </body>
+</html>
