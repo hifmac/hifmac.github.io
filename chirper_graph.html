@@ -5,11 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <title>Chirper Social Showcase</title>
 
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js'></script>
+        <style>
+            #graph-container {
+                width: 100%;
+                height: 100vh;
+                background-color: #F0F0F0;
+                border: 1px solid #000000;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        </style>
+
+        <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+        <script src="https://unpkg.com/layout-base@1.0.2/layout-base.js"></script>
+        <script src="https://unpkg.com/avsdf-base/avsdf-base.js"></script>
+        <script src="https://unpkg.com/cose-base@1.0.3/cose-base.js"></script>
+        <script src="https://ivis-at-bilkent.github.io/cytoscape.js-cise/cytoscape-cise.js"></script>
     </head>
 
     <body>
@@ -17,28 +33,36 @@
             <div class="row m-2">
                 <p>This site is created by hifmac personally and has nothing to do with the developers of Chirper.AI. Also, all the mistakes in this site are the responsibility of hifmac.</p>
             </div>
-            <div class="row m-2">
-                <div class="col-auto border p-1 d-flex align-items-center mr-2">
-                    <div class="input-group mr-2">
+            <div class="row m-2" style="position: fixed; left: 1vw; top: 1vh; z-index: 1; background-color: #ffffff40;">
+                <div class="col-auto border p-1 d-flex align-items-center me-2">
+                    <div class="input-group me-2">
                         <span class="input-group-text">@</span>
                         <input type="text" class="form-control" placeholder="Chirper ID" id="chirper-id">
                     </div>
                     <button type="button" class="btn btn-primary" id="go-button">Go!</button>
                 </div>
+
+                <div class="col-auto border p-1 d-flex align-items-center me-2">
+                    <div id="chirper-name" style="display: inline;">do nothing</div>
+                    <div class="progress" style="width: 100px">
+                        <div id="my-progress" class="progress-bar bg-success" role="progressbar" style="width:0%" aria-valuenow=0 aria-valuemin=0 aria-valuemax=100></div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div id="graph-container" style="width: 100vw; height: 100vh; "></div>
 
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script type="text/javascript">
+            function onTimeout(timeout) {
+                return new Promise((resolve) => setTimeout(resolve, timeout));
+            }
+
             const callApiV1 = (() => {
-                let promise = new Promise((resolve) => resolve());
+                let promise = onTimeout(0);
 
                 return function callApiV1Impl(apiName) {
                     return new Promise((resolve, reject) => {
@@ -53,15 +77,383 @@
                 };
             })();
 
-            async function onButtonClicked() {
-                const originChirperId = document.getElementById("chirper-id").value;
+            const getChirper = (() => {
+                const chirpers = {};
 
-                const chirps = await callApiV1(`chirp?username=${originChirperId}&sort=relationships&page=0&limit=25`);
-                console.log(chirps);
+                /**
+                 * @param {string} chirperId chirper id to load
+                 * @return {Promise<Object<str, any>>} chirper object
+                 */
+                return async function getChirperImpl(chirperId) {
+                    if (!(chirperId in chirpers)) {
+                        chirpers[chirperId] = (await callApiV1(`chirper/${chirperId}`)).result;
+                    }
+                    return chirpers[chirperId];
+                };
+            })();
+
+            function serializeChirpResult(chirpResult, chirperId) {
+                return chirpResult.chirps.reduce((list, chirp) => {
+                    if (Array.isArray(chirp)) {
+                        list.push(...chirp);
+                    }
+                    else {
+                        list.push(chirp);
+                    }
+                    return list;
+                }, []).filter((c) => (c?.chirper?.id === chirperId));
+            }
+
+            /**
+             * this is function
+             * @param {string} label progress label
+             * @param {number} value work progress between 0 to 100
+             */
+            function updateProgress(label, value) {
+                document.getElementById("chirper-name").textContent = label + ": ";
+
+                const progressbar = document.getElementById("my-progress");
+                progressbar.style.width = progressbar.textContent = `${value}%`;
+                progressbar.setAttribute('aria-valuenow', value);
+            }
+
+            /** @type {boolean} */
+            let running = false
+
+            async function loadRelationship(chirperId, chirperUsername) {
+                const storageKey = `chirp-${chirperId}`;
+                const LIMIT = 100;
+
+                const relationships = JSON.parse(localStorage.getItem(storageKey) || "{}");
+                let update = false;
+                let loaded = 0;
+
+                updateProgress(`start ${chirperUsername}`, 0)
+
+                for (let page = 0, finished = false; running && !finished && page < 10; ++page) {
+                    const response = await callApiV1(`chirp?username=${chirperUsername}&sort=createdAt&page=${page}&limit=${LIMIT}`);
+                    const chirps = serializeChirpResult(response.result, chirperId);
+
+                    finished = (response.result.chirps.length < LIMIT);
+                    loaded += response.result.chirps.length;
+
+                    const p = (100 * loaded / response.result.total) | 0;
+                    updateProgress(`loading ${chirperUsername}`, (100 * loaded / response.result.total) | 0)
+
+                    for (const chirp of chirps) {
+                        if (chirp.id in relationships) {
+                            finished = true;
+                            break;
+                        }
+
+                        if (chirp?.relationship?.to?.id && chirp?.relationship?.from?.id && chirp?.relationship?.state === "accepted") {
+                            relationships[chirp.id] = {
+                                id: chirp.id,
+                                to: chirp.relationship.to.id,
+                                from: chirp.relationship.from.id,
+                                slug: chirp.relationship.slug,
+                                state: chirp.relationship.state
+                            };
+                        }
+                        else {
+                            relationships[chirp.id] = null;
+                        }
+                        update = true;
+                    }
+                }
+
+                if (running && update) {
+                    localStorage.setItem(storageKey, JSON.stringify(relationships));
+                }
+                
+                updateProgress(`complete ${chirperUsername}`, 100)
+
+                return relationships;
+            }
+
+            const cy = cytoscape({
+                container: document.getElementById('graph-container'),
+                elements: [],
+                style: [],
+                layout: { name: 'preset' },
+                wheelSensitivity: 0.3,
+            });
+
+            async function updateGpaph(chirps) {
+                const worlds = {};
+                const nodes = {};
+                const edges = {};
+
+                let rendered = 0;
+                updateProgress("rendering", (100 * rendered / chirps.length) | 0);
+
+                // convert chirper to node
+                const chirpers = Array.from(new Set([].concat(...(chirps.map(x => [ x.to, x.from ])))));
+                for (const chirperId of chirpers) {
+                    const chirper = await getChirper(chirperId);
+                    console.log(chirper);
+            
+                    // load the world the chirper exists if there is
+                    if (chirper.world && !(chirper.world in worlds)) {
+                        worlds[chirper.world] = (await callApiV1(`world/${chirper.world}`)).result;
+
+                        const worldId = `world-${chirper.world}`;
+                        nodes[worlds[chirper.world].id] = {
+                            id: worldId,
+                            data: {
+                                id: worldId,
+                                name: worlds[chirper.world].name,
+                                link: `https://chirper.ai/worlds/${worlds[chirper.world].id}`,
+                            },
+                            style: {
+                                selector: `#${worldId}`,
+                                style: {
+                                    'shape': 'rectangle',
+                                    'background-image': `https://img.chirper.ai/${worlds[chirper.world].banner.url}`,
+                                    'background-fit': 'contain',
+                                    'label': 'data(name)',
+                                    'font-size': 6,
+                                }
+                            }
+                        };
+                    }
+
+                    const nodeId = `node-${Object.keys(nodes).length}`;
+                    nodes[chirperId] = {
+                        id: nodeId,
+                        data: {
+                            id: nodeId,
+                            name: chirper.name,
+                            link: `https://chirper.ai/${chirperId}`,
+                        },
+                        style: {
+                            selector: `#${nodeId}`,
+                            style: {
+                                'width': '32px',
+                                'height': '48px',
+                                'shape': 'rectangle',
+                                'background-image': `https://img.chirper.ai/${chirper.avatar.url}`,
+                                'background-fit': 'contain',
+                                'label': 'data(name)',
+                                'font-size': 6,
+                            }
+                        }
+                    }
+
+                    if (chirper.world) {
+                        console.log(`set ${chirper.world}`)
+                        nodes[chirperId].data.parent = `world-${chirper.world}`;
+                    }
+
+                    updateProgress("rendering", (90 * (++rendered) / chirpers.length) | 0);
+                }
+
+                // convert chirps into edges
+                const inputMap = {};
+                for (const chirp of chirps) {
+                    console.log(chirp);
+
+                    if ((chirp.to in inputMap) && (inputMap[chirp.to] != chirp.from)) {
+                        continue;
+                    }
+
+                    inputMap[chirp.to] = chirp.from;
+
+                    const edgeId = `edge-${chirp.from}-${chirp.to}`;
+                    if (edgeId in edges) {
+                        edges[edgeId].data.name += "\n " + chirp.slug;
+                    }
+                    else {
+                        edges[edgeId] = {
+                            id: edgeId,
+                            data: {
+                                id: edgeId,
+                                name: chirp.slug,
+                                slug: chirp.slug,
+                                state: chirp.state,
+                                source: nodes[chirp.from].id,
+                                target: nodes[chirp.to].id,
+                            },
+                            style: {
+                                selector: `#${edgeId}`,
+                                style: {
+                                    'curve-style': 'bezier',
+                                    'label': 'data(name)',
+                                    'font-size': 6,
+                                    "text-wrap": "wrap",
+                                    "text-max-width": 40,
+                                    'text-rotation': 'autorotate',
+                                    'line-color': "#00a000",
+                                    'target-arrow-color': "#00c000",
+                                    'target-arrow-shape': 'triangle',
+                                }
+                            }
+                        }
+                    }
+                }
+
+                const clusterMap = {};
+                for (const to in inputMap) {
+                    console.log(nodes[to]);
+                    const clusterKey = (nodes[to].data.parent || inputMap[to]);
+                    if (clusterKey in clusterMap) {
+                        clusterMap[clusterKey].push(nodes[to].id);
+                    }
+                    else {
+                        clusterMap[clusterKey] = [ nodes[to].id ];                       
+                    }
+                }
+                console.log(clusterMap);
+
+                // load nodes, edges, and styles
+                cy.json({
+                    elements: Object.values(nodes).map((x) => { return { data: x.data } })
+                        .concat(Object.values(edges).map((x) => { return { data: x.data } })),
+                    style: Object.values(nodes).map(x => x.style)
+                        .concat(Object.values(edges).map((x) => x.style)),
+                });
+
+                // redraw layout
+                cy.nodes().layout({
+                    // name: 'breadthfirst',
+                    name: 'cise',
+                    clusters: Object.values(clusterMap),
+
+                    // -------- Optional parameters --------
+                    // Whether to animate the layout
+                    // - true : Animate while the layout is running
+                    // - false : Just show the end result
+                    // - 'end' : Animate directly to the end result
+                    animate: false,
+                    
+                    // number of ticks per frame; higher is faster but more jerky
+                    refresh: 10, 
+                    
+                    // Animation duration used for animate:'end'
+                    animationDuration: undefined,
+                    
+                    // Easing for animate:'end'
+                    animationEasing: undefined,
+                    
+                    // Whether to fit the viewport to the repositioned graph
+                    // true : Fits at end of layout for animate:false or animate:'end'
+                    fit: true,
+                    
+                    // Padding in rendered co-ordinates around the layout
+                    padding: 0,
+                    
+                    // separation amount between nodes in a cluster
+                    // note: increasing this amount will also increase the simulation time 
+                    nodeSeparation: 0,
+                    
+                    // Inter-cluster edge length factor 
+                    // (2.0 means inter-cluster edges should be twice as long as intra-cluster edges)
+                    idealInterClusterEdgeLengthCoefficient: 0.1,
+
+                    // Whether to pull on-circle nodes inside of the circle
+                    allowNodesInsideCircle: true,
+                    
+                    // Max percentage of the nodes in a circle that can move inside the circle
+                    maxRatioOfNodesInsideCircle: 0.1,
+                    
+                    // - Lower values give looser springs
+                    // - Higher values give tighter springs
+                    springCoeff: 0.2,
+                    
+                    // Node repulsion (non overlapping) multiplier
+                    nodeRepulsion: 100,
+                    
+                    // Gravity force (constant)
+                    gravity: 0.1,
+                    
+                    // Gravity range (constant)
+                    gravityRange: 1, 
+                }).run();
+
+                // set link jumper for each node
+                for (const node of cy.nodes()) {
+                    cy.$("#" + node.id()).on("click", (ev) => {
+                        if (node.data("link")) {
+                            window.open(node.data("link"), "_blank");
+                        }
+                        else {
+                            node.data("name", "click");
+                        }
+                    });
+                }
+            }
+
+            async function onButtonClicked(button) {
+                // change button appearance for abort
+                button.classList.remove("btn-primary");
+                button.classList.add("btn-danger");
+                button.textContent = "Abort"
+
+                try {
+                    // chirper load loop
+                    const originChirperId = document.getElementById("chirper-id").value;
+                    const taskQueue = [ {
+                        chirperId: originChirperId,
+                        level: 0,
+                    } ];
+                    const relationshipList = [];
+                    const chirperList = {}
+
+                    // load all related chirpers
+                    let level = 100;
+                    while (running && taskQueue.length) {
+                        const task = taskQueue.shift();
+                        if (task.chirperId in chirperList) {
+                            continue;
+                        }
+
+                        // load all chirps instead of loading only relationships
+                        const chirper = await getChirper(task.chirperId);
+                        const relationships = await loadRelationship(chirper.id, chirper.username);
+                        for (const chirp of Object.values(relationships)) {
+                            if (chirp) {
+                                taskQueue.push({
+                                    chirperId: chirp.to,
+                                    level: task.level + 1,
+                                });
+                                taskQueue.push({
+                                    chirperId: chirp.from,
+                                    level: task.level + 1,
+                                });
+                            }
+                        }
+
+                        chirperList[chirper.id] = {
+                            level: task.level,
+                            data: chirper,
+                        };
+                        relationshipList.push(...(Object.values(relationships)));
+
+                        // update graph by loaded chirper
+                        await updateGpaph(relationshipList.filter(x => x));   
+                    }
+                }
+                catch (exc) {
+                    console.error(exc);
+                }
+
+                // reset button appearance for go
+                button.classList.remove("btn-danger");
+                button.classList.add("btn-secondary");
+                button.textContent = "Retry!"
+                running = false;
             }
 
             document.getElementById('go-button').addEventListener('click', (ev) => {
-                onButtonClicked().catch(console.error);
+                // start loading if not running
+                if (!running) {
+                    running = true;
+                    onButtonClicked(ev.target).catch(console.error);
+                }
+                // abort loading
+                else {
+                    running = false;
+                }
             });
         </script>
     </body>
