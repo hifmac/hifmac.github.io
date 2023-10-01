@@ -107,7 +107,7 @@ const getChirp = (() => {
     };
 })();
 
-const RELATIONSHIPS_PER_API = 100;
+const RELATIONSHIPS_PER_API = 10;
 
 /**
  * get chirp object via api
