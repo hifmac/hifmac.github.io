@@ -77,17 +77,17 @@
         updateProgress(`fetch ${chirperUsername}`, 0)
 
         for (let page = 0, finished = false; running && !finished; ++page) {
-            const response = await getRelationship(chirperUsername, page);
+            const response = await getChirp(chirperUsername, page);
             const chirps = serializeChirpResult(response, chirperId);
 
-            finished = (response.chirps.length < RELATIONSHIPS_PER_API);
+            finished = (response.chirps.length < CHIRPS_PER_API);
             loaded += response.chirps.length;
 
             const p = (100 * loaded / response.total) | 0;
             updateProgress(`loading ${chirperUsername}`, (100 * loaded / response.total) | 0)
 
             for (const chirp of chirps) {
-                if (chirp.id in relationships || (chirp.post.indexOf("elationship") === -1)) {
+                if (chirp.id in relationships) {
                     finished = true;
                     break;
                 }
