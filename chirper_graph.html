@@ -26,6 +26,7 @@
         <script src="https://unpkg.com/avsdf-base/avsdf-base.js"></script>
         <script src="https://unpkg.com/cose-base@1.0.3/cose-base.js"></script>
         <script src="https://ivis-at-bilkent.github.io/cytoscape.js-cise/cytoscape-cise.js"></script>
+        <script src="./js/chirper_utils.js"></script>
     </head>
 
     <body>
@@ -43,9 +44,9 @@
                 </div>
 
                 <div class="col-auto border p-1 d-flex align-items-center me-2">
-                    <div id="chirper-name" style="display: inline;">do nothing</div>
+                    <div id="progress-label" style="display: inline;">waiting:</div>
                     <div class="progress" style="width: 100px">
-                        <div id="my-progress" class="progress-bar bg-success" role="progressbar" style="width:0%" aria-valuenow=0 aria-valuemin=0 aria-valuemax=100></div>
+                        <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width:0%" aria-valuenow=0 aria-valuemin=0 aria-valuemax=100></div>
                     </div>
                 </div>
             </div>
@@ -53,92 +54,30 @@
 
         <div id="graph-container" style="width: 100vw; height: 100vh; "></div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script type="text/javascript">
-            function onTimeout(timeout) {
-                return new Promise((resolve) => setTimeout(resolve, timeout));
-            }
-
-            const callApiV1 = (() => {
-                let promise = onTimeout(0);
-
-                return function callApiV1Impl(apiName) {
-                    return new Promise((resolve, reject) => {
-                        promise = promise.then(() => {
-                            const url = `https://api.chirper.ai/v1/${apiName}`;
-                            console.log(url);
-                            return fetch(url);
-                        }).then((response) => {
-                            resolve(response.json());
-                        }).catch(reject);
-                    });
-                };
-            })();
-
-            const getChirper = (() => {
-                const chirpers = {};
-
-                /**
-                 * @param {string} chirperId chirper id to load
-                 * @return {Promise<Object<str, any>>} chirper object
-                 */
-                return async function getChirperImpl(chirperId) {
-                    if (!(chirperId in chirpers)) {
-                        chirpers[chirperId] = (await callApiV1(`chirper/${chirperId}`)).result;
-                    }
-                    return chirpers[chirperId];
-                };
-            })();
-
-            function serializeChirpResult(chirpResult, chirperId) {
-                return chirpResult.chirps.reduce((list, chirp) => {
-                    if (Array.isArray(chirp)) {
-                        list.push(...chirp);
-                    }
-                    else {
-                        list.push(chirp);
-                    }
-                    return list;
-                }, []).filter((c) => (c?.chirper?.id === chirperId));
-            }
-
-            /**
-             * this is function
-             * @param {string} label progress label
-             * @param {number} value work progress between 0 to 100
-             */
-            function updateProgress(label, value) {
-                document.getElementById("chirper-name").textContent = label + ": ";
-
-                const progressbar = document.getElementById("my-progress");
-                progressbar.style.width = progressbar.textContent = `${value}%`;
-                progressbar.setAttribute('aria-valuenow', value);
-            }
-
             /** @type {boolean} */
             let running = false
 
             async function loadRelationship(chirperId, chirperUsername) {
                 const storageKey = `chirp-${chirperId}`;
-                const LIMIT = 100;
 
                 const relationships = JSON.parse(localStorage.getItem(storageKey) || "{}");
                 let update = false;
                 let loaded = 0;
 
-                updateProgress(`start ${chirperUsername}`, 0)
+                updateProgress(`fetch ${chirperUsername}`, 0)
 
-                for (let page = 0, finished = false; running && !finished && page < 10; ++page) {
-                    const response = await callApiV1(`chirp?username=${chirperUsername}&sort=createdAt&page=${page}&limit=${LIMIT}`);
-                    const chirps = serializeChirpResult(response.result, chirperId);
+                for (let page = 0, finished = false; running && !finished; ++page) {
+                    const response = await getChirp(chirperUsername, page);
+                    const chirps = serializeChirpResult(response, chirperId);
 
-                    finished = (response.result.chirps.length < LIMIT);
-                    loaded += response.result.chirps.length;
+                    finished = (response.chirps.length < CHIRPS_PER_API);
+                    loaded += response.chirps.length;
 
-                    const p = (100 * loaded / response.result.total) | 0;
-                    updateProgress(`loading ${chirperUsername}`, (100 * loaded / response.result.total) | 0)
+                    const p = (100 * loaded / response.total) | 0;
+                    updateProgress(`loading ${chirperUsername}`, (100 * loaded / response.total) | 0)
 
                     for (const chirp of chirps) {
                         if (chirp.id in relationships) {
@@ -195,7 +134,7 @@
             
                     // load the world the chirper exists if there is
                     if (chirper.world && !(chirper.world in worlds)) {
-                        worlds[chirper.world] = (await callApiV1(`world/${chirper.world}`)).result;
+                        worlds[chirper.world] = await getWorld(chirper.world);
 
                         const worldId = `world-${chirper.world}`;
                         nodes[worlds[chirper.world].id] = {
