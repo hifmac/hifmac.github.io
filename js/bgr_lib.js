@@ -491,6 +491,13 @@ export const BgrLib = {
         };
     })(),
 
+    /**
+     * create a HTML element
+     * @param {string} tag 
+     * @param {string} text 
+     * @param {Object<string, string>} attributes 
+     * @returns {HTMLElement}
+     */
     createElement(tag, text, attributes) {
         const elem = document.createElement(tag);
         elem.textContent = text;
@@ -533,6 +540,7 @@ export const BgrLib = {
     updateTooltip: (function() {
         let pending = false;
         let pendingTimerId = null;
+        let tooltipList = null;
 
         const update = function () {
             pending = false;
@@ -542,8 +550,10 @@ export const BgrLib = {
                 if (tooltip.parentNode) {
                     tooltip.parentNode.removeChild(tooltip);
                 }
-            }    
-            $('[data-toggle="tooltip"]').tooltip({html: true});
+            }
+
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
         };
     
         const pendingTimeout = function() {
@@ -710,8 +720,6 @@ Table.prototype.makeBody = function Table_makeBody() {
         this.data.sort((a, b) => compare(this.sort_column.read(a), this.sort_column.read(b)));
     }
 
-
-
     const body = document.createElement('tbody');
     for (let i in this.data) {
         const data = this.data[i];
@@ -749,9 +757,10 @@ Table.prototype.createTooltip = function (title) {
     this.hasTooltip = true;
     return {
         'style': Table.CELL_ATTR.style,
-        'data-toggle': 'tooltip',
-        'data-placement': 'top',
-        title,
+        'data-bs-toggle': 'tooltip',
+        'data-bs-placement': 'top',
+        'data-bs-title': title,
+        'data-bs-html': true, 
     };
 }
 

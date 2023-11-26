@@ -71,6 +71,11 @@ addEventListener('load', function() {
     const rare_ur_checkbox = document.getElementById('rare-ur-checkbox');
     const rare_zingi_checkbox = document.getElementById('rare-zingi-checkbox');
 
+    /** @type {HTMLSelectElement} */
+    const included_equips = document.getElementById('included-equips');
+    /** @type {HTMLSelectElement} */
+    const excluded_equips = document.getElementById('excluded-equips');
+
     const NUMERIC = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     const UNIT = BgrLib.getUnit().slice();
@@ -269,129 +274,141 @@ addEventListener('load', function() {
 
     /**
      * search equip with right staff
-     * @param {BgrUnit} unit 
-     * @param {BgrEquip[]} weapons 
      */
-    function RSSearch(unit, weapons) {
-        this.unit = unit;
-        this.weapons = weapons;
-        this.spd_buff = parseFloat(spd_selecter.value);
-        this.crit_buff = parseFloat(crit_selecter.value);
-        this.def_target = toInt(def_selecter.value);
-        /** @type {EquippedUnit[]} */
-        this.results = [];
-        this.last_hash = '';
-
-
-        const limitRareN = rare_n_checkbox.checked ? 5 : 0;
-        const limitRareR = rare_r_checkbox.checked ? 5 : 0;
-        const limitRareSR = rare_sr_checkbox.checked ? 5 : 0;
-        const limitRareSSR = rare_ssr_checkbox.checked ? 5 : 0;
-        const limitRareUR = rare_ur_checkbox.checked ? 5 : 0;
-        const limitRareZingi = rare_zingi_checkbox.checked ? 1 : 0;
-
-        this.weapons = this.weapons.filter((x) => limitRareN || x.rank() != 'N');
-        this.weapons = this.weapons.filter((x) => limitRareR || x.rank() != 'R');
-        this.weapons = this.weapons.filter((x) => limitRareSR || x.rank() != 'SR');
-        this.weapons = this.weapons.filter((x) => limitRareSSR || x.rank() != 'SSR');
-        this.weapons = this.weapons.filter((x) => limitRareUR || x.rank() != 'UR');
-        this.weapons = this.weapons.filter((x) => limitRareZingi || x.rank() != '神器');
+    class RSSearch {
+        static NUM_RESULTS = 30;
+        static SHRINK_THRESHOLD = 100
 
         /**
-         * @param {BgrEquip[]} equips
-         * @returns {boolean} whether equips satisfy the limitation of number of weapons.
+         * constructor
+         * @param {BgrUnit} unit 
+         * @param {BgrEquip[]} weapons 
          */
-        this.validateWeapon = function(equips) {
-            const numWeapons = {
-                N: limitRareN,
-                R: limitRareR,
-                SR: limitRareSR,
-                SSR: limitRareSSR,
-                UR: limitRareUR,
-                '神器': limitRareZingi
+        constructor(unit, weapons) {
+            this.unit = unit;
+            this.weapons = weapons;
+            this.spd_buff = parseFloat(spd_selecter.value);
+            this.crit_buff = parseFloat(crit_selecter.value);
+            this.def_target = toInt(def_selecter.value);
+            /** @type {EquippedUnit[]} */
+            this.results = [];
+            this.last_hash = '';
+
+
+            const limitRareN = rare_n_checkbox.checked ? 5 : 0;
+            const limitRareR = rare_r_checkbox.checked ? 5 : 0;
+            const limitRareSR = rare_sr_checkbox.checked ? 5 : 0;
+            const limitRareSSR = rare_ssr_checkbox.checked ? 5 : 0;
+            const limitRareUR = rare_ur_checkbox.checked ? 5 : 0;
+            const limitRareZingi = rare_zingi_checkbox.checked ? 1 : 0;
+            const limitExcluded = [ ...excluded_equips.options ].map(option => option.value);
+
+            this.weapons = this.weapons.filter((x) => limitRareN || x.rank() != 'N');
+            this.weapons = this.weapons.filter((x) => limitRareR || x.rank() != 'R');
+            this.weapons = this.weapons.filter((x) => limitRareSR || x.rank() != 'SR');
+            this.weapons = this.weapons.filter((x) => limitRareSSR || x.rank() != 'SSR');
+            this.weapons = this.weapons.filter((x) => limitRareUR || x.rank() != 'UR');
+            this.weapons = this.weapons.filter((x) => limitRareZingi || x.rank() != '神器');
+            this.weapons = this.weapons.filter((x) => !limitExcluded.includes(`${x.id()}`));
+
+            /**
+             * @param {BgrEquip[]} equips
+             * @returns {boolean} whether equips satisfy the limitation of number of weapons.
+             */
+            this.validateWeapon = function RSSearch_validateWeapon(equips) {
+                const numWeapons = {
+                    N: limitRareN,
+                    R: limitRareR,
+                    SR: limitRareSR,
+                    SSR: limitRareSSR,
+                    UR: limitRareUR,
+                    '神器': limitRareZingi
+                };
+        
+                for (let equip of equips) {
+                    numWeapons[equip.rank()] -= 1;
+                }
+
+                return 0 <= numWeapons['神器']
+                    && 0 <= numWeapons['UR']
+                    && 0 <= numWeapons['SSR']
+                    && 0 <= numWeapons['SR']
+                    && 0 <= numWeapons['R']
+                    && 0 <= numWeapons['N'];
             };
-    
-            for (let equip of equips) {
-                numWeapons[equip.rank()] -= 1;
-            }
+        }
 
-            return 0 <= numWeapons['神器']
-                && 0 <= numWeapons['UR']
-                && 0 <= numWeapons['SSR']
-                && 0 <= numWeapons['SR']
-                && 0 <= numWeapons['R']
-                && 0 <= numWeapons['N'];
-        };
-    }
+        /**
+         * search equipes until step end
+         * @param {number} step_end 
+         * @returns {boolean}
+         */
+        step(step_end) {
+            let update = false;
+            let weapons = [];
 
-    RSSearch.NUM_RESULTS = 30;
-    RSSearch.SHRINK_THRESHOLD = 100
+            while (Date.now() < step_end) {
+                const specials = this.specials ? this.specials : this.weapons;
+                const speclal_length = specials.length;
 
-    RSSearch.prototype.step = function RSSearch_step(step_end) {
-        let update = false;
-        let weapons = [];
-
-        while (Date.now() < step_end) {
-            const specials = this.specials ? this.specials : this.weapons;
-            const speclal_length = specials.length;
-
-            while (true) {
-                weapons[0] = specials[xorShift() % speclal_length];
-                weapons[1] = specials[xorShift() % speclal_length];
-                weapons[2] = specials[xorShift() % speclal_length];
-                weapons[3] = specials[xorShift() % speclal_length];
-                weapons[4] = this.weapons[xorShift() % this.weapons.length];
-                if (new Set(weapons).size == weapons.length && this.validateWeapon(weapons)) {
-                    this.results.push(new EquippedUnit(this.unit, weapons, this.spd_buff, this.crit_buff, this.def_target));
-                    if (RSSearch.SHRINK_THRESHOLD <= this.results.length) {
-                        break;
+                while (true) {
+                    weapons[0] = specials[xorShift() % speclal_length];
+                    weapons[1] = specials[xorShift() % speclal_length];
+                    weapons[2] = specials[xorShift() % speclal_length];
+                    weapons[3] = specials[xorShift() % speclal_length];
+                    weapons[4] = this.weapons[xorShift() % this.weapons.length];
+                    if (new Set(weapons).size == weapons.length && this.validateWeapon(weapons)) {
+                        this.results.push(new EquippedUnit(this.unit, weapons, this.spd_buff, this.crit_buff, this.def_target));
+                        if (RSSearch.SHRINK_THRESHOLD <= this.results.length) {
+                            break;
+                        }
                     }
+                }
+
+                this.shrinkResult(RSSearch.NUM_RESULTS);
+
+                if (this.last_hash != this.results[RSSearch.NUM_RESULTS - 1].hash) {
+                    this.last_hash = this.results[RSSearch.NUM_RESULTS - 1].hash;
+                    this.results.forEach((x) => x.equips.sort(compareAttack));
+                    this.specials = Array.from(
+                        new Set(this.results.reduce((accum, x) => accum.concat(x.equips), []))
+                        );
+
+                    update = true;
                 }
             }
 
-            this.shrinkResult(RSSearch.NUM_RESULTS);
-
-            if (this.last_hash != this.results[RSSearch.NUM_RESULTS - 1].hash) {
-                this.last_hash = this.results[RSSearch.NUM_RESULTS - 1].hash;
-                this.results.forEach((x) => x.equips.sort(compareAttack));
-                this.specials = Array.from(
-                    new Set(this.results.reduce((accum, x) => accum.concat(x.equips), []))
-                    );
-
-                update = true;
-            }
+            return update;
         }
 
-        return update;
-    };
-
-    /**
-     * remove duplicates from an array
-     * @param {EquippedUnit[]} results 
-     */
-    RSSearch.prototype.removeDuplicates = function RSSearch_removeDuplicates(results) {
-        if (results.length) {
-            let prevhash = results[0].hash;
-            for (let i = 1; i < results.length; ++i) {
-                while (i < results.length) {
-                    if (prevhash != results[i].hash) { 
-                        prevhash = results[i].hash;
-                        break;
+        /**
+         * remove duplicates from an array
+         * @param {EquippedUnit[]} results 
+         */
+        removeDuplicates(results) {
+            if (results.length) {
+                let prevhash = results[0].hash;
+                for (let i = 1; i < results.length; ++i) {
+                    while (i < results.length) {
+                        if (prevhash != results[i].hash) { 
+                            prevhash = results[i].hash;
+                            break;
+                        }
+                        results.splice(i, 1);
                     }
-                    results.splice(i, 1);
                 }
             }
         }
-    };
 
-    RSSearch.prototype.shrinkResult = function RSSearch_shrinkResult(size) {
-        this.results.sort(compareScore);
-        this.removeDuplicates(this.results);
-        this.results.splice(size);
-    };
+        shrinkResult(size) {
+            this.results.sort(compareScore);
+            this.removeDuplicates(this.results);
+            this.results.splice(size);
+        }
 
-    RSSearch.prototype.getResult = function RSSearch_getResult() {
-        return this.results;
+        getResult() {
+            return this.results;
+        }
     };
 
     /**
@@ -430,7 +447,39 @@ addEventListener('load', function() {
         unit_selecter.dispatchEvent(new Event('change'));
     });
 
-    function onSearchRequested() {
+
+    // ユニット変更イベントハンドラ
+    function onChanged() {
+        const params = new EquippedUnit(getUnit(), equip_selecters.map((x) => getEquip(x)), 0, 0, 0);
+        if (params) {
+            unit_id.value = params.unit.id();
+            unit_attr.value = params.unit.attr();
+            unit_hp.value   = params.hp;
+            unit_atk.value  = params.atk;
+            unit_spd.value  = params.spd;
+            unit_def.value  = params.def;
+            unit_move.value = params.move;
+            unit_crit.value = percentize(params.crit);
+            unit_atkscale.value = percentize(params.unit.atkScale());
+            unit_atkrange.value = params.unit.atkRange();
+            unit_skillbuffer1.value = params.unit.attackSkillBuffer1();
+            unit_skillbuffer2.value = params.unit.attackSkillBuffer2();
+            unit_leaderskill.value = params.unit.leaderSkill();
+            unit_skillcd.value = params.unit.attackSkillCooldown();
+        }
+    }
+
+    // 名前フィルタ変更イベント
+    unit_search.addEventListener('input', function() {
+        updateUnit();
+        onChanged();
+    });
+
+    // ユニット変更イベント
+    unit_selecter.addEventListener('change', onChanged);
+
+    // 検索ボタン
+    search_button.addEventListener('click', function onSearchRequested() {
         if (search_timer) {
             clearTimeout(search_timer);
         }
@@ -469,35 +518,9 @@ addEventListener('load', function() {
         };
 
         timer();
-    }
-
-    function onChanged() {
-        const params = new EquippedUnit(getUnit(), equip_selecters.map((x) => getEquip(x)), 0, 0, 0);
-        if (params) {
-            unit_id.value = params.unit.id();
-            unit_attr.value = params.unit.attr();
-            unit_hp.value   = params.hp;
-            unit_atk.value  = params.atk;
-            unit_spd.value  = params.spd;
-            unit_def.value  = params.def;
-            unit_move.value = params.move;
-            unit_crit.value = percentize(params.crit);
-            unit_atkscale.value = percentize(params.unit.atkScale());
-            unit_atkrange.value = params.unit.atkRange();
-            unit_skillbuffer1.value = params.unit.attackSkillBuffer1();
-            unit_skillbuffer2.value = params.unit.attackSkillBuffer2();
-            unit_leaderskill.value = params.unit.leaderSkill();
-            unit_skillcd.value = params.unit.attackSkillCooldown();
-        }
-    }
-
-    unit_search.addEventListener('input', function() {
-        updateUnit();
-        onChanged();
     });
 
-    unit_selecter.addEventListener('change', onChanged);
-
+    // 装備登録
     equip_selecters.forEach(function(e) {
         e.appendChild(createElement('option', '無し'));
         for (let equip of EQUIP) {
@@ -506,7 +529,55 @@ addEventListener('load', function() {
         e.addEventListener('change', onChanged);
     });
 
-    search_button.addEventListener('click', onSearchRequested);
+    // #####################
+    // ###   除外装備UI   ###
+    // #####################
+
+    // 除外装備登録
+    for (const e of [ ...EQUIP ].sort((a, b) => (a.id() - b.id()))) {
+        included_equips.appendChild(BgrLib.createElement("option", e.name(), { "value": e.id() }));
+    }
+
+    /**
+     * 装備移動関数
+     * @param {HTMLSelectElement} source 移動元リスト
+     * @param {HTMLSelectElement} destination 移動先リスト
+     */
+    const moveSelected = (source, destination) => {
+        const addOptions = [ ...destination.options ];
+        const removeIndexies = [];
+
+        // 移動対象を
+        for (const opt of [ ...source.options ]) {
+            if (opt.selected) {
+                opt.selected = false;
+                removeIndexies.push(opt.index);
+                addOptions.push(opt);
+            }
+        }
+
+        // 要素を削除する
+        removeIndexies.reverse();
+        for (const index of removeIndexies) {
+            source.options.remove(index);
+        }
+
+        // ID順に並べ替えた要素を追加する
+        while (destination.options.length) {
+            destination.options.remove(0);
+        }
+
+        addOptions.sort((a, b) => ((a.value | 0) - (b.value | 0)));
+        for (const opt of addOptions) {
+            destination.options.add(opt);
+        }
+    };
+
+    // 除外ハンドラ
+    document.getElementById("exclude-button").addEventListener("click", () => moveSelected(included_equips, excluded_equips));
+
+    // 復帰ハンドラ
+    document.getElementById("include-button").addEventListener("click", () => moveSelected(excluded_equips, included_equips));
 
     updateUnit();
     onChanged();

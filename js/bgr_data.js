@@ -1,5 +1,5 @@
 import { BgrLib, Table, TableColumn } from './bgr_lib.js'
-import { Checkbox, Textbox } from 'https://hifmac.github.io/bgr-xml-tools/js/bgr/bgr.util.js'
+import { Checkbox, Textbox } from './bgr_util.js'
 
 /**
  * 
@@ -48,7 +48,10 @@ function TextboxToFilter(textbox, filterFunction) {
 function setFormGroup(label, group, forms) {
     BgrLib.clearChildren(group);
     if (label) {
-        group.appendChild(BgrLib.createElement('label', label + '：'))
+        const div = BgrLib.createElement('div');
+        div.classList.add("col-auto");
+        div.appendChild(BgrLib.createElement('label', label + '：'));
+        group.appendChild(div);
     }
     for (let i in forms) {
         group.appendChild(forms[i].div);
