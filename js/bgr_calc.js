@@ -529,13 +529,20 @@ addEventListener('load', function() {
         e.addEventListener('change', onChanged);
     });
 
+
     // #####################
     // ###   除外装備UI   ###
     // #####################
 
     // 除外装備登録
+    const excludedEquips = JSON.parse(localStorage.getItem("excluded-equips") || "[]");
     for (const e of [ ...EQUIP ].sort((a, b) => (a.id() - b.id()))) {
-        included_equips.appendChild(BgrLib.createElement("option", e.name(), { "value": e.id() }));
+        if (excludedEquips.includes(`${e.id()}`)) {
+            excluded_equips.appendChild(BgrLib.createElement("option", `${e.rank()} - ${e.name()}`, { "value": e.id() }));
+        }
+        else {
+            included_equips.appendChild(BgrLib.createElement("option", `${e.rank()} - ${e.name()}`, { "value": e.id() }));
+        }
     }
 
     /**
@@ -547,13 +554,18 @@ addEventListener('load', function() {
         const addOptions = [ ...destination.options ];
         const removeIndexies = [];
 
-        // 移動対象を
+        // 移動対象を選別する
         for (const opt of [ ...source.options ]) {
             if (opt.selected) {
                 opt.selected = false;
                 removeIndexies.push(opt.index);
                 addOptions.push(opt);
             }
+        }
+
+        // 移動要素が無ければ終わる
+        if (removeIndexies.length === 0) {
+            return ;
         }
 
         // 要素を削除する
@@ -571,6 +583,9 @@ addEventListener('load', function() {
         for (const opt of addOptions) {
             destination.options.add(opt);
         }
+
+        // 除外装備を保存する
+        localStorage.setItem("excluded-equips", JSON.stringify([ ...excluded_equips.options ].map(x => x.value)));
     };
 
     // 除外ハンドラ
