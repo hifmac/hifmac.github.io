@@ -70,6 +70,8 @@ addEventListener('load', function() {
     const rare_ssr_checkbox = document.getElementById('rare-ssr-checkbox');
     const rare_ur_checkbox = document.getElementById('rare-ur-checkbox');
     const rare_zingi_checkbox = document.getElementById('rare-zingi-checkbox');
+    const exclusion_checkbox = document.getElementById('exclusion-checkbox');
+
 
     /** @type {HTMLSelectElement} */
     const included_equips = document.getElementById('included-equips');
@@ -301,7 +303,7 @@ addEventListener('load', function() {
             const limitRareSSR = rare_ssr_checkbox.checked ? 5 : 0;
             const limitRareUR = rare_ur_checkbox.checked ? 5 : 0;
             const limitRareZingi = rare_zingi_checkbox.checked ? 1 : 0;
-            const limitExcluded = [ ...excluded_equips.options ].map(option => option.value);
+            const limitExcluded = (exclusion_checkbox.checked ? [ ...excluded_equips.options ] : []).map(option => option.value);
 
             this.weapons = this.weapons.filter((x) => limitRareN || x.rank() != 'N');
             this.weapons = this.weapons.filter((x) => limitRareR || x.rank() != 'R');
