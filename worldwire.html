@@ -1457,11 +1457,14 @@
             body.messages.push({ ...message, role: 'assistant' });
             for (const call of calls) {
               signal.throwIfAborted();
-              let result;
-              try { result = executeArticleTool(call.function.name, JSON.parse(call.function.arguments), articles); }
+              let result, args;
+              try {
+                args = JSON.parse(call.function.arguments);
+                result = executeArticleTool(call.function.name, args, articles);
+              }
               catch (err) { result = { error: err.message }; }
               body.messages.push({ role: 'tool', tool_call_id: call.id, content: JSON.stringify(result) });
-              onTool({ name: call.function.name, round: round + 1, count: result.articles?.length || 0, error: !!result.error });
+              onTool({ name: call.function.name, call_id: call.id, arguments: args === undefined ? call.function.arguments : args, round: round + 1, count: result.articles?.length || 0, error: !!result.error });
             }
             continue;
           }
@@ -1484,7 +1487,7 @@
         const toolProgress = stage => info => {
           loadingPhase = stage + '：過去の記事を検索中（' + info.count + '件）…';
           renderLoading();
-          console.info('Article tool:', { stage, ...info });
+          console.info('Article tool:', JSON.stringify({ stage, ...info }));
         };
         try {
           const instructions = interpolate(w.news_model.prompt, variables) + '\nReturn ONLY a valid JSON object with the keys "title" and "content", both strings. Write in English. Separate paragraphs with blank lines encoded as \\n\\n inside the JSON string; escape all control characters. No Markdown fences.';
