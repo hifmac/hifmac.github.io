@@ -22,18 +22,29 @@ const runTool = (name, args, articles = archive) => plain(context.executeArticle
 assert.deepEqual(runTool('search_articles', { query: '港' }).articles.map(x => x.id), ['b', 'a']);
 assert.deepEqual(runTool('search_articles', { query: 'market' }).articles.map(x => x.id), ['c']);
 assert.deepEqual(runTool('search_articles', { query: '', author: '中央通信', genre: '政治' }).articles.map(x => x.id), ['a']);
-assert.deepEqual(runTool('sort_articles', { sort: 'oldest' }).articles.map(x => x.id), ['a', 'b', 'c']);
-assert.equal(runTool('sort_articles', { sort: 'reacted' }).articles[0].id, 'b');
-assert.deepEqual(runTool('sort_articles', { sort: 'title' }).articles.map(x => x.title), archive.map(x => x.title).sort((a, b) => a.localeCompare(b, 'ja')));
-const page = runTool('sort_articles', { offset: 1, limit: 1 });
+assert.deepEqual(runTool('search_articles', { sort_key: 'sequence', sort_order: 'asc' }).articles.map(x => x.id), ['a', 'b', 'c']);
+assert.equal(runTool('search_articles', { sort_key: 'reaction_count', sort_order: 'desc' }).articles[0].id, 'b');
+assert.deepEqual(runTool('search_articles', { sort_key: 'title', sort_order: 'asc' }).articles.map(x => x.title), archive.map(x => x.title).sort((a, b) => a.localeCompare(b, 'ja')));
+for (const sort_key of ['sequence', 'date', 'title', 'reaction_count']) {
+  const asc = runTool('search_articles', { sort_key, sort_order: 'asc' }).articles.map(x => x.id);
+  const desc = runTool('search_articles', { sort_key, sort_order: 'desc' }).articles.map(x => x.id);
+  assert.deepEqual(desc, asc.slice().reverse(), sort_key + ' supports both directions');
+}
+const differentDates = [{ ...archive[0], date: '0142/04/30' }, { ...archive[1], date: '0142/03/01' }, archive[2]];
+assert.deepEqual(runTool('search_articles', { sort_key: 'date', sort_order: 'asc' }, differentDates).articles.map(x => x.id), ['b', 'c', 'a']);
+assert.deepEqual(runTool('search_articles', { query: '港', sort_key: 'sequence', sort_order: 'asc', limit: 1 }).articles.map(x => x.id), ['a']);
+assert.throws(() => runTool('search_articles', { sort_order: 'invalid' }));
+assert.throws(() => runTool('search_articles', { sort: 'newest' }));
+assert.throws(() => runTool('sort_articles', {}));
+const page = runTool('search_articles', { offset: 1, limit: 1 });
 assert.equal(page.total, 3);
 assert.equal(page.next_offset, 2);
 assert.equal(page.has_more, true);
-assert.equal(runTool('sort_articles', { offset: 10 }).next_offset, null);
+assert.equal(runTool('search_articles', { offset: 10 }).next_offset, null);
 assert.equal(runTool('search_articles', { query: 'missing' }).total, 0);
-assert.equal(runTool('sort_articles', {}, []).total, 0);
-assert.equal(runTool('sort_articles', {}, [{ ...archive[0], content: 'x'.repeat(7000) }]).articles[0].content_truncated, true);
-for (const args of [{ limit: 11 }, { offset: -1 }, { limit: 1.5 }, { sort: 'invalid' }, { author: [] }, { query: 1 }, { extra: 1 }]) {
+assert.equal(runTool('search_articles', {}, []).total, 0);
+assert.equal(runTool('search_articles', {}, [{ ...archive[0], content: 'x'.repeat(7000) }]).articles[0].content_truncated, true);
+for (const args of [{ limit: 11 }, { offset: -1 }, { limit: 1.5 }, { sort_key: 'invalid' }, { author: [] }, { query: 1 }, { extra: 1 }]) {
   assert.throws(() => runTool('search_articles', args));
 }
 assert.throws(() => runTool('delete_articles', {}));
@@ -61,13 +72,18 @@ const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal 
   context.complete(endpoint, 'mock-token', model, 'Write JSON', 'Generate article', signal, archive, callback);
 
 (async () => {
-  mock([calls(toolCall('s1', 'search_articles', { query: '港' }), toolCall('s2', 'sort_articles', { sort: 'reacted' })), calls(toolCall('s3', 'sort_articles', { sort: 'oldest', limit: 1 })), end()]);
+  mock([calls(toolCall('s1', 'search_articles', { query: '港' }), toolCall('s2', 'search_articles', { sort_key: 'reaction_count', sort_order: 'desc' })), calls(toolCall('s3', 'search_articles', { sort_key: 'sequence', sort_order: 'asc', limit: 1 })), end()]);
   const progress = [];
   assert.deepEqual(JSON.parse(await invoke(undefined, undefined, x => progress.push(x))), final);
   assert.equal(requests.length, 3);
   assert.equal(requests[0].reasoning_effort, 'none');
   assert.equal(requests[0].response_format.json_schema.strict, true);
-  assert.deepEqual(requests[0].tools.map(x => x.function.name), ['search_articles', 'sort_articles']);
+  assert.deepEqual(requests[0].tools.map(x => x.function.name), ['search_articles']);
+  const parameters = requests[0].tools[0].function.parameters;
+  assert.deepEqual(parameters.properties.sort_key.enum, ['sequence', 'date', 'title', 'reaction_count']);
+  assert.deepEqual(parameters.properties.sort_order.enum, ['asc', 'desc']);
+  assert.ok(parameters.required.includes('sort_key') && parameters.required.includes('sort_order'));
+  assert.equal('sort' in parameters.properties, false);
   assert.equal('temperature' in requests[0], false);
   assert.deepEqual(requests[1].messages.filter(x => x.role === 'tool').map(x => x.tool_call_id), ['s1', 's2']);
   assert.equal(JSON.parse(requests[1].messages[3].content).articles[0].id, 'b');
@@ -80,17 +96,17 @@ const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal 
   mock([end()]);
   await invoke('http://localhost:8766/api');
   assert.equal('response_format' in requests[0], false);
-  assert.equal(requests[0].tools.length, 2);
+  assert.equal(requests[0].tools.length, 1);
 
-  mock(Array.from({ length: 6 }, (_, i) => calls(toolCall('loop' + i, 'sort_articles', {}))).concat(end()));
+  mock(Array.from({ length: 6 }, (_, i) => calls(toolCall('loop' + i, 'search_articles', {}))).concat(end()));
   await invoke();
   assert.equal(requests.length, 7);
   assert.equal(requests.at(-1).tool_choice, 'none');
-  mock(Array.from({ length: 7 }, (_, i) => calls(toolCall('loop' + i, 'sort_articles', {}))));
+  mock(Array.from({ length: 7 }, (_, i) => calls(toolCall('loop' + i, 'search_articles', {}))));
   await assert.rejects(invoke(), /上限/);
-  mock([calls(toolCall('same', 'sort_articles', {}), toolCall('same', 'sort_articles', {}))]);
+  mock([calls(toolCall('same', 'search_articles', {}), toolCall('same', 'search_articles', {}))]);
   await assert.rejects(invoke(), /ID/);
-  mock([calls(...Array.from({ length: 9 }, (_, i) => toolCall('many' + i, 'sort_articles', {})))]);
+  mock([calls(...Array.from({ length: 9 }, (_, i) => toolCall('many' + i, 'search_articles', {})))]);
   await assert.rejects(invoke(), /上限/);
   mock([{ finish_reason: 'length', message: { content: 'cut off' } }]);
   await assert.rejects(invoke(), /途中終了/);
@@ -100,7 +116,7 @@ const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal 
   const cancelled = new AbortController(); cancelled.abort();
   await assert.rejects(invoke(undefined, cancelled.signal), { name: 'AbortError' });
   assert.equal(requests.length, 0);
-  mock([calls(toolCall('cancel', 'sort_articles', {})), end()]);
+  mock([calls(toolCall('cancel', 'search_articles', {})), end()]);
   const during = new AbortController();
   await assert.rejects(invoke(undefined, during.signal, () => during.abort()), { name: 'AbortError' });
   assert.equal(requests.length, 1);
@@ -117,11 +133,11 @@ const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal 
     activeView: 'feed', toast: message => { throw new Error(message); }
   });
   vm.runInContext(script.slice(script.indexOf('async function generateNews'), script.indexOf('function cancelGeneration')), context);
-  mock([calls(toolCall('news-search', 'search_articles', { query: '港' })), end(), calls(toolCall('translation-sort', 'sort_articles', { sort: 'oldest' })), end()]);
+  mock([calls(toolCall('news-search', 'search_articles', { query: '港' })), end(), calls(toolCall('translation-search', 'search_articles', { sort_key: 'sequence', sort_order: 'asc' })), end()]);
   await context.generateNews();
   assert.equal(requests.length, 4);
   assert.equal(requests[1].messages.at(-1).tool_call_id, 'news-search');
-  assert.equal(requests[3].messages.at(-1).tool_call_id, 'translation-sort');
+  assert.equal(requests[3].messages.at(-1).tool_call_id, 'translation-search');
   assert.equal(requests[2].messages.length, 2, 'Translation has an independent conversation');
   assert.equal(stored.news.length, 4);
   assert.equal(stored.dayOffset, 4);
