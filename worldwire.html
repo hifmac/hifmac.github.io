@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>WORLDSIGNAL — 世界を読む</title>
+  <style>
+    :root { --bg:#f3f0e8; --paper:#fffefa; --ink:#222725; --muted:#73766f; --rule:#d9d8d0; --accent:#b54e34; --accent-soft:#faeee9; --pine:#304e43; --shadow:0 15px 38px rgba(31,34,28,.065); }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,system-ui,sans-serif;font-size:14px;line-height:1.7}
+    button,input,select,textarea{font:inherit} button{cursor:pointer} button:disabled{cursor:not-allowed;opacity:.48} :focus-visible{outline:3px solid #d28d4a;outline-offset:3px}
+    .hidden{display:none!important}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;letter-spacing:.06em}.muted{color:var(--muted)}
+    .top-line{height:5px;background:var(--accent)}
+    .masthead{max-width:1450px;margin:auto;padding:23px 38px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--rule)}
+    .brand{display:flex;align-items:center;gap:15px;min-width:0}.brand-symbol{display:grid;place-items:center;border:1.5px solid var(--ink);height:46px;width:46px;flex-shrink:0;border-radius:50%;font-size:23px}.brand-title{font-family:Georgia,"Times New Roman",serif;font-size:26px;letter-spacing:.085em;font-weight:700;line-height:1.12}.brand-sub{font-size:10px;letter-spacing:.2em;color:var(--muted);margin-top:4px}
+    .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    .eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .world-picker{display:flex;align-items:center;gap:11px}.world-picker select{width:190px;max-width:32vw;border:1px solid var(--rule);border-radius:3px;background:var(--paper);padding:9px 30px 9px 11px;font-weight:700}
+    .btn{border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:3px;padding:10px 15px;font-weight:700;line-height:1.3;transition:background .16s,transform .16s;white-space:nowrap}.btn:hover:not(:disabled){background:#ece9df}.btn:active:not(:disabled){transform:translateY(1px)}.btn-primary{background:var(--pine);color:white;border-color:var(--pine)}.btn-primary:hover:not(:disabled){background:#203b31}.btn-accent{background:var(--accent);color:white;border-color:var(--accent)}.btn-accent:hover:not(:disabled){background:#973c26}.btn-quiet{background:transparent}.btn-small{padding:7px 10px;font-size:12px}.btn-danger{color:#9f3a30;border-color:#ccaaa4}
+    .layout{max-width:1450px;margin:auto;padding:33px 38px 70px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:42px}
+    .sidebar{min-width:0}.side-panel + .side-panel{margin-top:26px}.sidebar-inner{position:sticky;top:20px}.side-label{font-size:10px;color:var(--muted);letter-spacing:.18em;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+    .world-name{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-size:27px;letter-spacing:.015em;line-height:1.45;margin:0 0 10px}.world-description{color:#61655e;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}
+    .side-divider{height:1px;background:var(--rule);margin:26px 0}.clock{font-size:26px;line-height:1.3;font-family:Georgia,serif;font-weight:700;margin:4px 0}.era-tag{color:var(--accent);font-size:12px;font-weight:700}.side-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.side-stat{border-left:2px solid var(--rule);padding-left:10px}.side-stat strong{font-size:23px;font-family:Georgia,serif;display:block;line-height:1.2}.side-stat span{font-size:10px;color:var(--muted)}
+    .pill-list{display:flex;flex-wrap:wrap;gap:7px}.pill{border:1px solid #cfcfc7;border-radius:20px;padding:2px 9px;font-size:11px;color:#5d625a;background:#f9f8f3}.source-line{padding:7px 0;border-bottom:1px dashed var(--rule);font-size:12px}.source-line:last-child{border:0}
+    .disclaimer{border:1px solid var(--rule);padding:14px;background:#eeeae1;font-size:11px;line-height:1.8;color:#666860}
+    .workspace{min-width:0}.workspace-top{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid var(--ink);gap:15px;padding-bottom:15px}.section-kicker{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.2em}.section-heading{font-family:Georgia,"Yu Mincho",serif;font-size:35px;line-height:1.25;margin:5px 0 0;font-weight:600;letter-spacing:.015em}.tabs{display:flex;gap:4px}.tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:10px 16px;font-weight:700}.tab.active{color:var(--ink);border-bottom-color:var(--accent)}
+    .edition-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:19px 0 12px}.edition-row .mono{font-size:11px;color:var(--muted)}.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:7px;box-shadow:0 0 0 3px #ebcfc6}
+    .paper{background:var(--paper);border:1px solid #e0ded5;box-shadow:var(--shadow);position:relative;min-height:440px}.paper::before{content:"";position:absolute;inset:5px;border:1px solid #efede6;pointer-events:none}
+    .paper-inside{position:relative;padding:38px clamp(25px,5.5vw,76px) 34px}.article-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.13em}.article-rule{height:1px;background:var(--rule);margin:17px 0 22px}.article-title{font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;font-size:clamp(27px,3.35vw,44px);font-weight:750;line-height:1.5;letter-spacing:.018em;margin:0 0 20px;overflow-wrap:anywhere}.byline{font-size:12px;color:#646962;margin-bottom:34px}.article-content{font-size:15px;line-height:2.1;letter-spacing:.025em;overflow-wrap:anywhere;white-space:pre-wrap}.article-content p{margin:0 0 1.6em}.article-content p:last-child{margin-bottom:0}.end-mark{display:flex;justify-content:center;align-items:center;gap:10px;color:#b1b3ac;font-size:18px;padding:30px 0 3px}.end-mark:before,.end-mark:after{content:"";width:35px;height:1px;background:var(--rule)}
+    .reactions{margin-top:25px;border-top:1px solid var(--rule);padding-top:23px}.reaction-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.reaction{display:flex;align-items:center;justify-content:center;min-width:55px;height:49px;background:#f7f6f0;border:1px solid #d8d8cf;border-radius:4px;font-size:25px;transition:transform .15s,border-color .15s,background .15s}.reaction:hover:not(:disabled){transform:translateY(-3px);border-color:var(--accent);background:var(--accent-soft)}.reaction.selected{border-color:var(--accent);background:var(--accent-soft);opacity:1}.reaction:disabled{opacity:.7}.reaction-help{font-size:12px;color:var(--muted)}
+    .loading-strip{background:#e7e9e1;border:1px solid #cdd6c8;padding:17px 20px;display:flex;align-items:center;gap:16px;margin:14px 0}.spinner{height:22px;width:22px;flex-shrink:0;border-radius:50%;border:3px solid #b6c5b8;border-top-color:var(--pine);animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.loading-copy{flex:1;font-weight:700}.loading-sub{font-weight:400;font-size:11px;color:#617267}.loader-bottom{margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .empty-state{text-align:center;padding:62px 25px 66px}.empty-orbit{margin:auto auto 22px;display:grid;place-items:center;width:100px;height:100px;border:1px solid #d9d8d0;border-radius:50%;color:var(--accent);font-family:Georgia,serif;font-size:47px}.empty-title{font-family:"Yu Mincho",Georgia,serif;font-size:28px;margin:0 0 10px}.empty-state p{color:var(--muted);max-width:420px;margin:0 auto 24px}
+    .feed-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}.feed-footer .muted{font-size:12px}
+    .archive-controls{background:var(--paper);border:1px solid var(--rule);padding:17px;margin-top:20px;display:grid;grid-template-columns:minmax(160px,1fr) minmax(130px,170px) minmax(125px,160px);gap:12px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:11px;color:var(--muted);font-weight:700}.input,.field input,.field textarea,.field select{width:100%;border:1px solid #d6d6cf;border-radius:3px;background:white;padding:10px 11px;color:var(--ink);outline-offset:2px}.field textarea{resize:vertical;min-height:105px}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--pine)}
+    .archive-summary{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:20px 0 9px;font-size:12px;color:var(--muted)}.archive-card{display:grid;grid-template-columns:85px 1fr 27px;gap:16px;align-items:start;text-align:left;width:100%;background:var(--paper);border:1px solid var(--rule);padding:20px;margin:10px 0;color:var(--ink)}.archive-card:hover{border-color:#9ba99a;background:#fbfaf5}.archive-index{color:var(--accent);font-family:Georgia,serif;font-size:20px;font-weight:700}.archive-info h3{font-family:"Yu Mincho",Georgia,serif;font-size:20px;line-height:1.5;margin:1px 0 6px}.archive-info .snippet{color:#6c7068;font-size:12px;line-height:1.8;margin-top:10px;overflow-wrap:anywhere}.archive-info .meta{font-size:11px;color:var(--muted)}.archive-arrow{font-size:20px;color:#a5a79e}.pagination{display:flex;justify-content:center;align-items:center;gap:14px;padding:20px 0}
+    .toast-area{position:fixed;right:18px;bottom:18px;z-index:90;max-width:min(470px,calc(100vw - 36px));pointer-events:none}.toast{box-shadow:0 10px 35px #0002;background:var(--ink);color:white;padding:13px 18px;border-radius:4px;margin-top:7px;font-size:12px;pointer-events:auto;white-space:pre-wrap;overflow-wrap:anywhere}.toast.error{background:#8c372d}
+    dialog{border:1px solid #bfc1b8;background:var(--bg);box-shadow:0 30px 120px #0005;color:var(--ink);padding:0;max-height:93vh;overflow:auto}dialog::backdrop{background:rgba(22,30,25,.63)}.settings{width:min(900px,calc(100vw - 20px))}.reader{width:min(800px,calc(100vw - 20px));background:var(--paper)}.modal-header{padding:20px 26px;background:var(--paper);border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:2}.modal-header h2{font:700 24px Georgia,"Yu Mincho",serif;margin:0}.settings-body{padding:24px 26px 34px}.settings-section{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:26px}.settings-section:last-child{border:0;margin-bottom:0}.settings-section h3{font-size:17px;margin:0 0 11px;font-family:Georgia,"Yu Mincho",serif}.section-note{font-size:12px;color:var(--muted);margin:0 0 15px}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.settings-grid .wide{grid-column:1/-1}.token-row{display:flex;gap:8px;align-items:end}.token-row .field{flex:1}.settings-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.model-box{background:var(--paper);border:1px solid var(--rule);padding:17px;margin:12px 0}.model-box h4{margin:0 0 13px;font-size:14px}.parameters{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.read-only-note{color:var(--pine);font-size:11px;margin-top:8px}.modal-bottom{position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--rule);padding:15px 26px;display:flex;justify-content:space-between;align-items:center;gap:9px;z-index:2}
+    .reader-body{padding:33px clamp(22px,5vw,58px) 38px}.reader-title{font-family:"Yu Mincho",Georgia,serif;font-size:clamp(24px,4vw,35px);line-height:1.5;margin:17px 0}.reader-text{font-size:15px;line-height:2.1;white-space:pre-wrap;overflow-wrap:anywhere}.reader-text p{margin:0 0 1.3em}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:25px 22px 60px;gap:25px}.sidebar-inner{position:static}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:18px}.sidebar .side-divider{display:none}.sidebar .side-panel + .side-panel{margin-top:0}.sidebar .side-panel{border-bottom:1px solid var(--rule);padding-bottom:15px}.sidebar .side-panel:last-child{display:none}.masthead{padding:16px 22px}.brand-title{font-size:22px}}
+    @media(max-width:600px){.masthead{flex-direction:column;align-items:stretch}.header-actions{justify-content:space-between}.world-picker{flex:1}.world-picker select{max-width:unset;flex:1;width:100%}.brand-title{font-size:23px}.layout{padding:18px 12px 40px}.sidebar{grid-template-columns:1fr 1fr;gap:12px}.sidebar .side-panel:first-child{grid-column:1/-1}.world-name{font-size:23px}.world-description{font-size:12px}.sidebar .side-panel:nth-child(3){display:none}.workspace-top{align-items:center}.section-heading{font-size:26px}.tabs{flex-shrink:0}.tab{padding:8px 9px;font-size:12px}.paper-inside{padding:29px 22px}.article-title{font-size:28px}.article-content{font-size:14px}.archive-controls{grid-template-columns:1fr 1fr}.archive-controls .field:first-child{grid-column:1/-1}.archive-card{grid-template-columns:43px 1fr 12px;padding:14px;gap:10px}.archive-index{font-size:16px}.archive-info h3{font-size:17px}.settings-grid{grid-template-columns:1fr}.parameters{grid-template-columns:1fr 1fr}.token-row{align-items:stretch;flex-direction:column}.modal-header,.settings-body,.modal-bottom{padding-left:16px;padding-right:16px}.modal-bottom{flex-wrap:wrap}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <header class="masthead">
+    <div class="brand"><span class="brand-symbol" aria-hidden="true">◉</span><div><div class="brand-title">WORLDSIGNAL</div><div class="brand-sub mono">READ THE WORLD BETWEEN THE LINES</div></div></div>
+    <div class="header-actions"><div class="world-picker"><span class="eyebrow">WORLD</span><select id="worldSelect" aria-label="ワールドを選択"></select></div><button class="btn" id="settingsBtn" type="button">⚙ 設定 / API</button></div>
+  </header>
+  <main class="layout">
+    <aside class="sidebar" id="sideInfo" aria-label="ワールド情報"></aside>
+    <section class="workspace" aria-label="ニュース読書エリア">
+      <div class="workspace-top"><div><div class="section-kicker mono">INDEPENDENT WORLDS · CHRONICLE</div><h1 class="section-heading" id="workspaceTitle">最新の報道</h1></div><div class="tabs" role="tablist" aria-label="ページ切り替え"><button id="feedTab" class="tab active" role="tab" aria-selected="true" type="button">現在の号</button><button id="archiveTab" class="tab" role="tab" aria-selected="false" type="button">記事検索</button></div></div>
+      <section id="feedPane" aria-label="最新記事"><div class="edition-row"><span class="mono"><span class="live-dot"></span><span id="editionLabel">AWAITING TRANSMISSION</span></span><span id="connectionTag" class="mono"></span></div><div id="loadingSlot" aria-live="polite"></div><div id="feedContent"></div><div class="feed-footer"><span id="feedFootnote" class="muted">現実の歴史ではなく、報道の断片を読む。</span><button id="nextBtn" class="btn btn-primary hidden" type="button">次のニュースを生成 →</button></div></section>
+      <section id="archivePane" class="hidden" aria-label="記事アーカイブ"><div class="archive-controls"><div class="field"><label for="searchInput">全文検索（タイトル・本文・記者）</label><input id="searchInput" type="search" placeholder="検索キーワード..."></div><div class="field"><label for="sourceFilter">ニュースソース</label><select id="sourceFilter"><option value="">すべての媒体</option></select></div><div class="field"><label for="sortSelect">並び順</label><select id="sortSelect"><option value="newest">新しい順</option><option value="oldest">古い順</option><option value="title">タイトル順</option><option value="reacted">リアクション済み優先</option></select></div></div><div class="archive-summary"><span id="archiveCount">0 件</span><span class="mono">ARCHIVE / LOCAL</span></div><div id="archiveList"></div><div id="archivePager" class="pagination"></div></section>
+    </section>
+  </main>
+  <div class="toast-area" id="toastArea" aria-live="polite"></div>
+
+  <dialog id="settingsDialog" class="settings" aria-labelledby="settingsTitle">
+    <div class="modal-header"><div><div class="eyebrow">CONTROL ROOM</div><h2 id="settingsTitle">世界と通信の設定</h2></div><button id="closeSettings" class="btn btn-small" type="button">閉じる ×</button></div>
+    <div class="settings-body">
+      <section class="settings-section"><h3>01 / API 接続</h3><p class="section-note">OpenAI 互換 Chat Completions（POST）。トークンは実行中のメモリだけに保持し、ブラウザ保存・バックアップの対象外です。</p><div class="field"><label for="endpointInput">API Endpoint</label><input id="endpointInput" type="url" spellcheck="false" placeholder="https://api.openai.com/v1/chat/completions"></div><div class="token-row" style="margin-top:12px"><div class="field"><label for="tokenInput">Bearer Token — 保存しない</label><input id="tokenInput" type="password" autocomplete="new-password" spellcheck="false" placeholder="sk-... / API Key"></div><button class="btn btn-primary" id="setTokenBtn" type="button">一時適用</button><button class="btn" id="clearTokenBtn" type="button">破棄</button></div><p id="tokenStatus" class="read-only-note" role="status"></p></section>
+      <section class="settings-section"><h3>02 / ワールド</h3><div class="settings-actions" style="margin-bottom:14px"><button id="newWorldBtn" class="btn btn-small" type="button">＋ 新しい世界</button><button id="deleteWorldBtn" class="btn btn-small btn-danger" type="button">現在の世界を削除</button><span class="muted" style="font-size:11px">記事は世界ごとに分離されます</span></div><form id="worldForm"><div class="settings-grid">
+        <div class="field"><label for="wName">Name / 世界名</label><input id="wName" required maxlength="100"></div>
+        <div class="field"><label for="wEra">Era Name / 年号</label><input id="wEra" required maxlength="80"></div>
+        <div class="field"><label for="wStart">Start Date / yyyy/mm/dd</label><input id="wStart" required placeholder="2084/01/01" pattern="\d{4}/\d{2}/\d{2}"></div>
+        <div class="field wide"><label for="wDesc">Description / 世界設定</label><textarea id="wDesc" rows="4" required></textarea></div>
+        <div class="field wide"><label for="wSources">News Source List / 1行に1媒体、「名前 | 説明」</label><textarea id="wSources" rows="4" required></textarea></div>
+        <div class="field"><label for="wGenres">Genre List / 1行に1ジャンル</label><textarea id="wGenres" rows="4" required></textarea></div>
+        <div class="field"><label for="wReactions">Reaction List / 半角スペースまたは改行で区切る</label><textarea id="wReactions" rows="4" required></textarea></div>
+      </div>
+      <div class="model-box"><h4>03 / News Model — 英語記事の生成</h4><div class="field"><label for="newsModel">モデル名</label><input id="newsModel" required placeholder="gpt-4.1-mini"></div><div class="parameters" style="margin-top:10px"><div class="field"><label for="newsTopP">top-p</label><input id="newsTopP" type="number" min="0" max="1" step="0.01"></div><div class="field"><label for="newsTopK">top-k ※</label><input id="newsTopK" type="number" min="1" step="1" placeholder="任意"></div><div class="field"><label for="newsTemp">temp</label><input id="newsTemp" type="number" min="0" max="2" step="0.05"></div><div class="field"><label for="newsMinP">min-p ※</label><input id="newsMinP" type="number" min="0" max="1" step="0.01" placeholder="任意"></div></div><div class="field" style="margin-top:10px"><label for="newsPrompt">prompt</label><textarea id="newsPrompt" rows="5"></textarea></div></div>
+      <div class="model-box"><h4>04 / Translation Model — 日本語への翻訳</h4><div class="field"><label for="transModel">モデル名</label><input id="transModel" required placeholder="gpt-4.1-mini"></div><div class="parameters" style="margin-top:10px"><div class="field"><label for="transTopP">top-p</label><input id="transTopP" type="number" min="0" max="1" step="0.01"></div><div class="field"><label for="transTopK">top-k ※</label><input id="transTopK" type="number" min="1" step="1" placeholder="任意"></div><div class="field"><label for="transTemp">temp</label><input id="transTemp" type="number" min="0" max="2" step="0.05"></div><div class="field"><label for="transMinP">min-p ※</label><input id="transMinP" type="number" min="0" max="1" step="0.01" placeholder="任意"></div></div><div class="field" style="margin-top:10px"><label for="transPrompt">prompt</label><textarea id="transPrompt" rows="4"></textarea></div></div>
+      <p class="section-note">※ top-k / min-p は対応している互換APIにのみ送信します。公式 OpenAI API では送信しません。モデルによって temp / top-p に非対応の場合もあります。</p><button type="submit" class="btn btn-accent">この世界とAPI設定を保存</button></form></section>
+      <section class="settings-section"><h3>05 / ローカルデータ</h3><p class="section-note">全世界の設定・記事・抽選バケットを JSON でバックアップ。トークンは含まれません。読み込みは現在のデータを上書きします。</p><div class="settings-actions"><button id="exportBtn" class="btn btn-small" type="button">↓ JSON エクスポート</button><button id="importBtn" class="btn btn-small" type="button">↑ JSON インポート</button><input id="importFile" type="file" accept="application/json,.json" class="hidden"></div></section>
+    </div><div class="modal-bottom"><span class="muted" style="font-size:11px">記事・設定: localStorage ／ キー: RAM のみ</span><button id="closeSettingsBottom" class="btn" type="button">編集を終える</button></div>
+  </dialog>
+  <dialog id="readerDialog" class="reader" aria-labelledby="readerTitle"><div class="modal-header"><span class="eyebrow">FROM THE ARCHIVE</span><button class="btn btn-small" id="closeReader" type="button">閉じる ×</button></div><div id="readerBody" class="reader-body"></div></dialog>
+
+  <script>
+  (() => {
+    'use strict';
+    const CONFIG_KEY = 'worldsignal.config.v1';
+    const DATA_KEY = 'worldsignal.data.v1';
+    const PAGE_SIZE = 10;
+    const $ = id => document.getElementById(id);
+    const clone = value => JSON.parse(JSON.stringify(value));
+    const uid = () => (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : 'id-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+    const DEFAULT_ENDPOINT = /^(127\.0\.0\.1|localhost):8766$/.test(location.host) ? location.origin+'/api' : 'https://api.openai.com/v1/chat/completions';
+    const DEFAULT_NEWS_PROMPT = 'Write a vivid, credible English newspaper article set in this fictional world. Give a concrete event, specifics, named individuals and institutions, and a distinctive editorial voice fitting the news source. Different outlets may be biased, mistaken, contradictory or propagandistic. Treat the world as living and open-ended, not as a fixed canon. Avoid referring to the player or explaining that this is a simulation. Aim for 200–350 English words.';
+    const DEFAULT_TRANSLATION_PROMPT = 'Translate the provided English news article into natural, polished Japanese journalism. Preserve names, factual assertions, uncertainty, bias, paragraph breaks and the distinction between claims and confirmed facts. Do not add new events or commentary.';
+    const modelDefaults = (translation = false) => ({ name:'gpt-4.1-mini', top_p:1, top_k:null, temp:translation ? 0.3 : 0.95, min_p:null, prompt:translation ? DEFAULT_TRANSLATION_PROMPT : DEFAULT_NEWS_PROMPT });
+    const newWorld = () => ({ name:'黄昏圏', description:'大陸を横断する軌道鉄道と都市国家が競合する架空の世界。海面上昇後の新地図、気候制御技術、古い国家の亡霊が政治と生活を形作っている。', era_name:'再建暦', start_date:'0142/04/01', news_source_list:[{name:'中央通信',description:'大都市圏を拠点にする事実重視を自称する通信社。政府寄りの報道傾向。'},{name:'夕映新聞',description:'地方の住民の声と社会問題を重視する独立紙。'},{name:'自由波ラジオ',description:'噂や告発を速報する反体制系の放送局。裏取りは不均一。'},{name:'商都日報',description:'金融と交易路の情報に強い経済紙。'}], genre_list:[{name:'政治'},{name:'経済'},{name:'技術'},{name:'社会'},{name:'文化'},{name:'事件'},{name:'環境'},{name:'国際'}], reaction_list:[{emoji:'😮'},{emoji:'🤔'},{emoji:'😡'},{emoji:'😂'},{emoji:'❤️'},{emoji:'😢'}], news_model:modelDefaults(), translation_model:modelDefaults(true) });
+    const defaultConfig = () => ({llm:{endpoint:DEFAULT_ENDPOINT},currentWorld:'world-1',world:{'world-1':newWorld()}});
+    const defaultWorldData = () => ({news:[],sourceBucket:[],genreBucket:[],dayOffset:0});
+    function readStore(key, fallback){ try { const raw=localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch { return fallback; } }
+    let config = readStore(CONFIG_KEY, defaultConfig());
+    let data = readStore(DATA_KEY, {});
+    let token = ''; // Intentionally never serialized, logged, exported or stored in the DOM after applying.
+    let busy = false;
+    let currentController = null;
+    let activeView = 'feed';
+    let query = '';
+    let sourceQuery = '';
+    let sort = 'newest';
+    let page = 1;
+    let loadingPhase = '';
+    const isObject = x => x !== null && typeof x === 'object' && !Array.isArray(x);
+    const validDate = s => { const m=/^(\d{4})\/(\d{2})\/(\d{2})$/.exec(s || ''); if(!m) return false; const d=new Date(0); d.setUTCFullYear(+m[1],+m[2]-1,+m[3]); return d.getUTCFullYear()===+m[1] && d.getUTCMonth()===+m[2]-1 && d.getUTCDate()===+m[3]; };
+    function validateConfig(c){ return isObject(c) && isObject(c.llm) && typeof c.llm.endpoint==='string' && isObject(c.world) && Object.keys(c.world).length>0 && Object.prototype.hasOwnProperty.call(c.world,c.currentWorld) && Object.values(c.world).every(w => isObject(w) && typeof w.name==='string' && typeof w.description==='string' && typeof w.era_name==='string' && validDate(w.start_date) && Array.isArray(w.news_source_list) && w.news_source_list.length>0 && w.news_source_list.every(s=>typeof s.name==='string' && typeof s.description==='string') && Array.isArray(w.genre_list) && w.genre_list.length>0 && w.genre_list.every(g=>typeof g.name==='string') && Array.isArray(w.reaction_list) && w.reaction_list.length>0 && w.reaction_list.every(r=>typeof r.emoji==='string') && ['news_model','translation_model'].every(k=>isObject(w[k]) && typeof w[k].name==='string' && typeof w[k].prompt==='string')); }
+    if(!validateConfig(config)) config=defaultConfig();
+    if(!isObject(data)) data={};
+    function currentWorld(){ return config.world[config.currentWorld]; }
+    function currentData(){ const key=config.currentWorld; if(!isObject(data[key])) data[key]=defaultWorldData(); const d=data[key]; if(!Array.isArray(d.news)) d.news=[]; if(!Array.isArray(d.sourceBucket)) d.sourceBucket=[]; if(!Array.isArray(d.genreBucket)) d.genreBucket=[]; if(!Number.isFinite(d.dayOffset) || d.dayOffset<0) d.dayOffset=d.news.length; return d; }
+    function persist(){ try{ localStorage.setItem(CONFIG_KEY, JSON.stringify(config)); localStorage.setItem(DATA_KEY, JSON.stringify(data)); return true; }catch(e){ toast('ローカル保存に失敗しました。空き容量・ブラウザ設定を確認し、必要ならJSONでバックアップしてください。','error'); return false; } }
+    function toast(message,type='info'){ const el=document.createElement('div'); el.className='toast '+(type==='error'?'error':''); el.textContent=message; $('toastArea').appendChild(el); setTimeout(()=>el.remove(),6500); }
+    function dateAt(start,offset){ const [y,m,d]=start.split('/').map(Number); const dt=new Date(0); dt.setUTCFullYear(y,m-1,d); dt.setUTCDate(dt.getUTCDate()+offset); return [String(dt.getUTCFullYear()).padStart(4,'0'),String(dt.getUTCMonth()+1).padStart(2,'0'),String(dt.getUTCDate()).padStart(2,'0')].join('/'); }
+    function E(tag, cls, text){ const el=document.createElement(tag); if(cls)el.className=cls; if(text!==undefined) el.textContent=text; return el; }
+    function appendParagraphs(target,content){ String(content||'').split(/\n\s*\n/).filter(Boolean).forEach(p=>target.appendChild(E('p','',p.trim()))); }
+    function renderWorldPicker(){ const select=$('worldSelect'); select.replaceChildren(); for(const [id,w] of Object.entries(config.world)){ const o=new Option(w.name,id); select.appendChild(o); } select.value=config.currentWorld; }
+    function renderSidebar(){ const w=currentWorld(),d=currentData(),root=$('sideInfo'); root.replaceChildren();
+      const s1=E('div','side-panel');s1.append(E('div','side-label mono','YOUR WORLD'),E('h2','world-name',w.name),E('div','world-description',w.description));root.appendChild(s1);
+      const s2=E('div','side-panel');s2.append(E('div','side-label mono','SIMULATED DATE'),E('div','era-tag',w.era_name),E('div','clock',dateAt(w.start_date,d.dayOffset)),E('div','muted','1記事＝1日進行。報道は真実とは限らない。')); const stats=E('div','side-stats');const a=E('div','side-stat'),b=E('div','side-stat');a.append(E('strong','',String(d.news.length)),E('span','','収録記事'));b.append(E('strong','',String(w.news_source_list.length)),E('span','','報道機関'));stats.append(a,b);s2.appendChild(stats);root.appendChild(s2);
+      const s3=E('div','side-panel');s3.appendChild(E('div','side-label mono','NEWS SOURCES'));w.news_source_list.forEach(source=>s3.appendChild(E('div','source-line',source.name)));s3.appendChild(E('div','side-divider'));s3.appendChild(E('div','side-label mono','CATEGORIES'));const pills=E('div','pill-list');w.genre_list.forEach(g=>pills.appendChild(E('span','pill',g.name)));s3.appendChild(pills);root.appendChild(s3);
+      const s4=E('div','side-panel');s4.appendChild(E('div','side-divider'));s4.appendChild(E('div','disclaimer','この世界には公式の正史がありません。記事は独立した情報源の証言であり、互いに食い違う可能性があります。'));root.appendChild(s4);
+    }
+    function latest(){ return currentData().news.at(-1) || null; }
+    function renderShell(){ renderWorldPicker(); renderSidebar(); $('connectionTag').textContent=token?'● KEY IN MEMORY':'○ KEY NOT SET';renderTabs();renderFeed();if(activeView==='archive')renderArchive(); }
+    function renderTabs(){const archive=activeView==='archive';$('feedPane').classList.toggle('hidden',archive);$('archivePane').classList.toggle('hidden',!archive);$('feedTab').classList.toggle('active',!archive);$('archiveTab').classList.toggle('active',archive);$('feedTab').setAttribute('aria-selected',String(!archive));$('archiveTab').setAttribute('aria-selected',String(archive));$('workspaceTitle').textContent=archive?'記事アーカイブ':'最新の報道';}
+    function setView(view){activeView=view;page=1;renderTabs();if(view==='archive')renderArchive();else renderFeed();}
+    function renderFeed(){ const d=currentData(),w=currentWorld(),article=latest(),root=$('feedContent'); root.replaceChildren();$('editionLabel').textContent=article?'ISSUE NO. '+String(d.news.length).padStart(4,'0')+'  /  '+article.date:'AWAITING TRANSMISSION'; $('feedFootnote').textContent=article?'すべての出来事が事実とは限りません。報道を手掛かりに世界を推測してください。':'最初のニュースで、この世界の扉が開きます。';
+      const paper=E('article','paper');const inside=E('div','paper-inside');paper.appendChild(inside);
+      if(!article){const empty=E('div','empty-state');empty.append(E('div','empty-orbit','◎'),E('h2','empty-title','まだ何も報じられていない。'),E('p','','記事を生成すると、ワールドのニュースソースが英語で報道し、日本語に翻訳された記事が届きます。'));const b=E('button','btn btn-accent','最初のニュースを生成 →');b.type='button';b.disabled=busy;b.addEventListener('click',generateNews);empty.appendChild(b);inside.appendChild(empty);}
+      else {const meta=E('div','article-meta');meta.append(E('span','',article.genre||'WORLD REPORT'),E('span','',w.era_name+' '+article.date));inside.appendChild(meta);inside.appendChild(E('div','article-rule'));inside.appendChild(E('h2','article-title',article.title));inside.appendChild(E('div','byline','発信：'+article.author));const contents=E('div','article-content');appendParagraphs(contents,article.content);inside.appendChild(contents);inside.appendChild(E('div','end-mark','◆'));
+        const box=E('section','reactions');box.appendChild(E('div','eyebrow mono',article.reaction?.length?'YOUR REACTION':'HOW DO YOU REACT?'));box.appendChild(E('div','reaction-help',article.reaction?.length?'リアクションは記録済みです。次の号へ進めます。':'リアクションを選ぶと、次のニュースが自動生成されます。'));const row=E('div','reaction-row');w.reaction_list.forEach(r=>{const btn=E('button','reaction'+(article.reaction?.includes(r.emoji)?' selected':''),r.emoji);btn.type='button';btn.title=r.emoji;btn.setAttribute('aria-label',r.emoji+' でリアクション');btn.disabled=busy||!!article.reaction?.length;btn.addEventListener('click',()=>react(r.emoji));row.appendChild(btn);});box.appendChild(row);inside.appendChild(box);}
+      root.appendChild(paper);
+      const next=$('nextBtn');next.classList.toggle('hidden',!article || !article.reaction?.length);next.disabled=busy;
+      renderLoading();
+    }
+    function renderLoading(){ const slot=$('loadingSlot');slot.replaceChildren();if(!busy)return;const wrap=E('div','loading-strip'), spin=E('div','spinner'), copy=E('div','loading-copy');copy.append(E('div','',loadingPhase||'世界から受信中…'),E('div','loading-sub','ニュース生成 → 翻訳 → 収録'));const cancel=E('button','btn btn-small','中止');cancel.type='button';cancel.addEventListener('click',cancelGeneration);wrap.append(spin,copy,cancel);slot.appendChild(wrap); }
+    function react(emoji){if(busy)return;const article=latest();if(!article || article.reaction?.length)return;article.reaction=[emoji];persist();renderFeed();if(activeView==='archive')renderArchive();if(token){generateNews();}else{toast('リアクションを記録しました。次のニュースを生成するには設定からトークンを一時適用してください。');}}
+    function shuffled(names){const a=[...names];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    function pickFromBucket(bucket, available){ // Preview a draw, commit only once the full news+translation succeeds.
+      const valid=new Set(available);const cleaned=bucket.filter(x=>valid.has(x));const replenished=cleaned.length?cleaned:shuffled(available);return {value:replenished[0],remaining:replenished.slice(1)};
+    }
+    function interpolate(text,vars){return String(text).replace(/\{\{([a-z_]+)\}\}/gi,(match,key)=>Object.prototype.hasOwnProperty.call(vars,key)?vars[key]:match);}
+    function extractJson(raw){let t=String(raw).trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'');try{return JSON.parse(t);}catch{}const a=t.indexOf('{'),b=t.lastIndexOf('}');if(a!==-1&&b>a)return JSON.parse(t.slice(a,b+1));throw new Error('モデルの応答がJSONではありません。モデルまたはpromptを確認してください。');}
+    function assertArticle(x,stage){if(!isObject(x)||typeof x.title!=='string'||!x.title.trim()||typeof x.content!=='string'||!x.content.trim())throw new Error(stage+'の応答に title / content がありません。');return {title:x.title.trim(),content:x.content.trim()};}
+    function isOpenAIEndpoint(url){try{const host=new URL(url).hostname.toLowerCase();return host==='api.openai.com';}catch{return false;}}
+    async function complete(endpoint,secret,model,systemPrompt,userPrompt,signal){const body={model:model.name,stream:false,messages:[{role:'system',content:systemPrompt},{role:'user',content:userPrompt}]};
+      // Official OpenAI Chat Completions accepts temperature/top_p for compatible models,
+      // but does NOT accept top_k/min_p. Many OpenAI-compatible gateways do.
+      if(model.temp!==null && model.temp!==undefined && model.temp!=='')body.temperature=Number(model.temp);
+      if(model.top_p!==null && model.top_p!==undefined && model.top_p!=='')body.top_p=Number(model.top_p);
+      if(!isOpenAIEndpoint(endpoint)){
+        if(model.top_k!==null&&model.top_k!==undefined&&model.top_k!=='')body.top_k=Number(model.top_k);
+        if(model.min_p!==null&&model.min_p!==undefined&&model.min_p!=='')body.min_p=Number(model.min_p);
+      }
+      let response;
+      try{response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+secret},body:JSON.stringify(body),signal});}
+      catch(err){if(signal.aborted)throw err;throw new Error('APIに接続できません。URL、通信、CORS許可を確認してください（'+err.message+'）。');}
+      if(!response.ok){let detail='';try{const e=await response.json();detail=e.error?.message||e.message||'';}catch{}throw new Error('API HTTP '+response.status+(detail?' — '+detail.slice(0,330):'。設定したモデルとパラメータを確認してください。'));}
+      let payload;try{payload=await response.json();}catch{throw new Error('APIがJSONレスポンスを返しませんでした。');}
+      const content=payload?.choices?.[0]?.message?.content;
+      if(typeof content==='string')return content;
+      if(Array.isArray(content))return content.filter(x=>x?.type==='text').map(x=>x.text).join('\n');
+      throw new Error('Chat Completions形式の choices[0].message.content を取得できませんでした。');
+    }
+    async function generateNews(){if(busy)return;
+      if(!token){toast('設定 / API でBearer Tokenを一時適用してください。','error');$('settingsDialog').showModal();return;}
+      const w=currentWorld(),d=currentData(),worldId=config.currentWorld,endpoint=config.llm.endpoint.trim(),secret=token;
+      try{const u=new URL(endpoint);if(!['https:','http:'].includes(u.protocol))throw new Error();}catch{toast('API Endpointに有効なhttp(s) URLを設定してください。','error');return;}
+      const s=pickFromBucket(d.sourceBucket,w.news_source_list.map(x=>x.name));const g=pickFromBucket(d.genreBucket,w.genre_list.map(x=>x.name));
+      const source=w.news_source_list.find(x=>x.name===s.value),genre=g.value,when=dateAt(w.start_date,d.dayOffset),controller=new AbortController();currentController=controller;busy=true;loadingPhase='英語の報道を取材しています…';renderFeed();
+      const variables={world:w.name,world_description:w.description,era:w.era_name,date:when,source:source.name,source_description:source.description,genre};
+      try{
+        const instructions=interpolate(w.news_model.prompt,variables)+'\nReturn ONLY a valid JSON object with the keys "title" and "content", both strings. Write in English. Separate paragraphs with blank lines. No Markdown fences.';
+        const enRaw=await complete(endpoint,secret,w.news_model,instructions,'WORLD: '+w.name+'\nSETTING: '+w.description+'\nERA: '+w.era_name+'\nDATE: '+when+'\nNEWS SOURCE: '+source.name+'\nSOURCE PROFILE: '+source.description+'\nGENRE: '+genre+'\nWrite one self-contained original news report. Do not depend on any earlier report. Output JSON only.',controller.signal);
+        const english=assertArticle(extractJson(enRaw),'ニュース生成');
+        if(controller.signal.aborted)return;
+        loadingPhase='記事を日本語に翻訳しています…';renderLoading();
+        const translateInstructions=interpolate(w.translation_model.prompt,variables)+'\nReturn ONLY a valid JSON object with the keys "title" and "content" as Japanese strings, preserving paragraph breaks. No Markdown fences.';
+        const jaRaw=await complete(endpoint,secret,w.translation_model,translateInstructions,JSON.stringify(english),controller.signal);
+        const japanese=assertArticle(extractJson(jaRaw),'翻訳');
+        if(controller.signal.aborted)return;
+        const item={author:source.name,date:when,title:japanese.title,content:japanese.content,reaction:[],id:uid(),genre,sequence:d.news.length+1};
+        d.news.push(item);d.sourceBucket=s.remaining;d.genreBucket=g.remaining;d.dayOffset++;
+        persist();page=1;
+        if(activeView==='archive')renderArchive();
+      }catch(err){if(err?.name!=='AbortError'){console.error('News generation failed:',err instanceof Error?err.message:'request error');toast('生成に失敗しました: '+(err?.message||String(err)),'error');}}
+      finally{if(currentController===controller){busy=false;currentController=null;loadingPhase='';renderShell();}}
+    }
+    function cancelGeneration(){if(currentController)currentController.abort();}
+    function renderArchive(){const d=currentData(),root=$('archiveList'),pager=$('archivePager');root.replaceChildren();pager.replaceChildren();const filter=$('sourceFilter'),prev=filter.value;filter.replaceChildren(new Option('すべての媒体',''));const used=[...new Set(d.news.map(n=>n.author))];used.sort((a,b)=>a.localeCompare(b,'ja')).forEach(name=>filter.appendChild(new Option(name,name)));filter.value=used.includes(sourceQuery)?sourceQuery:'';sourceQuery=filter.value;
+      const q=query.trim().toLocaleLowerCase();const result=d.news.filter(n=>(!q||[n.title,n.content,n.author,n.genre||''].some(v=>String(v).toLocaleLowerCase().includes(q)))&&(!sourceQuery||n.author===sourceQuery));
+      if(sort==='newest')result.sort((a,b)=>(b.sequence??0)-(a.sequence??0));
+      else if(sort==='oldest')result.sort((a,b)=>(a.sequence??0)-(b.sequence??0));
+      else if(sort==='title')result.sort((a,b)=>a.title.localeCompare(b.title,'ja'));
+      else if(sort==='reacted')result.sort((a,b)=>(b.reaction?.length||0)-(a.reaction?.length||0)||(b.sequence??0)-(a.sequence??0));
+      const pages=Math.max(1,Math.ceil(result.length/PAGE_SIZE));page=Math.min(page,pages);$('archiveCount').textContent=result.length+' 件 / '+d.news.length+' 件中';
+      for(const a of result.slice((page-1)*PAGE_SIZE,page*PAGE_SIZE)){
+        const button=E('button','archive-card');button.type='button';button.appendChild(E('div','archive-index',String(a.sequence||d.news.indexOf(a)+1).padStart(3,'0')));
+        const info=E('div','archive-info');info.append(E('div','meta',a.author+'  ·  '+currentWorld().era_name+' '+a.date+'  ·  '+(a.genre||'一般')+(a.reaction?.length?'  ·  '+a.reaction.join(' '):'')),E('h3','',a.title),E('div','snippet',String(a.content).replace(/\s+/g,' ').slice(0,105)+'…'));button.append(info,E('span','archive-arrow','↗'));button.addEventListener('click',()=>openArticle(a.id));root.appendChild(button);
+      }
+      if(!result.length){const empty=E('div','empty-state');empty.append(E('h2','empty-title',d.news.length?'該当する記事がありません':'アーカイブは空です'),E('p','',d.news.length?'キーワードや媒体を変更してください。':'ニュースを生成すると、ここに保存されます。'));root.appendChild(empty);}
+      const back=E('button','btn btn-small','← 前');back.type='button';back.disabled=page<=1;back.addEventListener('click',()=>{page--;renderArchive();});const next=E('button','btn btn-small','次 →');next.type='button';next.disabled=page>=pages;next.addEventListener('click',()=>{page++;renderArchive();});pager.append(back,E('span','mono',page+' / '+pages),next);
+    }
+    function openArticle(id){const a=currentData().news.find(n=>n.id===id);if(!a)return;const w=currentWorld(),root=$('readerBody');root.replaceChildren();root.append(E('div','article-meta',w.era_name+' '+a.date+'  /  '+(a.genre||'報道')),E('h2','reader-title',a.title),E('p','muted','発信：'+a.author));const content=E('div','reader-text');appendParagraphs(content,a.content);root.appendChild(content);if(a.reaction?.length)root.appendChild(E('div','reaction-help','あなたのリアクション：'+a.reaction.join(' ')));$('readerDialog').showModal();}
+    function openSettings(){fillSettings();$('settingsDialog').showModal();}
+    function tokenLabel(){$('tokenStatus').textContent=token?'● トークンをメモリ内に保持中（タブを閉じると消えます）':'○ トークンは未設定です';}
+    const val=id=>$(id).value;
+    const setVal=(id,v)=>{$(id).value=v??'';};
+    function setModel(prefix,m){setVal(prefix+'Model',m.name);setVal(prefix+'TopP',m.top_p);setVal(prefix+'TopK',m.top_k);setVal(prefix+'Temp',m.temp);setVal(prefix+'MinP',m.min_p);setVal(prefix+'Prompt',m.prompt);}
+    function fillSettings(){const w=currentWorld();setVal('endpointInput',config.llm.endpoint);setVal('tokenInput','');tokenLabel();setVal('wName',w.name);setVal('wEra',w.era_name);setVal('wStart',w.start_date);setVal('wDesc',w.description);setVal('wSources',w.news_source_list.map(x=>x.name+' | '+x.description).join('\n'));setVal('wGenres',w.genre_list.map(x=>x.name).join('\n'));setVal('wReactions',w.reaction_list.map(x=>x.emoji).join(' '));setModel('news',w.news_model);setModel('trans',w.translation_model);}
+    function optNumber(id){const x=val(id).trim();return x===''?null:Number(x);}
+    function readModel(prefix){return {name:val(prefix+'Model').trim(),top_p:optNumber(prefix+'TopP'),top_k:optNumber(prefix+'TopK'),temp:optNumber(prefix+'Temp'),min_p:optNumber(prefix+'MinP'),prompt:val(prefix+'Prompt').trim()};}
+    function validateModel(m,label){if(!m.name)throw new Error(label+'のモデル名が空です。');if(m.top_p!==null && (m.top_p<0||m.top_p>1))throw new Error(label+'のtop-pは0〜1です。');if(m.temp!==null && (m.temp<0||m.temp>2))throw new Error(label+'のtempは0〜2です。');if(m.top_k!==null && (!Number.isInteger(m.top_k)||m.top_k<1))throw new Error(label+'のtop-kは1以上の整数です。');if(m.min_p!==null && (m.min_p<0||m.min_p>1))throw new Error(label+'のmin-pは0〜1です。');}
+    function saveSettings(ev){ev.preventDefault();try{
+      const lines=val('wSources').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+      const sources=lines.map(line=>{const i=line.indexOf('|');return {name:(i<0?line:line.slice(0,i)).trim(),description:(i<0?'':line.slice(i+1)).trim()};});
+      const genres=val('wGenres').split(/\r?\n/).map(s=>s.trim()).filter(Boolean).map(name=>({name}));
+      const emojis=val('wReactions').trim().split(/\s+/u).filter(Boolean).map(emoji=>({emoji}));
+      if(!sources.length||sources.some(s=>!s.name))throw new Error('ニュースソースを1件以上指定してください。');
+      if(new Set(sources.map(s=>s.name)).size!==sources.length)throw new Error('ニュースソースの名前は重複できません。');
+      if(!genres.length||!emojis.length)throw new Error('ジャンルとリアクションはそれぞれ1件以上必要です。');
+      if(new Set(genres.map(g=>g.name)).size!==genres.length)throw new Error('ジャンル名は重複できません。');
+      if(!validDate(val('wStart')))throw new Error('開始日は実在する yyyy/mm/dd 形式で入力してください。');
+      const model=readModel('news'),trans=readModel('trans');validateModel(model,'News Model');validateModel(trans,'Translation Model');
+      const endpoint=val('endpointInput').trim();const u=new URL(endpoint);if(!['http:','https:'].includes(u.protocol))throw new Error('http(s)以外のEndpointは使用できません。');
+      const existing=currentWorld();Object.assign(existing,{name:val('wName').trim(),description:val('wDesc').trim(),era_name:val('wEra').trim(),start_date:val('wStart').trim(),news_source_list:sources,genre_list:genres,reaction_list:emojis,news_model:model,translation_model:trans});
+      config.llm.endpoint=endpoint;const d=currentData();d.sourceBucket=[];d.genreBucket=[];persist();renderShell();toast('設定を保存しました。');$('settingsDialog').close();
+    }catch(e){toast('設定を保存できません: '+e.message,'error');}}
+    function switchWorld(id){if(!Object.prototype.hasOwnProperty.call(config.world,id))return;cancelGeneration();config.currentWorld=id;activeView='feed';page=1;query='';sourceQuery='';setVal('searchInput','');persist();renderShell();}
+    function createWorld(){if(busy){toast('ニュースの生成を中止してから世界を変更してください。');return;}const id=uid();const w=newWorld();w.name='新しい世界';w.description='ここに世界設定を入力してください。';w.start_date='2100/01/01';config.world[id]=w;config.currentWorld=id;currentData();persist();renderShell();fillSettings();toast('新しい世界を作成しました。内容を編集して保存してください。');}
+    function deleteWorld(){if(Object.keys(config.world).length<=1){toast('少なくとも1つの世界が必要です。','error');return;}const id=config.currentWorld,name=currentWorld().name;if(!confirm('「'+name+'」と、その全記事を完全に削除しますか？'))return;cancelGeneration();delete config.world[id];delete data[id];config.currentWorld=Object.keys(config.world)[0];persist();renderShell();fillSettings();toast('世界とその記事を削除しました。');}
+    function exportData(){const blob=new Blob([JSON.stringify({version:1,config,data},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=E('a');a.href=url;a.download='worldsignal-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+    async function importData(file){try{if(!file)return;const obj=JSON.parse(await file.text());if(!validateConfig(obj.config)||!isObject(obj.data))throw new Error('互換性のあるバックアップ形式ではありません。');if(!confirm('すべてのワールド・設定・記事をバックアップで上書きしますか？'))return;cancelGeneration();config=obj.config;data=obj.data;for(const id of Object.keys(data)){if(!config.world[id])delete data[id];}activeView='feed';query='';sourceQuery='';page=1;persist();renderShell();fillSettings();toast('バックアップを読み込みました。');}catch(e){toast('読み込みに失敗しました: '+e.message,'error');}finally{$('importFile').value='';}}
+    $('worldSelect').addEventListener('change',e=>switchWorld(e.target.value));$('settingsBtn').addEventListener('click',openSettings);$('closeSettings').addEventListener('click',()=>$('settingsDialog').close());$('closeSettingsBottom').addEventListener('click',()=>$('settingsDialog').close());$('closeReader').addEventListener('click',()=>$('readerDialog').close());$('feedTab').addEventListener('click',()=>setView('feed'));$('archiveTab').addEventListener('click',()=>setView('archive'));$('nextBtn').addEventListener('click',generateNews);
+    $('searchInput').addEventListener('input',e=>{query=e.target.value;page=1;renderArchive();});$('sourceFilter').addEventListener('change',e=>{sourceQuery=e.target.value;page=1;renderArchive();});$('sortSelect').addEventListener('change',e=>{sort=e.target.value;page=1;renderArchive();});
+    $('setTokenBtn').addEventListener('click',()=>{const next=val('tokenInput').trim().replace(/^Bearer\s+/i,'');if(!next){toast('Bearer Tokenを入力してください。','error');return;}token=next;setVal('tokenInput','');tokenLabel();renderShell();toast('トークンを一時適用しました。保存はしていません。');});
+    $('clearTokenBtn').addEventListener('click',()=>{token='';setVal('tokenInput','');tokenLabel();renderShell();toast('メモリ上のトークンを破棄しました。');});
+    $('worldForm').addEventListener('submit',saveSettings);$('newWorldBtn').addEventListener('click',createWorld);$('deleteWorldBtn').addEventListener('click',deleteWorld);$('exportBtn').addEventListener('click',exportData);$('importBtn').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',e=>importData(e.target.files?.[0]));
+    $('settingsDialog').addEventListener('close',()=>setVal('tokenInput',''));
+    // Clicking the native backdrop closes dialogs, but never copies token text to storage.
+    for(const dlg of [$('settingsDialog'),$('readerDialog')])dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+    // Keep the archive search and reader size bounded; no infinite growing feed nodes.
+    currentData();renderShell();
+  })();
+  </script>
+</body>
+</html>
