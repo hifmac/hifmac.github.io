@@ -71,12 +71,12 @@ function mock(choices) {
 const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal = new AbortController().signal, callback) =>
   context.complete(endpoint, 'mock-token', model, 'Write JSON', 'Generate article', signal, archive, callback);
 
-// Settings must round-trip independently and accept legacy configurations without the field.
+// Settings must round-trip and accept legacy configurations without the field.
 const fields = {};
 const settingsContext = { $: id => fields[id] ||= { value: '' } };
 vm.createContext(settingsContext);
 vm.runInContext(script.slice(script.indexOf('const val = id'), script.indexOf('function saveSettings')), settingsContext);
-for (const [prefix, effort] of [['news', 'high'], ['trans', 'none']]) {
+for (const [prefix, effort] of [['news', 'high'], ['news', 'none']]) {
   settingsContext.setModel(prefix, { ...model, reasoning_effort: effort, prompt: 'Write JSON' });
   const saved = settingsContext.readModel(prefix);
   assert.equal(saved.reasoning_effort, effort);
@@ -87,6 +87,28 @@ for (const [prefix, effort] of [['news', 'high'], ['trans', 'none']]) {
 settingsContext.setModel('news', { ...model, prompt: 'Write JSON' });
 assert.equal(settingsContext.readModel('news').reasoning_effort, null);
 assert.throws(() => settingsContext.validateModel({ ...model, reasoning_effort: 'invalid' }, 'news'), /reasoning_effort/);
+
+const configContext = { DEFAULT_ENDPOINT: 'http://localhost:8766/api' };
+vm.createContext(configContext);
+vm.runInContext(script.slice(script.indexOf('const LEGACY_NEWS_PROMPT'), script.indexOf('let config =')), configContext);
+vm.runInContext(script.slice(script.indexOf('const isObject ='), script.indexOf('if (!validateConfig(config))')), configContext);
+vm.runInContext(script.slice(script.indexOf('function migrateConfig'), script.indexOf('function currentWorld')), configContext);
+vm.runInContext(`
+  const fresh = defaultConfig();
+  if (!validateConfig(fresh)) throw new Error('Single-model configuration is invalid');
+  if ('translation_model' in fresh.world['world-1']) throw new Error('Translation model remains in defaults');
+  const legacy = defaultConfig();
+  legacy.world['world-1'].news_model.prompt = LEGACY_NEWS_PROMPT;
+  legacy.world['world-1'].translation_model = modelDefaults();
+  if (!validateConfig(legacy)) throw new Error('Legacy backup is invalid');
+  migrateConfig(legacy);
+  if (legacy.world['world-1'].news_model.prompt !== DEFAULT_NEWS_PROMPT) throw new Error('Legacy default prompt was not migrated');
+  if ('translation_model' in legacy.world['world-1']) throw new Error('Legacy translation model was not removed');
+  legacy.world['world-1'].news_model.prompt = 'Custom editorial instructions';
+  migrateConfig(legacy);
+  if (legacy.world['world-1'].news_model.prompt !== 'Custom editorial instructions') throw new Error('Custom prompt changed');
+`, configContext);
+assert.equal(html.includes('id="transModel"'), false);
 
 (async () => {
   for (const effort of ['none', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max']) {
@@ -150,10 +172,9 @@ assert.throws(() => settingsContext.validateModel({ ...model, reasoning_effort: 
   await assert.rejects(invoke(undefined, during.signal, () => during.abort()), { name: 'AbortError' });
   assert.equal(requests.length, 1);
 
-  // Exercise the real generateNews caller so both stages must expose and run tools.
-  const world = { name: 'world', description: 'setting', era_name: 'era', start_date: '0142/04/01', news_source_list: [{ name: '中央通信', description: 'source' }], genre_list: [{ name: '政治' }], news_model: { ...model, prompt: 'English JSON' }, translation_model: { ...model, prompt: 'Japanese JSON' } };
+  // Japanese generation uses one model conversation, including archive tool rounds.
+  const world = { name: 'world', description: 'setting', era_name: 'era', start_date: '0142/04/01', news_source_list: [{ name: '中央通信', description: 'source' }], genre_list: [{ name: '政治' }], news_model: { ...model, prompt: 'Write in English' } };
   world.news_model.reasoning_effort = 'high';
-  world.translation_model.reasoning_effort = 'none';
   const stored = { news: structuredClone(archive), sourceBucket: [], genreBucket: [], dayOffset: 3 };
   Object.assign(context, {
     busy: false, token: 'mock-token', config: { currentWorld: 'world', llm: { endpoint: 'https://api.openai.com/v1/chat/completions' } },
@@ -164,15 +185,16 @@ assert.throws(() => settingsContext.validateModel({ ...model, reasoning_effort: 
     activeView: 'feed', toast: message => { throw new Error(message); }
   });
   vm.runInContext(script.slice(script.indexOf('async function generateNews'), script.indexOf('function cancelGeneration')), context);
-  mock([calls(toolCall('news-search', 'search_articles', { query: '港' })), end(), calls(toolCall('translation-search', 'search_articles', { sort_key: 'sequence', sort_order: 'asc' })), end()]);
+  mock([calls(toolCall('news-search', 'search_articles', { query: '港' })), end()]);
   await context.generateNews();
-  assert.equal(requests.length, 4);
-  assert.deepEqual(requests.map(body => body.reasoning_effort), ['high', 'high', 'none', 'none']);
+  assert.equal(requests.length, 2);
+  assert.equal(responses.length, 0);
+  assert.deepEqual(requests.map(body => body.reasoning_effort), ['high', 'high']);
   assert.equal(requests[1].messages.at(-1).tool_call_id, 'news-search');
-  assert.equal(requests[3].messages.at(-1).tool_call_id, 'translation-search');
-  assert.equal(requests[2].messages.length, 2, 'Translation has an independent conversation');
+  assert.match(requests[0].messages[0].content, /Write the title and content directly in Japanese, even if earlier instructions request another language/);
+  assert.match(requests[0].messages[1].content, /directly in Japanese/);
   assert.equal(stored.news.length, 4);
   assert.equal(stored.dayOffset, 4);
   assert.equal(stored.news.at(-1).content, final.content);
-  console.log('PASS: archive filtering/sorting/pagination, immutable results, JSON repair, multi-call and multi-round loops, error recovery, limits, cancellation, and generation + translation integration');
+  console.log('PASS: archive filtering/sorting/pagination, immutable results, JSON repair, tool loops, error recovery, limits, cancellation, reasoning settings, legacy migration, and direct Japanese generation');
 })().catch(err => { console.error(err); process.exitCode = 1; });
