@@ -55,17 +55,27 @@ assert.throws(() => context.extractJson('{"title":"unfinished'), /JSON/);
 
 const model = { name: 'gpt-6-luna', temp: null, top_p: null, top_k: null, min_p: null };
 const final = { title: '記事', content: '本文\n\n次の段落' };
-const end = () => ({ finish_reason: 'stop', message: { role: 'assistant', content: JSON.stringify(final) } });
-const toolCall = (id, name, args) => ({ id, type: 'function', function: { name, arguments: typeof args === 'string' ? args : JSON.stringify(args) } });
-const calls = (...items) => ({ finish_reason: 'tool_calls', message: { role: 'assistant', content: null, tool_calls: items } });
-let requests, responses;
-function mock(choices) {
-  requests = []; responses = choices.slice();
+const end = () => ({ status: 'completed', output: [{ type: 'message', role: 'assistant', content: [{ type: 'output_text', text: JSON.stringify(final) }] }] });
+const toolCall = (id, name, args) => ({ id: 'fc_' + id, call_id: id, type: 'function_call', name, arguments: typeof args === 'string' ? args : JSON.stringify(args) });
+const calls = (...items) => ({ status: 'completed', output: items });
+let requests, responses, urls;
+function mock(payloads) {
+  requests = []; responses = payloads.slice(); urls = [];
   context.fetch = async (url, opts) => {
+    urls.push(url);
     requests.push(JSON.parse(opts.body));
     assert.equal(opts.signal.aborted, false);
     assert.ok(responses.length, 'Unexpected extra API request');
-    return { ok: true, json: async () => ({ choices: [responses.shift()] }) };
+    const payload = responses.shift();
+    // Keep a realistic Chat Completions fixture for custom legacy gateways.
+    if (requests.at(-1).messages) {
+      const tools = payload.output.filter(item => item.type === 'function_call');
+      return { ok: true, json: async () => ({ choices: [{ finish_reason: tools.length ? 'tool_calls' : 'stop', message: {
+        role: 'assistant', content: tools.length ? null : payload.output[0].content[0].text,
+        ...(tools.length ? { tool_calls: tools.map(item => ({ id: item.call_id, type: 'function', function: { name: item.name, arguments: item.arguments } })) } : {})
+      } }] }) };
+    }
+    return { ok: true, json: async () => payload };
   };
 }
 const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal = new AbortController().signal, callback) =>
@@ -88,8 +98,9 @@ settingsContext.setModel('news', { ...model, prompt: 'Write JSON' });
 assert.equal(settingsContext.readModel('news').reasoning_effort, null);
 assert.throws(() => settingsContext.validateModel({ ...model, reasoning_effort: 'invalid' }, 'news'), /reasoning_effort/);
 
-const configContext = { DEFAULT_ENDPOINT: 'http://localhost:8766/api' };
+const configContext = { DEFAULT_ENDPOINT: 'https://api.openai.com/v1/responses', URL };
 vm.createContext(configContext);
+vm.runInContext(script.slice(script.indexOf('function isOpenAIEndpoint'), script.indexOf('const ARTICLE_SORT_KEYS')), configContext);
 vm.runInContext(script.slice(script.indexOf('const LEGACY_NEWS_PROMPT'), script.indexOf('let config =')), configContext);
 vm.runInContext(script.slice(script.indexOf('const isObject ='), script.indexOf('if (!validateConfig(config))')), configContext);
 vm.runInContext(script.slice(script.indexOf('function migrateConfig'), script.indexOf('function currentWorld')), configContext);
@@ -98,10 +109,12 @@ vm.runInContext(`
   if (!validateConfig(fresh)) throw new Error('Single-model configuration is invalid');
   if ('translation_model' in fresh.world['world-1']) throw new Error('Translation model remains in defaults');
   const legacy = defaultConfig();
+  legacy.llm.endpoint = 'https://api.openai.com/v1/chat/completions';
   legacy.world['world-1'].news_model.prompt = LEGACY_NEWS_PROMPT;
   legacy.world['world-1'].translation_model = modelDefaults();
   if (!validateConfig(legacy)) throw new Error('Legacy backup is invalid');
   migrateConfig(legacy);
+  if (legacy.llm.endpoint !== 'https://api.openai.com/v1/responses') throw new Error('OpenAI endpoint was not migrated');
   if (legacy.world['world-1'].news_model.prompt !== DEFAULT_NEWS_PROMPT) throw new Error('Legacy default prompt was not migrated');
   if ('translation_model' in legacy.world['world-1']) throw new Error('Legacy translation model was not removed');
   legacy.world['world-1'].news_model.prompt = 'Custom editorial instructions';
@@ -112,10 +125,10 @@ assert.equal(html.includes('id="transModel"'), false);
 
 (async () => {
   for (const effort of ['none', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max']) {
-    for (const endpoint of ['https://api.openai.com/v1/chat/completions', 'http://localhost:8766/api']) {
+    for (const endpoint of ['https://api.openai.com/v1/chat/completions', 'https://api.openai.com/v1/responses', 'http://localhost:8766/api', 'https://gateway.example/v1/responses']) {
       mock([calls(toolCall('effort', 'search_articles', {})), end()]);
       await context.complete(endpoint, 'mock-token', { ...model, reasoning_effort: effort }, 'Write JSON', 'Generate article', new AbortController().signal, archive);
-      assert.ok(requests.every(body => body.reasoning_effort === effort));
+      assert.ok(requests.every(body => (body.reasoning?.effort ?? body.reasoning_effort) === effort));
     }
   }
   for (const effort of [undefined, null, '']) {
@@ -123,31 +136,55 @@ assert.equal(html.includes('id="transModel"'), false);
     await context.complete('http://localhost:8766/api', 'mock-token', { ...model, name: 'custom-model', reasoning_effort: effort }, 'Write JSON', 'Generate article', new AbortController().signal, archive);
     assert.equal('reasoning_effort' in requests[0], false);
   }
-  mock([calls(toolCall('s1', 'search_articles', { query: '港' }), toolCall('s2', 'search_articles', { sort_key: 'reaction_count', sort_order: 'desc' })), calls(toolCall('s3', 'search_articles', { sort_key: 'sequence', sort_order: 'asc', limit: 1 })), end()]);
+  const reasoning = { type: 'reasoning', id: 'rs_1', summary: [], encrypted_content: 'opaque-reasoning' };
+  mock([calls(reasoning, toolCall('s1', 'search_articles', { query: '港' }), toolCall('s2', 'search_articles', { sort_key: 'reaction_count', sort_order: 'desc' })), calls(toolCall('s3', 'search_articles', { sort_key: 'sequence', sort_order: 'asc', limit: 1 })), end()]);
   const progress = [];
   assert.deepEqual(JSON.parse(await invoke(undefined, undefined, x => progress.push(x))), final);
   assert.equal(requests.length, 3);
-  assert.equal(requests[0].reasoning_effort, 'medium');
-  assert.equal(requests[0].response_format.json_schema.strict, true);
-  assert.deepEqual(requests[0].tools.map(x => x.function.name), ['search_articles']);
-  const parameters = requests[0].tools[0].function.parameters;
+  assert.ok(urls.every(url => url === 'https://api.openai.com/v1/responses'));
+  assert.deepEqual(requests[0].reasoning, { effort: 'medium' });
+  assert.equal(requests[0].store, false);
+  assert.deepEqual(requests[0].include, ['reasoning.encrypted_content']);
+  for (const key of ['messages', 'reasoning_effort', 'response_format']) assert.equal(key in requests[0], false);
+  assert.equal(requests[0].text.format.strict, true);
+  assert.deepEqual(requests[0].text.format.schema.required, ['title', 'content']);
+  assert.deepEqual(requests[0].tools.map(x => x.name), ['search_articles']);
+  const parameters = requests[0].tools[0].parameters;
   assert.deepEqual(parameters.properties.sort_key.enum, ['sequence', 'date', 'title', 'reaction_count']);
   assert.deepEqual(parameters.properties.sort_order.enum, ['asc', 'desc']);
   assert.ok(parameters.required.includes('sort_key') && parameters.required.includes('sort_order'));
   assert.equal('sort' in parameters.properties, false);
   assert.equal('temperature' in requests[0], false);
-  assert.deepEqual(requests[1].messages.filter(x => x.role === 'tool').map(x => x.tool_call_id), ['s1', 's2']);
-  assert.equal(JSON.parse(requests[1].messages[3].content).articles[0].id, 'b');
-  assert.equal(requests[2].messages.at(-1).tool_call_id, 's3');
+  assert.deepEqual(requests[1].input[2], reasoning);
+  assert.deepEqual(requests[2].input[2], reasoning);
+  assert.deepEqual(requests[1].input.filter(x => x.type === 'function_call_output').map(x => x.call_id), ['s1', 's2']);
+  assert.equal(JSON.parse(requests[1].input.find(x => x.type === 'function_call_output').output).articles[0].id, 'b');
+  assert.equal(requests[2].input.at(-1).call_id, 's3');
   assert.equal(progress.length, 3);
 
   mock([calls(toolCall('bad1', 'search_articles', '{bad JSON'), toolCall('bad2', 'unknown', {})), end()]);
   await invoke();
-  assert.ok(requests[1].messages.filter(x => x.role === 'tool').every(x => JSON.parse(x.content).error));
+  assert.ok(requests[1].input.filter(x => x.type === 'function_call_output').every(x => JSON.parse(x.output).error));
   mock([end()]);
   await invoke('http://localhost:8766/api');
   assert.equal('response_format' in requests[0], false);
   assert.equal(requests[0].tools.length, 1);
+  mock([calls(toolCall('legacy', 'search_articles', { query: '港' })), end()]);
+  await invoke('https://gateway.example/v1/chat/completions');
+  assert.equal(urls[0], 'https://gateway.example/v1/chat/completions');
+  assert.equal(requests[0].tools[0].function.name, 'search_articles');
+  assert.equal(requests[1].messages.at(-1).tool_call_id, 'legacy');
+  assert.equal('input' in requests[0], false);
+  mock([{ status: 'failed', error: { message: 'Model unavailable' }, output: [] }]);
+  await assert.rejects(invoke(), /Model unavailable/);
+  mock([{ status: 'in_progress', output: end().output }]);
+  await assert.rejects(invoke(), /完了状態/);
+  mock([{ status: 'completed', output: [] }]);
+  await assert.rejects(invoke(), /テキスト/);
+  mock([{ status: 'completed', output: [reasoning, { type: 'message', role: 'assistant', content: [
+    { type: 'output_text', text: '{"title":"記事",' }, { type: 'output_text', text: '"content":"本文"}' }
+  ] }] }]);
+  assert.deepEqual(JSON.parse(await invoke()), { title: '記事', content: '本文' });
 
   mock(Array.from({ length: 6 }, (_, i) => calls(toolCall('loop' + i, 'search_articles', {}))).concat(end()));
   await invoke();
@@ -159,9 +196,9 @@ assert.equal(html.includes('id="transModel"'), false);
   await assert.rejects(invoke(), /ID/);
   mock([calls(...Array.from({ length: 9 }, (_, i) => toolCall('many' + i, 'search_articles', {})))]);
   await assert.rejects(invoke(), /上限/);
-  mock([{ finish_reason: 'length', message: { content: 'cut off' } }]);
+  mock([{ status: 'incomplete', incomplete_details: { reason: 'max_output_tokens' }, output: end().output }]);
   await assert.rejects(invoke(), /途中終了/);
-  mock([{ finish_reason: 'stop', message: { refusal: 'refused' } }]);
+  mock([{ status: 'completed', output: [{ type: 'message', role: 'assistant', content: [{ type: 'refusal', refusal: 'refused' }] }] }]);
   await assert.rejects(invoke(), /拒否/);
   mock([end()]);
   const cancelled = new AbortController(); cancelled.abort();
@@ -189,12 +226,12 @@ assert.equal(html.includes('id="transModel"'), false);
   await context.generateNews();
   assert.equal(requests.length, 2);
   assert.equal(responses.length, 0);
-  assert.deepEqual(requests.map(body => body.reasoning_effort), ['high', 'high']);
-  assert.equal(requests[1].messages.at(-1).tool_call_id, 'news-search');
-  assert.match(requests[0].messages[0].content, /Write the title and content directly in Japanese, even if earlier instructions request another language/);
-  assert.match(requests[0].messages[1].content, /directly in Japanese/);
+  assert.deepEqual(requests.map(body => body.reasoning.effort), ['high', 'high']);
+  assert.equal(requests[1].input.at(-1).call_id, 'news-search');
+  assert.match(requests[0].input[0].content, /Write the title and content directly in Japanese, even if earlier instructions request another language/);
+  assert.match(requests[0].input[1].content, /directly in Japanese/);
   assert.equal(stored.news.length, 4);
   assert.equal(stored.dayOffset, 4);
   assert.equal(stored.news.at(-1).content, final.content);
-  console.log('PASS: archive filtering/sorting/pagination, immutable results, JSON repair, tool loops, error recovery, limits, cancellation, reasoning settings, legacy migration, and direct Japanese generation');
+  console.log('PASS: Responses requests/output, stateless reasoning replay, legacy gateway compatibility, archive tools, error recovery, limits, cancellation, reasoning settings, endpoint migration, and direct Japanese generation');
 })().catch(err => { console.error(err); process.exitCode = 1; });
