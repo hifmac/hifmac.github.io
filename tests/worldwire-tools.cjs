@@ -71,12 +71,41 @@ function mock(choices) {
 const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal = new AbortController().signal, callback) =>
   context.complete(endpoint, 'mock-token', model, 'Write JSON', 'Generate article', signal, archive, callback);
 
+// Settings must round-trip independently and accept legacy configurations without the field.
+const fields = {};
+const settingsContext = { $: id => fields[id] ||= { value: '' } };
+vm.createContext(settingsContext);
+vm.runInContext(script.slice(script.indexOf('const val = id'), script.indexOf('function saveSettings')), settingsContext);
+for (const [prefix, effort] of [['news', 'high'], ['trans', 'none']]) {
+  settingsContext.setModel(prefix, { ...model, reasoning_effort: effort, prompt: 'Write JSON' });
+  const saved = settingsContext.readModel(prefix);
+  assert.equal(saved.reasoning_effort, effort);
+  settingsContext.validateModel(saved, prefix);
+  settingsContext.setModel(prefix, JSON.parse(JSON.stringify(saved)));
+  assert.equal(settingsContext.readModel(prefix).reasoning_effort, effort);
+}
+settingsContext.setModel('news', { ...model, prompt: 'Write JSON' });
+assert.equal(settingsContext.readModel('news').reasoning_effort, null);
+assert.throws(() => settingsContext.validateModel({ ...model, reasoning_effort: 'invalid' }, 'news'), /reasoning_effort/);
+
 (async () => {
+  for (const effort of ['none', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max']) {
+    for (const endpoint of ['https://api.openai.com/v1/chat/completions', 'http://localhost:8766/api']) {
+      mock([calls(toolCall('effort', 'search_articles', {})), end()]);
+      await context.complete(endpoint, 'mock-token', { ...model, reasoning_effort: effort }, 'Write JSON', 'Generate article', new AbortController().signal, archive);
+      assert.ok(requests.every(body => body.reasoning_effort === effort));
+    }
+  }
+  for (const effort of [undefined, null, '']) {
+    mock([end()]);
+    await context.complete('http://localhost:8766/api', 'mock-token', { ...model, name: 'custom-model', reasoning_effort: effort }, 'Write JSON', 'Generate article', new AbortController().signal, archive);
+    assert.equal('reasoning_effort' in requests[0], false);
+  }
   mock([calls(toolCall('s1', 'search_articles', { query: '港' }), toolCall('s2', 'search_articles', { sort_key: 'reaction_count', sort_order: 'desc' })), calls(toolCall('s3', 'search_articles', { sort_key: 'sequence', sort_order: 'asc', limit: 1 })), end()]);
   const progress = [];
   assert.deepEqual(JSON.parse(await invoke(undefined, undefined, x => progress.push(x))), final);
   assert.equal(requests.length, 3);
-  assert.equal(requests[0].reasoning_effort, 'none');
+  assert.equal(requests[0].reasoning_effort, 'medium');
   assert.equal(requests[0].response_format.json_schema.strict, true);
   assert.deepEqual(requests[0].tools.map(x => x.function.name), ['search_articles']);
   const parameters = requests[0].tools[0].function.parameters;
@@ -123,6 +152,8 @@ const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal 
 
   // Exercise the real generateNews caller so both stages must expose and run tools.
   const world = { name: 'world', description: 'setting', era_name: 'era', start_date: '0142/04/01', news_source_list: [{ name: '中央通信', description: 'source' }], genre_list: [{ name: '政治' }], news_model: { ...model, prompt: 'English JSON' }, translation_model: { ...model, prompt: 'Japanese JSON' } };
+  world.news_model.reasoning_effort = 'high';
+  world.translation_model.reasoning_effort = 'none';
   const stored = { news: structuredClone(archive), sourceBucket: [], genreBucket: [], dayOffset: 3 };
   Object.assign(context, {
     busy: false, token: 'mock-token', config: { currentWorld: 'world', llm: { endpoint: 'https://api.openai.com/v1/chat/completions' } },
@@ -136,6 +167,7 @@ const invoke = (endpoint = 'https://api.openai.com/v1/chat/completions', signal 
   mock([calls(toolCall('news-search', 'search_articles', { query: '港' })), end(), calls(toolCall('translation-search', 'search_articles', { sort_key: 'sequence', sort_order: 'asc' })), end()]);
   await context.generateNews();
   assert.equal(requests.length, 4);
+  assert.deepEqual(requests.map(body => body.reasoning_effort), ['high', 'high', 'none', 'none']);
   assert.equal(requests[1].messages.at(-1).tool_call_id, 'news-search');
   assert.equal(requests[3].messages.at(-1).tool_call_id, 'translation-search');
   assert.equal(requests[2].messages.length, 2, 'Translation has an independent conversation');

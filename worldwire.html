@@ -1212,6 +1212,11 @@
                   step="0.05"></div>
               <div class="field"><label for="newsMinP">min-p ※</label><input id="newsMinP" type="number" min="0" max="1"
                   step="0.01" placeholder="任意"></div>
+              <div class="field"><label for="newsReasoningEffort">reasoning_effort</label><select id="newsReasoningEffort">
+                  <option value="">自動</option>
+                  <option>none</option><option>minimal</option><option>low</option><option>medium</option>
+                  <option>high</option><option>xhigh</option><option>max</option>
+                </select></div>
             </div>
             <div class="field" style="margin-top:10px"><label for="newsPrompt">prompt</label><textarea id="newsPrompt"
                 rows="5"></textarea></div>
@@ -1229,12 +1234,16 @@
                   step="0.05"></div>
               <div class="field"><label for="transMinP">min-p ※</label><input id="transMinP" type="number" min="0"
                   max="1" step="0.01" placeholder="任意"></div>
+              <div class="field"><label for="transReasoningEffort">reasoning_effort</label><select id="transReasoningEffort">
+                  <option value="">自動</option>
+                  <option>none</option><option>minimal</option><option>low</option><option>medium</option>
+                  <option>high</option><option>xhigh</option><option>max</option>
+                </select></div>
             </div>
             <div class="field" style="margin-top:10px"><label for="transPrompt">prompt</label><textarea id="transPrompt"
                 rows="4"></textarea></div>
           </div>
-          <p class="section-note">※ top-k / min-p は対応している互換APIにのみ送信します。公式 OpenAI API では送信しません。既定の GPT-6 Luna は推論レベル
-            none（Chat Completionsで記事検索Toolを使うため）を使用します。temp / top-p / top-k / min-p は空欄のまま送信しません。</p><button type="submit"
+          <p class="section-note">※ top-k / min-p は対応している互換APIにのみ送信します。公式 OpenAI API では送信しません。reasoning_effort の自動設定は GPT-6 Luna / Sol に medium を送信し、その他のモデルでは省略します。選択できる推論レベルの対応状況はモデル・APIによって異なります。temp / top-p / top-k / min-p は空欄のまま送信しません。</p><button type="submit"
             class="btn btn-accent">この世界とAPI設定を保存</button>
         </form>
       </section>
@@ -1273,6 +1282,7 @@
         top_k: null,
         temp: null,
         min_p: null,
+        reasoning_effort: null,
         prompt: translation ? DEFAULT_TRANSLATION_PROMPT : DEFAULT_NEWS_PROMPT
       });
       const newWorld = () => ({
@@ -1782,8 +1792,12 @@
             content: userPrompt
           }]
         };
-        // Luna/Sol function calling in Chat Completions requires reasoning_effort: medium.
-        if (/^gpt-6-(?:luna|sol)(?:-|$)/.test(model.name)) body.reasoning_effort = 'medium';
+        // Preserve the existing automatic setting for configurations without an explicit effort.
+        if (model.reasoning_effort !== null && model.reasoning_effort !== undefined && model.reasoning_effort !== '') {
+          body.reasoning_effort = model.reasoning_effort;
+        } else if (/^gpt-6-(?:luna|sol)(?:-|$)/.test(model.name)) {
+          body.reasoning_effort = 'medium';
+        }
         if (isOpenAIEndpoint(endpoint) && /^gpt-6-luna(?:-|$)/.test(model.name)) {
           body.response_format = {
             type: 'json_schema',
@@ -2079,6 +2093,7 @@
         setVal(prefix + 'TopK', m.top_k);
         setVal(prefix + 'Temp', m.temp);
         setVal(prefix + 'MinP', m.min_p);
+        setVal(prefix + 'ReasoningEffort', m.reasoning_effort);
         setVal(prefix + 'Prompt', m.prompt);
       }
 
@@ -2110,12 +2125,14 @@
           top_k: optNumber(prefix + 'TopK'),
           temp: optNumber(prefix + 'Temp'),
           min_p: optNumber(prefix + 'MinP'),
+          reasoning_effort: val(prefix + 'ReasoningEffort') || null,
           prompt: val(prefix + 'Prompt').trim()
         };
       }
 
       function validateModel(m, label) {
         if (!m.name) throw new Error(label + 'のモデル名が空です。');
+        if (m.reasoning_effort != null && m.reasoning_effort !== '' && !['none', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max'].includes(m.reasoning_effort)) throw new Error(label + 'のreasoning_effortが不正です。');
         if (m.top_p !== null && (m.top_p < 0 || m.top_p > 1)) throw new Error(label + 'のtop-pは0〜1です。');
         if (m.temp !== null && (m.temp < 0 || m.temp > 2)) throw new Error(label + 'のtempは0〜2です。');
         if (m.top_k !== null && (!Number.isInteger(m.top_k) || m.top_k < 1)) throw new Error(label + 'のtop-kは1以上の整数です。');
