@@ -117,6 +117,9 @@ vm.runInContext(`
   if (legacy.llm.endpoint !== 'https://api.openai.com/v1/responses') throw new Error('OpenAI endpoint was not migrated');
   if (legacy.world['world-1'].news_model.prompt !== DEFAULT_NEWS_PROMPT) throw new Error('Legacy default prompt was not migrated');
   if ('translation_model' in legacy.world['world-1']) throw new Error('Legacy translation model was not removed');
+  legacy.world['world-1'].news_model.prompt = LEGACY_JAPANESE_NEWS_PROMPT;
+  migrateConfig(legacy);
+  if (legacy.world['world-1'].news_model.prompt !== DEFAULT_NEWS_PROMPT) throw new Error('Japanese news default was not generalized');
   legacy.world['world-1'].news_model.prompt = 'Custom editorial instructions';
   migrateConfig(legacy);
   if (legacy.world['world-1'].news_model.prompt !== 'Custom editorial instructions') throw new Error('Custom prompt changed');
