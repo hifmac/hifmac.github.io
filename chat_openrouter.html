@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Chat · OpenRouter</title>
+<style>
+:root {font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;color-scheme:dark;--bg:#212121;--side:#171717;--hover:#292929;--panel:#2d2d2d;--panel2:#303030;--line:#3a3a3a;--text:#f1f1f1;--muted:#a5a5a5;--soft:#c2c2c2;--accent:#f6f6f6;--danger:#ff7979;--radius:14px}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--text)}body{overflow:hidden}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.4}a{color:#94c8ff;text-decoration:none}a:hover{text-decoration:underline}::selection{background:#535353}
+.app{height:100dvh;display:flex;overflow:hidden}.sidebar{width:270px;flex:0 0 270px;background:var(--side);display:flex;flex-direction:column;padding:17px 11px 13px;gap:9px;border-right:1px solid #252525;z-index:10}.side-head{padding:0 5px 10px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:700;letter-spacing:-.3px}.brand-icon{height:30px;width:30px;display:grid;place-items:center;border-radius:10px;color:#fff;border:1px solid #777;font-size:19px}.icon-btn{width:35px;height:35px;border:0;background:transparent;border-radius:9px;color:var(--soft);display:inline-flex;align-items:center;justify-content:center}.icon-btn:hover,.nav-btn:hover,.thread:hover{background:var(--hover)}.icon{height:18px;width:18px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}.nav-btn{width:100%;border:0;border-radius:9px;background:transparent;color:var(--text);display:flex;align-items:center;gap:12px;padding:10px 12px;text-align:left;font-size:14px;font-weight:550}.search-wrap{display:flex;align-items:center;gap:9px;color:var(--muted);padding:0 11px;border-radius:9px}.search-wrap:focus-within{background:#262626}.search-wrap input{min-width:0;flex:1;background:transparent;border:0;outline:0;color:var(--text);padding:9px 0;font-size:13px}.search-wrap input::placeholder{color:#b6b6b6}.kbd{font-size:10px;color:#777;border:1px solid #4b4b4b;border-radius:4px;padding:1px 4px}.side-label{font-size:12px;color:#848484;font-weight:700;margin:19px 12px 4px}.thread-list{min-height:0;overflow:auto;flex:1;scrollbar-width:thin;scrollbar-color:#464646 transparent}.thread{position:relative;display:flex;align-items:center;margin:2px 0;border-radius:9px}.thread.active{background:#303030}.thread-main{border:0;background:none;text-align:left;color:#d7d7d7;width:100%;min-width:0;padding:11px 37px 11px 12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:13px}.thread-delete{position:absolute;right:4px;top:4px;width:30px;height:30px;display:none}.thread:hover .thread-delete,.thread.active .thread-delete{display:flex}.empty-search{font-size:12px;color:#888;line-height:1.7;padding:13px}.sidebar-bottom{border-top:1px solid #2c2c2c;padding-top:10px}.sidebar-bottom .nav-btn{color:#d8d8d8}.storage-info{font-size:11px;color:#777;padding:6px 13px 1px}
+.main{flex:1;min-width:0;display:flex;flex-direction:column;position:relative;background:var(--bg)}.topbar{height:62px;flex:none;display:flex;align-items:center;gap:12px;padding:0 22px}.top-model{display:flex;align-items:center;gap:7px;background:transparent;border:0;border-radius:9px;color:#ddd;font-size:16px;font-weight:650;max-width:70%;padding:10px;text-align:left}.top-model:hover{background:#2b2b2b}.top-model span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.muted-arrow{color:#aaa}.top-spacer{flex:1}.connection{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:#777}.dot.ready{background:#64c39c}.mobile-only{display:none}.conversation{min-height:0;flex:1;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#4a4a4a transparent;scrollbar-width:thin}.messages{width:min(100%,870px);padding:18px 27px 40px;margin:auto;display:flex;flex-direction:column;gap:34px;min-height:100%}.message{display:flex;flex-direction:column;gap:8px;max-width:100%;min-width:0}.message.user{align-items:flex-end}.message-content{white-space:normal;line-height:1.8;font-size:15px;overflow-wrap:anywhere;min-width:0}.message.user .message-content{max-width:min(84%,680px);background:#303030;padding:10px 17px;border-radius:21px;line-height:1.65;white-space:pre-wrap}.assistant-head{display:flex;align-items:center;gap:9px;color:#c9c9c9;font-weight:650;font-size:13px;margin-bottom:3px}.assistant-logo{width:26px;height:26px;border-radius:50%;border:1px solid #787878;display:grid;place-items:center;font-size:15px}.message.assistant .message-content{padding:0 2px}.message-content p{margin:0 0 12px}.message-content p:last-child{margin-bottom:0}.message-content h2,.message-content h3,.message-content h4{line-height:1.45;margin:15px 0 8px}.message-content h2{font-size:21px}.message-content h3{font-size:17px}.message-content h4{font-size:15px}.message-content ul,.message-content ol{padding-left:25px;margin:8px 0 15px}.message-content li{margin:5px 0}.message-content strong{font-weight:700}.message-content blockquote{margin:10px 0;border-left:3px solid #656565;padding:3px 13px;color:#c0c0c0}.message-content code.inline-code{background:#383838;padding:1px 5px;border-radius:5px;font-size:.9em}.code-wrap{border-radius:12px;overflow:hidden;border:1px solid #424242;margin:14px 0;background:#141414}.code-head{padding:6px 12px;font-size:11px;color:#aaa;background:#252525;display:flex;align-items:center;justify-content:space-between}.code-head button{background:none;border:0;color:#bdbdbd;font-size:11px;cursor:pointer}.code-wrap pre{margin:0;padding:16px;overflow:auto;tab-size:2;font-size:12px;line-height:1.65;white-space:pre;scrollbar-width:thin}.message-actions{display:flex;gap:3px;opacity:0;transition:opacity .12s}.message:hover .message-actions,.message:focus-within .message-actions{opacity:1}.message-actions button{height:30px;min-width:30px;border:0;background:transparent;border-radius:7px;color:#a7a7a7;display:inline-grid;place-items:center}.message-actions button:hover{background:#333;color:#fff}.message.user .message-actions{justify-content:flex-end}.pending-dots{color:#aaa;font-size:24px;letter-spacing:5px;animation:pulse 1.2s infinite}@keyframes pulse{50%{opacity:.35}}.tool-summary{width:fit-content;max-width:100%;margin:3px 0;color:#acacac;font-size:12px;background:#292929;border-radius:9px;padding:7px 10px}.tool-summary summary{cursor:pointer}.tool-summary pre{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.6 ui-monospace,monospace;max-height:190px;overflow:auto;margin-bottom:0}.empty-state{min-height:100%;display:grid;align-content:center;justify-items:center;text-align:center;padding:70px 20px 35px;gap:18px}.welcome-mark{height:56px;width:56px;display:grid;place-items:center;border:1px solid #6d6d6d;border-radius:18px;font-size:27px}.empty-state h1{font-size:28px;font-weight:650;letter-spacing:-.7px;margin:0}.empty-state p{max-width:460px;color:#969696;font-size:13px;line-height:1.8;margin:0}.composer-section{width:100%;flex:none;padding:8px 28px 18px;background:linear-gradient(0deg,var(--bg) 86%,transparent)}.composer-shell{width:min(100%,830px);margin:auto}.composer{border:1px solid #3d3d3d;background:#303030;border-radius:23px;padding:12px 12px 10px;box-shadow:0 8px 25px #00000016;transition:border .15s}.composer:focus-within{border-color:#5a5a5a}.composer textarea{display:block;border:0;outline:0;resize:none;background:transparent;color:#f7f7f7;width:100%;max-height:225px;min-height:43px;padding:6px 6px 1px;font-size:15px;line-height:1.6;scrollbar-width:thin}.composer textarea::placeholder{color:#aaa}.composer-footer{display:flex;align-items:center;gap:8px;margin-top:7px}.composer-hint{color:#858585;font-size:11px;padding-left:7px}.composer-flex{flex:1}.model-select{background:#353535;color:#dedede;border:1px solid #454545;border-radius:11px;outline:0;min-width:0;max-width:260px;padding:7px 10px;font-size:12px;cursor:pointer}.send-btn{border:0;background:#f1f1f1;color:#242424;border-radius:50%;height:34px;width:34px;display:grid;place-items:center;flex:none}.send-btn:hover:not(:disabled){background:#d8d8d8}.send-btn.stop{background:#ececec}.composer-note{font-size:11px;color:#777;text-align:center;margin-top:10px}.edit-area{border:1px solid #515151;border-radius:15px;padding:10px;background:#303030;width:min(100%,770px)}.edit-area textarea{min-height:94px;max-height:340px;width:100%;resize:vertical;border:0;outline:0;background:transparent;color:white;font-size:14px;line-height:1.65}.edit-actions{display:flex;justify-content:flex-end;gap:8px}.small-btn{border:1px solid #515151;border-radius:20px;background:#393939;color:#eee;padding:7px 14px;font-size:12px}.small-btn.primary{background:#f4f4f4;color:#212121;border-color:#f4f4f4}.small-btn:hover{filter:brightness(1.12)}.status{color:#aaa;font-size:12px;font-style:italic;margin-bottom:8px}.toast{position:fixed;bottom:116px;left:50%;transform:translateX(-50%);background:#0b0b0b;color:#f1f1f1;border:1px solid #4d4d4d;border-radius:12px;box-shadow:0 10px 30px #0008;padding:11px 17px;font-size:13px;z-index:50;max-width:min(90vw,570px);pointer-events:none}.hide{display:none!important}
+.dialog{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(96vw,860px);max-height:min(92dvh,920px);border:1px solid #494949;border-radius:18px;background:#252525;color:var(--text);padding:0;box-shadow:0 30px 90px #000a;overflow:hidden}.dialog::backdrop{background:#000b;backdrop-filter:blur(3px)}.dialog-inner{display:flex;flex-direction:column;max-height:min(92dvh,920px)}.dialog-head{padding:20px 24px 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #3b3b3b}.dialog-head h2{font-size:19px;margin:0}.dialog-scroll{min-height:0;overflow:auto;padding:20px 24px;scrollbar-width:thin}.dialog-section{margin-bottom:24px}.field-label{display:block;font-size:12px;color:#c9c9c9;font-weight:600;margin:0 0 7px}.input{background:#323232;color:#f2f2f2;outline:none;border:1px solid #4e4e4e;border-radius:9px;width:100%;padding:10px 11px;font-size:13px}.input:focus{border-color:#929292}.input::placeholder{color:#797979}.field-help{font-size:11px;color:#9b9b9b;line-height:1.7;margin-top:7px}.token-line{display:flex;gap:9px;align-items:center}.token-line .input{flex:1}.token-line .icon-btn{border:1px solid #4a4a4a;width:39px;height:39px}.config-heading{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px}.config-heading h3{font-size:14px;margin:0}.model-card{padding:15px;border:1px solid #464646;border-radius:13px;background:#2c2c2c;margin-bottom:12px}.model-title-row{display:flex;gap:9px;align-items:center;margin-bottom:15px}.model-title-row .field{flex:1;min-width:0}.model-title-row .icon-btn{margin-top:19px;color:#c8b0b0}.model-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.model-fields .wide{grid-column:1/-1}.model-fields .field-label{font-weight:500}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;padding:15px 24px;border-top:1px solid #3b3b3b;background:#252525}.action-btn{border-radius:9px;background:#343434;border:1px solid #505050;padding:9px 17px;color:#eee;font-size:13px}.action-btn.primary{background:#f5f5f5;color:#1e1e1e;border-color:#f5f5f5;font-weight:650}.action-btn:hover{filter:brightness(1.08)}.settings-note{border-radius:8px;background:#333;padding:9px 12px;color:#aaa;font-size:11px;line-height:1.6}.menu-backdrop{display:none}
+@media(max-width:810px){.sidebar{position:fixed;inset:0 auto 0 0;transform:translateX(-100%);transition:transform .18s;box-shadow:8px 0 26px #0003}.sidebar.open{transform:translateX(0)}.menu-backdrop.open{display:block;position:fixed;inset:0;background:#0009;z-index:9}.mobile-only{display:inline-flex}.topbar{padding:0 13px}.connection span:last-child{display:none}.messages{padding:18px 19px 30px;gap:28px}.composer-section{padding:6px 12px 14px}.composer-note{display:none}.empty-state h1{font-size:23px}.message.user .message-content{max-width:95%}.model-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.dialog-scroll{padding:16px}.dialog-head{padding:17px}.dialog-actions{padding:12px 16px}.thread-delete{display:flex}.composer-hint{display:none}}
+@media(max-width:450px){.model-select{max-width:197px}.dialog{width:98vw}.model-fields{grid-template-columns:1fr 1fr;gap:9px}.model-title-row{gap:3px}}
+@media(hover:none){.message-actions{opacity:1}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div id="menuBackdrop" class="menu-backdrop"></div>
+  <aside class="sidebar" id="sidebar" aria-label="サイドバー">
+    <div class="side-head"><div class="brand"><div class="brand-icon">✳</div><span>Chat</span></div><button class="icon-btn" id="collapseSidebar" title="サイドバーを閉じる" aria-label="サイドバーを閉じる"></button></div>
+    <button class="nav-btn" id="newChat"><span id="newIcon"></span><span>新しいチャット</span></button>
+    <label class="search-wrap"><span id="searchIcon"></span><input id="searchThreads" placeholder="チャットを検索" aria-label="チャット検索"><span class="kbd">⌘ K</span></label>
+    <div class="side-label">チャット</div>
+    <nav id="threadList" class="thread-list" aria-label="チャット履歴"></nav>
+    <div class="sidebar-bottom"><button class="nav-btn" id="openSettings"><span id="settingsIcon"></span><span>設定</span></button><div class="storage-info" id="storageInfo"></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button class="icon-btn mobile-only" id="mobileMenu" title="メニュー" aria-label="メニュー"></button><button class="top-model" id="modelHeading"><span id="topModelName"></span><span id="chevronIcon" class="muted-arrow"></span></button><div class="top-spacer"></div><div class="connection"><span id="connectionDot" class="dot"></span><span id="connectionText">APIキー未設定</span></div></header>
+    <section class="conversation" id="conversation" aria-label="会話"><div id="messageList" class="messages"></div></section>
+    <section class="composer-section"><div class="composer-shell"><div class="composer"><textarea id="promptInput" rows="1" placeholder="メッセージを入力" aria-label="メッセージを入力"></textarea><div class="composer-footer"><span class="composer-hint">Enter で送信 · Shift+Enter で改行</span><span class="composer-flex"></span><select class="model-select" id="composerModel" aria-label="モデル選択"></select><button class="send-btn" id="sendButton" aria-label="送信"></button></div></div><div class="composer-note">回答はAIによって生成されます。重要な情報は確認してください。</div></div></section>
+  </main>
+</div>
+<dialog class="dialog" id="settingsDialog" aria-label="設定">
+  <div class="dialog-inner"><header class="dialog-head"><h2>設定</h2><button class="icon-btn" id="closeSettings" aria-label="閉じる"></button></header><div class="dialog-scroll">
+    <section class="dialog-section"><label class="field-label" for="apiToken">OpenRouter API Token</label><div class="token-line"><input class="input" type="password" id="apiToken" placeholder="sk-or-v1-..." autocomplete="off" spellcheck="false"><button class="icon-btn" id="toggleToken" title="トークンを表示 / 非表示" aria-label="トークン表示切替"></button></div><div class="field-help">トークンはページ内のメモリだけに保持します。localStorageには保存されず、リロードで消えます。APIリクエスト時のみOpenRouterへ送信します。</div></section>
+    <section class="dialog-section"><div class="config-heading"><h3>モデル一覧</h3><button class="small-btn" id="addModel">＋ モデル追加</button></div><div id="modelCards"></div><div class="settings-note">空欄のパラメータはAPIリクエストに含めません。system-prompt も空欄なら system メッセージを送信しません。</div></section>
+  </div><footer class="dialog-actions"><button class="action-btn" id="cancelSettings">キャンセル</button><button class="action-btn primary" id="saveSettings">保存</button></footer></div>
+</dialog>
+<div class="toast hide" id="toast" role="status"></div>
+<script>
+'use strict';
+(() => {
+  const STORE_KEY = 'openrouter-chat-singlefile-v1';
+  const BUDGET = 4 * 1024 * 1024;
+  const ENDPOINT = 'https://openrouter.ai/api/v1/chat/completions';
+  const defaults = [
+    {name:'openai/gpt-6-luna',systemPrompt:'',topP:'',topK:'',temp:'',minP:''},
+    {name:'google/gemini-3.8-flash',systemPrompt:'',topP:'',topK:'',temp:'',minP:''},
+    {name:'google/gemma-4-31b-it',systemPrompt:'',topP:'0.95',topK:'64',temp:'1.0',minP:''},
+    {name:'deepseek/deepseek-v4.1-flash',systemPrompt:'',topP:'1.0',topK:'',temp:'1.0',minP:''},
+    {name:'z-ai/glm-5.3-flash',systemPrompt:'',topP:'0.95',topK:'',temp:'1.0',minP:''}
+  ];
+  const $ = id => document.getElementById(id);
+  const IC = {
+    menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+    plus:'<path d="M12 5v14M5 12h14"/>',
+    search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+    settings:'<path d="M12 2.8v2M12 19.2v2M4.2 4.2l1.5 1.5m12.6 12.6 1.5 1.5M2.8 12h2m14.4 0h2M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.8"/>',
+    close:'<path d="M6 6l12 12M18 6 6 18"/>',
+    chevron:'<path d="m6 9 6 6 6-6"/>',
+    send:'<path d="M12 19V5m-6 6 6-6 6 6"/>',
+    stop:'<rect x="7" y="7" width="10" height="10" rx="1.5" fill="currentColor" stroke="none"/>',
+    edit:'<path d="m15 5 4 4M4 20l4.5-1 10.7-10.7a2.8 2.8 0 0 0-4-4L4.5 15z"/>',
+    copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
+    trash:'<path d="M4 7h16M10 4h4m4 3-1 13H7L6 7M10 10v7m4-7v7"/>',
+    eye:'<path d="M2 12s3.8-6 10-6 10 6 10 6-3.8 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/>'
+  };
+  function icon(name){return `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${IC[name]||''}</svg>`;}
+  $('collapseSidebar').innerHTML=icon('menu');$('newIcon').innerHTML=icon('plus');$('searchIcon').innerHTML=icon('search');$('settingsIcon').innerHTML=icon('settings');$('mobileMenu').innerHTML=icon('menu');$('chevronIcon').innerHTML=icon('chevron');$('closeSettings').innerHTML=icon('close');$('toggleToken').innerHTML=icon('eye');
+
+  // Only application state is serialized; `apiToken` never enters this object.
+  let apiToken = '';
+  let threads = [];
+  let models = structuredClone(defaults);
+  let selectedModel = models[0].name;
+  let activeId = null;
+  let editingId = null;
+  let configDraft = null;
+  let generation = null;
+  let toastTimer;
+  let renderQueued = false;
+  let storageBlocked = false;
+  const makeId = () => (globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
+  function message(text){
+    const el=$('toast');el.textContent=text;el.classList.remove('hide');
+    clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.add('hide'),3600);
+  }
+  function estimatedBytes(s){return Math.max(new Blob([s]).size,s.length*2);}
+  function cleanState(){return {version:1,models,selectedModel,activeId,threads:threads.map(t=>({...t,messages:t.messages.filter(m=>m.status!=='pending')}))};}
+  function saveState(){
+    if(storageBlocked)return;
+    let snapshot=cleanState();let json=JSON.stringify(snapshot);let pruned=0;
+    while(estimatedBytes(json)>BUDGET && threads.length){
+      const oldest=threads.slice().sort((a,b)=>a.updatedAt-b.updatedAt)[0];
+      threads=threads.filter(t=>t.id!==oldest.id);
+      if(activeId===oldest.id)activeId=null;
+      snapshot=cleanState();json=JSON.stringify(snapshot);pruned++;
+    }
+    try{
+      localStorage.setItem(STORE_KEY,json);
+    }catch(e){
+      while(threads.length){
+        const oldest=threads.slice().sort((a,b)=>a.updatedAt-b.updatedAt)[0];
+        threads=threads.filter(t=>t.id!==oldest.id);
+        if(activeId===oldest.id)activeId=null;
+        pruned++;json=JSON.stringify(cleanState());
+        try{localStorage.setItem(STORE_KEY,json);break;}catch(err){/* Continue evicting; storage may be unavailable. */}
+      }
+      if(!threads.length){try{localStorage.setItem(STORE_KEY,JSON.stringify(cleanState()));}catch(err){storageBlocked=true;message('localStorageを利用できません。会話はこのページ内のみ保持されます。');}}
+    }
+    if(pruned){message(`容量制限により古いチャット${pruned}件を削除しました。`);renderSidebar();renderMessages();}
+    $('storageInfo').textContent=`保存容量 約 ${(estimatedBytes(json)/1024/1024).toFixed(2)} / 4.00 MiB`;
+  }
+  function loadState(){
+    try{
+      const saved=JSON.parse(localStorage.getItem(STORE_KEY)||'null');
+      if(!saved||saved.version!==1)return;
+      if(Array.isArray(saved.models)&&saved.models.length){
+        const restored=saved.models.filter(x=>x && typeof x.name==='string' && x.name.trim()).map(x=>({name:String(x.name),systemPrompt:String(x.systemPrompt||''),topP:String(x.topP??''),topK:String(x.topK??''),temp:String(x.temp??''),minP:String(x.minP??'')}));
+        if(restored.length)models=restored;
+      }
+      if(Array.isArray(saved.threads))threads=saved.threads.filter(t=>t&&typeof t.id==='string'&&Array.isArray(t.messages)).map(t=>({...t,messages:t.messages.filter(m=>m&&['user','assistant'].includes(m.role)&&typeof m.content==='string'&&m.status!=='pending')}));
+      activeId=threads.some(t=>t.id===saved.activeId)?saved.activeId:null;
+      selectedModel=models.some(m=>m.name===saved.selectedModel)?saved.selectedModel:models[0].name;
+    }catch(e){message('保存データの読み込みに失敗しました。');}
+  }
+  loadState();
+  const activeThread=()=>threads.find(t=>t.id===activeId);
+  const currentModel=()=>models.find(m=>m.name===selectedModel)||models[0];
+  function closeMobile(){$('sidebar').classList.remove('open');$('menuBackdrop').classList.remove('open');}
+  function renderSidebar(){
+    const list=$('threadList');list.replaceChildren();
+    const search=$('searchThreads').value.trim().toLocaleLowerCase();
+    const filtered=threads.slice().sort((a,b)=>b.updatedAt-a.updatedAt).filter(t=>`${t.title} ${t.messages.map(m=>m.content).join(' ')}`.toLocaleLowerCase().includes(search));
+    for(const t of filtered){
+      const item=document.createElement('div');item.className='thread'+(t.id===activeId?' active':'');
+      const select=document.createElement('button');select.className='thread-main';select.textContent=t.title||'新しいチャット';select.title=t.title||'新しいチャット';select.addEventListener('click',()=>{activeId=t.id;editingId=null;closeMobile();renderAll();saveState();});
+      const del=document.createElement('button');del.className='icon-btn thread-delete';del.innerHTML=icon('trash');del.title='削除';del.setAttribute('aria-label','チャットを削除');del.addEventListener('click',e=>{e.stopPropagation();if(!confirm('このチャットを削除しますか？'))return;if(generation?.threadId===t.id)stopGeneration();threads=threads.filter(x=>x.id!==t.id);if(activeId===t.id)activeId=null;renderAll();saveState();});
+      item.append(select,del);list.append(item);
+    }
+    if(!filtered.length){const p=document.createElement('div');p.className='empty-search';p.textContent=search?'該当するチャットがありません。':'まだチャットがありません。';list.append(p);}
+  }
+  function renderModelChoices(){
+    const sel=$('composerModel');sel.replaceChildren();
+    for(const m of models){const opt=document.createElement('option');opt.value=m.name;opt.textContent=m.name;sel.append(opt);}
+    if(!models.some(m=>m.name===selectedModel))selectedModel=models[0].name;
+    sel.value=selectedModel;$('topModelName').textContent=selectedModel;
+    $('connectionDot').classList.toggle('ready',!!apiToken);
+    $('connectionText').textContent=apiToken?'APIキー設定済み':'APIキー未設定';
+  }
+  function escapeHTML(v){return String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');}
+  function inlineMarkdown(text){
+    let s=escapeHTML(text);
+    s=s.replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g,(_m,label,url)=>`<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+    s=s.replace(/`([^`\n]+)`/g,'<code class="inline-code">$1</code>');
+    s=s.replace(/\*\*([^*\n]+)\*\*/g,'<strong>$1</strong>');
+    s=s.replace(/\*([^*\n]+)\*/g,'<em>$1</em>');
+    return s;
+  }
+  function markdownHTML(text){
+    // User/model-supplied HTML is escaped before controlled Markdown markup is added.
+    const lines=text.replace(/\r\n?/g,'\n').split('\n');let out=[],para=[],listType=null,list=[];
+    function flushPara(){if(para.length){out.push('<p>'+para.map(inlineMarkdown).join('<br>')+'</p>');para=[];}}
+    function flushList(){if(listType){out.push(`<${listType}>`+list.map(v=>`<li>${inlineMarkdown(v)}</li>`).join('')+`</${listType}>`);listType=null;list=[];}}
+    for(let i=0;i<lines.length;i++){
+      const l=lines[i];const fence=l.match(/^\s*```\s*([\w.+-]*)\s*$/);
+      if(fence){flushPara();flushList();const lang=fence[1]||'code';let body=[];i++;while(i<lines.length&&!/^\s*```\s*$/.test(lines[i]))body.push(lines[i++]);out.push(`<div class="code-wrap"><div class="code-head"><span>${escapeHTML(lang)}</span><button type="button" class="copy-code">コピー</button></div><pre><code>${escapeHTML(body.join('\n'))}</code></pre></div>`);continue;}
+      if(!l.trim()){flushPara();flushList();continue;}
+      const h=l.match(/^(#{1,3})\s+(.*)$/);if(h){flushPara();flushList();out.push(`<h${h[1].length+1}>${inlineMarkdown(h[2])}</h${h[1].length+1}>`);continue;}
+      const li=l.match(/^\s*(?:([-*])|(\d+)\.)\s+(.+)$/);if(li){flushPara();let kind=li[2]?'ol':'ul';if(listType&&kind!==listType)flushList();listType=kind;list.push(li[3]);continue;}
+      if(l.startsWith('> ')){flushPara();flushList();out.push(`<blockquote>${inlineMarkdown(l.slice(2))}</blockquote>`);continue;}
+      flushList();para.push(l);
+    }
+    flushPara();flushList();return out.join('');
+  }
+  function btnIcon(name,title,fn){const b=document.createElement('button');b.type='button';b.title=title;b.setAttribute('aria-label',title);b.innerHTML=icon(name);b.addEventListener('click',fn);return b;}
+  function appendEdit(container,msg,thread,index){
+    const wrap=document.createElement('div');wrap.className='edit-area';const ta=document.createElement('textarea');ta.value=msg.content;ta.setAttribute('aria-label','メッセージ編集');const actions=document.createElement('div');actions.className='edit-actions';
+    const cancel=document.createElement('button');cancel.className='small-btn';cancel.textContent='キャンセル';cancel.onclick=()=>{editingId=null;renderMessages();};
+    const save=document.createElement('button');save.className='small-btn primary';save.textContent=msg.role==='user'?'保存して再生成':'保存';
+    save.onclick=async()=>{
+      if(generation){message('生成中は編集できません。');return;}
+      const value=ta.value.trim();if(!value){message('空のメッセージは保存できません。');return;}
+      msg.content=value;delete msg.apiTrail;delete msg.toolRuns;delete msg.model;
+      thread.messages=thread.messages.slice(0,index+1);thread.updatedAt=Date.now();editingId=null;
+      saveState();renderAll();
+      if(msg.role==='user')await generate(thread);
+      else $('promptInput').focus();
+    };
+    ta.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();save.click();}if(e.key==='Escape'){cancel.click();}});
+    actions.append(cancel,save);wrap.append(ta,actions);container.append(wrap);requestAnimationFrame(()=>{ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length);});
+  }
+  function renderMessages(){
+    const root=$('messageList'),thread=activeThread();const viewport=$('conversation');const atBottom=viewport.scrollHeight-viewport.scrollTop-viewport.clientHeight<130;
+    root.replaceChildren();
+    if(!thread||!thread.messages.length){
+      const empty=document.createElement('div');empty.className='empty-state';empty.innerHTML='<div class="welcome-mark">✳</div><h1>何から始めましょうか？</h1><p>モデルを選択してメッセージを送信してください。検索、ページ取得、JavaScript実行にも対応しています。</p>';root.append(empty);
+    } else {
+      thread.messages.forEach((msg,index)=>{
+        const row=document.createElement('article');row.className=`message ${msg.role}`;
+        if(msg.role==='assistant'){
+          const h=document.createElement('div');h.className='assistant-head';h.innerHTML='<span class="assistant-logo">✳</span><span></span>';
+          h.lastElementChild.textContent=msg.model||'Assistant';row.append(h);
+        }
+        if(editingId===msg.id){appendEdit(row,msg,thread,index);root.append(row);return;}
+        if(msg.status==='pending'&&msg.statusText){const s=document.createElement('div');s.className='status';s.textContent=msg.statusText;row.append(s);}
+        const content=document.createElement('div');content.className='message-content';
+        if(msg.role==='user')content.textContent=msg.content;
+        else if(msg.content)content.innerHTML=markdownHTML(msg.content);
+        else if(msg.status==='pending')content.innerHTML='<span class="pending-dots">···</span>';
+        else content.textContent='（空の応答）';
+        row.append(content);
+        if(msg.toolRuns?.length){const detail=document.createElement('details');detail.className='tool-summary';const summary=document.createElement('summary');summary.textContent=`JavaScript 実行 ${msg.toolRuns.length} 件`;detail.append(summary);for(const item of msg.toolRuns){const pre=document.createElement('pre');pre.textContent=`> ${item.code}\n${item.output}`;detail.append(pre);}row.append(detail);}
+        if(msg.status!=='pending'){
+          const actions=document.createElement('div');actions.className='message-actions';
+          actions.append(btnIcon('copy','コピー',()=>copyText(msg.content)),btnIcon('edit','編集（以降の履歴を削除）',()=>{if(generation){message('生成中は編集できません。');return;}editingId=msg.id;renderMessages();}));row.append(actions);
+        }
+        root.append(row);
+      });
+    }
+    root.querySelectorAll('.copy-code').forEach(btn=>btn.addEventListener('click',()=>copyText(btn.closest('.code-wrap').querySelector('code').textContent)));
+    if(atBottom)requestAnimationFrame(()=>{viewport.scrollTop=viewport.scrollHeight;});
+  }
+  async function copyText(text){try{await navigator.clipboard.writeText(text);message('コピーしました');}catch(e){message('コピーできませんでした。');}}
+  function renderAll(){renderSidebar();renderModelChoices();renderMessages();updateSendButton();}
+  function autoSize(){const ta=$('promptInput');ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,225)+'px';}
+  function updateSendButton(){
+    const btn=$('sendButton');btn.innerHTML=icon(generation?'stop':'send');btn.classList.toggle('stop',!!generation);
+    btn.disabled=!generation&&!$('promptInput').value.trim();btn.title=generation?'生成を停止':'送信';btn.setAttribute('aria-label',btn.title);
+  }
+  function newChat(){activeId=null;editingId=null;$('promptInput').value='';autoSize();closeMobile();renderAll();$('promptInput').focus();saveState();}
+  function selectModel(name){if(!models.some(m=>m.name===name))return;selectedModel=name;renderModelChoices();saveState();}
+  function asText(c){if(typeof c==='string')return c;if(Array.isArray(c))return c.map(v=>typeof v==='string'?v:(v.text||'')).join('');return '';}
+  function buildHistory(thread,model){
+    const history=[];
+    if(model.systemPrompt.trim())history.push({role:'system',content:model.systemPrompt});
+    for(const msg of thread.messages){
+      if(msg.status==='pending')continue;
+      if(msg.role==='user')history.push({role:'user',content:msg.content});
+      else if(Array.isArray(msg.apiTrail)&&msg.apiTrail.length)history.push(...msg.apiTrail);
+      else history.push({role:'assistant',content:msg.content});
+    }
+    return history;
+  }
+  function paramsForModel(model){
+    const params={};const config=[['topP','top_p'],['topK','top_k'],['temp','temperature'],['minP','min_p']];
+    for(const [key,field] of config){if(String(model[key]).trim()!=='')params[field]=Number(model[key]);}
+    return params;
+  }
+  const jsTool={type:'function',function:{name:'javascript',description:'Execute self-contained JavaScript in a restricted Web Worker inside a sandboxed iframe. No DOM, no network, no APIs or secrets. Provide code that returns a useful result, e.g. return 1 + 2; console.log output is captured. Execution has a time limit.',parameters:{type:'object',properties:{code:{type:'string',description:'JavaScript source; supports async/await and return statements.'}},required:['code'],additionalProperties:false}}};
+  const tools=[{type:'openrouter:web_search'},{type:'openrouter:web_fetch'},jsTool];
+
+  function jsFrameDocument(){
+    // The user's code is sent by postMessage, never interpolated into srcdoc or main page.
+    return `<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' blob:; worker-src blob:; connect-src 'none'; img-src 'none'; frame-src 'none'; object-src 'none'; form-action 'none'"></head><body><script>
+      'use strict';
+      const workerSource = \`'use strict';
+        self.fetch = () => Promise.reject(Error('Network disabled'));
+        self.XMLHttpRequest = undefined; self.WebSocket = undefined;
+        self.EventSource = undefined; self.importScripts = undefined;
+        self.onmessage = async ({data}) => {
+          let output = []; const push=(...args)=>{if(output.join('\\\\n').length < 12000)output.push(args.map(a=>{try{return typeof a==='string'?a:JSON.stringify(a);}catch{return String(a);}}).join(' '));};
+          const consoleSafe={log:push,info:push,warn:push,error:push,debug:push};
+          try {
+            const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;
+            const fn=new AsyncFunction('console', '"use strict";\\\\n'+data.code);
+            const result=await fn(consoleSafe);
+            push(result===undefined?'(undefined)':result);
+            self.postMessage({ok:true,output:output.join('\\\\n').slice(0,12000)});
+          } catch(e) {self.postMessage({ok:false,output:String(e?.stack||e).slice(0,12000)+'\\\\n'+output.join('\\\\n')});}
+        };
+      \`;
+      let worker;
+      window.addEventListener('message',e=>{
+        if(e.source!==parent||!e.data||e.data.type!=='run-js')return;
+        const nonce=e.data.nonce;
+        try{
+          const url=URL.createObjectURL(new Blob([workerSource],{type:'text/javascript'}));
+          worker=new Worker(url);URL.revokeObjectURL(url);
+          worker.onmessage=ev=>{parent.postMessage({type:'js-result',nonce,...ev.data},'*');worker.terminate();};
+          worker.onerror=ev=>{parent.postMessage({type:'js-result',nonce,ok:false,output:String(ev.message)},'*');worker.terminate();};
+          worker.postMessage({code:e.data.code});
+        } catch(err){parent.postMessage({type:'js-result',nonce,ok:false,output:String(err)},'*');}
+      });
+      parent.postMessage({type:'js-ready'},'*');
+    <\/script></body></html>`;
+  }
+  function executeJavaScript(code,signal){
+    return new Promise((resolve)=>{
+      if(typeof code!=='string'){resolve({ok:false,output:'code must be a string'});return;}
+      const frame=document.createElement('iframe');frame.setAttribute('sandbox','allow-scripts');frame.setAttribute('referrerpolicy','no-referrer');frame.style.display='none';frame.srcdoc=jsFrameDocument();
+      const nonce=makeId();let finished=false;let timer;
+      const cleanup=(result)=>{
+        if(finished)return;finished=true;clearTimeout(timer);window.removeEventListener('message',onMessage);signal?.removeEventListener('abort',onAbort);frame.remove();resolve(result);
+      };
+      const onAbort=()=>cleanup({ok:false,output:'Cancelled'});
+      function onMessage(event){
+        if(event.source!==frame.contentWindow||!event.data)return;
+        if(event.data.type==='js-ready'){frame.contentWindow.postMessage({type:'run-js',nonce,code},'*');return;}
+        if(event.data.type==='js-result'&&event.data.nonce===nonce)cleanup({ok:!!event.data.ok,output:String(event.data.output??'').slice(0,12000)});
+      }
+      window.addEventListener('message',onMessage);
+      if(signal?.aborted){cleanup({ok:false,output:'Cancelled'});return;}
+      signal?.addEventListener('abort',onAbort,{once:true});
+      timer=setTimeout(()=>cleanup({ok:false,output:'Execution timed out after 5 seconds'}),5000);
+      document.body.append(frame);
+    });
+  }
+  function streamFragment(data,assembled){
+    if(data.error)throw Error(data.error?.message||JSON.stringify(data.error));
+    const choice=data.choices?.[0];if(!choice)return;
+    const delta=choice.delta||{};
+    const part=asText(delta.content);if(part)assembled.content+=part;
+    const calls=delta.tool_calls||delta.toolCalls||[];
+    for(const fragment of calls){
+      const i=fragment.index??0;
+      const call=assembled.toolCalls[i]||(assembled.toolCalls[i]={id:'',type:'function',function:{name:'',arguments:''}});
+      if(fragment.id)call.id=fragment.id;
+      if(fragment.type)call.type=fragment.type;
+      if(fragment.function){if(fragment.function.name)call.function.name+=fragment.function.name;if(fragment.function.arguments)call.function.arguments+=fragment.function.arguments;}
+    }
+  }
+  async function fetchCompletion(payload,signal,onText){
+    const response=await fetch(ENDPOINT,{method:'POST',headers:{'Authorization':`Bearer ${apiToken}`,'Content-Type':'application/json','X-OpenRouter-Title':'OpenRouter Local Chat'},body:JSON.stringify({...payload,stream:true}),signal});
+    if(!response.ok){let detail='';try{const d=await response.json();detail=d.error?.message||JSON.stringify(d);}catch{detail=await response.text();}throw Error(`OpenRouter HTTP ${response.status}: ${detail.slice(0,450)}`);}
+    if(!response.body)throw Error('このブラウザでストリーミングが利用できません。');
+    const reader=response.body.getReader();const decoder=new TextDecoder();let buffer='';const assembled={content:'',toolCalls:[]};let doneMarker=false;
+    function processEvent(raw){
+      const lines=raw.split(/\r?\n/);const dataText=lines.filter(s=>s.startsWith('data:')).map(s=>s.slice(5).trimStart()).join('\n');
+      if(!dataText)return;if(dataText.trim()==='[DONE]'){doneMarker=true;return;}
+      let value;try{value=JSON.parse(dataText);}catch{return;}
+      streamFragment(value,assembled);onText(assembled.content);
+    }
+    try{
+      while(true){const {done,value}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});let m;
+        while((m=buffer.match(/\r?\n\r?\n/))){const index=m.index;processEvent(buffer.slice(0,index));buffer=buffer.slice(index+m[0].length);}
+        if(doneMarker)break;
+      }
+      buffer+=decoder.decode();if(buffer.trim()&&!doneMarker)processEvent(buffer);
+    }finally{reader.releaseLock();}
+    return {content:assembled.content,toolCalls:assembled.toolCalls.filter(x=>x&&x.function?.name)};
+  }
+  function scheduleRender(){if(renderQueued)return;renderQueued=true;requestAnimationFrame(()=>{renderQueued=false;renderMessages();});}
+  async function generate(thread){
+    if(generation)return;
+    if(!apiToken){message('設定からOpenRouter API Tokenを入力してください。');openSettings();return;}
+    const model=structuredClone(currentModel());const ctx=buildHistory(thread,model);
+    const controller=new AbortController();generation={controller,threadId:thread.id};
+    const reply={id:makeId(),role:'assistant',content:'',model:model.name,status:'pending',statusText:'モデルからの応答を待機中…',toolRuns:[]};
+    thread.messages.push(reply);renderAll();
+    let apiTrail=[],lastContent='';
+    try{
+      for(let round=0;round<8;round++){
+        if(controller.signal.aborted)throw new DOMException('Aborted','AbortError');
+        reply.content='';reply.statusText=round===0?'モデルからの応答を待機中…':'ツール結果をもとに応答を生成中…';scheduleRender();
+        const response=await fetchCompletion({model:model.name,messages:ctx,tools,...paramsForModel(model)},controller.signal,content=>{
+          reply.content=content;lastContent=content;if(content)reply.statusText='';scheduleRender();
+        });
+        if(controller.signal.aborted)throw new DOMException('Aborted','AbortError');
+        if(!response.toolCalls.length){
+          if(!response.content.trim() && !apiTrail.length)throw Error('モデルから空の応答が返されました。');
+          reply.content=response.content||lastContent||'（応答がありません）';
+          apiTrail.push({role:'assistant',content:reply.content});
+          reply.apiTrail=apiTrail;reply.status='done';delete reply.statusText;break;
+        }
+        const assistantCall={role:'assistant',content:response.content||null,tool_calls:response.toolCalls.map(c=>({id:c.id,type:'function',function:{name:c.function.name,arguments:c.function.arguments}}))};
+        ctx.push(assistantCall);apiTrail.push(assistantCall);
+        reply.statusText=`JavaScript ツールを実行中（${response.toolCalls.length}件）…`;reply.content='';scheduleRender();
+        for(const call of response.toolCalls){
+          if(controller.signal.aborted)throw new DOMException('Aborted','AbortError');
+          let output,code='';
+          if(call.function.name==='javascript'){
+            try{const args=JSON.parse(call.function.arguments||'{}');code=String(args.code||'');const result=await executeJavaScript(code,controller.signal);output=JSON.stringify(result);}
+            catch(error){output=JSON.stringify({ok:false,output:String(error)});}
+          } else output=JSON.stringify({ok:false,output:'Unknown tool'});
+          const toolMessage={role:'tool',tool_call_id:call.id,name:call.function.name,content:output};ctx.push(toolMessage);apiTrail.push(toolMessage);
+          reply.toolRuns.push({code:code.slice(0,10000),output:output.slice(0,12000)});
+        }
+        if(round===7)throw Error('ツール呼び出しの上限（8回）に達しました。');
+      }
+      thread.updatedAt=Date.now();
+    }catch(error){
+      const aborted=controller.signal.aborted;
+      if(aborted){if(!reply.content.trim()&&!reply.toolRuns.length)thread.messages=thread.messages.filter(m=>m.id!==reply.id);else{reply.content=reply.content||'（停止しました）';reply.status='done';delete reply.statusText;}}
+      else{reply.status='done';reply.content=(reply.content?reply.content+'\n\n':'')+`⚠️ ${String(error.message||error)}`;delete reply.statusText;message('API応答でエラーが発生しました。');}
+    }finally{
+      if(generation?.controller===controller)generation=null;
+      thread.updatedAt=Date.now();saveState();renderAll();
+    }
+  }
+  async function sendMessage(){
+    if(generation){stopGeneration();return;}
+    if(editingId){message('先にメッセージ編集を終了してください。');return;}
+    const input=$('promptInput'),content=input.value.trim();if(!content)return;
+    if(!apiToken){openSettings();message('先にOpenRouter API Tokenを入力してください。');return;}
+    let thread=activeThread();const now=Date.now();
+    if(!thread){thread={id:makeId(),title:content.replace(/\s+/g,' ').slice(0,36)||'新しいチャット',createdAt:now,updatedAt:now,messages:[]};threads.unshift(thread);activeId=thread.id;}
+    thread.messages.push({id:makeId(),role:'user',content});thread.updatedAt=now;
+    input.value='';autoSize();saveState();renderAll();await generate(thread);
+  }
+  function stopGeneration(){generation?.controller.abort();}
+
+  function formInput(key,label,model,opts={}){
+    const wrap=document.createElement('div');wrap.className='field'+(opts.wide?' wide':'');
+    const lbl=document.createElement('label');lbl.className='field-label';lbl.textContent=label;
+    const inp=document.createElement(opts.multiline?'textarea':'input');inp.className='input';
+    if(opts.multiline){inp.rows=3;inp.style.resize='vertical';}else{inp.type='text';}
+    inp.value=model[key]??'';inp.placeholder=opts.placeholder||'空欄なら省略';inp.spellcheck=false;
+    inp.addEventListener('input',()=>{model[key]=inp.value;});
+    wrap.append(lbl,inp);return wrap;
+  }
+  function renderConfigModels(){
+    const root=$('modelCards');root.replaceChildren();
+    configDraft.forEach((model,index)=>{
+      const card=document.createElement('div');card.className='model-card';
+      const top=document.createElement('div');top.className='model-title-row';top.append(formInput('name','Model Name (OpenRouter ID)',model,{placeholder:'provider/model-id'}));
+      const del=btnIcon('trash','モデルを削除',()=>{if(configDraft.length===1){message('最低1つのモデルが必要です。');return;}configDraft.splice(index,1);renderConfigModels();});top.append(del);card.append(top);
+      const grid=document.createElement('div');grid.className='model-fields';
+      grid.append(formInput('systemPrompt','system-prompt',model,{wide:true,multiline:true,placeholder:'システムプロンプト（任意）'}));
+      for(const [key,label] of [['topP','top-p'],['topK','top-k'],['temp','temp'],['minP','min-p']])grid.append(formInput(key,label,model));
+      card.append(grid);root.append(card);
+    });
+  }
+  function openSettings(){
+    configDraft=structuredClone(models);$('apiToken').value=apiToken;$('apiToken').type='password';renderConfigModels();
+    if(!$('settingsDialog').open)$('settingsDialog').showModal();
+  }
+  function closeSettings(){$('settingsDialog').close();configDraft=null;}
+  function validateModels(ms){
+    const names=new Set();for(const m of ms){
+      m.name=m.name.trim();if(!m.name)throw Error('モデル名を入力してください。');
+      if(names.has(m.name))throw Error(`モデル名が重複しています: ${m.name}`);names.add(m.name);
+      for(const [key,min,max,int] of [['topP',0,1,false],['topK',0,1000000,true],['temp',0,2,false],['minP',0,1,false]]){
+        const raw=String(m[key]).trim();if(!raw)continue;
+        const n=Number(raw);if(!Number.isFinite(n)||n<min||n>max||(int&&!Number.isInteger(n)))throw Error(`${m.name} の ${key} は ${min}〜${max} の${int?'整数':'数値'}にしてください。`);
+      }
+    }
+  }
+  function commitSettings(){
+    try{validateModels(configDraft);models=structuredClone(configDraft);apiToken=$('apiToken').value.trim();if(!models.some(m=>m.name===selectedModel))selectedModel=models[0].name;closeSettings();renderAll();saveState();message('設定を反映しました（API Tokenは保存しません）。');}
+    catch(e){message(e.message);}
+  }
+  $('openSettings').addEventListener('click',openSettings);$('modelHeading').addEventListener('click',openSettings);
+  $('closeSettings').onclick=closeSettings;$('cancelSettings').onclick=closeSettings;$('saveSettings').onclick=commitSettings;
+  $('settingsDialog').addEventListener('click',e=>{if(e.target===$('settingsDialog'))closeSettings();});
+  $('settingsDialog').addEventListener('close',()=>{configDraft=null;});
+  $('addModel').onclick=()=>{configDraft.push({name:'',systemPrompt:'',topP:'',topK:'',temp:'',minP:''});renderConfigModels();};
+  $('toggleToken').onclick=()=>$('apiToken').type=$('apiToken').type==='password'?'text':'password';
+  $('newChat').onclick=newChat;$('searchThreads').addEventListener('input',renderSidebar);
+  $('sendButton').onclick=sendMessage;$('promptInput').addEventListener('input',()=>{autoSize();updateSendButton();});
+  $('promptInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();sendMessage();}});
+  $('composerModel').addEventListener('change',e=>selectModel(e.target.value));
+  $('mobileMenu').onclick=()=>{$('sidebar').classList.add('open');$('menuBackdrop').classList.add('open');};
+  $('collapseSidebar').onclick=closeMobile;$('menuBackdrop').onclick=closeMobile;
+  document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if(window.innerWidth<=810){$('sidebar').classList.add('open');$('menuBackdrop').classList.add('open');}$('searchThreads').focus();}if(e.key==='Escape')closeMobile();});
+  window.addEventListener('beforeunload',()=>{generation?.controller.abort();});
+  renderAll();saveState();autoSize();
+})();
+</script>
+</body>
+</html>
